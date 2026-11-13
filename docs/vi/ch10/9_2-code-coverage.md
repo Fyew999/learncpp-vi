@@ -34,8 +34,8 @@ void checkValue(int x)
     std::cout << "Xong\n";      // Dòng 2
 }
 ```
-- Nếu chỉ test với `x = 5`: Dòng 1 và Dòng 2 đều chạy -> **Statement Coverage đạt 100%**!
-- Tuy nhiên, nhánh ngầm định `x <= 0` (khi điều kiện if sai) chưa hề được kiểm tra -> **Branch Coverage chỉ đạt 50%**!
+- Nếu chỉ test với `x = 5`: Dòng 1 và Dòng 2 đều chạy -&gt; **Statement Coverage đạt 100%**!
+- Tuy nhiên, nhánh ngầm định `x <= 0` (khi điều kiện if sai) chưa hề được kiểm tra -&gt; **Branch Coverage chỉ đạt 50%**!
 
 ### 1.2. Loop Coverage: Nguyên Tắc 0, 1, 2
 Mọi vòng lặp phải được kiểm tra ở 3 trạng thái biên:

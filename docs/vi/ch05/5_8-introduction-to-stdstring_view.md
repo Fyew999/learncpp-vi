@@ -162,7 +162,7 @@ Because `std::string` makes a copy of its initializer (which is expensive), C++ 
 
 However, if this is desired, we have two options:
 
-<ol start="1">
+
 - Explicitly create a `std::string` with a `std::string_view` initializer (which is allowed, since this will rarely be done unintentionally)
 
 - Convert an existing `std::string_view` to a `std::string` using `static_cast`

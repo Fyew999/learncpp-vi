@@ -22,7 +22,7 @@ Trong bài học trước, bạn đã học cách dùng `Step Into` và `Step Ov
 
 Lệnh **Run to Cursor** cho phép bạn đặt con trỏ chuột tại một dòng code bất kỳ trong file và yêu cầu Debugger: *"Hãy chạy hết tốc lực từ điểm hiện tại cho đến khi chạm vào dòng con trỏ này thì dừng lại!"*.
 
-- **Cách sử dụng**: Nhấp chuột phải vào dòng lệnh mong muốn -> Chọn **Run to Cursor** (Phím tắt: `Ctrl + F10` trên Visual Studio).
+- **Cách sử dụng**: Nhấp chuột phải vào dòng lệnh mong muốn -&gt; Chọn **Run to Cursor** (Phím tắt: `Ctrl + F10` trên Visual Studio).
 - **Đặc điểm**: Lệnh này chỉ có hiệu lực một lần duy nhất. Nếu dòng code đó nằm trong một vòng lặp chạy 100 lần, Debugger chỉ dừng ở lần chạm đầu tiên, sau đó nếu bạn bấm Continue, chương trình sẽ chạy thẳng về đích.
 
 ---
@@ -113,7 +113,7 @@ Ngoài ra, **tuyệt đối không bao giờ dùng "Set Next Statement" để nh
 Trong các ứng dụng thực tế, một vòng lặp có thể lặp 100.000 lần và bug chỉ xuất hiện ở lần lặp thứ 99.999 khi chỉ số `i == 99999` hoặc khi biến `ptr == nullptr`. Nếu bạn đặt Breakpoint thông thường, bạn sẽ phải nhấn Continue... 99.999 lần!
 
 Giải pháp hiện đại là **Conditional Breakpoint (Điểm ngắt có điều kiện)**:
-1. Nhấp chuột phải vào chấm tròn đỏ của Breakpoint -> Chọn **Conditions...**.
+1. Nhấp chuột phải vào chấm tròn đỏ của Breakpoint -&gt; Chọn **Conditions...**.
 2. Nhập biểu thức điều kiện C++: `i == 99999` hoặc `user.age < 0`.
 3. Debugger sẽ cho chương trình chạy hết tốc lực và **chỉ dừng lại duy nhất khi điều kiện đó thỏa mãn (true)**!
 

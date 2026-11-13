@@ -140,7 +140,7 @@ int main()
 Cho bitset `std::bitset<8> b { 0b0000'0101 };`. Sau khi gọi `b.flip(1);` và `b.reset(0);`, chuỗi nhị phân của `b` sẽ là bao nhiêu?
 ::: details [Xem lời giải]
 - Ban đầu: `b = 00000101` (bit 0 = 1, bit 1 = 0, bit 2 = 1).
-- `b.flip(1)`: Đảo bit 1 từ 0 thành 1 -> `00000111`.
-- `b.reset(0)`: Tắt bit 0 về 0 -> `00000110`.
+- `b.flip(1)`: Đảo bit 1 từ 0 thành 1 -&gt; `00000111`.
+- `b.reset(0)`: Tắt bit 0 về 0 -&gt; `00000110`.
 - Kết quả: `00000110`.
 :::

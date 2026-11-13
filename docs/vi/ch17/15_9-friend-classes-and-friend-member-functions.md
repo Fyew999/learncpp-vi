@@ -355,7 +355,7 @@ int main()
 }
 ```
 
-> Step #1
+&gt; Step #1
 
 Make `Point3d` a friend class of `Vector3d`, and implement hàm `Point3d::moveByVector()`.
 
@@ -426,7 +426,7 @@ int main()
 ```
 :::
 
-> Step #2
+&gt; Step #2
 
 Instead of making class `Point3d` a friend of class `Vector3d`, make member hàm `Point3d::moveByVector` a friend of class `Vector3d`.
 
@@ -503,7 +503,7 @@ int main()
 ```
 :::
 
-> Step #3
+&gt; Step #3
 
 Reimplement the solution to the prior step using 5 separate files: Point3d.h, Point3d.cpp, Vector3d.h, Vector3d.cpp, and main.cpp.
 

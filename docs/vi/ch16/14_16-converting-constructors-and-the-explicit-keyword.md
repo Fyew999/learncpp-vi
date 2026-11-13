@@ -146,7 +146,7 @@ You might be surprised to find that this version doesn’t compile.  The reason 
 
 There are two ways to make this example work:
 
-<ol start="1">
+
 - Use a `std::string_view` hằng giá trị (literal):
 
 ```cpp
@@ -161,7 +161,7 @@ int main()
 
 This works because only one user-defined conversion is now required (from `std::string_view` to `Employee`).
 
-<ol start="2">
+
 - Explicitly construct an `Employee` rather than implicitly create one:
 
 ```cpp

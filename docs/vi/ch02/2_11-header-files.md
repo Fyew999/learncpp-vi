@@ -369,12 +369,12 @@ When C++ was first created, all of the headers in the standard library ended in 
  Identifiers placed in namespace 
 
  C++ specific    
- <xxx.h> 
+ &lt;xxx.h&gt; 
  iostream.h 
  Global namespace 
 
  C compatibility 
- <xxx.h> 
+ &lt;xxx.h&gt; 
  stddef.h   
  Global namespace 
 
@@ -403,19 +403,19 @@ Modern C++ now contains 4 sets of header files:
 global namespace (optional) 
 
  C++ specific (old)    
- <xxx.h> 
+ &lt;xxx.h&gt; 
  iostream.h 
  Global namespace 
 
  C compatibility (old) 
- <xxx.h> 
+ &lt;xxx.h&gt; 
  stddef.h   
  Global namespace (required)
 `std` namespace (optional) 
 
 ::: danger Cảnh báo nguy hiểm
 
-The new C compatibility headers `<cxxx>` may optionally declare names in the global namespace, and the old C compatibility headers <xxx.h> may optionally declare names in the `std` namespace.  Names in these locations should be avoided, as those names may not be declared in those locations on other implementations.
+The new C compatibility headers `<cxxx>` may optionally declare names in the global namespace, and the old C compatibility headers &lt;xxx.h&gt; may optionally declare names in the `std` namespace.  Names in these locations should be avoided, as those names may not be declared in those locations on other implementations.
 :::
 
 ::: tip Thực hành tốt nhất (Best Practice)

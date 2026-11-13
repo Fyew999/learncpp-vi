@@ -85,7 +85,7 @@ int main()
 Trên chiếc máy tính cá nhân của bạn, đoạn code trên có thể in ra `-2147483648` (do bit dấu bị lật từ 0 sang 1 theo cơ chế xoay vòng bù 2 của phần cứng). Nhiều lập trình viên lầm tưởng đây là quy chuẩn!
 
 **KHÔNG HỀ!** Theo văn bản chuẩn ISO C++:
-> *"Nếu một phép toán số nguyên có dấu vượt ra ngoài dải giá trị có thể biểu diễn, hành vi của chương trình là **HOÀN TOÀN KHÔNG XÁC ĐỊNH (Undefined Behavior)**."*
+&gt; *"Nếu một phép toán số nguyên có dấu vượt ra ngoài dải giá trị có thể biểu diễn, hành vi của chương trình là **HOÀN TOÀN KHÔNG XÁC ĐỊNH (Undefined Behavior)**."*
 
 **Hậu quả thực tế khi biên dịch Release (`-O2` hoặc `-O3`)**:
 Trình tối ưu hóa của Compiler (như GCC hay Clang) mặc định giả định rằng **UB không bao giờ xảy ra trong code của bạn**. 

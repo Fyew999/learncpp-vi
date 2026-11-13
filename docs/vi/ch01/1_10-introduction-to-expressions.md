@@ -44,9 +44,9 @@ flowchart TD
     Add --> L4["Literal: 4"]
 ```
 
-1. Phép nhân `2 * 3` được định giá trước -> Sinh ra giá trị tạm `6`.
-2. Phép cộng `6 + 4` được định giá tiếp -> Sinh ra giá trị tạm `10`.
-3. Phép gán đưa giá trị `10` vào biến `x` -> Biểu thức hoàn tất!
+1. Phép nhân `2 * 3` được định giá trước -&gt; Sinh ra giá trị tạm `6`.
+2. Phép cộng `6 + 4` được định giá tiếp -&gt; Sinh ra giá trị tạm `10`.
+3. Phép gán đưa giá trị `10` vào biến `x` -&gt; Biểu thức hoàn tất!
 
 ---
 
@@ -72,7 +72,7 @@ Hãy quan sát câu lệnh sau:
 x + 5; // Hoàn toàn hợp lệ về mặt cú pháp!
 ```
 - Phép toán `2 * 3` tính ra `6`, sau đó dấu chấm phẩy `;` xuất hiện và giá trị `6` bị vứt bỏ vào sọt rác!
-- Câu lệnh này không làm thay đổi bất kỳ ô nhớ nào, không in gì ra màn hình -> **Hoàn toàn vô dụng (Useless Expression Statement)**.
+- Câu lệnh này không làm thay đổi bất kỳ ô nhớ nào, không in gì ra màn hình -&gt; **Hoàn toàn vô dụng (Useless Expression Statement)**.
 
 Khi bạn bật cờ cảnh báo `-Wall`, trình biên dịch GCC và Clang sẽ phát cảnh báo:
 `warning: statement has no effect [-Wunused-value]`
@@ -153,6 +153,6 @@ int main()
 Màn hình in ra: `5 10 7`.
 **Giải thích**:
 - `a` khởi tạo bằng `5`.
-- `b` định giá biểu thức `a * 2` -> `5 * 2 = 10`.
-- `c` định giá biểu thức `b - 3` -> `10 - 3 = 7`.
+- `b` định giá biểu thức `a * 2` -&gt; `5 * 2 = 10`.
+- `c` định giá biểu thức `b - 3` -&gt; `10 - 3 = 7`.
 :::

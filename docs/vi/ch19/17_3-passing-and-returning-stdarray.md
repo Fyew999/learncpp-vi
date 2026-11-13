@@ -99,7 +99,7 @@ int main()
 
 ## 5. 📝 Hệ Thống Quiz & Bài Tập Tự Luyện
 
-::: details Câu hỏi 1: Viết một function template `findMax` nhận vào một `std::array<T, N>` có kích thước bất kỳ ($N > 0$) và trả về phần tử lớn nhất.
+::: details Câu hỏi 1: Viết một function template `findMax` nhận vào một `std::array<T, N>` có kích thước bất kỳ ($N &gt; 0$) và trả về phần tử lớn nhất.
 **Lời giải chi tiết**:
 ```cpp
 #include <iostream>

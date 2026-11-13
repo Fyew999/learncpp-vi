@@ -3,7 +3,7 @@
 ---
 
 ## 🎯 Mục Tiêu Bài Học
-- Hiểu chi tiết 3 giai đoạn chuyển hóa mã nguồn: Tiền xử lý (Preprocessor) -> Trình biên dịch (Compiler) -> Trình liên kết (Linker).
+- Hiểu chi tiết 3 giai đoạn chuyển hóa mã nguồn: Tiền xử lý (Preprocessor) -&gt; Trình biên dịch (Compiler) -&gt; Trình liên kết (Linker).
 - Phân biệt Tệp mã nguồn (`.cpp`), Tệp đối tượng (`.o`/`.obj`), Thư viện tĩnh (`.a`/`.lib`) và Thư viện động (`.so`/`.dll`).
 - Nhận biết sự khác biệt giữa Lỗi biên dịch (Compiler Error) và Lỗi liên kết (Linker Error).
 

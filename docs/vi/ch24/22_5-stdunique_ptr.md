@@ -118,7 +118,7 @@ Because std::unique_ptr is designed with move semantics in mind, copy sự khở
 
 Accessing the managed object
 
-std::unique_ptr has an overloaded toán tử* and toán tử-> that can be used to return the resource being managed.  Operator* returns a tham chiếu to the managed resource, and toán tử-> returns a con trỏ.
+std::unique_ptr has an overloaded toán tử* and toán tử-&gt; that can be used to return the resource being managed.  Operator* returns a tham chiếu to the managed resource, and toán tử-&gt; returns a con trỏ.
 
 Remember that std::unique_ptr may not always be managing an object -- either because it was created empty (using the default hàm tạo (constructor) or passing in a nullptr as the tham số), or because the resource it was managing got moved to another std::unique_ptr.  So before we use either of these các toán tử, we should check whether the std::unique_ptr actually has a resource.  Fortunately, this is easy: std::unique_ptr has a cast to bool that returns true if the std::unique_ptr is managing a resource.
 

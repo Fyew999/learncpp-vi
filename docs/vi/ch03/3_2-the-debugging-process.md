@@ -66,7 +66,7 @@ Một buổi tối, bạn muốn lấy một cốc đá từ khay lấy đá t�
   - Tủ lạnh vẫn lạnh sâu (-18°C)? Có.
   - Đường ống cấp nước có bị tắc không? Không, nước vẫn chảy tốt.
   - Bộ phận làm đá tự động (ice maker) có nhận được điện và quay cơ học không? Động cơ làm đá đã bị kẹt bánh răng!
-  - **=> Đây chính là nguyên nhân gốc rễ (Root Cause)!**
+  - **=&gt; Đây chính là nguyên nhân gốc rễ (Root Cause)!**
 - **Hiểu vấn đề & Lập phương án**: Bánh răng nhựa bị nứt khiến mô-tơ không thể đổ đá ra khay. Bạn có các lựa chọn: gỡ bánh răng ra dán keo (tạm bợ), thay cụm làm đá mới, hoặc mua tủ lạnh mới. Bạn quyết định mua cụm làm đá mới.
 - **Sửa chữa & Kiểm thử**: Lắp cụm mới, bật điện tủ lạnh. Sáng hôm sau mở ra, đá đã đầy ắp khay và các ngăn khác của tủ lạnh vẫn đông đá hoàn hảo (không phát sinh lỗi mới).
 

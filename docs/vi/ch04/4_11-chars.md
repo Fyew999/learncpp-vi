@@ -304,7 +304,7 @@ ESC (escape)
 28
 FS (file separator)
 60
-<
+&lt;
 92
 \ 
 124
@@ -322,7 +322,7 @@ GS (group separator)
 30
 RS (record separator)
 62
->
+&gt;
 94
 ^
 126

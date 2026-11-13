@@ -48,7 +48,7 @@ int main()
 
 Although the above example works just fine, there are two downsides:
 
-<ol start="1">
+
 - We have to remember the name of the hàm we created to get the enumerator name.
 
 - Having to call such a hàm adds clutter to our output câu lệnh.

@@ -642,7 +642,7 @@ Function các con trỏ are useful primarily when you want to store các hàm in
 
 Hệ thống Câu hỏi & Quiz Tự Luyện
 
-<ol start="1">
+
 - In this quiz, we’re going to write a version of our basic calculator using hàm các con trỏ.
 
 1a) Create a short program asking the user for two integer inputs and a mathematical operation (‘+’, ‘-‘, ‘*’, ‘/’).  Ensure the user enters a valid operation.

@@ -79,7 +79,7 @@ Nhiều người mới học thường thắc mắc: *"Tại sao CPU không tín
 ## 4. Thăng Cấp Số Thực (Floating-Point Promotion)
 
 Quy tắc thăng cấp số thực cực kỳ đơn giản:
-> Giá trị kiểu `float` có thể được thăng cấp ngầm định thành `double`.
+&gt; Giá trị kiểu `float` có thể được thăng cấp ngầm định thành `double`.
 
 ```cpp
 void printDouble(double d)
@@ -101,8 +101,8 @@ int main()
 ## ⚠️ Cạm Bẫy Thực Chiến: Đừng Nhầm Lẫn Với Ép Kiểu Ngược
 
 ::: warning Chú ý: Promotion chỉ diễn ra THEO MỘT CHIỀU!
-`float` -> `double` là thăng cấp an toàn.  
-Nhưng `double` -> `float` KHÔNG PHẢI là thăng cấp, mà là **Chuyển đổi số học (Numeric Conversion)** tiềm ẩn nguy cơ tràn số hoặc mất độ chính xác thập phân.
+`float` -&gt; `double` là thăng cấp an toàn.  
+Nhưng `double` -&gt; `float` KHÔNG PHẢI là thăng cấp, mà là **Chuyển đổi số học (Numeric Conversion)** tiềm ẩn nguy cơ tràn số hoặc mất độ chính xác thập phân.
 :::
 
 ---

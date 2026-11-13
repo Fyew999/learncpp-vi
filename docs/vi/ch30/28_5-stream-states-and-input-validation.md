@@ -280,7 +280,7 @@ If the user instead enters input starting with a letter, the extraction will fai
 
 However, there’s one more case we haven’t tested for, and that’s when the user enters a string that starts with numbers but then contains letters (e.g. “34abcd56”).  In this case, the starting numbers (34) will be extracted into age, the remainder of the string (“abcd56”) will be left in the input stream, and the failbit will NOT be set.  This causes two potential problems:
 
-<ol start="1">
+
 - If you want this to be valid input, you now have garbage in your stream.
 
 - If you don’t want this to be valid input, it is not rejected (and you have garbage in your stream).

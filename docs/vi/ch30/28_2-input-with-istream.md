@@ -16,7 +16,7 @@ The iostream library is fairly complex -- so we will not be able to cover it in 
 
 **The extraction toán tử**
 
-As seen in many lessons now, we can use the extraction toán tử (>>) to read information from an input stream.  C++ has predefined extraction operations for all of the built-in các kiểu dữ liệu, and you’ve already seen how you can [overload the extraction toán tử](http://www.learncpp.com/cpp-tutorial/93-overloading-the-io-các toán tử/) for your own classes.
+As seen in many lessons now, we can use the extraction toán tử (&gt;&gt;) to read information from an input stream.  C++ has predefined extraction operations for all of the built-in các kiểu dữ liệu, and you’ve already seen how you can [overload the extraction toán tử](http://www.learncpp.com/cpp-tutorial/93-overloading-the-io-các toán tử/) for your own classes.
 
 When reading strings, one common problem with the extraction toán tử is how to keep the input from overflowing your buffer.  Given the following example:
 
@@ -27,7 +27,7 @@ std::cin >> buf;
 
 what happens if the user enters 18 characters?  The buffer overflows, and bad stuff happens.  Generally speaking, it’s a bad idea to make any assumption about how many characters your user will enter.
 
-One way to handle this problem is through use of manipulators.  A **manipulator** is an object that is used to modify a stream when applied with the extraction (>>) or insertion (<<) các toán tử.  One manipulator you have already worked with is "std::endl", which both prints a newline character and flushes any buffered output.
+One way to handle this problem is through use of manipulators.  A **manipulator** is an object that is used to modify a stream when applied with the extraction (&gt;&gt;) or insertion (&lt;&lt;) các toán tử.  One manipulator you have already worked with is "std::endl", which both prints a newline character and flushes any buffered output.
 
 C++ provides a manipulator known as **setw** (in the iomanip header) that can be used to limit the number of characters read in from a stream.  To use setw(), simply provide the maximum number of characters to read as a tham số, and insert it into your input câu lệnh like such:
 

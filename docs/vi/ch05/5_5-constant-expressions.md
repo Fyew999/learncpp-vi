@@ -296,7 +296,7 @@ The likelihood that an biểu thức is fully evaluated at compile-time can be c
 
 So why doesn’t C++ require all hằng số biểu thức to be evaluated at compile-time?  There are at least two good reasons:
 
-<ol start="1">
+
 - Compile-time evaluation makes debugging harder.  If our code has a buggy calculation that is evaluated at compile-time, we have limited tools to diagnose the issue.  Allowing non-required hằng số biểu thức to be evaluated at runtime (typically when optimizations are turned off) enables runtime debugging of our code.  Being able to step through and inspect the state of our programs while they are running can make finding bugs easier.
 
 - To provide the trình biên dịch with the flexibility to optimize as it sees fit (or as influenced by trình biên dịch options).  For example, a trình biên dịch might want to offer an option that defers all non-required hằng số biểu thức evaluation to runtime, in order to improve compile times for developers.

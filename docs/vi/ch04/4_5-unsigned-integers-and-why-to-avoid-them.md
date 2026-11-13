@@ -30,7 +30,7 @@ Vì toàn bộ các bit (kể cả bit đầu MSB) đều được dùng để b
 ## 2. Bản Chất Toán Học: Cơ Chế Xoay Vòng Đồng Dư (Modulo Wrap-Around)
 
 Khác với số nguyên có dấu (khi tràn số là *Undefined Behavior*), chuẩn ISO C++ quy định rõ ràng:
-> *"Số nguyên không dấu không bao giờ bị coi là tràn số theo nghĩa UB; mọi phép toán vượt dải giá trị đều tuân theo số học đồng dư modulo $2^n$."*
+&gt; *"Số nguyên không dấu không bao giờ bị coi là tràn số theo nghĩa UB; mọi phép toán vượt dải giá trị đều tuân theo số học đồng dư modulo $2^n$."*
 
 Hãy tưởng tượng một chiếc đồng hồ kim: sau 12 giờ sẽ quay về 1 giờ. Với số nguyên không dấu 16-bit (`unsigned short` có dải từ $0$ đến $65.535$):
 - Nếu bạn lấy $65.535 + 1$: Giá trị lập tức **xoay vòng về `0`**!

@@ -14,7 +14,7 @@
 
 Trong chương 1, bạn đã biết mọi chương trình C++ bắt đầu từ hàm `main()`. Nhưng khi chương trình mở rộng lên hàng nghìn dòng, nếu nhét toàn bộ mã nguồn vào `main()`, mã nguồn sẽ trở thành một "mớ bòng bong" spaghetti không thể bảo trì, gỡ lỗi hay kiểm thử!
 
-> **Hàm (Function)** là một tập hợp các câu lệnh được đặt tên, được thiết kế để hoàn thành một nhiệm vụ chuyên biệt và có thể được tái sử dụng nhiều lần tại bất kỳ vị trí nào trong chương trình.
+&gt; **Hàm (Function)** là một tập hợp các câu lệnh được đặt tên, được thiết kế để hoàn thành một nhiệm vụ chuyên biệt và có thể được tái sử dụng nhiều lần tại bất kỳ vị trí nào trong chương trình.
 
 ### Phân Loại Hàm Trong C++
 1. **Hàm thư viện chuẩn (Standard Library Functions)**: Các hàm có sẵn do ngôn ngữ cung cấp (như `std::cin`, `std::cout`, `std::sqrt`).

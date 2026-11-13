@@ -46,7 +46,7 @@ int main()
 ## 2. Hành Vi Không Xác Định (Undefined Behavior - UB)
 
 Theo định nghĩa của Chuẩn ISO C++:
-> **Undefined Behavior (UB)** là trạng thái mã nguồn thực thi một hành động mà ngôn ngữ C++ không quy định bất kỳ quy tắc hay kết quả nào. 
+&gt; **Undefined Behavior (UB)** là trạng thái mã nguồn thực thi một hành động mà ngôn ngữ C++ không quy định bất kỳ quy tắc hay kết quả nào. 
 
 Nói cách khác, một khi chương trình chạm vào UB, **chuẩn C++ không còn bảo đảm tính đúng đắn cho bất kỳ dòng code nào tiếp theo nữa**. Mọi giả định về logic phần mềm đều sụp đổ!
 

@@ -59,12 +59,12 @@ Một ký tự có thể mang nhiều ý nghĩa tùy thuộc vào số ngôi c�
 
 Trong ngôn ngữ giao tiếp hằng ngày, "tác dụng phụ" thường mang nghĩa tiêu cực (như uống thuốc bị đau bụng). Nhưng trong chuẩn ISO C++, khái niệm **Hiệu ứng phụ (Side Effect)** mang ý nghĩa hoàn toàn trung lập:
 
-> **Hiệu ứng phụ (Side Effect)**: Là bất kỳ thay đổi nào có thể quan sát được đối với trạng thái của hệ thống sau khi toán tử thực thi, nằm ngoài việc sinh ra giá trị trả về.
+&gt; **Hiệu ứng phụ (Side Effect)**: Là bất kỳ thay đổi nào có thể quan sát được đối với trạng thái của hệ thống sau khi toán tử thực thi, nằm ngoài việc sinh ra giá trị trả về.
 
 Ví dụ:
-- Phép toán `2 + 3`: Trả về giá trị `5`. Không làm thay đổi bất kỳ ô nhớ nào -> **Không có Side Effect**.
-- Phép toán `x = 5`: Trả về giá trị tham chiếu tới `x`, đồng thời **ghi đè giá trị 5 vào ô nhớ của biến `x`** -> Thay đổi ô nhớ này chính là **Side Effect**!
-- Lệnh `std::cout << 5`: Trả về đối tượng `std::cout`, đồng thời **đẩy ký tự `'5'` ra màn hình Console** -> Ghi ra màn hình chính là **Side Effect**!
+- Phép toán `2 + 3`: Trả về giá trị `5`. Không làm thay đổi bất kỳ ô nhớ nào -&gt; **Không có Side Effect**.
+- Phép toán `x = 5`: Trả về giá trị tham chiếu tới `x`, đồng thời **ghi đè giá trị 5 vào ô nhớ của biến `x`** -&gt; Thay đổi ô nhớ này chính là **Side Effect**!
+- Lệnh `std::cout << 5`: Trả về đối tượng `std::cout`, đồng thời **đẩy ký tự `'5'` ra màn hình Console** -&gt; Ghi ra màn hình chính là **Side Effect**!
 
 ---
 

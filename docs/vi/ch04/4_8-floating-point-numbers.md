@@ -427,7 +427,7 @@ Conclusion
 
 To summarize, the two things you should remember about floating point numbers:
 
-<ol start="1">
+
 - Floating point numbers are useful for storing very large or very small numbers, including those with fractional components.
 
 - Floating point numbers often have small rounding errors, even when the number has fewer significant digits than the precision.  Many times these go unnoticed because they are so small, and because the numbers are truncated for output.  However, comparisons of floating point numbers may not give the expected results.  Performing mathematical operations on these values will cause the rounding errors to grow larger.

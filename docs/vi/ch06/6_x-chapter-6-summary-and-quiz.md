@@ -13,7 +13,7 @@
 
 1. **Precedence vs Associativity**:
    - *Precedence* quyết định ai là toán hạng của ai.
-   - *Associativity* quyết định hướng gom nhóm (L->R hay R->L) khi cùng cấp độ ưu tiên.
+   - *Associativity* quyết định hướng gom nhóm (L-&gt;R hay R-&gt;L) khi cùng cấp độ ưu tiên.
    - Cả hai đều **KHÔNG quyết định thứ tự thực thi (Order of Evaluation)** của các biểu thức con độc lập.
 2. **Integer Division**: Phép chia 2 số nguyên luôn cắt bỏ phần thập phân. Muốn kết quả thực, ít nhất 1 toán hạng phải là `float` hoặc `double`.
 3. **Division by Zero**: Chia số nguyên cho 0 là **Undefined Behavior (UB)** và gây crash.

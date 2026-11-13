@@ -428,7 +428,7 @@ a) Write a class named `Point3d`.  The class should contain:
 
 - A public member hàm named `setValues()` that allows you to set values for `m_x`, `m_y`, and `m_z`.
 
-- A public member hàm named `print()` that prints the Point in the following format: <m_x, m_y, m_z>
+- A public member hàm named `print()` that prints the Point in the following format: &lt;m_x, m_y, m_z&gt;
 
 Make sure the following program executes correctly:
 

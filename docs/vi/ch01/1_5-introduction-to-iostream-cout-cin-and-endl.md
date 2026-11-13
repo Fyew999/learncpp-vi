@@ -50,8 +50,8 @@ int main()
 ```
 
 ::: tip Quy Tắc Nhớ Mũi Tên Toán Tử
-- `std::cout << x;`: Mũi tên `<<` chỉ về phía `std::cout` -> Đẩy giá trị từ `x` ra màn hình.
-- `std::cin >> x;`: Mũi tên `>>` chỉ về phía `x` -> Đẩy giá trị từ bàn phím vào biến `x`.
+- `std::cout << x;`: Mũi tên `<<` chỉ về phía `std::cout` -&gt; Đẩy giá trị từ `x` ra màn hình.
+- `std::cin >> x;`: Mũi tên `>>` chỉ về phía `x` -&gt; Đẩy giá trị từ bàn phím vào biến `x`.
 :::
 
 ---

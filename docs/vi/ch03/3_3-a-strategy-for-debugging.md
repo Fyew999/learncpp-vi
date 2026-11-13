@@ -69,10 +69,10 @@ Một lỗi xuất hiện ngẫu nhiên (chạy 10 lần chỉ bị lỗi 1 lầ
 ## 4. Chiến Thuật "Đoán Số Hi-Lo" (Homing In on Issues)
 
 Hãy nhớ lại trò chơi đoán số tuổi thơ: Tôi nghĩ trong đầu một số nguyên từ 1 đến 10. Bạn đoán:
-- Bạn đoán: `5` -> Tôi bảo: **"Quá thấp" (Too low)**. (Bạn loại bỏ ngay nửa dải số từ 1 đến 5).
-- Bạn đoán: `8` -> Tôi bảo: **"Quá cao" (Too high)**. (Bạn loại bỏ 8, 9, 10).
-- Bạn đoán: `6` -> Tôi bảo: **"Quá thấp" (Too low)**.
-- Bạn đoán: `7` -> Tôi bảo: **"Chính xác!"**.
+- Bạn đoán: `5` -&gt; Tôi bảo: **"Quá thấp" (Too low)**. (Bạn loại bỏ ngay nửa dải số từ 1 đến 5).
+- Bạn đoán: `8` -&gt; Tôi bảo: **"Quá cao" (Too high)**. (Bạn loại bỏ 8, 9, 10).
+- Bạn đoán: `6` -&gt; Tôi bảo: **"Quá thấp" (Too low)**.
+- Bạn đoán: `7` -&gt; Tôi bảo: **"Chính xác!"**.
 
 Trong lập trình, ta áp dụng chính xác tư duy **tìm kiếm nhị phân (Binary Search)** này để khoanh vùng lỗi giữa điểm bắt đầu chạy và điểm xuất hiện triệu chứng sai:
 

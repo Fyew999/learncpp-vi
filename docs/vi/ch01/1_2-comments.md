@@ -84,13 +84,13 @@ flowchart TD
     Level3["3. Cấp Độ Từng Câu Lệnh"] -->|"Mô tả WHY"| Ex3["Mô tả lý do: Tại sao lại chọn cách kỳ lạ này?"]
 ```
 
-### Quy Tắc 1: Cấp độ Thư viện / Tệp / Hàm -> Mô tả **WHAT** (Làm cái gì)
+### Quy Tắc 1: Cấp độ Thư viện / Tệp / Hàm -&gt; Mô tả **WHAT** (Làm cái gì)
 Đặt ở đầu tệp hoặc ngay trước định nghĩa hàm:
 ```cpp
 // Hàm xấp xỉ nghiệm của phương trình vi phân bằng phương pháp Runge-Kutta bậc 4.
 ```
 
-### Quy Tắc 2: Cấp độ Bên trong Hàm -> Mô tả **HOW** (Giải quyết bằng cách nào)
+### Quy Tắc 2: Cấp độ Bên trong Hàm -&gt; Mô tả **HOW** (Giải quyết bằng cách nào)
 ```cpp
 // Thuật toán:
 // 1. Lọc các phần tử trùng lặp bằng bảng băm (hash set)
@@ -98,7 +98,7 @@ flowchart TD
 // 3. Trả về top k phần tử lớn nhất
 ```
 
-### Quy Tắc 3: Cấp độ Câu Lệnh -> Mô tả **WHY** (Tại sao) — Quan Trọng Nhất!
+### Quy Tắc 3: Cấp độ Câu Lệnh -&gt; Mô tả **WHY** (Tại sao) — Quan Trọng Nhất!
 Đừng bao giờ giải thích câu lệnh đang làm gì (What) nếu cú pháp đã quá rõ ràng. Hãy giải thích **tại sao bạn phải làm như vậy**!
 
 ❌ **Chú thích tồi (Bad Comment):**

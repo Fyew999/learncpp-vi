@@ -82,7 +82,7 @@ We’ll talk more about both linked lists and iterators in future lessons.
 
 **Associative Containers**
 
-Associative containers are containers that automatically sort their inputs when those inputs are inserted into the container.  By default, associative containers compare elements using toán tử<.
+Associative containers are containers that automatically sort their inputs when those inputs are inserted into the container.  By default, associative containers compare elements using toán tử&lt;.
 
 `<li>`A **set** is a container that stores unique elements, with duplicate elements disallowed.  The elements are sorted according to their values.
 `<li>`A **multiset** is a set where duplicate elements are allowed.
@@ -95,7 +95,7 @@ Container adapters are special predefined containers that are adapted to specifi
 
 `<li>`A **ngăn xếp Stack** is a container where elements operate in a LIFO (Last In, First Out) context, where elements are inserted (pushed) and removed (popped) from the end of the container.  Stacks default to using deque as their default sequence container (which seems odd, since vector seems like a more natural fit), but can use vector or list as well.
 `<li>`A **queue** is a container where elements operate in a FIFO (First In, First Out) context, where elements are inserted (pushed) to the back of the container and removed (popped) from the front.  Queues default to using deque, but can also use list.
-`<li>`A **priority queue** is a type of queue where the elements are kept sorted (via toán tử<).  When elements are pushed, the element is sorted in the queue.  Removing an element from the front returns the highest priority item in the priority queue.
+`<li>`A **priority queue** is a type of queue where the elements are kept sorted (via toán tử&lt;).  When elements are pushed, the element is sorted in the queue.  Removing an element from the front returns the highest priority item in the priority queue.
 
   	
   	

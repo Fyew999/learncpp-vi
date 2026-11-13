@@ -60,8 +60,8 @@ Phép trừ `-` và phép trừ `-` có cùng cấp độ ưu tiên (Cấp 6). T
 - Hay `7 - (4 - 1) = 4`?
 
 Lúc này, **Tính kết hợp (Associativity)** sẽ can thiệp:
-1. **Từ Trái sang Phải (Left-to-Right - L->R)**: Phổ biến ở hầu hết toán tử 2 ngôi số học, so sánh, logic. Biểu thức được gom nhóm từ trái qua phải: `(7 - 4) - 1 = 2`.
-2. **Từ Phải sang Trái (Right-to-Left - R->L)**: Áp dụng cho các toán tử 1 ngôi (Unary operators như `++`, `--`, `!`), toán tử điều kiện `?:`, và các toán tử gán (`=`, `+=`, v.v.).
+1. **Từ Trái sang Phải (Left-to-Right - L-&gt;R)**: Phổ biến ở hầu hết toán tử 2 ngôi số học, so sánh, logic. Biểu thức được gom nhóm từ trái qua phải: `(7 - 4) - 1 = 2`.
+2. **Từ Phải sang Trái (Right-to-Left - R-&gt;L)**: Áp dụng cho các toán tử 1 ngôi (Unary operators như `++`, `--`, `!`), toán tử điều kiện `?:`, và các toán tử gán (`=`, `+=`, v.v.).
 
 Ví dụ về tính kết hợp từ phải sang trái của toán tử gán:
 ```cpp
@@ -75,23 +75,23 @@ a = b = c = 5; // Gom nhóm thành: a = (b = (c = 5))
 
 | Cấp | Toán tử | Tên toán tử | Tính kết hợp |
 | :---: | :--- | :--- | :---: |
-| **1** | `::` | Phân giải phạm vi toàn cục / namespace / class | L->R |
-| **2** | `()``<br>``[]``<br>``.``<br>``->``<br>``++``<br>``--``<br>``typeid``<br>``cast` | Gọi hàm`<br>`Chỉ mục mảng`<br>`Truy cập thành viên trực tiếp`<br>`Truy cập thành viên qua con trỏ`<br>`Hậu tố tăng / giảm`<br>`Định danh kiểu runtime`<br>``static_cast`, `const_cast`, `dynamic_cast`, `reinterpret_cast` | L->R |
-| **3** | `+``<br>``-``<br>``++``<br>``--``<br>``!``<br>``~``<br>``(type)``<br>``*``<br>``&``<br>``sizeof``<br>``co_await` | Dấu dương / âm 1 ngôi`<br>`Tiền tố tăng / giảm`<br>`Phủ định logic (NOT)`<br>`Đảo bit (Bitwise NOT)`<br>`Ép kiểu kiểu C`<br>`Giải tham chiếu con trỏ (Dereference)`<br>`Lấy địa chỉ bộ nhớ (Address-of)`<br>`Đo kích thước kiểu/biến`<br>`Coroutine await (C++20) | R->L |
-| **4** | `.*``<br>``->*` | Con trỏ tới thành viên | L->R |
-| **5** | `*``<br>``/``<br>``%` | Phép nhân số học`<br>`Phép chia số học`<br>`Phép chia lấy phần dư | L->R |
-| **6** | `+``<br>``-` | Phép cộng số học`<br>`Phép trừ số học | L->R |
-| **7** | `<<``<br>``>>` | Dịch bit trái (hoặc xuất stream)`<br>`Dịch bit phải (hoặc nhập stream) | L->R |
-| **8** | `<=>` | Toán tử so sánh ba chiều (Spaceship operator - C++20) | L->R |
-| **9** | `<``<br>``<=``<br>``>``<br>``>=` | Nhỏ hơn`<br>`Nhỏ hơn hoặc bằng`<br>`Lớn hơn`<br>`Lớn hơn hoặc bằng | L->R |
-| **10** | `==``<br>``!=` | So sánh bằng`<br>`So sánh khác | L->R |
-| **11** | `&` | Phép toán Bitwise AND | L->R |
-| **12** | `^` | Phép toán Bitwise XOR | L->R |
-| **13** | `\|` | Phép toán Bitwise OR | L->R |
-| **14** | `&&` | Phép toán Logical AND | L->R |
-| **15** | `\|\|` | Phép toán Logical OR | L->R |
-| **16** | `?:``<br>``=``<br>``+=`, `-=`, v.v.`<br>``throw``<br>``co_yield` | Toán tử điều kiện ba ngôi`<br>`Toán tử gán giá trị`<br>`Các toán tử gán phức hợp`<br>`Ném ngoại lệ`<br>`Coroutine yield (C++20) | R->L |
-| **17** | `,` | Toán tử dấu phẩy (Comma operator) | L->R |
+| **1** | `::` | Phân giải phạm vi toàn cục / namespace / class | L-&gt;R |
+| **2** | `()``<br>``[]``<br>``.``<br>``->``<br>``++``<br>``--``<br>``typeid``<br>``cast` | Gọi hàm`<br>`Chỉ mục mảng`<br>`Truy cập thành viên trực tiếp`<br>`Truy cập thành viên qua con trỏ`<br>`Hậu tố tăng / giảm`<br>`Định danh kiểu runtime`<br>``static_cast`, `const_cast`, `dynamic_cast`, `reinterpret_cast` | L-&gt;R |
+| **3** | `+``<br>``-``<br>``++``<br>``--``<br>``!``<br>``~``<br>``(type)``<br>``*``<br>``&``<br>``sizeof``<br>``co_await` | Dấu dương / âm 1 ngôi`<br>`Tiền tố tăng / giảm`<br>`Phủ định logic (NOT)`<br>`Đảo bit (Bitwise NOT)`<br>`Ép kiểu kiểu C`<br>`Giải tham chiếu con trỏ (Dereference)`<br>`Lấy địa chỉ bộ nhớ (Address-of)`<br>`Đo kích thước kiểu/biến`<br>`Coroutine await (C++20) | R-&gt;L |
+| **4** | `.*``<br>``->*` | Con trỏ tới thành viên | L-&gt;R |
+| **5** | `*``<br>``/``<br>``%` | Phép nhân số học`<br>`Phép chia số học`<br>`Phép chia lấy phần dư | L-&gt;R |
+| **6** | `+``<br>``-` | Phép cộng số học`<br>`Phép trừ số học | L-&gt;R |
+| **7** | `<<``<br>``>>` | Dịch bit trái (hoặc xuất stream)`<br>`Dịch bit phải (hoặc nhập stream) | L-&gt;R |
+| **8** | `<=>` | Toán tử so sánh ba chiều (Spaceship operator - C++20) | L-&gt;R |
+| **9** | `<``<br>``<=``<br>``>``<br>``>=` | Nhỏ hơn`<br>`Nhỏ hơn hoặc bằng`<br>`Lớn hơn`<br>`Lớn hơn hoặc bằng | L-&gt;R |
+| **10** | `==``<br>``!=` | So sánh bằng`<br>`So sánh khác | L-&gt;R |
+| **11** | `&` | Phép toán Bitwise AND | L-&gt;R |
+| **12** | `^` | Phép toán Bitwise XOR | L-&gt;R |
+| **13** | `\|` | Phép toán Bitwise OR | L-&gt;R |
+| **14** | `&&` | Phép toán Logical AND | L-&gt;R |
+| **15** | `\|\|` | Phép toán Logical OR | L-&gt;R |
+| **16** | `?:``<br>``=``<br>``+=`, `-=`, v.v.`<br>``throw``<br>``co_yield` | Toán tử điều kiện ba ngôi`<br>`Toán tử gán giá trị`<br>`Các toán tử gán phức hợp`<br>`Ném ngoại lệ`<br>`Coroutine yield (C++20) | R-&gt;L |
+| **17** | `,` | Toán tử dấu phẩy (Comma operator) | L-&gt;R |
 
 ---
 
@@ -142,7 +142,7 @@ Biểu thức sau được gom nhóm như thế nào theo chuẩn C++? Giá tr�
 int val = 12 / 2 * 3;
 ```
 ::: details [Xem lời giải]
-- Phép chia `/` và phép nhân `*` đều có độ ưu tiên Cấp 5, tính kết hợp từ Trái sang Phải (L->R).
+- Phép chia `/` và phép nhân `*` đều có độ ưu tiên Cấp 5, tính kết hợp từ Trái sang Phải (L-&gt;R).
 - Do đó, biểu thức được gom nhóm: `(12 / 2) * 3`.
 - Tính `12 / 2 = 6`, sau đó `6 * 3 = 18`.
 - Kết quả là `18` (nếu gom nhóm sai thành `12 / (2 * 3)` sẽ ra 2).
@@ -165,6 +165,6 @@ if (flags & mask == 1) // Kiểm tra cờ có bật không?
 - Trình biên dịch sẽ gom nhóm thành: `flags & (mask == 1)`.
 - `mask == 1` trả về `true` (tương đương 1).
 - Sau đó `flags & 1` = `0b0101 & 0b0001 = 1` (chuyển sang bool là `true`).
-- Trường hợp này vô tình ra đúng, nhưng nếu kiểm tra bit khác: `flags & mask == 4` sẽ bị biến thành `flags & (mask == 4)` -> `flags & 0 = 0` (luôn `false`)!
+- Trường hợp này vô tình ra đúng, nhưng nếu kiểm tra bit khác: `flags & mask == 4` sẽ bị biến thành `flags & (mask == 4)` -&gt; `flags & 0 = 0` (luôn `false`)!
 - **Cách sửa đúng**: Bắt buộc dùng dấu ngoặc: `if ((flags & mask) == 1)`.
 :::

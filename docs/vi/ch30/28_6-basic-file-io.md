@@ -14,7 +14,7 @@
 
 File I/O in C++ works very similarly to normal I/O (with a few minor added complexities).  There are 3 basic file I/O classes in C++: ifstream (derived from istream), ofstream (derived from ostream), and fstream (derived from iostream).  These classes do file input, output, and input/output respectively.  To use the file I/O classes, you will need to include the fstream header.
 
-Unlike the cout, cin, cerr, and clog streams, which are already ready for use, file streams have to be explicitly set up by the programmer.  However, this is extremely simple: to open a file for reading and/or writing, simply instantiate an object of the appropriate file I/O class, with the name of the file as a tham số.  Then use the insertion (<<) or extraction (>>) toán tử to write to or read data from the file.  Once you are done, there are several ways to close a file: explicitly call the close() hàm, or just let the file I/O biến go out of phạm vi truy cập (scope) (the file I/O class hàm hủy (destructor) will close the file for you).
+Unlike the cout, cin, cerr, and clog streams, which are already ready for use, file streams have to be explicitly set up by the programmer.  However, this is extremely simple: to open a file for reading and/or writing, simply instantiate an object of the appropriate file I/O class, with the name of the file as a tham số.  Then use the insertion (&lt;&lt;) or extraction (&gt;&gt;) toán tử to write to or read data from the file.  Once you are done, there are several ways to close a file: explicitly call the close() hàm, or just let the file I/O biến go out of phạm vi truy cập (scope) (the file I/O class hàm hủy (destructor) will close the file for you).
 
 **File output**
 

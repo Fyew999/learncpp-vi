@@ -96,7 +96,7 @@ For your interest, here’s a list of the major features that C++11 adds.  Note 
 
 - Variadic templates (no tutorial yet)
 
-- Two >> symbols without a space between them will now properly be interpreted as closing a template object
+- Two &gt;&gt; symbols without a space between them will now properly be interpreted as closing a template object
 
 There are also many new classes in the C++ standard library available for use.
 

@@ -13,7 +13,7 @@
 
 Khác với Promotion (luôn an toàn tuyệt đối), **Chuyển đổi số học (Numeric Conversion)** bao gồm bất kỳ chuyển đổi kiểu dữ liệu cơ bản nào nằm ngoài phạm vi thăng cấp.
 
-Nó có thể xảy ra giữa các kiểu có kích thước bằng nhau, hoặc từ kiểu lớn hơn sang kiểu nhỏ hơn, hoặc giữa các hệ thống biểu diễn khác nhau (số nguyên <-> số thực).
+Nó có thể xảy ra giữa các kiểu có kích thước bằng nhau, hoặc từ kiểu lớn hơn sang kiểu nhỏ hơn, hoặc giữa các hệ thống biểu diễn khác nhau (số nguyên &lt;-&gt; số thực).
 
 ```mermaid
 flowchart TD
@@ -35,8 +35,8 @@ flowchart TD
 ## 2. Năm Nhóm Chuyển Đổi Số Học Chi Tiết
 
 ### Nhóm 1: Chuyển đổi giữa các số nguyên
-- **Mở rộng (Widening)**: `short` sang `long` -> Luôn an toàn vì kiểu đích có dải giá trị rộng hơn.
-- **Thu hẹp (Narrowing)**: `int` (4 bytes) sang `short` (2 bytes) -> Nếu giá trị vượt quá phạm vi [-32768, 32767], kết quả phụ thuộc vào phần cứng hoặc bị tràn số.
+- **Mở rộng (Widening)**: `short` sang `long` -&gt; Luôn an toàn vì kiểu đích có dải giá trị rộng hơn.
+- **Thu hẹp (Narrowing)**: `int` (4 bytes) sang `short` (2 bytes) -&gt; Nếu giá trị vượt quá phạm vi [-32768, 32767], kết quả phụ thuộc vào phần cứng hoặc bị tràn số.
 
 ### Nhóm 2: Chuyển đổi giữa các số thực
 - `double` sang `float`: `double` có 53 bit định trị (~15-17 chữ số thập phân), trong khi `float` chỉ có 24 bit định trị (~6-9 chữ số thập phân). Phần dư sẽ bị làm tròn.

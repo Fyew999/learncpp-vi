@@ -16,7 +16,7 @@ To recap the process needed to use a library:
 
 Once per library:
 
-<ol start="1">
+
 - Acquire the library.  Download it from the website or via a package manager.
 
 - Install the library.  Unzip it to a directory or install it via a package manager.
@@ -27,7 +27,7 @@ Once per library:
 
 Once per project:
 
-<ol start="5">
+
 - Tell the trình liên kết which static or import library files to link (if there are any).
 
 - #include the library’s header file(s) in your program.

@@ -90,7 +90,7 @@ Destructor naming
 
 Like các hàm tạo (constructors), các hàm hủy (destructors) have specific naming rules:
 
-<ol start="1">
+
 - The hàm hủy (destructor) must have the same name as the class, preceded by a tilde (~).
 
 - The hàm hủy (destructor) can not take đối số.

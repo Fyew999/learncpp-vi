@@ -14,9 +14,9 @@
 
 Một con bug nằm càng lâu trong mã nguồn thì chi phí để tìm và sửa nó càng tăng theo cấp số nhân. Một lỗi logic nhỏ nếu bị bỏ quên qua nhiều tuần, khi các tính năng khác tiếp tục được xây dựng chồng chéo lên nó, sẽ biến thành một "cơn ác mộng gỡ lỗi" ngốn hàng ngày trời của lập trình viên.
 
-> *"Mọi người đều biết rằng gỡ lỗi khó gấp đôi so với viết code ngay từ đầu. Vì vậy, nếu bạn cố tỏ ra thông minh hết mức có thể khi viết code, thì làm sao bạn đủ thông minh để gỡ lỗi nó được nữa?"*
-> 
-> — **Brian Kernighan**, Đồng tác giả ngôn ngữ C và cuốn sách *The Elements of Programming Style*.
+&gt; *"Mọi người đều biết rằng gỡ lỗi khó gấp đôi so với viết code ngay từ đầu. Vì vậy, nếu bạn cố tỏ ra thông minh hết mức có thể khi viết code, thì làm sao bạn đủ thông minh để gỡ lỗi nó được nữa?"*
+&gt; 
+&gt; — **Brian Kernighan**, Đồng tác giả ngôn ngữ C và cuốn sách *The Elements of Programming Style*.
 
 ```mermaid
 flowchart TD
@@ -136,7 +136,7 @@ Các công cụ phân tích tĩnh xuất sắc nhất hiện nay:
 1. **`clang-tidy`**: Trợ thủ số 1 của hệ sinh thái LLVM/Clang. Tự động kiểm tra hàng trăm quy tắc của bộ chuẩn C++ Core Guidelines, phát hiện rò rỉ bộ nhớ, biến chưa khởi tạo, và thậm chí tự động sửa code cho bạn!
 2. **`cppcheck`**: Công cụ mã nguồn mở cực kỳ mạnh mẽ, tập trung săn tìm các lỗi Undefined Behavior và con trỏ lạc lối.
 3. **Bộ phân tích tĩnh tích hợp trong IDE**:
-   - Visual Studio: Phím tắt `Alt + F11` (*Build > Run Code Analysis on Solution*).
+   - Visual Studio: Phím tắt `Alt + F11` (*Build &gt; Run Code Analysis on Solution*).
    - CLion / VS Code: Tích hợp trực tiếp Clang-Tidy hiển thị gạch chân màu vàng ngay khi bạn vừa gõ xong dòng code lỗi!
 
 ---

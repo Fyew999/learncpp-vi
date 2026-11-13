@@ -287,7 +287,7 @@ int main()
 
 There are two advantages to this approach:
 
-<ol start="1">
+
 - It effectively documents that the tham số is optional.
 
 - We can pass in an rvalue (since `std::optional` will make a copy).

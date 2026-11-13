@@ -259,7 +259,7 @@ Explicitly defaulted default hàm tạo (constructor) vs empty user-defined hàm
 
 There are at least two cases where the explicitly defaulted default hàm tạo (constructor) behaves differently than an empty user-defined hàm tạo (constructor).
 
-<ol start="1">
+
 - When value initializing a class, if the class has a user-defined default hàm tạo (constructor), the object will be default được khởi tạo.  However, if the class has a default hàm tạo (constructor) that is not user-provided (that is, a default hàm tạo (constructor) that is either implicitly defined, or defined using `= default`), the object will be zero-được khởi tạo before being default được khởi tạo.
 
 ```cpp
@@ -337,7 +337,7 @@ For a class that does not have a user-provided default hàm tạo (constructor),
 
 :::
 
-<ol start="2">
+
 - Prior to C++20, a class with a user-defined default hàm tạo (constructor) (even if it has an empty body) makes the class a non-aggregate, whereas an explicitly defaulted default hàm tạo (constructor) does not.  Assuming the class was otherwise an aggregate, the former would cause the class to use list sự khởi tạo instead of aggregate sự khởi tạo.  In C++20 onward, this inconsistency was addressed, so that both make the class a non-aggregate.
 
 Only create a default hàm tạo (constructor) when it makes sense

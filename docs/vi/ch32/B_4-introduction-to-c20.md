@@ -56,7 +56,7 @@ For your interest, here’s a list of the major changes that C++20 adds.  Note t
 
 - String các hằng giá trị (literals) as template tham số (no tutorial yet)
 
-- Three-way comparison using the spaceship toán tử <=> (no tutorial yet)
+- Three-way comparison using the spaceship toán tử &lt;=&gt; (no tutorial yet)
 
 - Using scoped enums ([13.6 -- Scoped enumerations (enum classes)](https://www.learncpp.com/cpp-tutorial/scoped-enumerations-enum-classes/))
 

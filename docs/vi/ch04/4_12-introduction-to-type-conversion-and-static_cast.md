@@ -164,7 +164,7 @@ static_cast takes the value from an biểu thức as input, and returns that val
 
 ::: info Hiểu biết cốt lõi
 
-Whenever you see C++ syntax (excluding the preprocessor) that makes use of angled brackets (<>), the thing between the angled brackets will most likely be a type.  This is typically how C++ deals with code that need a parameterized type.
+Whenever you see C++ syntax (excluding the preprocessor) that makes use of angled brackets (&lt;&gt;), the thing between the angled brackets will most likely be a type.  This is typically how C++ deals with code that need a parameterized type.
 
 :::
 

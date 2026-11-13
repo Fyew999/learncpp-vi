@@ -77,9 +77,9 @@ Nếu hàm của bạn có hàng chục biến nhưng bạn chỉ quan tâm duy 
 
 Cửa sổ Watch không chỉ hiển thị tên biến đơn thuần; nó thực chất là một **trình thông dịch biểu thức C++ thu nhỏ**! Bạn có thể gõ vào Watch bất kỳ biểu thức hợp lệ nào:
 
-- Gõ: `x + 10` -> Watch sẽ tính và hiển thị: `13` (khi `x == 3`).
-- Gõ: `x == 6` -> Watch sẽ hiển thị: `true` hoặc `false`.
-- Gõ: `sizeof(x)` -> Watch hiển thị kích thước byte: `4`.
+- Gõ: `x + 10` -&gt; Watch sẽ tính và hiển thị: `13` (khi `x == 3`).
+- Gõ: `x == 6` -&gt; Watch sẽ hiển thị: `true` hoặc `false`.
+- Gõ: `sizeof(x)` -&gt; Watch hiển thị kích thước byte: `4`.
 
 ---
 
@@ -105,7 +105,7 @@ Mỗi lần Debugger làm mới màn hình hoặc mỗi bước bạn bấm Step
 Một kịch bản gỡ lỗi kinh hoàng: Bạn có một biến toàn cục hoặc một biến trong đối tượng, ban đầu mang giá trị `0`. Sau khi chạy một hồi, biến đó bị đổi thành `-999`, nhưng bạn không hề biết trong số 500 hàm của dự án, **hàm nào đã lén lút ghi đè vào biến đó**!
 
 Giải pháp tối thượng của Debugger là **Data Breakpoint**:
-1. Trong cửa sổ Watch, nhấp chuột phải vào biến -> Chọn **Break When Value Changes** (hoặc tạo *New Data Breakpoint* theo địa chỉ ô nhớ).
+1. Trong cửa sổ Watch, nhấp chuột phải vào biến -&gt; Chọn **Break When Value Changes** (hoặc tạo *New Data Breakpoint* theo địa chỉ ô nhớ).
 2. Nhấn `Continue (F5)`.
 3. Chương trình chạy với tốc độ phần cứng bình thường. Ngay khi có bất kỳ dòng lệnh nào trong toàn bộ chương trình ghi dữ liệu mới vào ô nhớ đó, **CPU sẽ lập tức phát ngắt phần cứng và Debugger tạm dừng ngay tại dòng lệnh thủ phạm**!
 

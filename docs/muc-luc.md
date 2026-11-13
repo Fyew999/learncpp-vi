@@ -1,6 +1,6 @@
 # 📚 Mục Lục Toàn Diện 35 Chương (356 Bài Học Tiếng Việt)
 
-> **Tiêu chuẩn lập trình**: Nền tảng cốt lõi được xây dựng hoàn toàn chuẩn xác theo **C++17 (Chuẩn công nghiệp thực chiến)**, đồng thời mở rộng đối chiếu tính năng mới của C++20 và C++23.
+&gt; **Tiêu chuẩn lập trình**: Nền tảng cốt lõi được xây dựng hoàn toàn chuẩn xác theo **C++17 (Chuẩn công nghiệp thực chiến)**, đồng thời mở rộng đối chiếu tính năng mới của C++20 và C++23.
 
 Dưới đây là mục lục đầy đủ của toàn bộ giáo trình, được phân loại theo từng chương chủ đề bằng tiếng Việt chuẩn.
 
@@ -110,7 +110,7 @@ Dưới đây là mục lục đầy đủ của toàn bộ giáo trình, đư�
 ## Chương O: Thao Tác Bit (Bit Manipulation) (4 bài)
 
 - **[O.1 - Bit flags and bit manipulation via std::bitset](/vi/ch07/O_1-bit-flags-and-bit-manipulation-via-stdbitset)**
-- **[O.2 - Các toán tử thao tác bit (&, |, ^, ~, <<, >>)](/vi/ch07/O_2-bitwise-operators)**
+- **[O.2 - Các toán tử thao tác bit (&, |, ^, ~, &lt;&lt;, &gt;&gt;)](/vi/ch07/O_2-bitwise-operators)**
 - **[O.3 - Bit manipulation with bitwise operators and bit masks](/vi/ch07/O_3-bit-manipulation-with-bitwise-operators-and-bit-masks)**
 - **[O.4 - Chuyển đổi số nguyên giữa nhị phân và thập phân](/vi/ch07/O_4-converting-integers-between-binary-and-decimal-representation)**
 
@@ -228,7 +228,7 @@ Dưới đây là mục lục đầy đủ của toàn bộ giáo trình, đư�
 - **[13.9 - Khởi tạo giá trị mặc định cho thành viên Struct](/vi/ch15/13_9-default-member-initialization)**
 - **[13.10 - Passing and returning structs](/vi/ch15/13_10-passing-and-returning-structs)**
 - **[13.11 - Các kỹ thuật mở rộng với Struct (Byte alignment, Padding)](/vi/ch15/13_11-struct-miscellany)**
-- **[13.12 - Toán tử mũi tên -> khi làm việc với con trỏ Struct](/vi/ch15/13_12-member-selection-with-pointers-and-references)**
+- **[13.12 - Toán tử mũi tên -&gt; khi làm việc với con trỏ Struct](/vi/ch15/13_12-member-selection-with-pointers-and-references)**
 - **[13.13 - Mẫu lớp (Class Templates)](/vi/ch15/13_13-class-templates)**
 - **[13.14 - Tự suy luận đối số mẫu lớp CTAD (C++17)](/vi/ch15/13_14-class-template-argument-deduction-ctad-and-deduction-guides)**
 - **[13.15 - Bí danh mẫu (Alias Templates)](/vi/ch15/13_15-alias-templates)**
@@ -334,7 +334,7 @@ Dưới đây là mục lục đầy đủ của toàn bộ giáo trình, đư�
 - **[21.1 - Nhập môn Nạp chồng toán tử (Operator Overloading)](/vi/ch23/21_1-introduction-to-operator-overloading)**
 - **[21.2 - Nạp chồng toán tử số học bằng hàm friend](/vi/ch23/21_2-overloading-the-arithmetic-operators-using-friend-functions)**
 - **[21.3 - Overloading operators using normal functions](/vi/ch23/21_3-overloading-operators-using-normal-functions)**
-- **[21.4 - Nạp chồng toán tử nhập xuất luồng << và >>](/vi/ch23/21_4-overloading-the-io-operators)**
+- **[21.4 - Nạp chồng toán tử nhập xuất luồng &lt;&lt; và &gt;&gt;](/vi/ch23/21_4-overloading-the-io-operators)**
 - **[21.5 - Nạp chồng toán tử bằng phương thức thành viên](/vi/ch23/21_5-overloading-operators-using-member-functions)**
 - **[21.6 - Overloading unary operators +, -, and !](/vi/ch23/21_6-overloading-unary-operators)**
 - **[21.7 - Overloading the comparison operators](/vi/ch23/21_7-overloading-the-comparison-operators)**

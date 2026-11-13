@@ -212,7 +212,7 @@ Scientific notation for floating point các hằng giá trị (literals)
 
 There are two different ways to write floating-point các hằng giá trị (literals).
 
-<ol start="1">
+
 - In standard notation, we write a number with a decimal point:
 
 ```cpp
@@ -221,7 +221,7 @@ double d { -1.23 };    // the literal can be negative
 double why { 0. };     // syntactically acceptable, but avoid this because it's hard to see the decimal point (prefer 0.0)
 ```
 
-<ol start="2">
+
 - In scientific notation, we add an `e` to represent the exponent:
 
 ```cpp
@@ -251,7 +251,7 @@ Because strings are commonly used in programs, most modern programming languages
 
 There are two non-obvious things worth knowing about C-style string các hằng giá trị (literals).
 
-<ol start="1">
+
 - All C-style string các hằng giá trị (literals) have an implicit null terminator.  Consider a string such as `"hello"`.  While this C-style string appears to only have five characters, it actually has six: `'h'`, `'e'`, `'l`‘, `'l'`, `'o'`, and `'\0'` (a character with ASCII code 0).  This trailing ‘\0’ character is a special character called a **null terminator**, and it is used to indicate the end of the string.  A string that ends with a null terminator is called a **null-terminated string**.
 
 ::: info For advanced readers
@@ -261,7 +261,7 @@ This is the reason the string `"Hello, world!"` has type `const char[14]` rather
 
 The reason for the null-terminator is also historical: it can be used to determine where the string ends.
 
-<ol start="2">
+
 - Unlike most other các hằng giá trị (literals) (which are values, not đối tượng), C-style string các hằng giá trị (literals) are const đối tượng that are created at the start of the program and are guaranteed to exist for the entirety of the program.  This fact will become important in a few lessons, when we discuss `std::string_view`.
 
 ::: info Hiểu biết cốt lõi

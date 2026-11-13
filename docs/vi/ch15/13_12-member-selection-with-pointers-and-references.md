@@ -127,7 +127,7 @@ int main()
 
 However, this is a bit ugly, especially because we need to parenthesize the dereference operation so it will take precedence over the member selection operation.
 
-To make for a cleaner syntax, C++ offers a **member selection from con trỏ toán tử (->)** (also sometimes called the **arrow toán tử**) that can be used to select members from a con trỏ to an object:
+To make for a cleaner syntax, C++ offers a **member selection from con trỏ toán tử (-&gt;)** (also sometimes called the **arrow toán tử**) that can be used to select members from a con trỏ to an object:
 
 ```cpp
 #include <iostream>
@@ -153,13 +153,13 @@ int main()
 }
 ```
 
-This member selection from con trỏ toán tử (->) works identically to the member selection toán tử (.) but does an implicit dereference of the con trỏ object before selecting the member.  Thus `ptr->id` is equivalent to `(*ptr).id`.
+This member selection from con trỏ toán tử (-&gt;) works identically to the member selection toán tử (.) but does an implicit dereference of the con trỏ object before selecting the member.  Thus `ptr->id` is equivalent to `(*ptr).id`.
 
-This arrow toán tử is not only easier to type, but is also much less prone to error because the indirection is implicitly done for you, so there are no precedence issues to worry about.  Consequently, when doing member access through a con trỏ, always use the -> toán tử instead of the . toán tử.
+This arrow toán tử is not only easier to type, but is also much less prone to error because the indirection is implicitly done for you, so there are no precedence issues to worry about.  Consequently, when doing member access through a con trỏ, always use the -&gt; toán tử instead of the . toán tử.
 
 ::: tip Thực hành tốt nhất (Best Practice)
 
-When using a con trỏ to access a member, use the member selection from con trỏ toán tử (->) instead of the member selection toán tử (.).
+When using a con trỏ to access a member, use the member selection from con trỏ toán tử (-&gt;) instead of the member selection toán tử (.).
 
 :::
 
@@ -209,7 +209,7 @@ When using more than one `toán tử->` in sequence (e.g `ptr->c->y`), the biể
 
 Mixing các con trỏ and non-các con trỏ to members
 
-The member selection toán tử is always applied to the currently selected biến. If you have a mix of các con trỏ and normal member các biến, you can see member selections where . and -> are both used in sequence:
+The member selection toán tử is always applied to the currently selected biến. If you have a mix of các con trỏ and normal member các biến, you can see member selections where . and -&gt; are both used in sequence:
 
 ```cpp
 #include <iostream>

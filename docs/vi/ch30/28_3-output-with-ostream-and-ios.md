@@ -16,7 +16,7 @@ In this section, we will look at various aspects of the iostream output class (o
 
 **The insertion toán tử**
 
-The insertion toán tử (<<) is used to put information into an output stream.  C++ has predefined insertion operations for all of the built-in các kiểu dữ liệu, and you’ve already seen how you can [overload the insertion toán tử](http://www.learncpp.com/cpp-tutorial/93-overloading-the-io-các toán tử/) for your own classes.
+The insertion toán tử (&lt;&lt;) is used to put information into an output stream.  C++ has predefined insertion operations for all of the built-in các kiểu dữ liệu, and you’ve already seen how you can [overload the insertion toán tử](http://www.learncpp.com/cpp-tutorial/93-overloading-the-io-các toán tử/) for your own classes.
 
 In the lesson on [streams](http://www.learncpp.com/cpp-tutorial/131-input-and-output-io-streams/), you saw that both istream and ostream were derived from a class called ios.  One of the jobs of ios (and ios_base) is to control the formatting options for output.
 

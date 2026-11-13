@@ -62,7 +62,7 @@ One more thing: at each step, we’ll present two things: a *goal* and *tasks*. 
 
 The tasks will initially be hidden from view, to encourage you to see if you can complete each step using just the goal and sample output or sample program.  If you are unsure how to start, or are feeling stuck, you can unhide the tasks.  They should help get you moving forward.
 
-> Step #1
+&gt; Step #1
 
 Because this is going to be a bigger program, let’s start with a design exercise.
 
@@ -199,7 +199,7 @@ If you had a hard time with this exercise, that’s okay.  The goal here was mai
 
 Now, it’s time to get implementing!
 
-> Step #2
+&gt; Step #2
 
 Goal: Be able to display individual tiles on the screen.
 
@@ -308,7 +308,7 @@ int main()
 ```
 :::
 
-> Step #3
+&gt; Step #3
 
 Goal: Create a solved board (4×4 grid of tiles) and display it on the screen.
 
@@ -439,7 +439,7 @@ int main()
 ```
 :::
 
-> Step #4
+&gt; Step #4
 
 Goal: In this step, we’ll allow the user to repeatedly input game commands, handle invalid input, and implement the quit game command.
 
@@ -638,7 +638,7 @@ int main()
 ```
 :::
 
-> Step #5
+&gt; Step #5
 
 Goal: Implement a helper class that will make it easier for us to handle directional commands.
 
@@ -919,7 +919,7 @@ int main()
 ```
 :::
 
-> Step #6
+&gt; Step #6
 
 Goal: Implement a helper class that will make it easier for us to index the tiles in our game board.
 
@@ -1203,7 +1203,7 @@ int main()
 ```
 :::
 
-> Step #7
+&gt; Step #7
 
 Goal: Add the ability for players to slide the tiles on the board.
 
@@ -1547,7 +1547,7 @@ int main()
 ```
 :::
 
-> Step #8
+&gt; Step #8
 
 Goal: In this step, we’ll finish our game. Randomize the initial state of the game board. Also, detect when user wins, so after that we can print a win message and quit the game.
 

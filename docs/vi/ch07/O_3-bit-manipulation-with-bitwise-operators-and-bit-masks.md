@@ -133,7 +133,7 @@ auto bits = std::bit_cast<std::uint32_t>(f); // An toàn chuẩn ISO!
 :::
 
 ::: info 🚀 C++23: `std::byteswap`
-C++23 bổ sung hàm `std::byteswap` trong `<bit>` giúp đảo ngược thứ tự các byte (Big Endian <-> Little Endian) siêu nhanh mà không cần viết hàm thủ công.
+C++23 bổ sung hàm `std::byteswap` trong `<bit>` giúp đảo ngược thứ tự các byte (Big Endian &lt;-&gt; Little Endian) siêu nhanh mà không cần viết hàm thủ công.
 :::
 
 ---

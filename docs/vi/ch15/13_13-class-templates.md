@@ -197,7 +197,7 @@ int main()
 }
 ```
 
-Just like with hàm templates, we start a class template definition with a template tham số declaration.  We begin with the `template` keyword.  Next, we specify all of the template types that our class template will use inside angled brackets (<>). For each template type that we need, we use the keyword `typename` (preferred) or `class` (not preferred), followed by the name of the template type (e.g. `T`).  In this case, since both of our members will be the same type, we only need one template type.
+Just like with hàm templates, we start a class template definition with a template tham số declaration.  We begin with the `template` keyword.  Next, we specify all of the template types that our class template will use inside angled brackets (&lt;&gt;). For each template type that we need, we use the keyword `typename` (preferred) or `class` (not preferred), followed by the name of the template type (e.g. `T`).  In this case, since both of our members will be the same type, we only need one template type.
 
 Next, we define our struct like usual, except we can use our template type (`T`) wherever we want a templated type that will be replaced with a real type later.  That’s it!  We’re done with the class template definition.
 

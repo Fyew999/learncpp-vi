@@ -137,7 +137,7 @@ This program compiles and produces the same result as above:
 
 There are three key differences between the non-member and member examples:
 
-<ol start="1">
+
 - Where we declare (and define) the `print()` hàm
 
 - How we call the `print()` hàm

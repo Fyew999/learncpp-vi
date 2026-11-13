@@ -147,7 +147,7 @@ New programmers sometimes discover that they can make their program work by addi
 
 There are a few reasons:
 
-<ol start="1">
+
 - It can result in naming collisions between files.
 
 - It can be hard to avoid ODR violations.
@@ -245,7 +245,7 @@ Q12: Why should I constexpr an eligible hàm when I know it will only be evaluat
 
 There are a few reasons you might want to do so:
 
-<ol start="1">
+
 - There’s little downside to using constexpr, and it may help the trình biên dịch optimize even in contexts where it isn’t evaluated at compile-time.
 
 - Just because you’re not calling the hàm in a compile-time evaluatable context right now doesn’t mean you won’t call it in such a context when you modify or extend your program.  And if you haven’t constexpr’d the hàm already, you may not think to when you do start to call it in such a context, and then you’ll miss out on the performance benefits.  Or you may be forced to constexpr it later when you need to use the giá trị trả về in a context that requires a hằng số biểu thức somewhere.

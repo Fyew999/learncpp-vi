@@ -12,21 +12,21 @@
 
 # 28.4 &#8212; Stream classes for strings
 
-So far, all of the I/O examples you have seen have been writing to cout or reading from cin.  However, there is another set of classes called the stream classes for strings that allow you to use the familiar insertions (<<) and extraction (>>) các toán tử to work with strings.  Like istream and ostream, the string streams provide a buffer to hold data.  However, unlike cin and cout, these streams are not connected to an I/O channel (such as a keyboard, monitor, etc…).  One of the primary uses of string streams is to buffer output for display at a later time, or to process input line-by-line.
+So far, all of the I/O examples you have seen have been writing to cout or reading from cin.  However, there is another set of classes called the stream classes for strings that allow you to use the familiar insertions (&lt;&lt;) and extraction (&gt;&gt;) các toán tử to work with strings.  Like istream and ostream, the string streams provide a buffer to hold data.  However, unlike cin and cout, these streams are not connected to an I/O channel (such as a keyboard, monitor, etc…).  One of the primary uses of string streams is to buffer output for display at a later time, or to process input line-by-line.
 
 There are six stream classes for strings: istringstream (derived from istream), ostringstream (derived from ostream), and stringstream (derived from iostream) are used for reading and writing normal characters width strings.  wistringstream, wostringstream, and wstringstream are used for reading and writing wide character strings.  To use the stringstreams, you need to #include the sstream header.
 
 There are two ways to get data into a stringstream:
 
-<ol start="1">
-- Use the insertion (<<) toán tử:
+
+- Use the insertion (&lt;&lt;) toán tử:
 
 ```cpp
 std::stringstream os {};
 os << "en garde!\n"; // insert "en garde!" into the stringstream
 ```
 
-<ol start="2">
+
 - Use the str(string) hàm to set the value of the buffer:
 
 ```cpp
@@ -36,7 +36,7 @@ os.str("en garde!"); // set the stringstream buffer to "en garde!"
 
 There are similarly two ways to get data out of a stringstream:
 
-<ol start="1">
+
 - Use the str() hàm to retrieve the results of the buffer:
 
 ```cpp
@@ -51,8 +51,8 @@ This prints:
 12345 67.89
 ```
 
-<ol start="2">
-- Use the extraction (>>) toán tử:
+
+- Use the extraction (&gt;&gt;) toán tử:
 
 ```cpp
 std::stringstream os {};
@@ -74,7 +74,7 @@ This program prints:
 12345 - 67.89
 ```
 
-Note that the >> toán tử iterates through the string -- each successive use of >> returns the next extractable value in the stream.  On the other hand, str() returns the whole value of the stream, even if the >> has already been used on the stream.
+Note that the &gt;&gt; toán tử iterates through the string -- each successive use of &gt;&gt; returns the next extractable value in the stream.  On the other hand, str() returns the whole value of the stream, even if the &gt;&gt; has already been used on the stream.
 
 **Conversion between strings and numbers**
 
@@ -124,7 +124,7 @@ This program prints:
 
 There are several ways to empty a stringstream’s buffer.
 
-<ol start="1">
+
 - Set it to the empty string using str() with a blank C-style string:
 
 ```cpp
@@ -137,7 +137,7 @@ os << "World!";
 std::cout << os.str();
 ```
 
-<ol start="2">
+
 - Set it to the empty string using str() with a blank std::string object:
 
 ```cpp

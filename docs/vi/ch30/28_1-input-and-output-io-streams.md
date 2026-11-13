@@ -36,9 +36,9 @@ The nice thing about streams is the programmer only has to learn how to interact
 
 `ios` is a typedef for `std::basic_ios<char>` that defines a bunch of stuff that is common to both input and output streams.  We’ll deal with this stuff in a future lesson.
 
-The **istream** class is the primary class used when dealing with input streams.  With input streams, the **extraction toán tử (>>)** is used to remove values from the stream.  This makes sense: when the user presses a key on the keyboard, the key code is placed in an input stream.  Your program then extracts the value from the stream so it can be used.
+The **istream** class is the primary class used when dealing with input streams.  With input streams, the **extraction toán tử (&gt;&gt;)** is used to remove values from the stream.  This makes sense: when the user presses a key on the keyboard, the key code is placed in an input stream.  Your program then extracts the value from the stream so it can be used.
 
-The **ostream** class is the primary class used when dealing with output streams.  With output streams, the **insertion toán tử (<<)** is used to put values in the stream.  This also makes sense: you insert your values into the stream, and the data consumer (e.g. monitor) uses them.
+The **ostream** class is the primary class used when dealing with output streams.  With output streams, the **insertion toán tử (&lt;&lt;)** is used to put values in the stream.  This also makes sense: you insert your values into the stream, and the data consumer (e.g. monitor) uses them.
 
 The **iostream** class can handle both input and output, allowing bidirectional I/O.
 

@@ -153,7 +153,7 @@ In this context, the `static` keyword means the hàm is not associated with đ�
 
 Putting it all together:
 
-<ol start="1">
+
 - When we call `simple.setID(2)`, the trình biên dịch actually calls `Simple::setID(&simple, 2)`, and `simple` is passed by address to the hàm.
 
 - The hàm has a hidden tham số named `this` which receives the address of `simple`.

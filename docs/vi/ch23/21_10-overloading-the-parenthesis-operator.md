@@ -276,7 +276,7 @@ Câu hỏi #2
 
 This quiz question is extra credit.
 
-> Step #1
+&gt; Step #1
 
 Why is the above inefficient if we don’t need to modify the returned substring?
 
@@ -288,7 +288,7 @@ We only need a copy of the substring in cases where we intend to modify the subs
 
 :::
 
-> Step #2
+&gt; Step #2
 
 What might we do instead?
 
@@ -297,7 +297,7 @@ What might we do instead?
 `std::string_view` is capable of viewing a substring of an existing string without making a copy.  If our `toán tử()` were to return a `std::string_view`, then the caller could use the `std::string_view` when that suffices, or convert it to a `std::string` or `MyString` if they need to modify or persist the substring.
 :::
 
-> Step #3
+&gt; Step #3
 
 Update `toán tử()` from the prior quiz solution to return the substring as a `std::string_view` instead.
 

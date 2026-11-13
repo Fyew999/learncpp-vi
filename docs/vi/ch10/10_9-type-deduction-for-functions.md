@@ -83,7 +83,7 @@ Nếu bạn chỉ khai báo nguyên mẫu hàm:
 ```cpp
 auto foo(); // Khai báo trước
 ```
-Compiler không thể biết `foo()` trả về kiểu gì để cấp phát vùng nhớ stack cho nơi gọi nó -> Báo lỗi biên dịch ngay lập tức!
+Compiler không thể biết `foo()` trả về kiểu gì để cấp phát vùng nhớ stack cho nơi gọi nó -&gt; Báo lỗi biên dịch ngay lập tức!
 :::
 
 ---

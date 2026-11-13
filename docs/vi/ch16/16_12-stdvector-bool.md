@@ -24,7 +24,7 @@ Tuy nhiên, "ý đồ tốt" này đã dẫn tới một cơn ác mộng về m�
 ## 2. Tại Sao `std::vector<bool>` Không Phải Là Một Container Chuẩn?
 
 Một trong những yêu cầu bất di bất dịch của một Container trong C++ là:
-> Toán tử `operator[]` phải trả về một **tham chiếu thực sự (`T&`)** tới phần tử trong bộ nhớ, cho phép ta lấy địa chỉ `&v[i]`.
+&gt; Toán tử `operator[]` phải trả về một **tham chiếu thực sự (`T&`)** tới phần tử trong bộ nhớ, cho phép ta lấy địa chỉ `&v[i]`.
 
 Nhưng trên phần cứng máy tính:
 - CPU **không thể lấy địa chỉ của một bit đơn lẻ** (địa chỉ bộ nhớ RAM chỉ đánh tới cấp độ Byte).

@@ -129,9 +129,9 @@ std::cout << x << ' ' << y << '
 ```
 ::: details [Xem lời giải]
 - Dòng 1: `++x` tăng `x` lên 11 và trả về 11. `y--` trả về giá trị cũ là 20 rồi mới giảm `y` xuống 19.
-  -> In ra: `11 20`.
+  -&gt; In ra: `11 20`.
 - Dòng 2: In ra giá trị hiện tại của `x` và `y`.
-  -> In ra: `11 19`.
+  -&gt; In ra: `11 19`.
 :::
 
 ### Câu hỏi 2:

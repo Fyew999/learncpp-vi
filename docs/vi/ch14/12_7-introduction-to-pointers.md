@@ -278,7 +278,7 @@ Pointers and phép gán
 
 We can use phép gán with các con trỏ in two different ways:
 
-<ol start="1">
+
 - To change what the con trỏ is pointing at (by assigning the con trỏ a new address)
 
 - To change the value being pointed at (by assigning the dereferenced con trỏ a new value)

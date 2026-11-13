@@ -117,11 +117,11 @@ So if we can overload an toán tử as a friend or a member, which should we use
 
 **Not everything can be overloaded as a friend hàm**
 
-The phép gán (=), subscript ([]), hàm call (()), and member selection (->) các toán tử must be overloaded as member các hàm, because the language requires them to be.
+The phép gán (=), subscript ([]), hàm call (()), and member selection (-&gt;) các toán tử must be overloaded as member các hàm, because the language requires them to be.
 
 **Not everything can be overloaded as a member hàm**
 
-Trong bài học [21.4 -- Overloading the I/O các toán tử](https://www.learncpp.com/cpp-tutorial/overloading-the-io-các toán tử/), we overloaded toán tử<< for our Point class using the friend hàm method.  Here’s a reminder of how we did that:
+Trong bài học [21.4 -- Overloading the I/O các toán tử](https://www.learncpp.com/cpp-tutorial/overloading-the-io-các toán tử/), we overloaded toán tử&lt;&lt; for our Point class using the friend hàm method.  Here’s a reminder of how we did that:
 
 ```cpp
 #include <iostream>
@@ -160,9 +160,9 @@ int main()
 }
 ```
 
-However, we are not able to overload toán tử<< as a member hàm.  Why not?  Because the overloaded toán tử must be added as a member of the left operand.  In this case, the left operand is an object of type std::ostream.  std::ostream is fixed as part of the standard library.  We can’t modify the class declaration to add the overload as a member hàm of std::ostream.
+However, we are not able to overload toán tử&lt;&lt; as a member hàm.  Why not?  Because the overloaded toán tử must be added as a member of the left operand.  In this case, the left operand is an object of type std::ostream.  std::ostream is fixed as part of the standard library.  We can’t modify the class declaration to add the overload as a member hàm of std::ostream.
 
-This necessitates that toán tử<< be overloaded as a normal hàm (preferred) or a friend.
+This necessitates that toán tử&lt;&lt; be overloaded as a normal hàm (preferred) or a friend.
 
 Similarly, although we can overload toán tử+(Cents, int) as a member hàm (as we did above), we can’t overload toán tử+(int, Cents) as a member hàm, because int isn’t a class we can add members to.
 
@@ -180,13 +180,13 @@ Unary các toán tử are usually overloaded as member các hàm as well, since 
 
 The following rules of thumb can help you determine which form is best for a given situation:
 
-- If you’re overloading phép gán (=), subscript ([]), hàm call (()), or member selection (->), do so as a member hàm.
+- If you’re overloading phép gán (=), subscript ([]), hàm call (()), or member selection (-&gt;), do so as a member hàm.
 
 - If you’re overloading a unary toán tử, do so as a member hàm.
 
 - If you’re overloading a binary toán tử that does not modify its left operand (e.g. toán tử+), do so as a normal hàm (preferred) or friend hàm.
 
-- If you’re overloading a binary toán tử that modifies its left operand, but you can’t add members to the class definition of the left operand (e.g. toán tử<<, which has a left operand of type ostream), do so as a normal hàm (preferred) or friend hàm.
+- If you’re overloading a binary toán tử that modifies its left operand, but you can’t add members to the class definition of the left operand (e.g. toán tử&lt;&lt;, which has a left operand of type ostream), do so as a normal hàm (preferred) or friend hàm.
 
 - If you’re overloading a binary toán tử that modifies its left operand (e.g. toán tử+=), and you can modify the definition of the left operand, do so as a member hàm.
 

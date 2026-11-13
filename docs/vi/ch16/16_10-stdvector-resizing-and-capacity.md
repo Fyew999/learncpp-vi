@@ -116,7 +116,7 @@ int main()
 
 ### Phân biệt `reserve()` và `resize()`:
 - **`v.reserve(n)`**: Chỉ thay đổi **Capacity** (chuẩn bị sẵn bộ nhớ đệm), **không làm thay đổi Size**. Các phần tử chưa thực sự tồn tại, bạn không thể truy cập `v[0]`.
-- **`v.resize(n)`**: Thực sự thay đổi **Size** của vector. Tạo mới các phần tử với giá trị mặc định nếu $n > 	ext{size}$, hoặc cắt bỏ các phần tử thừa nếu $n < 	ext{size}$.
+- **`v.resize(n)`**: Thực sự thay đổi **Size** của vector. Tạo mới các phần tử với giá trị mặc định nếu $n &gt; 	ext{size}$, hoặc cắt bỏ các phần tử thừa nếu $n &lt; 	ext{size}$.
 
 ---
 

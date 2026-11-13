@@ -24,7 +24,7 @@ When you add new code files to your project, give them a .cpp extension.
 
 ::: cảnh báo For Visual Studio users
 
-In Visual Studio, right click on the *Source Files* folder (or the project name) in the Solution Explorer window, and choose *Add > New Item…*.
+In Visual Studio, right click on the *Source Files* folder (or the project name) in the Solution Explorer window, and choose *Add &gt; New Item…*.
 
 ![](https://www.learncpp.com/images/CppTutorial/Chapter2/VS-AddNewItem1.png)
 :::
@@ -35,13 +35,13 @@ Note: Your Visual Studio may opt to show you a compact view instead of the full 
 
 ![](https://www.learncpp.com/images/CppTutorial/Chapter2/VS-AddNewItem2.png)
 
-Note: If you create a new file from the *File menu* instead of from your project in the Solution Explorer, the new file won’t be added to your project automatically.  You’ll have to add it to the project manually.  To do so, right click on *Source Files* in the *Solution Explorer*, choose *Add > Existing Item*, and then select your file.
+Note: If you create a new file from the *File menu* instead of from your project in the Solution Explorer, the new file won’t be added to your project automatically.  You’ll have to add it to the project manually.  To do so, right click on *Source Files* in the *Solution Explorer*, choose *Add &gt; Existing Item*, and then select your file.
 
 Now when you compile your program, you should see the trình biên dịch list the name of your file as it compiles it.
 
 ::: cảnh báo For Code::Blocks users
 
-In Code::Blocks, go to the *File menu* and choose *New > File…*.
+In Code::Blocks, go to the *File menu* and choose *New &gt; File…*.
 
 ![](https://www.learncpp.com/images/CppTutorial/Chapter2/CB-AddNewItem1.png)
 :::
@@ -71,7 +71,7 @@ From the command line, you can create the additional file yourself, using your f
 
 ::: cảnh báo For VS Code users
 
-To create a new file, choose *View > Explorer* from the top nav to open the Explorer pane, and then click the *New File* icon to the right of the project name.  Alternately, choose *File > New File* from the top nav.  Then give your new file a name (don’t forget the .cpp extension).  If the file appears inside the *.vscode* folder, drag it up one level to the project folder.
+To create a new file, choose *View &gt; Explorer* from the top nav to open the Explorer pane, and then click the *New File* icon to the right of the project name.  Alternately, choose *File &gt; New File* from the top nav.  Then give your new file a name (don’t forget the .cpp extension).  If the file appears inside the *.vscode* folder, drag it up one level to the project folder.
 
 Next open the *tasks.json* file, and find the line `"${file}",`.
 
@@ -145,7 +145,7 @@ Remember, the trình biên dịch compiles each file individually.  It does not 
 
 This limited visibility and short memory is intentional, for a few reasons:
 
-<ol start="1">
+
 - It allows the source files of a project to be compiled in any order.
 
 - When we change a source file, only that source file needs to be recompiled.
@@ -212,7 +212,7 @@ Something went wrong!
 
 There are plenty of things that can go wrong the first time you try to work with multiple files.  If you tried the above example and ran into an error, check the following:
 
-<ol start="1">
+
 - If you get a trình biên dịch error about *add* not being defined in *main*, you probably forgot the forward declaration for hàm *add* in *main.cpp*.
 
 - If you get a trình liên kết error about *add* not being defined, e.g.
@@ -227,7 +227,7 @@ unresolved external symbol "int __cdecl add(int,int)" (?add@@YAHHH@Z) referenced
 
 2c. …it’s possible that the file is set to not compile or link.  Check the file properties and ensure the file is configured to be compiled/linked.  In Code::Blocks, compile and link are separate checkboxes that should be checked.  In Visual Studio, there’s an “exclude from build” option that should be set to “no” or left blank.  Make sure you check each build configuration (e.g. debug and release) separately.
 
-<ol start="3">
+
 - Do *not* *#include “add.cpp”* from *main.cpp*.  While doing so compiles in this case, #including .cpp files increases the risk of naming conflicts and other unanticipated consequences (especially as programs get larger and more complex).  We discuss #include further in lesson [2.10 -- Introduction to the preprocessor](https://www.learncpp.com/cpp-tutorial/introduction-to-the-preprocessor/).
 
 Tổng kết bài học

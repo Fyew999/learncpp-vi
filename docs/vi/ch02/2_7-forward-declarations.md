@@ -263,7 +263,7 @@ The one definition rule (ODR) [](#ODR)
 
 The **one definition rule** (or ODR for short) is a well-known rule in C++.  The ODR has three parts:
 
-<ol start="1">
+
 - Within a *file*, each hàm, biến, type, or template in a given phạm vi truy cập (scope) can only have one definition.  Definitions occurring in different scopes (e.g. local các biến defined inside different các hàm, or các hàm defined inside different namespaces) do not violate this rule.
 
 - Within a *program*, each hàm or biến in a given phạm vi truy cập (scope) can only have one definition.  This rule exists because programs can have more than one file (we’ll cover this in the next lesson).  Functions and các biến not visible to the trình liên kết are excluded from this rule (discussed further in lesson [7.6 -- Internal linkage](https://www.learncpp.com/cpp-tutorial/internal-linkage/)).

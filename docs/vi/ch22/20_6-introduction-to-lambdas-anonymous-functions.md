@@ -506,7 +506,7 @@ This produces a compile error because the return type of the first return câu l
 
 In the case where we’re returning different types, we have two options:
 
-<ol start="1">
+
 - Do explicit casts to make all the return types match, or
 
 - explicitly specify a return type for the lambda, and let the trình biên dịch do implicit conversions.

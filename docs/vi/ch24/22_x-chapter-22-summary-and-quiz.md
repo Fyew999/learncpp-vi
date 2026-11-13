@@ -38,7 +38,7 @@ std::weak_ptr is the smart con trỏ class used when you need one or more đối
 
 **Hệ thống Câu hỏi & Quiz Tự Luyện**
 
-<ol start="1">
+
 - Explain when you should use the following types of các con trỏ.
 
 1a) std::unique_ptr
@@ -73,7 +73,7 @@ std::auto_ptr has been deprecated and was removed in C++17.  It should not be us
 
 :::
 
-<ol start="2">
+
 - Explain why move semantics is focused around r-values.
 
 ::: details Xem lời giải (Solution)
@@ -82,7 +82,7 @@ Because r-values are temporary, we know they are going to get destroyed after th
 
 :::
 
-<ol start="3">
+
 - What’s wrong with the following code?  Update the program to be best practices compliant.
 
 3a)

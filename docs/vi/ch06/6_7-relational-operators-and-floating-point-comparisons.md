@@ -25,7 +25,7 @@ Toán tử quan hệ dùng để so sánh hai giá trị và luôn trả về k�
 | `!=` | So sánh khác | `x != y` | `true` |
 
 ::: warning ⚠️ Cạm bẫy chuỗi so sánh kiểu toán học
-Trong toán học, chúng ta có thể viết $1 < x < 10$ để kiểm tra $x$ có nằm giữa 1 và 10 hay không. Trong C++:
+Trong toán học, chúng ta có thể viết $1 &lt; x &lt; 10$ để kiểm tra $x$ có nằm giữa 1 và 10 hay không. Trong C++:
 ```cpp
 if (1 < x < 10) // 💥 LỖI LOGIC NGUY HIỂM!
 ```
@@ -73,7 +73,7 @@ int main()
 ## 3. Kỹ Thuật So Sánh Số Thực Bằng Epsilon
 
 Thay vì so sánh bằng tuyệt đối, ta kiểm tra xem khoảng cách giữa hai số có nhỏ hơn một ngưỡng sai số cho phép $\epsilon$ (Epsilon) hay không:
-$$|a - b| < \epsilon$$
+$$|a - b| &lt; \epsilon$$
 
 ```mermaid
 flowchart LR

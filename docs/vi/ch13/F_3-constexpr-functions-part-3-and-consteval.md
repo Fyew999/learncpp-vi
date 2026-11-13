@@ -20,7 +20,7 @@ Nhiều lập trình viên muốn viết các hàm kiểm tra bảo mật, đị
 ## 2. `consteval` — Hàm Tức Thì (Immediate Functions - C++20)
 
 C++20 giới thiệu từ khóa **`consteval`**:
-> Một hàm được đánh dấu `consteval` được gọi là **Hàm tức thì (Immediate Function)**. Mỗi lời gọi tới hàm này **BẮT BUỘC PHẢI SINH RA MỘT HẰNG BIỂU THỨC COMPILE-TIME**, nếu không chương trình sẽ bị từ chối biên dịch!
+&gt; Một hàm được đánh dấu `consteval` được gọi là **Hàm tức thì (Immediate Function)**. Mỗi lời gọi tới hàm này **BẮT BUỘC PHẢI SINH RA MỘT HẰNG BIỂU THỨC COMPILE-TIME**, nếu không chương trình sẽ bị từ chối biên dịch!
 
 ```cpp
 #include <iostream>

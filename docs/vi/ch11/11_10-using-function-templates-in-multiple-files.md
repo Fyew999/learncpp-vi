@@ -81,14 +81,14 @@ mã máy của int max(int, int) -> Crash!"]
 Trình biên dịch xử lý từng file `.cpp` (Translation Unit) một cách hoàn toàn độc lập:
 1. Khi dịch `main.cpp`, compiler thấy lời gọi `max(3, 7)` cần sinh mã cho `int`. Nhưng trong `max.h` chỉ có khai báo, compiler không có thân hàm nên đành nhờ Linker tìm sau.
 2. Khi dịch `max.cpp`, compiler thấy định nghĩa template nhưng trong file đó không có ai gọi `max`, nên compiler **không hề sinh ra bất kỳ dòng mã máy nào**!
-3. Đến giai đoạn Linker ráp nối: Linker tìm mã máy của `max<int>` nhưng không tìm thấy ở đâu -> Báo lỗi `undefined reference`!
+3. Đến giai đoạn Linker ráp nối: Linker tìm mã máy của `max<int>` nhưng không tìm thấy ở đâu -&gt; Báo lỗi `undefined reference`!
 
 ---
 
 ## 3. Giải Pháp Chuẩn Mực: Định Nghĩa Template Trong File Header
 
 Để template hoạt động trơn tru trong toàn dự án:
-> **Bắt buộc phải đặt TOÀN BỘ định nghĩa của template vào bên trong file Header (`.h` hoặc `.hpp`)!**
+&gt; **Bắt buộc phải đặt TOÀN BỘ định nghĩa của template vào bên trong file Header (`.h` hoặc `.hpp`)!**
 
 ```cpp
 // max.h

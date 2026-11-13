@@ -45,7 +45,7 @@ flowchart TD
 | **Syntax Error** | Lỗi ngữ pháp ngôn ngữ C++ | Luôn bị Compiler phát hiện tại compile-time, ngăn sinh mã máy. |
 | **Semantic Error** | Lỗi ý nghĩa/logic của câu lệnh | Có thể biên dịch thành công nhưng chạy sai kết quả hoặc gây Crash/UB. |
 | **Undefined Behavior (UB)** | Hành vi không được chuẩn ISO định nghĩa | Trạng thái nguy hiểm nhất: chương trình có thể sập hoặc chạy ngẫu nhiên. |
-| **Debugging** | Quy trình phát hiện, cô lập và khắc phục lỗi | 6 bước: Triệu chứng -> Nguyên nhân gốc -> Hiểu -> Lên phương án -> Sửa -> Retest. |
+| **Debugging** | Quy trình phát hiện, cô lập và khắc phục lỗi | 6 bước: Triệu chứng -&gt; Nguyên nhân gốc -&gt; Hiểu -&gt; Lên phương án -&gt; Sửa -&gt; Retest. |
 | **Heisenbug** | Bug biến mất khi cố gắng chèn log quan sát | Thường do biến chưa khởi tạo hoặc lỗi tràn bộ đệm RAM. |
 | **Step Into** | Đi vào bên trong hàm sắp gọi | Dùng khi muốn mổ xẻ chi tiết hàm nghi vấn lỗi. |
 | **Step Over** | Chạy trọn vẹn cả hàm, dừng ở dòng tiếp sau | Dùng cho các hàm đã kiểm thử kỹ hoặc hàm thư viện chuẩn. |

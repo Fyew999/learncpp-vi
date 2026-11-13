@@ -3,7 +3,7 @@
 ---
 
 ## 🎯 Mục Tiêu Bài Học
-- Làm chủ phương pháp phát triển phần mềm cuốn chiếu từng bước (**Incremental Development Strategy**): "Viết một khối nhỏ -> Biên dịch -> Kiểm thử -> Tinh chỉnh".
+- Làm chủ phương pháp phát triển phần mềm cuốn chiếu từng bước (**Incremental Development Strategy**): "Viết một khối nhỏ -&gt; Biên dịch -&gt; Kiểm thử -&gt; Tinh chỉnh".
 - Trải nghiệm thực tế quy trình chẩn đoán và khắc phục lỗi biên dịch (Compiler Error) khi gõ sai cú pháp I/O.
 - So sánh sâu sắc 3 giải pháp kiến trúc mã nguồn cho cùng một bài toán (Từ cách tồi đến cách chuẩn mực nhất).
 - Rèn luyện tư duy kỹ thuật: *"Làm cho chương trình chạy đúng trước, tối ưu hóa và làm sạch code sau"*.

@@ -193,7 +193,7 @@ Functionally, it works almost identically to the problematic example.  However, 
 
 Using std::weak_ptr
 
-One downside of std::weak_ptr is that std::weak_ptr are not directly usable (they have no toán tử->).  To use a std::weak_ptr, you must first convert it into a std::shared_ptr.  Then you can use the std::shared_ptr.  To convert a std::weak_ptr into a std::shared_ptr, you can use the lock() member hàm.  Here’s the above example, updated to show this off:
+One downside of std::weak_ptr is that std::weak_ptr are not directly usable (they have no toán tử-&gt;).  To use a std::weak_ptr, you must first convert it into a std::shared_ptr.  Then you can use the std::shared_ptr.  To convert a std::weak_ptr into a std::shared_ptr, you can use the lock() member hàm.  Here’s the above example, updated to show this off:
 
 ```cpp
 #include <iostream>
@@ -335,7 +335,7 @@ Hệ thống Câu hỏi & Quiz Tự Luyện
 
 Câu hỏi #1
 
-<ol start="1">
+
 - Fix the program presented in the section “A reductive case” so that the Resource is properly deallocated.  Do not alter the code in `main()`.
 
 Here is the program again for ease of tham chiếu:

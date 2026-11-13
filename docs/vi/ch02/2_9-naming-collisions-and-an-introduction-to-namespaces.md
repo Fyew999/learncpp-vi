@@ -53,7 +53,7 @@ However, when the trình liên kết executes, it will link all the definitions 
 
 Most naming collisions occur in two cases:
 
-<ol start="1">
+
 - Two (or more) identically named các hàm (or global các biến) are introduced into separate files belonging to the same program.  This will result in a trình liên kết error, as shown above.
 
 - Two (or more) identically named các hàm (or global các biến) are introduced into the same file.  This will result in a trình biên dịch error.

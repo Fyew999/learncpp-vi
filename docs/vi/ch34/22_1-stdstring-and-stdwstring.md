@@ -65,7 +65,7 @@ All string functionality in the standard library lives in the `<string>` header 
 #include <string>
 ```
 
-There are actually 3 different string classes in the string header.  The first is a templated base class named basic_string<>:
+There are actually 3 different string classes in the string header.  The first is a templated base class named basic_string&lt;&gt;:
 
 ```cpp
 namespace std
@@ -77,7 +77,7 @@ namespace std
 
 You won’t be working with this class directly, so don’t worry about what traits or an Allocator is for the time being.  The default values will suffice in almost every imaginable case.
 
-There are two flavors of basic_string<> provided by the standard library:
+There are two flavors of basic_string&lt;&gt; provided by the standard library:
 
 ```cpp
 namespace std
@@ -87,9 +87,9 @@ namespace std
 }
 ```
 
-These are the two classes that you will actually use.  std::string is used for standard ascii and utf-8 strings.  std::wstring is used for wide-character/unicode (utf-16) strings.  There is no built-in class for utf-32 strings (though you should be able to extend your own from basic_string<> if you need one).
+These are the two classes that you will actually use.  std::string is used for standard ascii and utf-8 strings.  std::wstring is used for wide-character/unicode (utf-16) strings.  There is no built-in class for utf-32 strings (though you should be able to extend your own from basic_string&lt;&gt; if you need one).
 
-Although you will directly use std::string and std::wstring, all of the string functionality is implemented in the basic_string<> class.  String and wstring are able to access that functionality directly by virtue of being templated.  Consequently, all of the các hàm presented will work for both string and wstring.  However, because basic_string is a templated class, it also means the trình biên dịch will produce horrible looking template errors when you do something syntactically incorrect with a string or wstring.  Don’t be intimidated by these errors; they look far worse than they are!
+Although you will directly use std::string and std::wstring, all of the string functionality is implemented in the basic_string&lt;&gt; class.  String and wstring are able to access that functionality directly by virtue of being templated.  Consequently, all of the các hàm presented will work for both string and wstring.  However, because basic_string is a templated class, it also means the trình biên dịch will produce horrible looking template errors when you do something syntactically incorrect with a string or wstring.  Don’t be intimidated by these errors; they look far worse than they are!
 
 Here’s a list of all the các hàm in the string class.  Most of these các hàm have multiple flavors to handle different types of inputs, which we will cover in more depth in the next lessons.
 
@@ -178,9 +178,9 @@ Effect
 
 **Input and Output**
 
-        >>, getline()
+        &gt;&gt;, getline()
 
-        <<
+        &lt;&lt;
 
         [c_str()](http://www.learncpp.com/cpp-tutorial/17-4-stdstring-character-access-and-conversion-to-c-style-arrays/)
 
@@ -204,7 +204,7 @@ Effect
 
         ==, !=
 
-        <, <=, > >=
+        &lt;, &lt;=, &gt; &gt;=
 
         compare()
     

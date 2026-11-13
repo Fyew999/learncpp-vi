@@ -171,7 +171,7 @@ Fibonacci numbers are defined mathematically as:
 F(n) = 
 0 if n = 0
 1 if n = 1
-f(n-1) + f(n-2) if n > 1
+f(n-1) + f(n-2) if n &gt; 1
 
 Consequently, it’s rather simple to write a (not very efficient) recursive hàm to calculate the nth Fibonacci number:
 
@@ -271,7 +271,7 @@ Generally favor iteration over recursion, except when recursion really makes sen
 
 **Hệ thống Câu hỏi & Quiz Tự Luyện**
 
-<ol start="1">
+
 - A factorial of an integer N (written N!) is defined as the product (multiplication) of all the numbers between 1 and N (0! = 1).  Write a recursive hàm called factorial that returns the factorial of the input.  Test it with the first 7 factorials.
 
 Hint: Remember that (x * y) = (y * x), so the product of all the numbers between 1 and N is the same as the product of all the numbers between N and 1.
@@ -296,7 +296,7 @@ int main()
 ```
 :::
 
-<ol start="2">
+
 - Write a recursive hàm that takes an integer as input and returns the sum of each individual digit in the integer (e.g. 357 = 3 + 5 + 7 = 15).  Print the answer for input 93427 (which is 25).  Assume the input values are positive.
 
 ::: details Xem lời giải (Solution)

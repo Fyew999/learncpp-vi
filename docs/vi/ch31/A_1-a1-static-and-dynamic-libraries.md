@@ -14,7 +14,7 @@
 
 A **library** is a package of code that is meant to be reused by many programs.  Typically, a C++ library comes in two pieces:
 
-<ol start="1">
+
 - A header file that defines the functionality the library is exposing (offering) to the programs using it.
 
 - A precompiled binary that contains the implementation of that functionality pre-compiled into machine language.
@@ -37,7 +37,7 @@ An **import library** is a library that automates the process of loading and usi
 
 Now that you know about the different kinds of libraries, let’s talk about how to actually use libraries in your program.  Installing a library in C++ typically involves 4 steps:
 
-<ol start="1">
+
 - Acquire the library.  The best option is to download a precompiled package for your operating system (if it exists) so you do not have to compile the library yourself.  If there is not one provided for your operating system, you will have to download a source-code-only package and compile it yourself (which is outside of the phạm vi truy cập (scope) of this lesson).  On Windows, libraries are typically distributed as .zip files.  On Linux, libraries are typically distributed as packages (e.g. .RPM).  Your package manager may have some of the more popular libraries (e.g. SDL) listed already for easy installation, so check there first.
 
 - Install the library.  On Linux, this typically involves invoking the package manager and letting it do all the work.  On Windows, this typically involves unzipping the library to a directory of your choice.  We recommend keeping all your libraries in one location for easy access.  For example, use a directory called C:\Libs, and put each library in it’s own subdirectory.
@@ -48,7 +48,7 @@ Now that you know about the different kinds of libraries, let’s talk about how
 
 Once the library is installed and the IDE knows where to look for it, the following 3 steps typically need to be performed for each project that wants to use the library:
 
-<ol start="5">
+
 - If using static libraries or import libraries, tell the trình liên kết which library files to link.
 
 - #include the library’s header file(s) in your program.  This tells the trình biên dịch about all of the functionality the library is offering so that your program will compile properly.

@@ -66,7 +66,7 @@ Hệ thống Câu hỏi & Quiz Tự Luyện
 
 Câu hỏi #1
 
-For each of the following biểu thức on the right side of toán tử <<, indicate whether the biểu thức is an lvalue or rvalue:
+For each of the following biểu thức on the right side of toán tử &lt;&lt;, indicate whether the biểu thức is an lvalue or rvalue:
 
 a)
 
@@ -181,7 +181,7 @@ Câu hỏi #3
 Name two reasons why we prefer to pass đối số by const tham chiếu instead of by non-const tham chiếu whenever possible.
 
 ::: details Xem lời giải (Solution)
-<ol start="1">
+
 - A non-const tham chiếu tham số can be used to modify the value of the đối số.  If we do not need this ability, it’s better to pass by const tham chiếu so that we don’t accidentally modify the đối số.
 
 - A non-const tham chiếu tham số can only accept a modifiable lvalue as an đối số.  A const tham chiếu-tham số can accept a modifiable lvalue, a non-modifiable lvalue, or an rvalue as an đối số.

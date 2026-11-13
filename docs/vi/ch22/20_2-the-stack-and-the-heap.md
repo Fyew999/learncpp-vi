@@ -67,7 +67,7 @@ A **data structure** is a programming mechanism for organizing data so that it c
 
 Consider a ngăn xếp Stack of plates in a cafeteria.  Because each plate is heavy and they are stacked, you can really only do one of three things:
 
-<ol start="1">
+
 - Look at the surface of the top plate
 
 - Take the top plate off the ngăn xếp Stack (exposing the one underneath, if it exists)
@@ -76,7 +76,7 @@ Consider a ngăn xếp Stack of plates in a cafeteria.  Because each plate is he
 
 In computer programming, a ngăn xếp Stack is a container data structure that holds multiple các biến (much like an array).  However, whereas an array lets you access and modify elements in any order you wish (called **random access**), a ngăn xếp Stack is more limited.  The operations that can be performed on a ngăn xếp Stack correspond to the three things mentioned above:
 
-<ol start="1">
+
 - Look at the top item on the ngăn xếp Stack (usually done via a hàm called top(), but sometimes called peek())
 
 - Take the top item off of the ngăn xếp Stack (done via a hàm called pop())
@@ -119,7 +119,7 @@ We can make one further optimization: When we pop an item off the call ngăn x�
 
 Let’s examine in more detail how the call ngăn xếp Stack works.  Here is the sequence of steps that takes place when a hàm is called:
 
-<ol start="1">
+
 - The program encounters a hàm call.
 
 
@@ -135,7 +135,7 @@ Let’s examine in more detail how the call ngăn xếp Stack works.  Here is th
 
 - Saved copies of any registers modified by the hàm that need to be restored when the hàm returns
 
-<ol start="3">
+
 - The CPU jumps to the hàm’s start point.
 
 - The instructions inside of the hàm begin executing.

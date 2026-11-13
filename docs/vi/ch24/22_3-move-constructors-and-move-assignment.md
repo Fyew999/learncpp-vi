@@ -114,7 +114,7 @@ That’s a lot of resource creation and destruction going on for such a simple p
 
 Let’s take a closer look.  There are 6 key steps that happen in this program (one for each printed message):
 
-<ol start="1">
+
 - Inside generateResource(), local biến res is created and được khởi tạo with a dynamically allocated Resource, which causes the first “Resource acquired”.
 
 - Res is returned back to main() by value.  We return by value here because res is a local biến -- it can’t be returned by address or tham chiếu because res will be destroyed when generateResource() ends.  So res is copy constructed into a temporary object.  Since our copy hàm tạo (constructor) does a deep copy, a new Resource is allocated here, which causes the second “Resource acquired”.
@@ -251,7 +251,7 @@ That’s much better!
 
 The flow of the program is exactly the same as before.  However, instead of calling the copy hàm tạo (constructor) and copy phép gán các toán tử, this program calls the move hàm tạo (constructor) and move phép gán các toán tử.  Looking a little more deeply:
 
-<ol start="1">
+
 - Inside generateResource(), local biến res is created and được khởi tạo with a dynamically allocated Resource, which causes the first “Resource acquired”.
 
 - Res is returned back to main() by value.  Res is move constructed into a temporary object, transferring the dynamically created object stored in res to the temporary object.  We’ll talk about why this happens below.

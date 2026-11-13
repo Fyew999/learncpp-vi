@@ -138,7 +138,7 @@ Output:
 QQQQ
 ```
 
-**template<class InputIterator> string::string(InputIterator itBeg, InputIterator itEnd)**
+**template&lt;class InputIterator&gt; string::string(InputIterator itBeg, InputIterator itEnd)**
 
 `<li>`This hàm tạo (constructor) creates a new string được khởi tạo by the characters of range [itBeg, itEnd).
 `<li>`If the resulting size exceeds the maximum string length, the length_error exception will be thrown.
@@ -175,7 +175,7 @@ cannot convert parameter 1 from 'int' to 'std::basic_string
 
 In other words, it tried to convert your int into a string but failed.
 
-The easiest way to convert numbers into strings is to involve the std::ostringstream class.  std::ostringstream is already set up to accept input from a variety of sources, including characters, numbers, strings, etc…  It is also capable of outputting strings (either via the extraction toán tử>>, or via the str() hàm).  For more information on std::ostringstream, see [28.4 -- Stream classes for strings](https://www.learncpp.com/cpp-tutorial/stream-classes-for-strings/).  
+The easiest way to convert numbers into strings is to involve the std::ostringstream class.  std::ostringstream is already set up to accept input from a variety of sources, including characters, numbers, strings, etc…  It is also capable of outputting strings (either via the extraction toán tử&gt;&gt;, or via the str() hàm).  For more information on std::ostringstream, see [28.4 -- Stream classes for strings](https://www.learncpp.com/cpp-tutorial/stream-classes-for-strings/).  
 
 Here’s a simple solution for creating std::string from various types of inputs:
 

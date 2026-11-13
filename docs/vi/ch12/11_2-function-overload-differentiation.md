@@ -19,7 +19,7 @@ Trình biên dịch căn cứ vào **Chữ ký hàm (Function Signature)** để
 | **Kiểu dữ liệu tham số** | **CÓ** | `void print(int);``<br>``void print(double);` |
 | **Thứ tự các kiểu tham số** | **CÓ** | `void print(int, double);``<br>``void print(double, int);` |
 | **Tham chiếu vs Giá trị** | **LƯU Ý** | Xem phân tích chi tiết bên dưới |
-| **Kiểu trả về (Return Type)** | ❌ **KHÔNG** | `int getValue();``<br>``double getValue();` -> **LỖI!** |
+| **Kiểu trả về (Return Type)** | ❌ **KHÔNG** | `int getValue();``<br>``double getValue();` -&gt; **LỖI!** |
 
 ```mermaid
 flowchart TD
@@ -78,7 +78,7 @@ int main()
     return 0;
 }
 ```
-Mặc dù hai hàm có chữ ký khác nhau, nhưng khi gọi `foo(a)`, compiler không biết bạn muốn truyền `a` theo giá trị hay theo tham chiếu -> Gây ra lỗi gọi hàm mơ hồ!
+Mặc dù hai hàm có chữ ký khác nhau, nhưng khi gọi `foo(a)`, compiler không biết bạn muốn truyền `a` theo giá trị hay theo tham chiếu -&gt; Gây ra lỗi gọi hàm mơ hồ!
 
 ---
 

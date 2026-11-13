@@ -129,7 +129,7 @@ point is set at the origin.
 
 **Hệ thống Câu hỏi & Quiz Tự Luyện**
 
-<ol start="1">
+
 - Implement overloaded unary `toán tử+` for the Point class.  Unary `toán tử+` just returns its operand (it does not make negative values positive).
 
 ::: details Xem lời giải (Solution)

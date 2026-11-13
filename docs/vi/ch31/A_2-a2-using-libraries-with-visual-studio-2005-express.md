@@ -16,14 +16,14 @@ To recap the process needed to use a library:
 
 Once per library:
 
-<ol start="1">
+
 - Acquire the library.  Download it from the website or via a package manager.
 
 - Install the library.  Unzip it to a directory or install it via a package manager.
 
 Once per project:
 
-<ol start="3">
+
 - Tell the trình biên dịch where to look for the header file(s) for the library.
 
 - Tell the trình liên kết where to look for the precompiled library file(s) for the library (if there are any).
@@ -40,11 +40,11 @@ Download and install the library to your hard disk.  See the tutorial on [static
 
 **Steps 3 and 4 -- Tell the trình biên dịch where to find headers and library files**
 
-A) Go to the Project menu and pick Project -> Properties (it should be at the bottom)
+A) Go to the Project menu and pick Project -&gt; Properties (it should be at the bottom)
 
 B) Under the “Configuration” dropdown, make sure that “All configurations” is selected.
 
-C) In the left window pane, select “Configuration Properties” -> “VC++ Directories”.
+C) In the left window pane, select “Configuration Properties” -&gt; “VC++ Directories”.
 
 D) On the “Include Directories” line, add the path to the .h files for the library (make sure this is separated from previous entries by a semicolon).
 
@@ -56,11 +56,11 @@ F) Click “OK”.
 
 For step 5, we need to add the library (.lib) files from the library to our project (if there are any -- if not, you can skip this step).  We do this on an individual project basis.
 
-A) Go to the Project menu and pick Project -> Properties (it should be at the bottom)
+A) Go to the Project menu and pick Project -&gt; Properties (it should be at the bottom)
 
 B) Under the “Configuration” dropdown, make sure that “All configurations” is selected.
 
-C) In the left window pane, select “Configuration Properties” -> “Linker” -> “Input”.
+C) In the left window pane, select “Configuration Properties” -&gt; “Linker” -&gt; “Input”.
 
 D) Add the name of your .lib file to the list of “Additional Dependencies” (separated from previous entries by a semicolon)
 

@@ -68,7 +68,7 @@ int main()
 
 The code here should be straightforward.
 
-What about toán tử< and toán tử>?  What would it mean for a Car to be greater or less than another Car?  We typically don’t think about cars this way.  Since the results of toán tử< and toán tử> would not be immediately intuitive, it may be better to leave these các toán tử undefined.  
+What about toán tử&lt; and toán tử&gt;?  What would it mean for a Car to be greater or less than another Car?  We typically don’t think about cars this way.  Since the results of toán tử&lt; and toán tử&gt; would not be immediately intuitive, it may be better to leave these các toán tử undefined.  
 
 ::: tip Thực hành tốt nhất (Best Practice)
 
@@ -76,9 +76,9 @@ Only define overloaded các toán tử that make intuitive sense for your class.
 
 :::
 
-However, there is one common exception to the above recommendation.  What if we wanted to sort a list of Cars?  In such a case, we might want to overload the comparison các toán tử to return the member (or members) you’re most likely to want to sort on.  For example, an overloaded toán tử< for Cars might sort based on make and model alphabetically.
+However, there is one common exception to the above recommendation.  What if we wanted to sort a list of Cars?  In such a case, we might want to overload the comparison các toán tử to return the member (or members) you’re most likely to want to sort on.  For example, an overloaded toán tử&lt; for Cars might sort based on make and model alphabetically.
 
-Some of the container classes in the standard library (classes that hold sets of other classes) require an overloaded toán tử< so they can keep the elements sorted.
+Some of the container classes in the standard library (classes that hold sets of other classes) require an overloaded toán tử&lt; so they can keep the elements sorted.
 
 Here’s a different example overloading all 6 logical comparison các toán tử:
 
@@ -167,13 +167,13 @@ Fortunately, many of the comparison các toán tử can be implemented using the
 
 - toán tử!= can be implemented as !(toán tử==)
 
-- toán tử> can be implemented as toán tử< with the order of the tham số flipped
+- toán tử&gt; can be implemented as toán tử&lt; with the order of the tham số flipped
 
-- toán tử>= can be implemented as !(toán tử<)
+- toán tử&gt;= can be implemented as !(toán tử&lt;)
 
-- toán tử<= can be implemented as !(toán tử>)
+- toán tử&lt;= can be implemented as !(toán tử&gt;)
 
-This means that we only need to implement logic for toán tử== and toán tử<, and then the other four comparison các toán tử can be defined in terms of those two!  Here’s an updated Cents example illustrating this:
+This means that we only need to implement logic for toán tử== and toán tử&lt;, and then the other four comparison các toán tử can be defined in terms of those two!  Here’s an updated Cents example illustrating this:
 
 ```cpp
 #include <iostream>
@@ -221,9 +221,9 @@ int main()
 }
 ```
 
-This way, if we ever need to change something, we only need to update toán tử== and toán tử< instead of all six comparison các toán tử!
+This way, if we ever need to change something, we only need to update toán tử== and toán tử&lt; instead of all six comparison các toán tử!
 
-The spaceship toán tử <=> C++20
+The spaceship toán tử &lt;=&gt; C++20
 
 C++20 introduces the spaceship toán tử (`toán tử<=>`), which allows us to reduce the number of comparison các hàm we need to write down to 2 at most, and sometimes just 1!
 
@@ -235,7 +235,7 @@ We intend to add a new lesson on this topic soon.  Until then, consider this som
 
 **Hệ thống Câu hỏi & Quiz Tự Luyện**
 
-<ol start="1">
+
 - Add the six comparison các toán tử to the Fraction class so that the following program compiles:
 
 ```cpp
@@ -396,8 +396,8 @@ int main()
 ```
 :::
 
-<ol start="2">
-- Add an overloaded toán tử<< and toán tử< to the Car class at the top of the lesson so that the following program compiles:
+
+- Add an overloaded toán tử&lt;&lt; and toán tử&lt; to the Car class at the top of the lesson so that the following program compiles:
 
 ```cpp
 #include <algorithm>

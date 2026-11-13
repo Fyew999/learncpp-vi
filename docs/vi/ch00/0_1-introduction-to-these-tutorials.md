@@ -17,9 +17,9 @@ Không giống như nhiều cuốn sách giáo khoa truyền thống hay các tr
 
 Dù bạn học C++ vì đam mê, để phục vụ học tập, thi đấu lập trình hay định hướng trở thành kỹ sư phần mềm chuyên nghiệp trong các ngành đòi hỏi hiệu năng tối thượng (Game Engine, Hệ thống nhúng, Tài chính HFT, AI Infrastructure), bạn đã đặt chân đến đúng nơi!
 
-> **Lời nhận xét từ độc giả quốc tế (Syam - Trinidad):**
-> 
-> *"Thật kinh ngạc trước cách giải thích các khái niệm C++ chuẩn xác và mạch lạc của trang web này. Tôi từng đọc cuốn 'Programming: Principles and Practice Using C++' của Bjarne Stroustrup (cha đẻ C++) nhưng cảm thấy khá rối rắm... Bộ giáo trình này làm mọi thứ sáng tỏ ngay từ lần đầu tiên. Dường như tác giả biết trước những gì tôi chưa hiểu và những gì tôi sắp phạm sai lầm. Cảm giác như chính phiên bản tương lai của tôi đã quay ngược thời gian để dạy tôi tránh khỏi các cạm bẫy vậy."*
+&gt; **Lời nhận xét từ độc giả quốc tế (Syam - Trinidad):**
+&gt; 
+&gt; *"Thật kinh ngạc trước cách giải thích các khái niệm C++ chuẩn xác và mạch lạc của trang web này. Tôi từng đọc cuốn 'Programming: Principles and Practice Using C++' của Bjarne Stroustrup (cha đẻ C++) nhưng cảm thấy khá rối rắm... Bộ giáo trình này làm mọi thứ sáng tỏ ngay từ lần đầu tiên. Dường như tác giả biết trước những gì tôi chưa hiểu và những gì tôi sắp phạm sai lầm. Cảm giác như chính phiên bản tương lai của tôi đã quay ngược thời gian để dạy tôi tránh khỏi các cạm bẫy vậy."*
 
 ---
 

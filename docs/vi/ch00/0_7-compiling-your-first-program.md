@@ -53,7 +53,7 @@ Dòng 7:  }                        --> Kết thúc hàm main
 - Khi bạn chạy chương trình, hệ điều hành sẽ tìm đến hàm `main` đầu tiên và bắt đầu thực thi từ dòng lệnh đầu tiên bên trong cặp dấu ngoặc nhọn `{}`.
 - Chữ `int` (viết tắt của integer - số nguyên) đứng trước `main` cho biết hàm này sẽ trả về một số nguyên cho hệ điều hành khi hoàn thành nhiệm vụ.
 
-### 2.3. `std::cout << "Xin chao, the gioi C++!
+### 2.3. `std::cout &lt;&lt; "Xin chao, the gioi C++!
 ";`
 - `std::cout` (phát âm là "see-out", viết tắt của *character output*) là đối tượng đại diện cho luồng xuất tiêu chuẩn (thường là màn hình Console).
 - Toán tử `<<` được gọi là **Toán tử chèn luồng (Stream Insertion Operator)**. Hãy hình dung nó như một mũi tên đang đẩy dữ liệu từ bên phải vào đối tượng `std::cout` bên trái.

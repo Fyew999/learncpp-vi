@@ -7,7 +7,7 @@
 Chương 10 trang bị cho bạn nền tảng sống còn về cách C++ quản lý và chuyển dịch kiểu dữ liệu trong bộ nhớ:
 
 1. **Chuyển đổi kiểu (Type Conversion)**: Quá trình tạo ra một giá trị tạm thời mang kiểu đích từ giá trị nguồn. Không bao giờ thay đổi biến gốc.
-2. **Thăng cấp số học (Promotion)**: Chuyển đổi an toàn tuyệt đối từ kiểu nhỏ lên kiểu lớn hơn (`char`/`short` -> `int`, `float` -> `double`).
+2. **Thăng cấp số học (Promotion)**: Chuyển đổi an toàn tuyệt đối từ kiểu nhỏ lên kiểu lớn hơn (`char`/`short` -&gt; `int`, `float` -&gt; `double`).
 3. **Chuyển đổi số học (Numeric Conversion)**: Chuyển đổi giữa các kiểu có thể gây mất mát dữ liệu hoặc cắt cụt (Narrowing).
 4. **Khởi tạo danh sách `{}`**: Vũ khí bảo vệ chống lại lỗi narrowing conversion ngay tại compile-time.
 5. **Chuyển đổi trong biểu thức (Usual Arithmetic Conversions)**: Tự động thăng cấp toán hạng nhỏ lên bậc cao hơn của toán hạng kia. Cảnh giác cao độ khi trộn lẫn `signed` và `unsigned`.

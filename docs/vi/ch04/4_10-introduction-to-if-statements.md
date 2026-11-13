@@ -191,7 +191,7 @@ int main()
 }
 ```
 
-The *less than toán tử* (<) is used to test whether one value is less than another.  Similarly, the *greater than toán tử* (>) is used to test whether one value is greater than another.  These các toán tử both return Boolean values.
+The *less than toán tử* (&lt;) is used to test whether one value is less than another.  Similarly, the *greater than toán tử* (&gt;) is used to test whether one value is greater than another.  These các toán tử both return Boolean values.
 
 Here’s output from a few runs of this program:
 

@@ -149,7 +149,7 @@ Const and constexpr hàm tham số
 
 Normal hàm calls are evaluated at runtime, with the supplied đối số being used to khởi tạo the hàm’s tham số.  Because the sự khởi tạo of hàm tham số happens at runtime, this leads to two consequences:
 
-<ol start="1">
+
 - `const` hàm tham số are treated as runtime các hằng số (even when the supplied đối số is a compile-time hằng số).
 
 - Function tham số cannot be declared as `constexpr`, since their sự khởi tạo value isn’t determined until runtime.

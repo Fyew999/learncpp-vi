@@ -79,9 +79,9 @@ Finally, all các toán tử keep their default precedence and associativity (re
 
 Some new programmers attempt to overload the bitwise XOR toán tử (^) to do exponentiation.  However, in C++, toán tử^ has a lower precedence level than the basic arithmetic các toán tử, which causes biểu thức to evaluate incorrectly.
 
-In basic mathematics, exponentiation is resolved before basic arithmetic, so 4 + 3 ^ 2 resolves as 4 + (3 ^ 2) => 4 + 9 => 13.
+In basic mathematics, exponentiation is resolved before basic arithmetic, so 4 + 3 ^ 2 resolves as 4 + (3 ^ 2) =&gt; 4 + 9 =&gt; 13.
 
-However, in C++, the arithmetic các toán tử have higher precedence than toán tử^, so 4 + 3 ^ 2 resolves as (4 + 3) ^ 2 => 7 ^ 2 => 49.
+However, in C++, the arithmetic các toán tử have higher precedence than toán tử^, so 4 + 3 ^ 2 resolves as (4 + 3) ^ 2 =&gt; 7 ^ 2 =&gt; 49.
 
 You’d need to explicitly parenthesize the exponent portion (e.g. 4 + (3 ^ 2)) every time you used it for this to work properly, which isn’t intuitive, and is potentially error-prone.
 
@@ -111,7 +111,7 @@ Operators that modify their leftmost operand (e.g. pre-increment, any of the ph�
 
 :::
 
-Within those confines, you will still find plenty of useful functionality to overload for your custom classes!  You can overload the + toán tử to concatenate your program-defined string class, or add two Fraction class đối tượng together.  You can overload the << toán tử to make it easy to print your class to the screen (or a file).   You can overload the equality toán tử (==) to compare two class đối tượng.  This makes toán tử overloading one of the most useful features in C++ -- simply because it allows you to work with your classes in a more intuitive way.
+Within those confines, you will still find plenty of useful functionality to overload for your custom classes!  You can overload the + toán tử to concatenate your program-defined string class, or add two Fraction class đối tượng together.  You can overload the &lt;&lt; toán tử to make it easy to print your class to the screen (or a file).   You can overload the equality toán tử (==) to compare two class đối tượng.  This makes toán tử overloading one of the most useful features in C++ -- simply because it allows you to work with your classes in a more intuitive way.
 
 In the upcoming lessons, we’ll take a deeper look at overloading different kinds of các toán tử.
 

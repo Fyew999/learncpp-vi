@@ -20,7 +20,7 @@ Operator overloading is a variant of hàm overloading that lets you overload cá
 
 Operators can be overloaded as a normal hàm, a friend hàm, or a member hàm. The following rules of thumb can help you determine which form is best for a given situation:
 
-- If you’re overloading phép gán (=), subscript ([]), hàm call (()), or member selection (->), do so as a member hàm.
+- If you’re overloading phép gán (=), subscript ([]), hàm call (()), or member selection (-&gt;), do so as a member hàm.
 
 - If you’re overloading a unary toán tử, do so as a member hàm.
 
@@ -50,7 +50,7 @@ Hệ thống Câu hỏi & Quiz Tự Luyện
 
 Câu hỏi #1
 
-<ol start="1">
+
 - Assuming `Point` is a class and `point` is an instance of that class, should you use a normal/friend or member hàm overload for the following các toán tử?
 
 a) `point + point`
@@ -380,7 +380,7 @@ A floating point number is a number with a decimal where the number of digits af
 
 In this quiz, we’re going to write a class to implement a fixed point number with two fractional digits (e.g. 12.34, 3.00, or 1278.99).  Assume that the range of the class should be -32768.99 to 32767.99, that the fractional component should hold any two digits, that we don’t want precision errors, and that we want to conserve space.
 
-> Step #1
+&gt; Step #1
 
 What type of member biến(s) do you think we should use to implement our fixed point number with 2 digits after the decimal?  (Make sure you read the answer before proceeding with the next questions)
 
@@ -392,9 +392,9 @@ A better solution would be to use a 16-bit signed integer to hold the non-fracti
 
 :::
 
-> Step #2
+&gt; Step #2
 
-Write a class named `FixedPoint2` that implements the recommended solution from the previous question.  If either (or both) of the non-fractional and fractional part of the number are negative, the number should be treated as negative.  Provide the overloaded các toán tử and các hàm tạo (constructors) required for the following program to run.  For now, don’t worry about the fractional portion being out of bounds (>99 or <-99).
+Write a class named `FixedPoint2` that implements the recommended solution from the previous question.  If either (or both) of the non-fractional and fractional part of the number are negative, the number should be treated as negative.  Provide the overloaded các toán tử and các hàm tạo (constructors) required for the following program to run.  For now, don’t worry about the fractional portion being out of bounds (&gt;99 or &lt;-99).
 
 ```cpp
 #include <cassert>
@@ -503,13 +503,13 @@ int main()
 ```
 :::
 
-> Step #3
+&gt; Step #3
 
 Now let’s handle the case where the fractional portion is out of bounds.  We have two reasonable strategies here:
 
-- Clamp the fraction portion (if >99, set to 99).
+- Clamp the fraction portion (if &gt;99, set to 99).
 
-- Treat overflow as relevant (if >99, reduce by 100 and add 1 to base).
+- Treat overflow as relevant (if &gt;99, reduce by 100 and add 1 to base).
 
 In this exercise, we’ll treat decimal overflow as relevant, as this will be useful in the next step.
 
@@ -645,7 +645,7 @@ int main()
 ```
 :::
 
-> Step #4
+&gt; Step #4
 
 Now add a hàm tạo (constructor) that takes a double.  The follow program should run:
 
@@ -791,7 +791,7 @@ int main()
 ```
 :::
 
-> Step #5
+&gt; Step #5
 
 Overload `toán tử==`, `toán tử>>`, `toán tử-` (unary), and `toán tử+` (binary).
 

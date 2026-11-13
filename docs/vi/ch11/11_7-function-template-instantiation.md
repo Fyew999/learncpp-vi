@@ -58,12 +58,12 @@ int main()
 }
 ```
 Tại sao lại lỗi? Vì trong định nghĩa mẫu `T max(T x, T y)`, cả hai tham số đều có cùng kiểu `T`.  
-Compiler thấy tham số thứ nhất là `int` -> suy ra `T = int`.  
-Nhưng tham số thứ hai lại là `double` -> suy ra `T = double`.  
+Compiler thấy tham số thứ nhất là `int` -&gt; suy ra `T = int`.  
+Nhưng tham số thứ hai lại là `double` -&gt; suy ra `T = double`.  
 Hai kết luận mâu thuẫn nhau, compiler sẽ từ chối tự ý ép kiểu và báo lỗi!
 
 ### Cách giải quyết:
-1. **Ép kiểu tường minh bằng góc ngoặc**: `max<double>(5, 6.7);` -> Ép `5` thành `double 5.0`.
+1. **Ép kiểu tường minh bằng góc ngoặc**: `max<double>(5, 6.7);` -&gt; Ép `5` thành `double 5.0`.
 2. **Dùng `static_cast`**: `max(static_cast<double>(5), 6.7);`
 3. **Thiết kế mẫu với nhiều kiểu tham số**: Học ngay ở bài 11.8 tiếp theo!
 

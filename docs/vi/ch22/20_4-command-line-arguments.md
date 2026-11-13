@@ -81,7 +81,7 @@ If you are running your program from an IDE, the IDE should provide a way to ent
 
 In Microsoft Visual Studio, right click on your project in the solution explorer, then choose properties.  Open the “Configuration Properties” tree element, and choose “Debugging”.  In the right pane, there is a line called “Command Arguments”.  You can enter your command line đối số there for testing, and they will be automatically passed to your program when you run it.
 
-In Code::Blocks, choose “Project -> Set program’s đối số”.
+In Code::Blocks, choose “Project -&gt; Set program’s đối số”.
 
 **Using command line đối số**
 
@@ -179,7 +179,7 @@ When run with input “567”, this program prints:
 Got integer: 567
 ```
 
-std::stringstream works much like std::cin.  In this case, we’re initializing it with the value of argv[1], so that we can use toán tử>> to extract the value to an integer biến (the same as we would with std::cin).
+std::stringstream works much like std::cin.  In this case, we’re initializing it with the value of argv[1], so that we can use toán tử&gt;&gt; to extract the value to an integer biến (the same as we would with std::cin).
 
 We’ll talk more about std::stringstream in a future chapter.
 

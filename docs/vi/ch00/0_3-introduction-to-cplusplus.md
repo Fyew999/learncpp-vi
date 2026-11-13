@@ -38,8 +38,8 @@ timeline
 
 Bjarne Stroustrup đã đặt ra nguyên tắc vàng bất di bất dịch cho C++:
 
-> 1. **Những gì bạn không dùng, bạn không phải trả giá.** (What you don't use, you don't pay for).
-> 2. **Những gì bạn dùng, bạn không thể tự tay viết bằng tay tốt hơn mã do trình biên dịch C++ sinh ra.**
+&gt; 1. **Những gì bạn không dùng, bạn không phải trả giá.** (What you don't use, you don't pay for).
+&gt; 2. **Những gì bạn dùng, bạn không thể tự tay viết bằng tay tốt hơn mã do trình biên dịch C++ sinh ra.**
 
 Điều này có nghĩa là mọi tính năng trừu tượng bậc cao trong C++ (như Class, Template, Lambda, Constexpr) đều được tối ưu hóa triệt để tại thời điểm biên dịch, sao cho mã máy sinh ra nhanh ngang bằng, thậm chí vượt trội hơn so với việc một chuyên gia tự viết bằng mã Assembly thô.
 
