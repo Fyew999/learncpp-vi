@@ -1,6 +1,7 @@
 import { defineConfig } from 'vitepress'
 
 export default defineConfig({
+  base: '/learncpp-vi/',
   lang: 'vi-VN',
   title: 'Siêu Giáo Trình C++ (LearnCpp Tiếng Việt)',
   description: 'LearnCpp.com bản Việt hóa chuẩn hóa và nâng cấp toàn diện: Nền tảng vững chắc C++17 (Production Standard) và mở rộng C++20/C++23',
