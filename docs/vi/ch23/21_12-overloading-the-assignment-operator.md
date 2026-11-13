@@ -26,8 +26,8 @@ The purpose of the copy hàm tạo (constructor) and the copy phép gán toán t
 
 The difference between the copy hàm tạo (constructor) and the copy phép gán toán tử causes a lot of confusion for new programmers, but it’s really not all that difficult.  Summarizing:
 
-<li>If a new object has to be created before the copying can occur, the copy hàm tạo (constructor) is used (note: this includes passing or returning đối tượng by value).
-<li>If a new object does not have to be created before the copying can occur, the phép gán toán tử is used.
+`<li>`If a new object has to be created before the copying can occur, the copy hàm tạo (constructor) is used (note: this includes passing or returning đối tượng by value).
+`<li>`If a new object does not have to be created before the copying can occur, the phép gán toán tử is used.
 
 Overloading the phép gán toán tử
 
@@ -347,33 +347,10 @@ Note that if your class has const members, the trình biên dịch will instead 
 
 If you want a class with const members to be assignable (for all members that aren’t const), you will need to explicitly overload `toán tử=` and manually assign each non-const member.
 
-</a>
-  	<a class="nav-link" href="/">
-  
-    <i class="fa fa-home" aria-hidden="true"></i>
-    
-      Back to table of contents
-    
-</a>
-  	<a class="nav-link" href="https://www.learncpp.com/cpp-tutorial/overloading-typecasts/">
-  
-    <i class="fa fa-chevron-circle-left" aria-hidden="true"></i>
-    
-      Previous lesson
-      
-        21.11Overloading typecasts
-      
-    
-  </a>
-
+  	
+  	
 
 ---
-
-
-
-
-
-
 
 ::: tip 💡 Tóm Tắt Quy Tắc Vàng (Core Guidelines)
 1. Luôn hiểu rõ vòng đời và quyền sở hữu (Ownership) của dữ liệu trước khi viết code.

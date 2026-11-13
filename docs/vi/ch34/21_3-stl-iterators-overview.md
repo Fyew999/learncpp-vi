@@ -16,24 +16,24 @@ An **Iterator** is an object that can traverse (iterate over) a container class 
 
 An iterator is best visualized as a con trỏ to a given element in the container, with a set of overloaded các toán tử to provide a set of well-defined các hàm:
 
-<li>**Operator*** -- Dereferencing the iterator returns the element that the iterator is currently pointing at.
-<li>**Operator++** -- Moves the iterator to the next element in the container.  Most iterators also provide `Operator--` to move to the previous element.
-<li>**Operator== and Operator!=** -- Basic comparison các toán tử to determine if two iterators point to the same element.  To compare the values that two iterators are pointing at, dereference the iterators first, and then use a comparison toán tử.
-<li>**Operator=** -- Assign the iterator to a new position (typically the start or end of the container’s elements).  To assign the value of the element the iterator is pointing at, dereference the iterator first, then use the assign toán tử.
+`<li>`**Operator*** -- Dereferencing the iterator returns the element that the iterator is currently pointing at.
+`<li>`**Operator++** -- Moves the iterator to the next element in the container.  Most iterators also provide `Operator--` to move to the previous element.
+`<li>`**Operator== and Operator!=** -- Basic comparison các toán tử to determine if two iterators point to the same element.  To compare the values that two iterators are pointing at, dereference the iterators first, and then use a comparison toán tử.
+`<li>`**Operator=** -- Assign the iterator to a new position (typically the start or end of the container’s elements).  To assign the value of the element the iterator is pointing at, dereference the iterator first, then use the assign toán tử.
 
 Each container includes four basic member các hàm for use with Operator=:
 
-<li>**begin()** returns an iterator representing the beginning of the elements in the container.
-<li>**end()** returns an iterator representing the element just past the end of the elements.
-<li>**cbegin()** returns a const (read-only) iterator representing the beginning of the elements in the container.
-<li>**cend()** returns a const (read-only) iterator representing the element just past the end of the elements.
+`<li>`**begin()** returns an iterator representing the beginning of the elements in the container.
+`<li>`**end()** returns an iterator representing the element just past the end of the elements.
+`<li>`**cbegin()** returns a const (read-only) iterator representing the beginning of the elements in the container.
+`<li>`**cend()** returns a const (read-only) iterator representing the element just past the end of the elements.
 
 It might seem weird that end() doesn’t point to the last element in the list, but this is done primarily to make looping easy: iterating over the elements can continue until the iterator reaches end(), and then you know you’re done.
 
 Finally, all containers provide (at least) two types of iterators:
 
-<li>**container::iterator** provides a read/write iterator
-<li>**container::const_iterator** provides a read-only iterator
+`<li>`**container::iterator** provides a read/write iterator
+`<li>`**container::const_iterator** provides a read-only iterator
 
 Lets take a look at some examples of using iterators.
 
@@ -184,33 +184,10 @@ Iterators provide an easy way to step through the elements of a container class 
 
 One point worth noting: Iterators must be implemented on a per-class basis, because the iterator does need to know how a class is implemented.  Thus iterators are always tied to specific container classes.
 
-</a>
-  	<a class="nav-link" href="/">
-  
-    <i class="fa fa-home" aria-hidden="true"></i>
-    
-      Back to table of contents
-    
-</a>
-  	<a class="nav-link" href="https://www.learncpp.com/cpp-tutorial/stl-containers-overview/">
-  
-    <i class="fa fa-chevron-circle-left" aria-hidden="true"></i>
-    
-      Previous lesson
-      
-        21.2STL containers overview
-      
-    
-  </a>
-
+  	
+  	
 
 ---
-
-
-
-
-
-
 
 ::: tip 💡 Tóm Tắt Quy Tắc Vàng (Core Guidelines)
 1. Luôn hiểu rõ vòng đời và quyền sở hữu (Ownership) của dữ liệu trước khi viết code.

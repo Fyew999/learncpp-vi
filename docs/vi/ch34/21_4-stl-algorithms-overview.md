@@ -142,7 +142,7 @@ This produces the result:
 7 6 4 2 0 -3 -5
 ```
 
-Alternatively, we could pass a custom comparison hàm as the third đối số to `std::sort`. There are several comparison các hàm in the <functional> header which we can use so we don’t have to write our own. We can pass `std::greater` to `std::sort` and remove the call to `std::reverse`. The vector will be sorted from high to low right away.
+Alternatively, we could pass a custom comparison hàm as the third đối số to `std::sort`. There are several comparison các hàm in the `<functional>` header which we can use so we don’t have to write our own. We can pass `std::greater` to `std::sort` and remove the call to `std::reverse`. The vector will be sorted from high to low right away.
 
 Note that `std::sort()` doesn’t work on list container classes -- the list class provides its own `sort()` member hàm, which is much more efficient than the generic version would be.
 
@@ -150,33 +150,10 @@ Note that `std::sort()` doesn’t work on list container classes -- the list cla
 
 Although this is just a taste of the algorithms that STL provides, it should suffice to show how easy these are to use in conjunction with iterators and the basic container classes.  There are enough other algorithms to fill up a whole chapter!
 
-</a>
-  	<a class="nav-link" href="/">
-  
-    <i class="fa fa-home" aria-hidden="true"></i>
-    
-      Back to table of contents
-    
-</a>
-  	<a class="nav-link" href="https://www.learncpp.com/cpp-tutorial/stl-iterators-overview/">
-  
-    <i class="fa fa-chevron-circle-left" aria-hidden="true"></i>
-    
-      Previous lesson
-      
-        21.3STL iterators overview
-      
-    
-  </a>
-
+  	
+  	
 
 ---
-
-
-
-
-
-
 
 ::: tip 💡 Tóm Tắt Quy Tắc Vàng (Core Guidelines)
 1. Luôn hiểu rõ vòng đời và quyền sở hữu (Ownership) của dữ liệu trước khi viết code.

@@ -438,28 +438,10 @@ Because of this, in C++11, the concept of “move” was formally defined, and �
 
 In C++11, std::auto_ptr has been replaced by a bunch of other types of “move-aware” smart các con trỏ: std::unique_ptr, std::weak_ptr, and std::shared_ptr.  We’ll also explore the two most popular of these: unique_ptr (which is a direct replacement for auto_ptr) and shared_ptr.
 
-</a>
-  	<a class="nav-link" href="/">
-  
-    <i class="fa fa-home" aria-hidden="true"></i>
-    
-      Back to table of contents
-    
-</a>
-  	<a class="nav-link" href="https://www.learncpp.com/cpp-tutorial/chapter-21-project/">
-  
-    <i class="fa fa-chevron-circle-left" aria-hidden="true"></i>
-    
-      Previous lesson
-      
-        21.yChapter 21 project
-      
-    
-  </a>
-
+  	
+  	
 
 ---
-
 
 ```mermaid
 flowchart LR
@@ -472,11 +454,9 @@ flowchart LR
     RefR -.->|Đồng nhất với| VarA
 ```
 
-
 ::: danger Cạm Bẫy Thực Chiến: Con Trỏ Lơ Lửng (Dangling Pointer) & UB
 Tuyệt đối không giải phóng vùng nhớ mà con trỏ đang trỏ tới rồi tiếp tục truy cập nó, hoặc trả về tham chiếu/con trỏ tới một biến cục bộ trên Stack. Khi hàm kết thúc, biến cục bộ bị hủy và con trỏ sẽ trỏ vào vùng nhớ rác, dẫn đến **Hành vi không xác định (Undefined Behavior)** cực kỳ nguy hiểm!
 :::
-
 
 ::: tip Nâng Cấp C++ Hiện Đại: Thay Thế Con Trỏ Thô Bằng Smart Pointers
 Trong C++ hiện đại (C++11 đến C++23), hãy hạn chế tối đa việc sử dụng con trỏ thô (`T*`) cùng các toán tử `new`/`delete`. Thay vào đó, hãy luôn ưu tiên:
@@ -484,7 +464,6 @@ Trong C++ hiện đại (C++11 đến C++23), hãy hạn chế tối đa việc 
 - `std::shared_ptr<T>`: Sở hữu chia sẻ tài nguyên có cơ chế đếm tham chiếu (Reference counting).
 - `std::span<T>` (C++20) hoặc `std::string_view` (C++17): Xem qua vùng nhớ mà không sở hữu, an toàn và tốc độ cực cao.
 :::
-
 
 ::: tip 💡 Tóm Tắt Quy Tắc Vàng (Core Guidelines)
 1. Luôn hiểu rõ vòng đời và quyền sở hữu (Ownership) của dữ liệu trước khi viết code.

@@ -289,7 +289,7 @@ For a more complete list of lvalue and rvalue biểu thức, you can consult tec
 A full list of lvalue and rvalue biểu thức can be found [here](https://en.cppreference.com/w/cpp/language/value_category).  In C++11, rvalues are broken into two subtypes: prvalues and xvalues, so the rvalues we’re talking about here are the sum of both of those categories.
 :::
 
-<p>Finally, we can write a program and have the trình biên dịch tell us what kind of biểu thức something is.  The following code demonstrates a method that determines whether an biểu thức is an lvalue or an rvalue:
+Finally, we can write a program and have the trình biên dịch tell us what kind of biểu thức something is.  The following code demonstrates a method that determines whether an biểu thức is an lvalue or an rvalue:
 
 ```cpp
 #include <iostream>
@@ -353,33 +353,10 @@ We cover array decay in lesson [17.8 -- C-style array decay](https://www.learncp
 
 Now that we’ve covered lvalues, we can get to our first compound type: the `lvalue tham chiếu`.
 
-</a>
-  	<a class="nav-link" href="/">
-  
-    <i class="fa fa-home" aria-hidden="true"></i>
-    
-      Back to table of contents
-    
-</a>
-  	<a class="nav-link" href="https://www.learncpp.com/cpp-tutorial/introduction-to-compound-data-types/">
-  
-    <i class="fa fa-chevron-circle-left" aria-hidden="true"></i>
-    
-      Previous lesson
-      
-        12.1Introduction to compound các kiểu dữ liệu
-      
-    
-  </a>
-
+  	
+  	
 
 ---
-
-
-
-
-
-
 
 ::: tip 💡 Tóm Tắt Quy Tắc Vàng (Core Guidelines)
 1. Luôn hiểu rõ vòng đời và quyền sở hữu (Ownership) của dữ liệu trước khi viết code.

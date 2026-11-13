@@ -128,28 +128,28 @@ a) `char`
 `char` is a fundamental type, so it should be passed by value.
 :::
 
-<p>b) `std::string`
+b) `std::string`
 
 ::: details Xem lời giải (Solution)
 
 `std::string` has to create a copy of the string whenever it is copied.  Pass it by const tham chiếu.
 :::
 
-<p>c) `unsigned long`
+c) `unsigned long`
 
 ::: details Xem lời giải (Solution)
 
 `unsigned long` is a fundamental type, so it should be passed by value.
 :::
 
-<p>d) `bool`
+d) `bool`
 
 ::: details Xem lời giải (Solution)
 
 `bool` is a fundamental type, so it should be passed by value.
 :::
 
-<p>e) An enumerated type
+e) An enumerated type
 
 ::: details Xem lời giải (Solution)
 
@@ -173,7 +173,7 @@ struct Position
 `Position` is a struct type and should be passed by const tham chiếu.
 :::
 
-<p>g)
+g)
 
 ```cpp
 struct Player
@@ -188,21 +188,21 @@ struct Player
 Although `Player` only contains a single `int` in its current state, which would make it fast to truyền theo giá trị, more members will be added in the future. We don’t want to update every use of `Player` when that happens, so we pass it by const tham chiếu.
 :::
 
-<p>h) `int` (when null is a valid đối số)
+h) `int` (when null is a valid đối số)
 
 ::: details Xem lời giải (Solution)
 
 Normally we’d pass an `int` by value, but if we want to be able to pass a null value also, then pass by address is a good choice, as we can pass in either the address of the `int`, or `nullptr`.
 :::
 
-<p>i) `std::string_view`
+i) `std::string_view`
 
 ::: details Xem lời giải (Solution)
 
 `std::string_view` does not create a copy of the string being viewed, and it is cheap to copy.  Pass by value.
 :::
 
-<p class="cpp-quiz-question cpp-topline" style="clear: both">Câu hỏi #3
+Câu hỏi #3
 
 Create a class template named `Triad` that has 3 members of the same template type.  Also create a hàm template named `print` that can print a Triad.  The following program should compile:
 
@@ -263,33 +263,10 @@ int main()
 ```
 :::
 
-</a>
-  	<a class="nav-link" href="/">
-  
-    <i class="fa fa-home" aria-hidden="true"></i>
-    
-      Back to table of contents
-    
-</a>
-  	<a class="nav-link" href="https://www.learncpp.com/cpp-tutorial/alias-templates/">
-  
-    <i class="fa fa-chevron-circle-left" aria-hidden="true"></i>
-    
-      Previous lesson
-      
-        13.15Alias templates
-      
-    
-  </a>
-
+  	
+  	
 
 ---
-
-
-
-
-
-
 
 ::: tip 💡 Tóm Tắt Quy Tắc Vàng (Core Guidelines)
 1. Luôn hiểu rõ vòng đời và quyền sở hữu (Ownership) của dữ liệu trước khi viết code.

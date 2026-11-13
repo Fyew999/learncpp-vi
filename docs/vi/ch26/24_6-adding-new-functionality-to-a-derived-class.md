@@ -63,8 +63,8 @@ int main()
 
 ### Câu hỏi:
 Lớp cha có thể gọi được các hàm mới được định nghĩa trong lớp con không?
-<details>
-<summary><b>Xem lời giải</b></summary>
+`<details>`
+`<summary>``<b>`Xem lời giải</b></summary>
 
 **Đáp án**: **HOÀN TOÀN KHÔNG!** Lớp cơ sở hoàn toàn không biết gì về sự tồn tại của các lớp con kế thừa từ nó. Quan hệ kế thừa là dòng chảy một chiều: Lớp con biết mọi thứ về lớp cha, nhưng lớp cha không biết lớp con có những tính năng gì.
 </details>

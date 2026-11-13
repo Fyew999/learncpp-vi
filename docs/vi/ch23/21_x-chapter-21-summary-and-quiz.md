@@ -211,7 +211,7 @@ c) Why use `std::int32_t` instead of `int`?
 `int` may be 16-bits on some platforms, which would mean our `Average` object could only have a maximum numerator value of 32,767.  Using `std::int32_t` guarantees a 32-bit integral value, which gives us much more range to work with.
 :::
 
-<p class="cpp-quiz-question cpp-topline" style="clear: both">Câu hỏi #3
+Câu hỏi #3
 
 Write your own integer array class named `IntArray` from scratch (do not use std::array or std::vector).  Users should pass in the size of the array when it is created, and the array should be dynamically allocated.  Use assert câu lệnh to guard against bad data.  Create any các hàm tạo (constructors) or overloaded các toán tử needed to make the following program operate correctly:
 
@@ -949,33 +949,10 @@ int main()
 ```
 :::
 
-</a>
-  	<a class="nav-link" href="/">
-  
-    <i class="fa fa-home" aria-hidden="true"></i>
-    
-      Back to table of contents
-    
-</a>
-  	<a class="nav-link" href="https://www.learncpp.com/cpp-tutorial/overloading-các toán tử-and-hàm-templates/">
-  
-    <i class="fa fa-chevron-circle-left" aria-hidden="true"></i>
-    
-      Previous lesson
-      
-        21.14Overloading các toán tử and hàm templates
-      
-    
-  </a>
-
+  	
+  	
 
 ---
-
-
-
-
-
-
 
 ::: tip 💡 Tóm Tắt Quy Tắc Vàng (Core Guidelines)
 1. Luôn hiểu rõ vòng đời và quyền sở hữu (Ownership) của dữ liệu trước khi viết code.

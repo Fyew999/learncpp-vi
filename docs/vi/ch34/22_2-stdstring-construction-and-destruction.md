@@ -20,11 +20,9 @@ The string classes have a number of các hàm tạo (constructors) that can be u
 
 Note: string::size_type resolves to size_t, which is the same unsigned integral type that is returned by the sizeof toán tử.  The actual size of size_t depending on the environment.  For the purposes of this tutorial, envision it as an unsigned int.
 
-</p>
+**string::string()**
 
-**string::string()**</p>
-
-<li>This is the default hàm tạo (constructor).  It creates an empty string.
+`<li>`This is the default hàm tạo (constructor).  It creates an empty string.
 
 Sample code:
 
@@ -39,9 +37,9 @@ Output:
 
 ```
 
-**string::string(const string& strString)**</p>
+**string::string(const string& strString)**
 
-<li>This is the copy hàm tạo (constructor).  This hàm tạo (constructor) creates a new string as a copy of strString.
+`<li>`This is the copy hàm tạo (constructor).  This hàm tạo (constructor) creates a new string as a copy of strString.
 
 Sample code:
 
@@ -59,11 +57,11 @@ my string
 
 **string::string(const string& strString, size_type unIndex)**
 
-**string::string(const string& strString, size_type unIndex, size_type unLength)**</p>
+**string::string(const string& strString, size_type unIndex, size_type unLength)**
 
-<li>This hàm tạo (constructor) creates a new string that contains at most unLength characters from strString, starting with index unIndex.  If a NULL is encountered, the string copy will end, even if unLength has not been reached.
-<li> If no unLength is supplied, all characters starting from unIndex will be used.
-<li>If unIndex is larger than the size of the string, the out_of_range exception will be thrown.
+`<li>`This hàm tạo (constructor) creates a new string that contains at most unLength characters from strString, starting with index unIndex.  If a NULL is encountered, the string copy will end, even if unLength has not been reached.
+`<li>` If no unLength is supplied, all characters starting from unIndex will be used.
+`<li>`If unIndex is larger than the size of the string, the out_of_range exception will be thrown.
 
 Sample code:
 
@@ -82,11 +80,11 @@ string
 stri
 ```
 
-**string::string(const char* szCString)**</p>
+**string::string(const char* szCString)**
 
-<li>This hàm tạo (constructor) creates a new string from the C-style string szCString, up to but not including the NULL terminator.
-<li>If the resulting size exceeds the maximum string length, the length_error exception will be thrown.
-<li>**Cảnh báo nguy hiểm:** szCString must not be NULL.
+`<li>`This hàm tạo (constructor) creates a new string from the C-style string szCString, up to but not including the NULL terminator.
+`<li>`If the resulting size exceeds the maximum string length, the length_error exception will be thrown.
+`<li>`**Cảnh báo nguy hiểm:** szCString must not be NULL.
 
 Sample code:
 
@@ -102,11 +100,11 @@ Output:
 my string
 ```
 
-**string::string(const char* szCString, size_type unLength)**</p>
+**string::string(const char* szCString, size_type unLength)**
 
-<li>This hàm tạo (constructor) creates a new string from the first unLength chars from the C-style string szCString.
-<li>If the resulting size exceeds the maximum string length, the length_error exception will be thrown.
-<li>**Cảnh báo nguy hiểm:** For this hàm only, NULLs are not treated as end-of-string characters in szCString!  This means it is possible to read off the end of your string if unLength is too big.  Be careful not to overflow your string buffer!
+`<li>`This hàm tạo (constructor) creates a new string from the first unLength chars from the C-style string szCString.
+`<li>`If the resulting size exceeds the maximum string length, the length_error exception will be thrown.
+`<li>`**Cảnh báo nguy hiểm:** For this hàm only, NULLs are not treated as end-of-string characters in szCString!  This means it is possible to read off the end of your string if unLength is too big.  Be careful not to overflow your string buffer!
 
 Sample code:
 
@@ -122,10 +120,10 @@ Output:
 my s
 ```
 
-**string::string(size_type nNum, char chChar)**</p>
+**string::string(size_type nNum, char chChar)**
 
-<li>This hàm tạo (constructor) creates a new string được khởi tạo by nNum occurances of the character chChar.
-<li>If the resulting size exceeds the maximum string length, the length_error exception will be thrown.
+`<li>`This hàm tạo (constructor) creates a new string được khởi tạo by nNum occurances of the character chChar.
+`<li>`If the resulting size exceeds the maximum string length, the length_error exception will be thrown.
 
 Sample code:
 
@@ -140,25 +138,22 @@ Output:
 QQQQ
 ```
 
-**template<class InputIterator> string::string(InputIterator itBeg, InputIterator itEnd)**</p>
+**template<class InputIterator> string::string(InputIterator itBeg, InputIterator itEnd)**
 
-<li>This hàm tạo (constructor) creates a new string được khởi tạo by the characters of range [itBeg, itEnd).
-<li>If the resulting size exceeds the maximum string length, the length_error exception will be thrown.
+`<li>`This hàm tạo (constructor) creates a new string được khởi tạo by the characters of range [itBeg, itEnd).
+`<li>`If the resulting size exceeds the maximum string length, the length_error exception will be thrown.
 
 No sample code for this one.  It’s obscure enough you’ll probably never use it.
 
-<p>
-
-**string::~string()**</p>
+**string::~string()**
 
 **String destruction**
 
-<li>This is the hàm hủy (destructor).  It destroys the string and frees the memory.
+`<li>`This is the hàm hủy (destructor).  It destroys the string and frees the memory.
 
 No sample code here either since the hàm hủy (destructor) isn’t called explicitly.
 
-<p>
-<p>**Constructing strings from numbers**
+**Constructing strings from numbers**
 
 One notable omission in the std::string class is the lack of ability to create strings from numbers.  For example:
 
@@ -227,7 +222,7 @@ Note that this solution omits any error checking.  It is possible that inserting
 The standard library also contains a hàm named `std::to_string()` that can be used to convert numbers into a std::string.  While this is a simpler solution for basic cases, the output of std::to_string may differ from the output of std::cout or our ToString() hàm above.  Some of these differences are currently documented [here](https://en.cppreference.com/w/cpp/string/basic_string/to_string).
 :::
 
-<p>**Converting strings to numbers**
+**Converting strings to numbers**
 
 Similar to the solution above:
 
@@ -265,28 +260,10 @@ And the output:
 
 Note that the second conversion failed and returned false.
 
-</a>
-  	<a class="nav-link" href="/">
-  
-    <i class="fa fa-home" aria-hidden="true"></i>
-    
-      Back to table of contents
-    
-</a>
-  	<a class="nav-link" href="https://www.learncpp.com/cpp-tutorial/stdstring-and-stdwstring/">
-  
-    <i class="fa fa-chevron-circle-left" aria-hidden="true"></i>
-    
-      Previous lesson
-      
-        22.1std::string and std::wstring
-      
-    
-  </a>
-
+  	
+  	
 
 ---
-
 
 ```mermaid
 classDiagram
@@ -298,13 +275,9 @@ classDiagram
     note for DoiTuong "Đóng gói (Encapsulation):\nDữ liệu được bảo vệ trong private\nThao tác qua phương thức public"
 ```
 
-
 ::: warning Cạm Bẫy: Khởi Tạo Không Đồng Nhất (Initialization Pitfalls)
 Hãy luôn khởi tạo biến thành viên ngay tại nơi khai báo hoặc sử dụng **Danh sách khởi tạo thành viên (Member Initializer List)** trong hàm tạo để tránh việc đối tượng bị gán giá trị 2 lần gây lãng phí chu kỳ CPU.
 :::
-
-
-
 
 ::: tip 💡 Tóm Tắt Quy Tắc Vàng (Core Guidelines)
 1. Luôn hiểu rõ vòng đời và quyền sở hữu (Ownership) của dữ liệu trước khi viết code.

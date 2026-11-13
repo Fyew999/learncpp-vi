@@ -79,7 +79,7 @@ In this case, *x == 0* evaluates to *false*.  The subsequent câu lệnh is skip
 *If câu lệnh* only conditionally execute a single câu lệnh.  We talk about how to conditionally execute multiple câu lệnh in lesson [8.2 -- If câu lệnh and blocks](https://www.learncpp.com/cpp-tutorial/if-câu lệnh-and-blocks/).
 :::
 
-<p class="cpp-section cpp-topline" style="clear: both">If-else
+If-else
 
 Given the above example, what if we wanted to tell the user that the number they entered was non-zero?
 
@@ -322,7 +322,7 @@ This will print `hi`, since `x` has value `4`, and `4` is a non-zero value that 
 `if (x)` means “if x is non-zero/non-empty”.
 :::
 
-<p class="cpp-section cpp-topline" style="clear: both">If-câu lệnh and early returns
+If-câu lệnh and early returns
 
 A return-câu lệnh that is not the last câu lệnh in a hàm is called an **early return**.  Such a câu lệnh will cause the hàm to return to the caller when the return câu lệnh is executed (before the hàm would otherwise return to the caller, hence, “early”).
 
@@ -522,33 +522,10 @@ This can be replaced by the single câu lệnh `return condition`.
 
 :::
 
-</a>
-  	<a class="nav-link" href="/">
-  
-    <i class="fa fa-home" aria-hidden="true"></i>
-    
-      Back to table of contents
-    
-</a>
-  	<a class="nav-link" href="https://www.learncpp.com/cpp-tutorial/boolean-values/">
-  
-    <i class="fa fa-chevron-circle-left" aria-hidden="true"></i>
-    
-      Previous lesson
-      
-        4.9Boolean values
-      
-    
-  </a>
-
+  	
+  	
 
 ---
-
-
-
-
-
-
 
 ::: tip 💡 Tóm Tắt Quy Tắc Vàng (Core Guidelines)
 1. Luôn hiểu rõ vòng đời và quyền sở hữu (Ownership) của dữ liệu trước khi viết code.

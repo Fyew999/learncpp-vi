@@ -180,7 +180,7 @@ With a moved-from object, it is safe to call any hàm that does not depend on th
 `std::move()` gives a hint to the trình biên dịch that the programmer doesn’t need the value of an object any more.  Only use `std::move()` on persistent đối tượng whose value you want to move, and do not make any assumptions about the value of the object beyond that point.  It is okay to give a moved-from object a new value (e.g. using `toán tử=`) after the current value has been moved.
 :::
 
-<p class="cpp-section cpp-topline" style="clear: both">Where else is std::move useful?
+Where else is std::move useful?
 
 std::move can also be useful when sorting an array of elements.  Many sorting algorithms (such as selection sort and bubble sort) work by swapping pairs of elements.  In previous lessons, we’ve had to resort to copy-semantics to do the swapping.  Now we can use move semantics, which is more efficient.
 
@@ -191,37 +191,14 @@ It can also be useful if we want to move the contents managed by one smart con t
 There is a useful variant of `std::move()` called `std::move_if_noexcept()` that returns a movable r-value if the object has a `noexcept` move hàm tạo (constructor), otherwise it returns a copyable l-value.  We cover this in lesson [27.10 -- std::move_if_noexcept](https://www.learncpp.com/cpp-tutorial/stdmove_if_noexcept/).
 :::
 
-<p class="cpp-section cpp-topline" style="clear: both">Conclusion
+Conclusion
 
 std::move can be used whenever we want to treat an l-value like an r-value for the purpose of invoking move semantics instead of copy semantics.
 
-</a>
-  	<a class="nav-link" href="/">
-  
-    <i class="fa fa-home" aria-hidden="true"></i>
-    
-      Back to table of contents
-    
-</a>
-  	<a class="nav-link" href="https://www.learncpp.com/cpp-tutorial/move-các hàm tạo (constructors)-and-move-phép gán/">
-  
-    <i class="fa fa-chevron-circle-left" aria-hidden="true"></i>
-    
-      Previous lesson
-      
-        22.3Move các hàm tạo (constructors) and move phép gán
-      
-    
-  </a>
-
+  	
+  	
 
 ---
-
-
-
-
-
-
 
 ::: tip 💡 Tóm Tắt Quy Tắc Vàng (Core Guidelines)
 1. Luôn hiểu rõ vòng đời và quyền sở hữu (Ownership) của dữ liệu trước khi viết code.

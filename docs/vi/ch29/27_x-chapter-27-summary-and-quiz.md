@@ -28,8 +28,8 @@ Xây dựng lớp `BankAccount` với:
 - Phương thức `withdraw(double amount)`: Nếu số tiền rút lớn hơn số dư, ném ngoại lệ `InsufficientFundsException`.
 - Hàm thực hiện giao dịch chuyển tiền giữa 2 tài khoản đảm bảo an toàn ngoại lệ (Nếu rút tiền từ tài khoản nguồn thất bại, tài khoản đích không bị ảnh hưởng).
 
-<details>
-<summary><b>Xem lời giải mã nguồn C++ hoàn chỉnh</b></summary>
+`<details>`
+`<summary>``<b>`Xem lời giải mã nguồn C++ hoàn chỉnh</b></summary>
 
 ```cpp
 #include <iostream>

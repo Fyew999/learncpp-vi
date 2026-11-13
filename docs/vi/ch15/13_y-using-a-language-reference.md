@@ -251,7 +251,8 @@ When you find `erase` on cppreference, you can ignore the overloads that use ite
 :::
 
 ::: info Tip
-<p>Indexes in C++ start at 0. The character at index 0 in the string “House” is ‘H’, at 1 it’s ‘o’, and so on.
+
+Indexes in C++ start at 0. The character at index 0 in the string “House” is ‘H’, at 1 it’s ‘o’, and so on.
 
 :::
 
@@ -327,28 +328,10 @@ int main()
 ```
 :::
 
-</a>
-  	<a class="nav-link" href="/">
-  
-    <i class="fa fa-home" aria-hidden="true"></i>
-    
-      Back to table of contents
-    
-</a>
-  	<a class="nav-link" href="https://www.learncpp.com/cpp-tutorial/chapter-13-summary-and-quiz/">
-  
-    <i class="fa fa-chevron-circle-left" aria-hidden="true"></i>
-    
-      Previous lesson
-      
-        13.xChapter 13 summary and quiz
-      
-    
-  </a>
-
+  	
+  	
 
 ---
-
 
 ```mermaid
 flowchart LR
@@ -361,11 +344,9 @@ flowchart LR
     RefR -.->|Đồng nhất với| VarA
 ```
 
-
 ::: danger Cạm Bẫy Thực Chiến: Con Trỏ Lơ Lửng (Dangling Pointer) & UB
 Tuyệt đối không giải phóng vùng nhớ mà con trỏ đang trỏ tới rồi tiếp tục truy cập nó, hoặc trả về tham chiếu/con trỏ tới một biến cục bộ trên Stack. Khi hàm kết thúc, biến cục bộ bị hủy và con trỏ sẽ trỏ vào vùng nhớ rác, dẫn đến **Hành vi không xác định (Undefined Behavior)** cực kỳ nguy hiểm!
 :::
-
 
 ::: tip Nâng Cấp C++ Hiện Đại: Thay Thế Con Trỏ Thô Bằng Smart Pointers
 Trong C++ hiện đại (C++11 đến C++23), hãy hạn chế tối đa việc sử dụng con trỏ thô (`T*`) cùng các toán tử `new`/`delete`. Thay vào đó, hãy luôn ưu tiên:
@@ -373,7 +354,6 @@ Trong C++ hiện đại (C++11 đến C++23), hãy hạn chế tối đa việc 
 - `std::shared_ptr<T>`: Sở hữu chia sẻ tài nguyên có cơ chế đếm tham chiếu (Reference counting).
 - `std::span<T>` (C++20) hoặc `std::string_view` (C++17): Xem qua vùng nhớ mà không sở hữu, an toàn và tốc độ cực cao.
 :::
-
 
 ::: tip 💡 Tóm Tắt Quy Tắc Vàng (Core Guidelines)
 1. Luôn hiểu rõ vòng đời và quyền sở hữu (Ownership) của dữ liệu trước khi viết code.

@@ -131,8 +131,6 @@ In general, using manipulators is much easier than setting and unsetting flags. 
 
 Here is a list of some of the more useful flags, manipulators, and member các hàm.  Flags live in the std::ios class, manipulators live in the std namespace, and the member các hàm live in the std::ostream class.
 
-</p>
-
 Group
 Flag
 Meaning
@@ -149,7 +147,7 @@ Booleans print “true” or “false”
 std::noboolalpha
 Booleans print 0 or 1 (default)
 
-<p>Example:
+Example:
 
 ```cpp
 std::cout << true << ' ' << false << '\n';
@@ -171,8 +169,6 @@ true false
 true false
 ```
 
-</p>
-
 Group
 Flag
 Meaning
@@ -189,7 +185,7 @@ Prefixes positive numbers with a +
 std::noshowpos
 Doesn’t prefix positive numbers with a +
 
-<p>Example:
+Example:
 
 ```cpp
 std::cout << 5 << '\n';
@@ -211,8 +207,6 @@ Result:
 +5
 ```
 
-</p>
-
 Group
 Flag
 Meaning
@@ -229,7 +223,7 @@ Uses upper case letters
 std::nouppercase
 Uses lower case letters
 
-<p>Example:
+Example:
 
 ```cpp
 std::cout << 12345678.9 << '\n';
@@ -250,8 +244,6 @@ Result:
 1.23457e+007
 1.23457E+007
 ```
-
-</p>
 
 Group
 Flag
@@ -285,7 +277,7 @@ Prints values in hexadecimal
 std::oct
 Prints values in octal
 
-<p>Example:
+Example:
 
 ```cpp
 std::cout << 27 << '\n';
@@ -321,8 +313,6 @@ By now, you should be able to see the relationship between setting formatting vi
 **Precision, notation, and decimal points**
 
 Using manipulators (or flags), it is possible to change the precision and format with which floating point numbers are displayed.  There are several formatting options that combine in somewhat complex ways, so we will take a closer look at this.
-
-</p>
 
 Group
 Flag
@@ -371,7 +361,7 @@ Returns the current precision of floating-point numbers
 std::ios_base::precision(int)
 Sets the precision of floating-point numbers and returns old precision
 
-<p>If fixed or scientific notation is used, precision determines how many decimal places in the fraction is displayed.   Note that if the precision is less than the number of significant digits, the number will be rounded.
+If fixed or scientific notation is used, precision determines how many decimal places in the fraction is displayed.   Note that if the precision is less than the number of significant digits, the number will be rounded.
 
 ```cpp
 std::cout << std::fixed << '\n';
@@ -448,8 +438,6 @@ Produces the following result:
 
 Here’s a summary table with some more examples:
 
-</p>
-
 Option
 Precision
 12345.0
@@ -523,11 +511,9 @@ Scientific
 1.234500e+004
 1.234500e-001
 
-<p>**Width, fill characters, and justification**
+**Width, fill characters, and justification**
 
 Typically when you print numbers, the numbers are printed without any regard to the space around them.  However, it is possible to left or right justify the printing of numbers.  In order to do this, we have to first define a field width, which defines the number of output spaces a value will have.  If the actual number printed is smaller than the field width, it will be left or right justified (as specified).  If the actual number is larger than the field width, it will not be truncated -- it will overflow the field.
-
-</p>
 
 Group
 Flag
@@ -578,7 +564,7 @@ Returns the current field width
 std::ios_base::width(int)
 Sets the current field width and returns old field width
 
-<p>In order to use any of these formatters, we first have to set a field width.  This can be done via the width(int) member hàm, or the setw() manipulator.  Note that right justification is the default.
+In order to use any of these formatters, we first have to set a field width.  This can be done via the width(int) member hàm, or the setw() manipulator.  Note that right justification is the default.
 
 ```cpp
 std::cout << -12345 << '\n'; // print default value with no field width
@@ -625,33 +611,10 @@ Note that all the blank spaces in the field have been filled up with the fill ch
 
 The ostream class and iostream library contain other output các hàm, flags, and manipulators that may be useful, depending on what you need to do.  As with the istream class, those topics are really more suited for a tutorial or book focusing on the standard library.
 
-</a>
-  	<a class="nav-link" href="/">
-  
-    <i class="fa fa-home" aria-hidden="true"></i>
-    
-      Back to table of contents
-    
-</a>
-  	<a class="nav-link" href="https://www.learncpp.com/cpp-tutorial/input-with-istream/">
-  
-    <i class="fa fa-chevron-circle-left" aria-hidden="true"></i>
-    
-      Previous lesson
-      
-        28.2Input with istream
-      
-    
-  </a>
-
+  	
+  	
 
 ---
-
-
-
-
-
-
 
 ::: tip 💡 Tóm Tắt Quy Tắc Vàng (Core Guidelines)
 1. Luôn hiểu rõ vòng đời và quyền sở hữu (Ownership) của dữ liệu trước khi viết code.

@@ -57,33 +57,10 @@ Once the library is installed and the IDE knows where to look for it, the follow
 
 Steps 3-5 involve configuring your IDE -- fortunately, almost all IDEs work the same way when it comes to doing these things.  Unfortunately, because each IDE has a different interface, the most difficult part of this process is simply locating *where* the proper place to perform each of these steps is.  Consequently, in the next few lessons in this section, we’ll cover how to do all of these steps for both Visual Studio and Code::Blocks.  If you are using another IDE, read both -- by the time you’re done, you should have enough information to do the same with your own IDE with a little searching.
 
-</a>
-  	<a class="nav-link" href="/">
-  
-    <i class="fa fa-home" aria-hidden="true"></i>
-    
-      Back to table of contents
-    
-</a>
-  	<a class="nav-link" href="https://www.learncpp.com/cpp-tutorial/random-file-io/">
-  
-    <i class="fa fa-chevron-circle-left" aria-hidden="true"></i>
-    
-      Previous lesson
-      
-        28.7Random file I/O
-      
-    
-  </a>
-
+  	
+  	
 
 ---
-
-
-
-
-
-
 
 ::: tip 💡 Tóm Tắt Quy Tắc Vàng (Core Guidelines)
 1. Luôn hiểu rõ vòng đời và quyền sở hữu (Ownership) của dữ liệu trước khi viết code.

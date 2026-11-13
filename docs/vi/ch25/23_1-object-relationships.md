@@ -62,16 +62,16 @@ Kế thừa tạo ra mối liên kết rất cứng nhắc giữa lớp cha và 
 
 ### Câu hỏi 1:
 Mối quan hệ giữa "Một cuốn sách" và "Các trang sách" thuộc loại nào? Nếu cuốn sách bị đốt cháy, các trang sách có còn tồn tại không?
-<details>
-<summary><b>Xem lời giải</b></summary>
+`<details>`
+`<summary>``<b>`Xem lời giải</b></summary>
 
 **Đáp án**: Đây là quan hệ **Composition (part-of)**. Các trang sách là một phần không thể tách rời của cuốn sách. Khi cuốn sách bị tiêu hủy, các trang sách cấu thành nó cũng bị tiêu hủy theo.
 </details>
 
 ### Câu hỏi 2:
 Mối quan hệ giữa "Giáo viên" và "Khoa/Bộ môn trường đại học" là gì?
-<details>
-<summary><b>Xem lời giải</b></summary>
+`<details>`
+`<summary>``<b>`Xem lời giải</b></summary>
 
 **Đáp án**: Đây là quan hệ **Aggregation (has-a)**. Khoa đại học *có* các giáo viên, nhưng giáo viên tồn tại độc lập với khoa. Nếu khoa đó giải thể, giáo viên vẫn tồn tại và có thể chuyển sang khoa khác hoặc trường khác công tác.
 </details>

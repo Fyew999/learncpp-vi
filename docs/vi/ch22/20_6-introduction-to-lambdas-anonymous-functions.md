@@ -188,7 +188,7 @@ As it turns out, lambdas don’t have a type that we can explicitly use.  When w
 In actuality, lambdas aren’t các hàm (which is part of how they avoid the limitation of C++ not supporting nested các hàm).  They’re a special kind of object called a functor.  Functors are đối tượng that contain an overloaded `toán tử()` that make them callable like a hàm.
 :::
 
-<p>Although we don’t know the type of a lambda, there are several ways of storing a lambda for use post-definition. If the lambda has an empty capture clause (nothing between the hard brackets []), we can use a regular hàm con trỏ.  `std::hàm` or type deduction via the `auto` keyword will also work (even if the lambda has a non-empty capture clause).
+Although we don’t know the type of a lambda, there are several ways of storing a lambda for use post-definition. If the lambda has an empty capture clause (nothing between the hard brackets []), we can use a regular hàm con trỏ.  `std::hàm` or type deduction via the `auto` keyword will also work (even if the lambda has a non-empty capture clause).
 
 ```cpp
 #include <functional>
@@ -312,7 +312,7 @@ Because lambdas with one or more `auto` tham số can potentially work with a wi
 When used in the context of a lambda, `auto` is just a shorthand for a template tham số.
 :::
 
-<p>Let’s take a look at a generic lambda:
+Let’s take a look at a generic lambda:
 
 ```cpp
 #include <algorithm>
@@ -537,7 +537,7 @@ That way, if you ever decide to change the return type, you (usually) only need 
 
 Standard library hàm đối tượng
 
-For common operations (e.g. addition, negation, or comparison) you don’t need to write your own lambdas, because the standard library comes with many basic callable đối tượng that can be used instead.  These are defined in the [<functional>](https://en.cppreference.com/w/cpp/utility/functional#Operator_function_objects) header.
+For common operations (e.g. addition, negation, or comparison) you don’t need to write your own lambdas, because the standard library comes with many basic callable đối tượng that can be used instead.  These are defined in the [`<functional>`](https://en.cppreference.com/w/cpp/utility/functional#Operator_function_objects) header.
 
 In the following example:
 
@@ -642,7 +642,7 @@ Dan is the best student
 ```
 
 ::: details Gợi ý (Hint)
-Hint: </p>
+Hint: 
 
 ```cpp
 #include <algorithm>
@@ -805,28 +805,10 @@ int main()
 ```
 :::
 
-</a>
-  	<a class="nav-link" href="/">
-  
-    <i class="fa fa-home" aria-hidden="true"></i>
-    
-      Back to table of contents
-    
-</a>
-  	<a class="nav-link" href="https://www.learncpp.com/cpp-tutorial/ellipsis-and-why-to-avoid-them/">
-  
-    <i class="fa fa-chevron-circle-left" aria-hidden="true"></i>
-    
-      Previous lesson
-      
-        20.5Ellipsis (and why to avoid them)
-      
-    
-  </a>
-
+  	
+  	
 
 ---
-
 
 ```mermaid
 flowchart TD
@@ -837,9 +819,6 @@ flowchart TD
         FrameFunc -->|Trả về giá trị (return)| FrameMain
     end
 ```
-
-
-
 
 ::: tip C++20 / C++23: Định Dạng & In Ấn Hiện Đại
 Thay vì dùng `std::cout` kèm `<<` cồng kềnh và dễ chậm, trong C++23 bạn có thể dùng `std::println`:
@@ -853,7 +832,6 @@ int main()
 }
 ```
 :::
-
 
 ::: tip 💡 Tóm Tắt Quy Tắc Vàng (Core Guidelines)
 1. Luôn hiểu rõ vòng đời và quyền sở hữu (Ownership) của dữ liệu trước khi viết code.

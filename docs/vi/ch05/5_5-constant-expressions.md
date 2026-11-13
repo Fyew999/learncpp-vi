@@ -58,7 +58,7 @@ A few common cases where a compile-time evaluatable biểu thức is required:
 
 In this lesson, we’ll explore more of C++’s capabilities around compile-time evaluation, and look at how C++ differentiates this last case from the prior two cases.
 
-<a name="compiletimebenefits"></a>The benefits of compile-time programming [<i class="fa fa-link" style="font-size: 0.8em;"></i>](#compiletimebenefits)
+The benefits of compile-time programming [](#compiletimebenefits)
 
 While the as-if rule is great for improving performance, it leaves us reliant on the sophistication of the trình biên dịch to actually determine what can evaluate at compile-time.  This means if there is a section of code we really want to execute at compile-time, it may or may not.  That same code compiled on a different platform, or with a different trình biên dịch, or using different quá trình biên dịch options, or slightly modified, may produce a different result.  Because the as-if rule is applied invisibly to us, we get no feedback from the trình biên dịch on what portions of code it decided to evaluate at compile-time, or why.  Code we desire to be evaluated at compile-time may not even be eligible (due to a typo or misunderstanding), and we may never know.
 
@@ -90,7 +90,7 @@ The following C++ features are the most foundational to compile-time programming
 
 All of these features have one thing in common: they make use of hằng số biểu thức.
 
-<a name="constantexpressions"></a>Constant biểu thức [<i class="fa fa-link" style="font-size: 0.8em;"></i>](#constantexpressions)
+Constant biểu thức [](#constantexpressions)
 
 Perhaps surprisingly, the C++ standard barely mentions “compile-time” at all.  Instead, the standard defines a “hằng số biểu thức”, which is an biểu thức that must be evaluatable at compile-time, along with rules that determine how the trình biên dịch should handle these biểu thức.  Constant biểu thức form the backbone of compile-time evaluation in C++.
 
@@ -172,7 +172,8 @@ For the precise definition of a hằng số biểu thức, see the [cppreference
 :::
 
 ::: info Nomenclature
-<p>When discussing hằng số biểu thức, it is common to use one of two phrasings:
+
+When discussing hằng số biểu thức, it is common to use one of two phrasings:
 
 - “X is usable in a hằng số biểu thức” is often used when emphasizing what X is.  e.g. “`5` is usable in a hằng số biểu thức” emphasizes that the hằng giá trị (literal) `5` can be used in a hằng số biểu thức.
 
@@ -189,7 +190,7 @@ When hằng số biểu thức were defined, `const` integral types were grandfa
 The committee discussed whether `const` non-integral types with a hằng số biểu thức initializer should also be treated as hằng số biểu thức (for consistency with the `const` integral types case).  Ultimately, they decided not to, in order to promote more consistent usage of `constexpr`.
 :::
 
-<p class="cpp-section cpp-topline" style="clear: both">Examples of hằng số and non-hằng số biểu thức
+Examples of hằng số and non-hằng số biểu thức
 
 In the following program, we look at some biểu thức câu lệnh and indicate whether each biểu thức is a hằng số biểu thức or runtime biểu thức:
 
@@ -261,7 +262,7 @@ The trình biên dịch is only *required* to evaluate hằng số biểu thức
 The technical name for an biểu thức that must be evaluated at compile-time is a **manifestly hằng số-evaluated biểu thức**.  You will likely only encounter this term in technical documentation.
 :::
 
-<p>In contexts that do not require a hằng số biểu thức, the trình biên dịch may choose whether to evaluate a hằng số biểu thức at compile-time or at runtime.
+In contexts that do not require a hằng số biểu thức, the trình biên dịch may choose whether to evaluate a hằng số biểu thức at compile-time or at runtime.
 
 ```cpp
 const int x { 3 + 4 }; // constant expression 3 + 4 must be evaluated at compile-time
@@ -278,7 +279,8 @@ The trình biên dịch is only *required* to evaluate hằng số biểu thức
 :::
 
 ::: info Tip
-<p>The likelihood that an biểu thức is fully evaluated at compile-time can be categorized as follows:
+
+The likelihood that an biểu thức is fully evaluated at compile-time can be categorized as follows:
 
 - Never: A non-hằng số biểu thức where the trình biên dịch is not able to determine all values at compile-time.
 
@@ -351,7 +353,7 @@ char a { 'q' };
 `a` is a non-hằng số biểu thức because it is defined as non-const.
 :::
 
-<p>b)
+b)
 
 ```cpp
 const int b { 0 };
@@ -364,7 +366,7 @@ const int b { 0 };
 `b` is a hằng số biểu thức since it is a `const` integral type with a hằng số biểu thức initializer.
 :::
 
-<p>c)
+c)
 
 ```cpp
 const double c { 5.0 };
@@ -379,7 +381,7 @@ const double c { 5.0 };
 Per the definition of a compile-time hằng số, only const *integral* các biến with a hằng số biểu thức initializer are compile-time các hằng số.  `c` is a double, which is not an integral type, so it does not meet this definition.
 :::
 
-<p>d)
+d)
 
 ```cpp
 const int d { a * 2 }; // a defined as char a { 'q' };
@@ -392,7 +394,7 @@ const int d { a * 2 }; // a defined as char a { 'q' };
 `d` is a non-hằng số biểu thức since the initializer is not a hằng số biểu thức.
 :::
 
-<p>e)
+e)
 
 ```cpp
 int e { c + 1.0 }; // c defined as const double c { 5.0 };
@@ -405,7 +407,7 @@ int e { c + 1.0 }; // c defined as const double c { 5.0 };
 `e` is a non-hằng số biểu thức because it is not defined as `const` and because it does not have a hằng số biểu thức initializer.
 :::
 
-<p>f)
+f)
 
 ```cpp
 const int f { d * 2 }; // d defined as const int d { 0 };
@@ -418,7 +420,7 @@ Both `d` and `2` are hằng số biểu thức, so `d * 2` is a hằng số bi�
 `f` is a hằng số biểu thức since it is a `const` integral type with a hằng số biểu thức initializer.
 :::
 
-<p>g)
+g)
 
 ```cpp
 const int g { getNumber() }; // getNumber returns an int by value
@@ -431,7 +433,7 @@ const int g { getNumber() }; // getNumber returns an int by value
 `g` is a non-hằng số biểu thức because the initializer is a non-hằng số biểu thức.
 :::
 
-<p>h)
+h)
 
 Extra credit:
 
@@ -440,38 +442,16 @@ const int h{};
 ```
 
 ::: details Xem lời giải (Solution)
-<p>`{}` invokes value-sự khởi tạo.  There is no explicit initializer here.
+
+`{}` invokes value-sự khởi tạo.  There is no explicit initializer here.
 
 `h` is a hằng số biểu thức since it is a `const` integral type with a hằng số biểu thức initializer (value sự khởi tạo initializes `h` to `0`, which is a hằng số biểu thức).
 :::
 
-</a>
-  	<a class="nav-link" href="/">
-  
-    <i class="fa fa-home" aria-hidden="true"></i>
-    
-      Back to table of contents
-    
-</a>
-  	<a class="nav-link" href="https://www.learncpp.com/cpp-tutorial/the-as-if-rule-and-compile-time-optimization/">
-  
-    <i class="fa fa-chevron-circle-left" aria-hidden="true"></i>
-    
-      Previous lesson
-      
-        5.4The as-if rule and compile-time optimization
-      
-    
-  </a>
-
+  	
+  	
 
 ---
-
-
-
-
-
-
 
 ::: tip 💡 Tóm Tắt Quy Tắc Vàng (Core Guidelines)
 1. Luôn hiểu rõ vòng đời và quyền sở hữu (Ownership) của dữ liệu trước khi viết code.

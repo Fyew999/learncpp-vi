@@ -481,7 +481,7 @@ private:
 ```
 :::
 
-c) Write an overloaded `toán tử[]` for this class.  This hàm should take a `std::string` tham số, and return a tham chiếu to a char.  In the body of the hàm, first see if the student’s name already exists (You can use `std::find_if` from <algorithm>).  If the student exists, return a tham chiếu to the grade and you’re done.  Otherwise, use the `std::vector::emplace_back()` or `std::vector::push_back()` hàm to add a `StudentGrade` for this new student.  When you do this, `std::vector` will add a copy of your `StudentGrade` to itself (resizing if needed, invalidating all previously returned các tham chiếu).  Finally, we need to return a tham chiếu to the grade for the student we just added to the `std::vector`.  We can access the student we just added using the `std::vector::back()` hàm.
+c) Write an overloaded `toán tử[]` for this class.  This hàm should take a `std::string` tham số, and return a tham chiếu to a char.  In the body of the hàm, first see if the student’s name already exists (You can use `std::find_if` from `<algorithm>`).  If the student exists, return a tham chiếu to the grade and you’re done.  Otherwise, use the `std::vector::emplace_back()` or `std::vector::push_back()` hàm to add a `StudentGrade` for this new student.  When you do this, `std::vector` will add a copy of your `StudentGrade` to itself (resizing if needed, invalidating all previously returned các tham chiếu).  Finally, we need to return a tham chiếu to the grade for the student we just added to the `std::vector`.  We can access the student we just added using the `std::vector::back()` hàm.
 
 The following program should run:
 
@@ -603,7 +603,7 @@ Prefer using `std::map` over writing your own implementation.
 :::
 :::
 
-<p class="cpp-quiz-question cpp-topline" style="clear: both">Câu hỏi #2
+Câu hỏi #2
 
 Extra credit #1: The `GradeMap` class and sample program we wrote is inefficient for many reasons.  Describe one way that the `GradeMap` class could be improved.  
 
@@ -612,7 +612,7 @@ Extra credit #1: The `GradeMap` class and sample program we wrote is inefficient
 `std::vector` is unsorted by nature.  This means every time we call `toán tử[]`, we’re potentially traversing the entire `std::vector` to find our element.  With a few elements, this isn’t a problem, but as we continue to add names, this will become increasingly slow.  We could optimize this by keeping our `m_map` sorted and using a binary search, so we minimize the number of elements we have to look through to find the ones we’re interested in.
 :::
 
-<p class="cpp-quiz-question cpp-topline" style="clear: both">Câu hỏi #3
+Câu hỏi #3
 
 Extra credit #2: Why does this program potentially not work as expected?
 
@@ -646,33 +646,10 @@ How a std::vector grows is a trình biên dịch-specific detail, so we can expe
 
 :::
 
-</a>
-  	<a class="nav-link" href="/">
-  
-    <i class="fa fa-home" aria-hidden="true"></i>
-    
-      Back to table of contents
-    
-</a>
-  	<a class="nav-link" href="https://www.learncpp.com/cpp-tutorial/overloading-the-increment-and-decrement-các toán tử/">
-  
-    <i class="fa fa-chevron-circle-left" aria-hidden="true"></i>
-    
-      Previous lesson
-      
-        21.8Overloading the increment and decrement các toán tử
-      
-    
-  </a>
-
+  	
+  	
 
 ---
-
-
-
-
-
-
 
 ::: tip 💡 Tóm Tắt Quy Tắc Vàng (Core Guidelines)
 1. Luôn hiểu rõ vòng đời và quyền sở hữu (Ownership) của dữ liệu trước khi viết code.

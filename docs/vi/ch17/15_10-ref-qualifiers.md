@@ -141,7 +141,7 @@ This can either coexist with the const rvalue getter, or you can just use this i
 We cover `std::move` in lesson [22.4 -- std::move](https://www.learncpp.com/cpp-tutorial/stdmove/).
 :::
 
-<p class="cpp-section cpp-topline" style="clear: both">Some notes about ref-qualified member các hàm
+Some notes about ref-qualified member các hàm
 
 First, for a given hàm, non-ref-qualified overloads and ref-qualified overloads cannot coexist.  Use one or the other.
 
@@ -165,33 +165,10 @@ Additionally:
 
 Based on all of the above, we are not recommending the use of ref-qualifiers as a thực hành tốt nhất (Best Practice).  Instead, we recommend always using the result of an access hàm immediately and not saving returned các tham chiếu for use later.
 
-</a>
-  	<a class="nav-link" href="/">
-  
-    <i class="fa fa-home" aria-hidden="true"></i>
-    
-      Back to table of contents
-    
-</a>
-  	<a class="nav-link" href="https://www.learncpp.com/cpp-tutorial/friend-classes-and-friend-member-các hàm/">
-  
-    <i class="fa fa-chevron-circle-left" aria-hidden="true"></i>
-    
-      Previous lesson
-      
-        15.9Friend classes and friend member các hàm
-      
-    
-  </a>
-
+  	
+  	
 
 ---
-
-
-
-
-
-
 
 ::: tip 💡 Tóm Tắt Quy Tắc Vàng (Core Guidelines)
 1. Luôn hiểu rõ vòng đời và quyền sở hữu (Ownership) của dữ liệu trước khi viết code.

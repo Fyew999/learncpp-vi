@@ -30,7 +30,7 @@ Fortunately, C++ has introduced two additional string types into the language th
 
 Introducing `std::string`
 
-The easiest way to work with strings and string đối tượng in C++ is via the `std::string` type, which lives in the <string> header.
+The easiest way to work with strings and string đối tượng in C++ is via the `std::string` type, which lives in the `<string>` header.
 
 We can create đối tượng of type `std::string` just like other đối tượng:
 
@@ -298,12 +298,13 @@ If using `std::getline()` to read strings, use `std::cin >> std::ws` input manip
 :::
 
 ::: info Hiểu biết cốt lõi
-<p>When extracting to a biến, the extraction toán tử (`>>`) ignores leading whitespace.  It stops extracting when encountering non-leading whitespace.
+
+When extracting to a biến, the extraction toán tử (`>>`) ignores leading whitespace.  It stops extracting when encountering non-leading whitespace.
 
 `std::getline()` does not ignore leading whitespace.  If you want it to ignore leading whitespace, pass `std::cin >> std::ws` as the first đối số.  It stops extracting when encountering a newline.
 :::
 
-<p class="cpp-section cpp-topline" style="clear: both">The length of a `std::string`
+The length of a `std::string`
 
 If we want to know how many characters are in a `std::string`, we can ask a `std::string` object for its length.  The syntax for doing this is different than you’ve seen before, but is pretty straightforward:
 
@@ -337,7 +338,7 @@ We’ll cover member các hàm, including how to write your own, in more detail 
 With normal các hàm, we call `hàm(object)`.  With member các hàm, we call `object.hàm()`.
 :::
 
-<p>Also note that `std::string::length()` returns an unsigned integral value (most likely of type `size_t`).  If you want to assign the length to an `int` biến, you should `static_cast` it to avoid trình biên dịch warnings about signed/unsigned conversions:
+Also note that `std::string::length()` returns an unsigned integral value (most likely of type `size_t`).  If you want to assign the length to an `int` biến, you should `static_cast` it to avoid trình biên dịch warnings about signed/unsigned conversions:
 
 ```cpp
 int length { static_cast<int>(name.length()) };
@@ -381,10 +382,11 @@ Do not pass `std::string` by value, as it makes an expensive copy.
 :::
 
 ::: info Tip
-<p>In most cases, use a `std::string_view` tham số instead (covered in lesson [5.8 -- Introduction to std::string_view](https://www.learncpp.com/cpp-tutorial/introduction-to-stdstring_view/)).
+
+In most cases, use a `std::string_view` tham số instead (covered in lesson [5.8 -- Introduction to std::string_view](https://www.learncpp.com/cpp-tutorial/introduction-to-stdstring_view/)).
 :::
 
-<p class="cpp-section cpp-topline" style="clear: both">Returning a `std::string`
+Returning a `std::string`
 
 When a hàm returns by value to the caller, the giá trị trả về is normally copied from the hàm back to the caller.  So you might expect that you should not return `std::string` by value, as doing so would return an expensive copy of a `std::string`.
 
@@ -401,7 +403,7 @@ However, as a rule of thumb, it is okay to return a `std::string` by value when 
 `std::string` supports a capability called move semantics, which allows an object that will be destroyed at the end of the hàm to instead be returned by value without making a copy.  How move semantics works is beyond the phạm vi truy cập (scope) of this introductory article, but is something we introduce in lesson [16.5 -- Returning std::vector, and an introduction to move semantics](https://www.learncpp.com/cpp-tutorial/returning-stdvector-and-an-introduction-to-move-semantics/).
 :::
 
-<p>In most other cases, prefer to avoid returning a `std::string` by value, as doing so will make an expensive copy.
+In most other cases, prefer to avoid returning a `std::string` by value, as doing so will make an expensive copy.
 
 ::: info Tip
 
@@ -409,10 +411,11 @@ If returning a C-style string hằng giá trị (literal), use a `std::string_vi
 :::
 
 ::: info For advanced readers
-<p>In certain cases, `std::string` may also be returned by (const) tham chiếu, which is another way to avoid making a copy.  We discuss this further in lessons [12.12 -- Return by tham chiếu and return by address](https://www.learncpp.com/cpp-tutorial/return-by-tham chiếu-and-return-by-address/) and [14.6 -- Access các hàm](https://www.learncpp.com/cpp-tutorial/access-các hàm/).
+
+In certain cases, `std::string` may also be returned by (const) tham chiếu, which is another way to avoid making a copy.  We discuss this further in lessons [12.12 -- Return by tham chiếu and return by address](https://www.learncpp.com/cpp-tutorial/return-by-tham chiếu-and-return-by-address/) and [14.6 -- Access các hàm](https://www.learncpp.com/cpp-tutorial/access-các hàm/).
 :::
 
-<p class="cpp-section cpp-topline" style="clear: both">Literals for `std::string`
+Literals for `std::string`
 
 Double-quoted string các hằng giá trị (literals) (like “Hello, world!”) are C-style strings by default (and thus, have a strange type).
 
@@ -444,14 +447,14 @@ We recommend `using namespace std::string_literals`, which imports only the các
 We discuss using-directives in lesson [7.13 -- Using declarations and using directives](https://www.learncpp.com/cpp-tutorial/using-declarations-and-using-directives/).  This is one of the exception cases where `using` an entire namespace is generally okay, because the suffixes defined within are unlikely to collide with any of your code.  Avoid such using-directives outside of các hàm in header files.
 :::
 
-<p>You probably won’t need to use `std::string` các hằng giá trị (literals) very often (as it’s fine to khởi tạo a `std::string` object with a C-style string hằng giá trị (literal)), but we’ll see a few cases in future lessons (involving type deduction) where using `std::string` các hằng giá trị (literals) instead of C-style string các hằng giá trị (literals) makes things easier (see [10.8 -- Type deduction for đối tượng using the auto keyword](https://www.learncpp.com/cpp-tutorial/type-deduction-for-đối tượng-using-the-auto-keyword/) for an example).
+You probably won’t need to use `std::string` các hằng giá trị (literals) very often (as it’s fine to khởi tạo a `std::string` object with a C-style string hằng giá trị (literal)), but we’ll see a few cases in future lessons (involving type deduction) where using `std::string` các hằng giá trị (literals) instead of C-style string các hằng giá trị (literals) makes things easier (see [10.8 -- Type deduction for đối tượng using the auto keyword](https://www.learncpp.com/cpp-tutorial/type-deduction-for-đối tượng-using-the-auto-keyword/) for an example).
 
 ::: info For advanced readers
 
 `"Hello"s` resolves to `std::string { "Hello", 5 }` which creates a temporary `std::string` được khởi tạo with C-style string hằng giá trị (literal) “Hello” (which has a length of 5, excluding the implicit null-terminator).
 :::
 
-<p class="cpp-section cpp-topline" style="clear: both"><a name="constexprStrings"></a>Constexpr strings [<i class="fa fa-link" style="font-size: 0.8em;"></i>](#constexprStrings)
+Constexpr strings [](#constexprStrings)
 
 If you try to define a `constexpr std::string`, your trình biên dịch will probably generate an error:
 
@@ -518,33 +521,10 @@ int main()
 ```
 :::
 
-</a>
-  	<a class="nav-link" href="/">
-  
-    <i class="fa fa-home" aria-hidden="true"></i>
-    
-      Back to table of contents
-    
-</a>
-  	<a class="nav-link" href="https://www.learncpp.com/cpp-tutorial/constexpr-các biến/">
-  
-    <i class="fa fa-chevron-circle-left" aria-hidden="true"></i>
-    
-      Previous lesson
-      
-        5.6Constexpr các biến
-      
-    
-  </a>
-
+  	
+  	
 
 ---
-
-
-
-
-
-
 
 ::: tip 💡 Tóm Tắt Quy Tắc Vàng (Core Guidelines)
 1. Luôn hiểu rõ vòng đời và quyền sở hữu (Ownership) của dữ liệu trước khi viết code.

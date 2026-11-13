@@ -85,7 +85,7 @@ Operators can also be overloaded as member các hàm of the left-most operand.  
 
 :::
 
-<a name="insertion"></a>Overloading `toán tử<<` to print an enumerator [<i class="fa fa-link" style="font-size: 0.8em;"></i>](#insertion)
+Overloading `toán tử<<` to print an enumerator [](#insertion)
 
 Before we proceed, let’s quickly recap how `toán tử<<` works when used for output.
 
@@ -154,7 +154,7 @@ Returning the left operand is also easy.  The left operand is tham số `out`, s
 
 Putting it all together: when we call `std::cout << shirt`, the trình biên dịch will see that we’ve overloaded `toán tử<<` to work with đối tượng of type `Color`.  Our overloaded `toán tử<<` hàm is then called with `std::cout` as the `out` tham số, and our `shirt` biến (which has value `blue`) as tham số `color`.  Since `out` is a tham chiếu to `std::cout`, and `color` is a copy of enumerator `blue`, the biểu thức `out << getColorName(color)` prints `"blue"` to the console.  Finally `out` is returned back to the caller in case we want to chain additional output.
 
-<a name="extraction"></a>Overloading `toán tử>>` to input an enumerator [<i class="fa fa-link" style="font-size: 0.8em;"></i>](#extraction)
+Overloading `toán tử>>` to input an enumerator [](#extraction)
 
 Similar to how we were able to teach `toán tử<<` to output an enumeration above, we can also teach `toán tử>>` how to input an enumeration:
 
@@ -247,41 +247,19 @@ Our right operand (`pet`) is an out tham số.  We cover out tham số in lesson
 If `pet` was a value tham số rather than a tham chiếu tham số, then our `toán tử>>` hàm would end up assigning a new value to a copy of the right operand rather than the actual right operand.  We want our right operand to be modified in this case.
 :::
 
-<p>Inside the hàm, we use `toán tử>>` to input a `std::string` (something it already knows how to do).  If the value the user enters matches one of our pets, then we can assign `pet` the appropriate enumerator and return the left operand (`in`).
+Inside the hàm, we use `toán tử>>` to input a `std::string` (something it already knows how to do).  If the value the user enters matches one of our pets, then we can assign `pet` the appropriate enumerator and return the left operand (`in`).
 
 If the user did not enter a valid pet, then we handle that case by putting `std::cin` into “failure mode”.  This is the state that `std::cin` typically goes into when an extraction fails.  The caller can then check `std::cin` to see if the extraction succeeded or failed.
 
 ::: info Related content
-<p>Trong bài học [17.6 -- std::array and enumerations](https://www.learncpp.com/cpp-tutorial/stdarray-and-enumerations/), we show how we can use `std::array` to make our input and output các toán tử less redundant, and avoid having to modify them when a new enumerator is added.
+
+Trong bài học [17.6 -- std::array and enumerations](https://www.learncpp.com/cpp-tutorial/stdarray-and-enumerations/), we show how we can use `std::array` to make our input and output các toán tử less redundant, and avoid having to modify them when a new enumerator is added.
 :::
 
-</a>
-  	<a class="nav-link" href="/">
-  
-    <i class="fa fa-home" aria-hidden="true"></i>
-    
-      Back to table of contents
-    
-</a>
-  	<a class="nav-link" href="https://www.learncpp.com/cpp-tutorial/converting-an-enumeration-to-and-from-a-string/">
-  
-    <i class="fa fa-chevron-circle-left" aria-hidden="true"></i>
-    
-      Previous lesson
-      
-        13.4Converting an enumeration to and from a string
-      
-    
-  </a>
-
+  	
+  	
 
 ---
-
-
-
-
-
-
 
 ::: tip 💡 Tóm Tắt Quy Tắc Vàng (Core Guidelines)
 1. Luôn hiểu rõ vòng đời và quyền sở hữu (Ownership) của dữ liệu trước khi viết code.

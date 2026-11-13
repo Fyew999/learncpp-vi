@@ -139,7 +139,7 @@ In the above example, since `getConstRef()` returns a `const std::string&`, the 
 Dropping a tham chiếu may change a low-level const to a top-level const: `const std::string&` is a low-level const, but dropping the tham chiếu yields `const std::string`, which is a top-level const.
 :::
 
-<p>We can reapply a tham chiếu and/or const:
+We can reapply a tham chiếu and/or const:
 
 ```cpp
 #include <string>
@@ -169,7 +169,7 @@ The `ref4` case works similarly to `ref3`, except we’ve reapplied the `const` 
 If you want a const tham chiếu, reapply the `const` qualifier even when it’s not strictly necessary, as it makes your intent clear and helps prevent mistakes.
 :::
 
-<p class="cpp-section cpp-topline" style="clear: both">What about constexpr các tham chiếu?
+What about constexpr các tham chiếu?
 
 Constexpr is not part of an biểu thức’s type, so it is not deduced by `auto`.
 
@@ -346,10 +346,11 @@ If you want a const con trỏ, con trỏ to const, or const con trỏ to const, 
 :::
 
 ::: info Tip
-<p>Consider using `auto*` when deducing a con trỏ type.  Using `auto*` in this case makes it clearer that we are deducing a con trỏ type, enlists the trình biên dịch’s help to ensure we don’t deduce a non-con trỏ type, and gives you more control over const.
+
+Consider using `auto*` when deducing a con trỏ type.  Using `auto*` in this case makes it clearer that we are deducing a con trỏ type, enlists the trình biên dịch’s help to ensure we don’t deduce a non-con trỏ type, and gives you more control over const.
 :::
 
-<p class="cpp-section cpp-topline" style="clear: both">Tổng kết bài học
+Tổng kết bài học
 
 Sorry to hear about your headache.  Let’s recap the most important points quickly.
 
@@ -381,28 +382,10 @@ Type deduction and các con trỏ:
 
 - Consider using `auto*` over `auto` when deducing a con trỏ type, as it allows you to explicitly reapply both the top-level and low-level const, and will error if a con trỏ type is not deduced.
 
-</a>
-  	<a class="nav-link" href="/">
-  
-    <i class="fa fa-home" aria-hidden="true"></i>
-    
-      Back to table of contents
-    
-</a>
-  	<a class="nav-link" href="https://www.learncpp.com/cpp-tutorial/in-and-out-tham số/">
-  
-    <i class="fa fa-chevron-circle-left" aria-hidden="true"></i>
-    
-      Previous lesson
-      
-        12.13In and out tham số
-      
-    
-  </a>
-
+  	
+  	
 
 ---
-
 
 ```mermaid
 flowchart LR
@@ -415,11 +398,9 @@ flowchart LR
     RefR -.->|Đồng nhất với| VarA
 ```
 
-
 ::: danger Cạm Bẫy Thực Chiến: Con Trỏ Lơ Lửng (Dangling Pointer) & UB
 Tuyệt đối không giải phóng vùng nhớ mà con trỏ đang trỏ tới rồi tiếp tục truy cập nó, hoặc trả về tham chiếu/con trỏ tới một biến cục bộ trên Stack. Khi hàm kết thúc, biến cục bộ bị hủy và con trỏ sẽ trỏ vào vùng nhớ rác, dẫn đến **Hành vi không xác định (Undefined Behavior)** cực kỳ nguy hiểm!
 :::
-
 
 ::: tip Nâng Cấp C++ Hiện Đại: Thay Thế Con Trỏ Thô Bằng Smart Pointers
 Trong C++ hiện đại (C++11 đến C++23), hãy hạn chế tối đa việc sử dụng con trỏ thô (`T*`) cùng các toán tử `new`/`delete`. Thay vào đó, hãy luôn ưu tiên:
@@ -427,7 +408,6 @@ Trong C++ hiện đại (C++11 đến C++23), hãy hạn chế tối đa việc 
 - `std::shared_ptr<T>`: Sở hữu chia sẻ tài nguyên có cơ chế đếm tham chiếu (Reference counting).
 - `std::span<T>` (C++20) hoặc `std::string_view` (C++17): Xem qua vùng nhớ mà không sở hữu, an toàn và tốc độ cực cao.
 :::
-
 
 ::: tip 💡 Tóm Tắt Quy Tắc Vàng (Core Guidelines)
 1. Luôn hiểu rõ vòng đời và quyền sở hữu (Ownership) của dữ liệu trước khi viết code.

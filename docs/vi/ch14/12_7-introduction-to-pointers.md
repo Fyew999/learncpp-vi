@@ -353,7 +353,7 @@ When we use a con trỏ without a dereference (`ptr`), we are accessing the addr
 When we dereference a con trỏ (`*ptr`), we are accessing the object being pointed at.  Modifying this (`*ptr = 6;`) changes the value of the object being pointed at.
 :::
 
-<p class="cpp-section cpp-topline" style="clear: both">Pointers behave much like lvalue các tham chiếu
+Pointers behave much like lvalue các tham chiếu
 
 Pointers and lvalue các tham chiếu behave similarly.  Consider the following program:
 
@@ -584,7 +584,7 @@ int main()
 A brief explanation about the 4 and the 2.  A 32-bit machine means that các con trỏ will be 32 bits in length, but sizeof() always prints the size in bytes.  32 bits is 4 bytes.  Thus the `sizeof(ptr)` is 4.  Because `ptr` is a con trỏ to a short, `*ptr` is a short.  The size of a short in this example is 2 bytes.  Thus the `sizeof(*ptr)` is 2.
 :::
 
-<p class="cpp-quiz-question cpp-topline" style="clear: both">Câu hỏi #2
+Câu hỏi #2
 
 What’s wrong with this snippet of code?
 
@@ -614,31 +614,13 @@ The fifth line should be:
 ptr = &v2;
 ```
 
-<p>This correctly assigns the address of `v2` to the con trỏ.
+This correctly assigns the address of `v2` to the con trỏ.
 :::
 
-</a>
-  	<a class="nav-link" href="/">
-  
-    <i class="fa fa-home" aria-hidden="true"></i>
-    
-      Back to table of contents
-    
-</a>
-  	<a class="nav-link" href="https://www.learncpp.com/cpp-tutorial/pass-by-const-lvalue-tham chiếu/">
-  
-    <i class="fa fa-chevron-circle-left" aria-hidden="true"></i>
-    
-      Previous lesson
-      
-        12.6Pass by const lvalue tham chiếu
-      
-    
-  </a>
-
+  	
+  	
 
 ---
-
 
 ```mermaid
 flowchart LR
@@ -651,11 +633,9 @@ flowchart LR
     RefR -.->|Đồng nhất với| VarA
 ```
 
-
 ::: danger Cạm Bẫy Thực Chiến: Con Trỏ Lơ Lửng (Dangling Pointer) & UB
 Tuyệt đối không giải phóng vùng nhớ mà con trỏ đang trỏ tới rồi tiếp tục truy cập nó, hoặc trả về tham chiếu/con trỏ tới một biến cục bộ trên Stack. Khi hàm kết thúc, biến cục bộ bị hủy và con trỏ sẽ trỏ vào vùng nhớ rác, dẫn đến **Hành vi không xác định (Undefined Behavior)** cực kỳ nguy hiểm!
 :::
-
 
 ::: tip Nâng Cấp C++ Hiện Đại: Thay Thế Con Trỏ Thô Bằng Smart Pointers
 Trong C++ hiện đại (C++11 đến C++23), hãy hạn chế tối đa việc sử dụng con trỏ thô (`T*`) cùng các toán tử `new`/`delete`. Thay vào đó, hãy luôn ưu tiên:
@@ -663,7 +643,6 @@ Trong C++ hiện đại (C++11 đến C++23), hãy hạn chế tối đa việc 
 - `std::shared_ptr<T>`: Sở hữu chia sẻ tài nguyên có cơ chế đếm tham chiếu (Reference counting).
 - `std::span<T>` (C++20) hoặc `std::string_view` (C++17): Xem qua vùng nhớ mà không sở hữu, an toàn và tốc độ cực cao.
 :::
-
 
 ::: tip 💡 Tóm Tắt Quy Tắc Vàng (Core Guidelines)
 1. Luôn hiểu rõ vòng đời và quyền sở hữu (Ownership) của dữ liệu trước khi viết code.

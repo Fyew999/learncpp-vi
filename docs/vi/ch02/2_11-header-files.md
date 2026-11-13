@@ -53,7 +53,7 @@ The answer is that *std::cout* has been forward declared in the “iostream” h
 When you `#include` a file, the content of the included file is inserted at the point of inclusion.  This provides a useful way to pull in declarations from another file.
 :::
 
-<p>Consider what would happen if the *iostream* header did not exist.  Wherever you used *std::cout*, you would have to manually type or copy in all of the declarations related to *std::cout* into the top of each file that used *std::cout*!  This would require a lot of knowledge about how *std::cout* was declared, and would be a ton of work.  Even worse, if a hàm prototype was added or changed, we’d have to go manually update all of the forward declarations.
+Consider what would happen if the *iostream* header did not exist.  Wherever you used *std::cout*, you would have to manually type or copy in all of the declarations related to *std::cout* into the top of each file that used *std::cout*!  This would require a lot of knowledge about how *std::cout* was declared, and would be a ton of work.  Even worse, if a hàm prototype was added or changed, we’d have to go manually update all of the forward declarations.
 
 It’s much easier to just `#include <iostream>`!
 
@@ -257,7 +257,7 @@ In future lessons, we will encounter additional kinds of definitions that can be
 
 :::
 
-<a name="corresponding_include"></a>Source files should include their paired header [<i class="fa fa-link" style="font-size: 0.8em;"></i>](#corresponding_include)
+Source files should include their paired header [](#corresponding_include)
 
 In C++, it is a thực hành tốt nhất (Best Practice) for code files to #include their paired header file (if one exists).  This allows the trình biên dịch to catch certain kinds of errors at compile time instead of link time.  For example:
 
@@ -311,7 +311,7 @@ Source files should #include their paired header file (if one exists).
 
 :::
 
-<a name="includecpp"></a>Do not #include .cpp files [<i class="fa fa-link" style="font-size: 0.8em;"></i>](#includecpp)
+Do not #include .cpp files [](#includecpp)
 
 Although the preprocessor will happily do so, you should generally not `#include` .cpp files.  These should be added to your project and compiled.
 
@@ -343,7 +343,7 @@ If you get a trình biên dịch error indicating that *add.h* isn’t found, ma
 
 If you get a trình liên kết error about hàm *add* not being defined, make sure you’ve included *add.cpp* in your project so the definition for hàm *add* can be linked into the program.
 
-<a name="includemethod"></a>Angled brackets vs double quotes [<i class="fa fa-link" style="font-size: 0.8em;"></i>](#includemethod)
+Angled brackets vs double quotes [](#includemethod)
 
 You’re probably curious why we use angled brackets for `iostream`, and double quotes for `add.h`.  It’s possible that a header file with the same filename might exist in multiple directories.  Our use of angled brackets vs double quotes helps give the preprocessor a clue as to where it should look for header files.
 
@@ -392,12 +392,12 @@ Modern C++ now contains 4 sets of header files:
  Identifiers placed in namespace 
 
  C++ specific (new)    
- <xxx>   
+ `<xxx>`   
  iostream   
  `std` namespace 
 
  C compatibility (new) 
- <cxxx>  
+ `<cxxx>`  
  cstddef    
  `std` namespace (required)
 global namespace (optional) 
@@ -415,11 +415,12 @@ global namespace (optional)
 
 ::: danger Cảnh báo nguy hiểm
 
-The new C compatibility headers <cxxx> may optionally declare names in the global namespace, and the old C compatibility headers <xxx.h> may optionally declare names in the `std` namespace.  Names in these locations should be avoided, as those names may not be declared in those locations on other implementations.
+The new C compatibility headers `<cxxx>` may optionally declare names in the global namespace, and the old C compatibility headers <xxx.h> may optionally declare names in the `std` namespace.  Names in these locations should be avoided, as those names may not be declared in those locations on other implementations.
 :::
 
 ::: tip Thực hành tốt nhất (Best Practice)
-<p>Use the standard library header files without the .h extension.  User-defined headers should still use a .h extension.
+
+Use the standard library header files without the .h extension.  User-defined headers should still use a .h extension.
 
 :::
 
@@ -444,11 +445,13 @@ Right click on your project in the *Solution Explorer*, and choose *Properties*,
 :::
 
 ::: cảnh báo For Code::Blocks users
-<p>In Code::Blocks, go to the *Project* menu and select *Build Options*, then the *Search directories* tab.  Add the directories you’d like the trình biên dịch to search for additional headers there.
+
+In Code::Blocks, go to the *Project* menu and select *Build Options*, then the *Search directories* tab.  Add the directories you’d like the trình biên dịch to search for additional headers there.
 :::
 
 ::: cảnh báo For gcc users
-<p>Using g++, you can use the -I option to specify an alternate include directory:
+
+Using g++, you can use the -I option to specify an alternate include directory:
 
 `g++ -o main -I./source/includes main.cpp`
 
@@ -456,14 +459,15 @@ There is no space after the `-I`.  For a full path (rather than a relative path)
 :::
 
 ::: cảnh báo For VS Code users
-<p>In your *tasks.json* configuration file, add a new line in the *“Args”* section:
+
+In your *tasks.json* configuration file, add a new line in the *“Args”* section:
 
 `"-I./source/includes",`
 
 There is no space after the `-I`.  For a full path (rather than a relative path), remove the `.` after `-I`.
 :::
 
-<p>The nice thing about this approach is that if you ever change your directory structure, you only have to change a single trình biên dịch or IDE setting instead of every code file.
+The nice thing about this approach is that if you ever change your directory structure, you only have to change a single trình biên dịch or IDE setting instead of every code file.
 
 Headers may include other headers
 
@@ -477,7 +481,7 @@ Foo.h:
 std::string_view getApplicationName(); // std::string_view used here
 ```
 
-<a name="transitive"></a>Transitive includes [<i class="fa fa-link" style="font-size: 0.8em;"></i>](#transitive)
+Transitive includes [](#transitive)
 
 When your source (.cpp) file #includes a header file, you’ll also get any other header files that are #included by that header (and any header files those include, and so on).  These additional header files are sometimes called **transitive includes**, as they’re included implicitly rather than explicitly.  
 
@@ -491,11 +495,11 @@ Each file should explicitly #include all of the header files it needs to compile
 
 Unfortunately, there is no easy way to detect when your code file is accidentally relying on content of a header file that has been included by another header file.
 
-::: info Q: I didn’t include <someheader> and my program worked anyway! Why?
+::: info Q: I didn’t include `<someheader>` and my program worked anyway! Why?
 
 :::
 
-This is one of the most commonly asked questions on this site.  The answer is: it’s likely working, because you included some other header (e.g. <iostream>), which itself included <someheader>.  Although your program will compile, per the thực hành tốt nhất (Best Practice) above, you should not rely on this.  What compiles for you might not compile on a friend’s machine.
+This is one of the most commonly asked questions on this site.  The answer is: it’s likely working, because you included some other header (e.g. `<iostream>`), which itself included `<someheader>`.  Although your program will compile, per the thực hành tốt nhất (Best Practice) above, you should not rely on this.  What compiles for you might not compile on a friend’s machine.
 
 The order of inclusion for header files
 
@@ -545,28 +549,10 @@ Here are a few more recommendations for creating and using header files.
 
 - Prefer putting documentation on what something does or how to use it in the header.  It’s more likely to be seen there.  Documentation describing how something works should remain in the source files.
 
-</a>
-  	<a class="nav-link" href="/">
-  
-    <i class="fa fa-home" aria-hidden="true"></i>
-    
-      Back to table of contents
-    
-</a>
-  	<a class="nav-link" href="https://www.learncpp.com/cpp-tutorial/introduction-to-the-preprocessor/">
-  
-    <i class="fa fa-chevron-circle-left" aria-hidden="true"></i>
-    
-      Previous lesson
-      
-        2.10Introduction to the preprocessor
-      
-    
-  </a>
-
+  	
+  	
 
 ---
-
 
 ```mermaid
 flowchart TD
@@ -577,9 +563,6 @@ flowchart TD
         FrameFunc -->|Trả về giá trị (return)| FrameMain
     end
 ```
-
-
-
 
 ::: tip C++20 / C++23: Định Dạng & In Ấn Hiện Đại
 Thay vì dùng `std::cout` kèm `<<` cồng kềnh và dễ chậm, trong C++23 bạn có thể dùng `std::println`:
@@ -593,7 +576,6 @@ int main()
 }
 ```
 :::
-
 
 ::: tip 💡 Tóm Tắt Quy Tắc Vàng (Core Guidelines)
 1. Luôn hiểu rõ vòng đời và quyền sở hữu (Ownership) của dữ liệu trước khi viết code.

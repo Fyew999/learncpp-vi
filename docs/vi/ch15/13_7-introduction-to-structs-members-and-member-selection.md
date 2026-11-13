@@ -71,7 +71,7 @@ In C++, a **member** is a biến, hàm, or type that belongs to a struct (or cla
 We’ll use the term *member* a lot in future lessons, so make sure you remember what it means.
 :::
 
-<p>Just like we use an empty set of curly braces to value khởi tạo ([1.4 -- Variable phép gán and sự khởi tạo](https://www.learncpp.com/cpp-tutorial/biến-phép gán-and-sự khởi tạo/)) normal các biến, the empty curly braces after each member biến ensures that the member các biến inside our `Employee` are value được khởi tạo when an `Employee` is created.  We’ll talk more about this when we cover default member sự khởi tạo in a few lessons ([13.9 -- Default member sự khởi tạo](https://www.learncpp.com/cpp-tutorial/default-member-sự khởi tạo/)).
+Just like we use an empty set of curly braces to value khởi tạo ([1.4 -- Variable phép gán and sự khởi tạo](https://www.learncpp.com/cpp-tutorial/biến-phép gán-and-sự khởi tạo/)) normal các biến, the empty curly braces after each member biến ensures that the member các biến inside our `Employee` are value được khởi tạo when an `Employee` is created.  We’ll talk more about this when we cover default member sự khởi tạo in a few lessons ([13.9 -- Default member sự khởi tạo](https://www.learncpp.com/cpp-tutorial/default-member-sự khởi tạo/)).
 
 Finally, we end the type definition with a semicolon.
 
@@ -194,28 +194,10 @@ In the above example, it is very easy to tell which member các biến belong to
 
 We’ll continue our exploration of structs in the next lesson, including a look at how to khởi tạo them.
 
-</a>
-  	<a class="nav-link" href="/">
-  
-    <i class="fa fa-home" aria-hidden="true"></i>
-    
-      Back to table of contents
-    
-</a>
-  	<a class="nav-link" href="https://www.learncpp.com/cpp-tutorial/scoped-enumerations-enum-classes/">
-  
-    <i class="fa fa-chevron-circle-left" aria-hidden="true"></i>
-    
-      Previous lesson
-      
-        13.6Scoped enumerations (enum classes)
-      
-    
-  </a>
-
+  	
+  	
 
 ---
-
 
 ```mermaid
 classDiagram
@@ -227,13 +209,9 @@ classDiagram
     note for DoiTuong "Đóng gói (Encapsulation):\nDữ liệu được bảo vệ trong private\nThao tác qua phương thức public"
 ```
 
-
 ::: warning Cạm Bẫy: Khởi Tạo Không Đồng Nhất (Initialization Pitfalls)
 Hãy luôn khởi tạo biến thành viên ngay tại nơi khai báo hoặc sử dụng **Danh sách khởi tạo thành viên (Member Initializer List)** trong hàm tạo để tránh việc đối tượng bị gán giá trị 2 lần gây lãng phí chu kỳ CPU.
 :::
-
-
-
 
 ::: tip 💡 Tóm Tắt Quy Tắc Vàng (Core Guidelines)
 1. Luôn hiểu rõ vòng đời và quyền sở hữu (Ownership) của dữ liệu trước khi viết code.

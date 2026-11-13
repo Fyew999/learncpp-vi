@@ -31,8 +31,8 @@
    - Bổ sung loại quái vật `enum class Type { Dragon, Orc, Slime }`.
 4. Viết hàm `main()` mô phỏng một hiệp chiến đấu giữa Player và Dragon.
 
-<details>
-<summary><b>Xem lời giải mã nguồn hoàn chỉnh</b></summary>
+`<details>`
+`<summary>``<b>`Xem lời giải mã nguồn hoàn chỉnh</b></summary>
 
 ```cpp
 #include <iostream>

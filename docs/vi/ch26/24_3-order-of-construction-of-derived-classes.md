@@ -90,8 +90,8 @@ int main()
 
 ### Câu hỏi:
 Tại sao Destructor của lớp con phải chạy trước Destructor của lớp cha?
-<details>
-<summary><b>Xem lời giải</b></summary>
+`<details>`
+`<summary>``<b>`Xem lời giải</b></summary>
 
 **Đáp án**: Nếu Destructor của lớp cha chạy trước, các biến thành viên của lớp cha sẽ bị giải phóng. Khi đó, nếu Destructor của lớp con cần truy cập dữ liệu của lớp cha để dọn dẹp, nó sẽ truy cập vào vùng nhớ đã chết, gây lỗi nghiêm trọng (Undefined Behavior / Crash).
 </details>

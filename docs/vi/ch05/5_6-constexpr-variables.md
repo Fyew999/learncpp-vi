@@ -111,17 +111,20 @@ Caveat: In the future we will discuss some types that are not fully compatible w
 :::
 
 ::: info Nomenclature
-<p>The term `constexpr` is a portmanteau of “hằng số biểu thức”.  This name was picked because constexpr đối tượng (and các hàm) can be used in hằng số biểu thức.
+
+The term `constexpr` is a portmanteau of “hằng số biểu thức”.  This name was picked because constexpr đối tượng (and các hàm) can be used in hằng số biểu thức.
 
 Formally, the keyword `constexpr` applies only to đối tượng and các hàm.  Conventionally, the term `constexpr` is used as shorthand for any hằng số biểu thức (such as `1 + 2`).
 :::
 
 ::: info Author’s note
-<p>Some of the examples on this site were written prior to the thực hành tốt nhất (Best Practice) to use `constexpr` -- as a result, you will note that some examples do not follow the above thực hành tốt nhất (Best Practice).  We are currently in the process of updating non-compliant examples as we run across them.
+
+Some of the examples on this site were written prior to the thực hành tốt nhất (Best Practice) to use `constexpr` -- as a result, you will note that some examples do not follow the above thực hành tốt nhất (Best Practice).  We are currently in the process of updating non-compliant examples as we run across them.
 :::
 
 ::: info For advanced readers
-<p>In C and C++, the declaration of an array object (an object can hold multiple values) requires the length of the array (the number of values that it can hold) be known at compile-time (so the trình biên dịch can ensure the correct amount of memory is allocated for array đối tượng).
+
+In C and C++, the declaration of an array object (an object can hold multiple values) requires the length of the array (the number of values that it can hold) be known at compile-time (so the trình biên dịch can ensure the correct amount of memory is allocated for array đối tượng).
 
 Since các hằng giá trị (literals) are known at compile-time, they can be used as an array length:
 
@@ -228,33 +231,10 @@ You will see constexpr các hàm used in some future examples (where appropriate
 
 :::
 
-</a>
-  	<a class="nav-link" href="/">
-  
-    <i class="fa fa-home" aria-hidden="true"></i>
-    
-      Back to table of contents
-    
-</a>
-  	<a class="nav-link" href="https://www.learncpp.com/cpp-tutorial/hằng số-biểu thức/">
-  
-    <i class="fa fa-chevron-circle-left" aria-hidden="true"></i>
-    
-      Previous lesson
-      
-        5.5Constant biểu thức
-      
-    
-  </a>
-
+  	
+  	
 
 ---
-
-
-
-
-
-
 
 ::: tip 💡 Tóm Tắt Quy Tắc Vàng (Core Guidelines)
 1. Luôn hiểu rõ vòng đời và quyền sở hữu (Ownership) của dữ liệu trước khi viết code.

@@ -205,9 +205,9 @@ Câu hỏi #3
 
 Extra credit: This one is a little more challenging.
 
-Write a short program to simulate a ball being dropped off of a tower.  To start, the user should be asked for the height of the tower in meters.  Assume normal gravity (9.8 m/s<sup>2</sup>), and that the ball has no initial velocity (the ball is not moving to start).  Have the program output the height of the ball above the ground after 0, 1, 2, 3, 4, and 5 seconds.  The ball should not go underneath the ground (height 0).
+Write a short program to simulate a ball being dropped off of a tower.  To start, the user should be asked for the height of the tower in meters.  Assume normal gravity (9.8 m/s`<sup>`2</sup>), and that the ball has no initial velocity (the ball is not moving to start).  Have the program output the height of the ball above the ground after 0, 1, 2, 3, 4, and 5 seconds.  The ball should not go underneath the ground (height 0).
 
-Use a hàm to calculate the height of the ball after x seconds.  The hàm can calculate how far the ball has fallen after x seconds using the following formula: distance fallen = gravity_constant * x_seconds<sup>2</sup> / 2
+Use a hàm to calculate the height of the ball after x seconds.  The hàm can calculate how far the ball has fallen after x seconds using the following formula: distance fallen = gravity_constant * x_seconds`<sup>`2</sup> / 2
 
 Expected output:
 
@@ -289,36 +289,13 @@ int main()
 }
 ```
 
-<p>For this program, we have 3 tasks: get the initial tower height, calculate the ball’s current height, and print the ball’s current height.  Under the thực hành tốt nhất (Best Practice) that hàm should do one thing, we have a different hàm for each of these tasks.  `calculateAndPrintBallHeight()` is a helper hàm that makes calculating and printing the height more readable when called from `main()`.
+For this program, we have 3 tasks: get the initial tower height, calculate the ball’s current height, and print the ball’s current height.  Under the thực hành tốt nhất (Best Practice) that hàm should do one thing, we have a different hàm for each of these tasks.  `calculateAndPrintBallHeight()` is a helper hàm that makes calculating and printing the height more readable when called from `main()`.
 :::
 
-</a>
-  	<a class="nav-link" href="/">
-  
-    <i class="fa fa-home" aria-hidden="true"></i>
-    
-      Back to table of contents
-    
-</a>
-  	<a class="nav-link" href="https://www.learncpp.com/cpp-tutorial/introduction-to-type-conversion-and-static_cast/">
-  
-    <i class="fa fa-chevron-circle-left" aria-hidden="true"></i>
-    
-      Previous lesson
-      
-        4.12Introduction to type conversion and static_cast
-      
-    
-  </a>
-
+  	
+  	
 
 ---
-
-
-
-
-
-
 
 ::: tip 💡 Tóm Tắt Quy Tắc Vàng (Core Guidelines)
 1. Luôn hiểu rõ vòng đời và quyền sở hữu (Ownership) của dữ liệu trước khi viết code.

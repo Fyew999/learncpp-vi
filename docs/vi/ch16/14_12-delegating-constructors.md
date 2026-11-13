@@ -249,7 +249,7 @@ Note that we had `Employee(std::string_view)` (the hàm tạo (constructor) with
 If we had instead chosen to have `Employee(std::string_view name, int id)` delegate to `Employee(std::string_view)`, then that would have left us unable to khởi tạo `m_id` using `id`, as a hàm tạo (constructor) can only delegate or khởi tạo, not both.
 :::
 
-<p>Second, it’s possible for one hàm tạo (constructor) to delegate to another hàm tạo (constructor), which delegates back to the first hàm tạo (constructor).  This forms an infinite loop, and will cause your program to run out of ngăn xếp Stack space and crash.  You can avoid this by ensuring all of your các hàm tạo (constructors) resolve to a non-delegating hàm tạo (constructor).
+Second, it’s possible for one hàm tạo (constructor) to delegate to another hàm tạo (constructor), which delegates back to the first hàm tạo (constructor).  This forms an infinite loop, and will cause your program to run out of ngăn xếp Stack space and crash.  You can avoid this by ensuring all of your các hàm tạo (constructors) resolve to a non-delegating hàm tạo (constructor).
 
 ::: tip Thực hành tốt nhất (Best Practice)
 
@@ -484,28 +484,10 @@ int main()
 ```
 :::
 
-</a>
-  	<a class="nav-link" href="/">
-  
-    <i class="fa fa-home" aria-hidden="true"></i>
-    
-      Back to table of contents
-    
-</a>
-  	<a class="nav-link" href="https://www.learncpp.com/cpp-tutorial/default-các hàm tạo (constructors)-and-default-đối số/">
-  
-    <i class="fa fa-chevron-circle-left" aria-hidden="true"></i>
-    
-      Previous lesson
-      
-        14.11Default các hàm tạo (constructors) and default đối số
-      
-    
-  </a>
-
+  	
+  	
 
 ---
-
 
 ```mermaid
 classDiagram
@@ -517,13 +499,9 @@ classDiagram
     note for DoiTuong "Đóng gói (Encapsulation):\nDữ liệu được bảo vệ trong private\nThao tác qua phương thức public"
 ```
 
-
 ::: warning Cạm Bẫy: Khởi Tạo Không Đồng Nhất (Initialization Pitfalls)
 Hãy luôn khởi tạo biến thành viên ngay tại nơi khai báo hoặc sử dụng **Danh sách khởi tạo thành viên (Member Initializer List)** trong hàm tạo để tránh việc đối tượng bị gán giá trị 2 lần gây lãng phí chu kỳ CPU.
 :::
-
-
-
 
 ::: tip 💡 Tóm Tắt Quy Tắc Vàng (Core Guidelines)
 1. Luôn hiểu rõ vòng đời và quyền sở hữu (Ownership) của dữ liệu trước khi viết code.

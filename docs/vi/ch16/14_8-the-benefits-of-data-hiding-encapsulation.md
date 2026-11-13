@@ -341,7 +341,7 @@ And finally, encapsulation can help you debug a program when something goes wron
 
 However, if a member can only be changed through a single member hàm, then you can simply breakpoint that single hàm and watch as each caller changes the value.  This can make it much easier to determine who the culprit is.
 
-<a name="prefer-non-member-các hàm"></a>Prefer non-member các hàm to member các hàm [<i class="fa fa-link" style="font-size: 0.8em;"></i>](#prefer-non-member-các hàm)
+Prefer non-member các hàm to member các hàm [](#prefer-non-member-các hàm)
 
 In C++, if a hàm can be reasonably implemented as a non-member hàm, prefer to implement it as a non-member hàm instead of as a member hàm.
 
@@ -390,7 +390,7 @@ One common but challenging case occurs when preferring a non-member hàm require
 The article [How Non-Member Functions Improve Encapsulation](https://embeddedartistry.com/fieldatlas/how-non-member-các hàm-improve-encapsulation/) by Scott Meyers explores the idea of preferring non-member các hàm in further detail.
 :::
 
-<p>Let’s illustrate this with three similar examples, in order from worst to best:
+Let’s illustrate this with three similar examples, in order from worst to best:
 
 ```cpp
 #include <iostream>
@@ -543,33 +543,10 @@ The following order is recommended by the [Google C++ style guide](https://googl
 
 :::
 
-</a>
-  	<a class="nav-link" href="/">
-  
-    <i class="fa fa-home" aria-hidden="true"></i>
-    
-      Back to table of contents
-    
-</a>
-  	<a class="nav-link" href="https://www.learncpp.com/cpp-tutorial/member-các hàm-returning-các tham chiếu-to-data-members/">
-  
-    <i class="fa fa-chevron-circle-left" aria-hidden="true"></i>
-    
-      Previous lesson
-      
-        14.7Member các hàm returning các tham chiếu to data members
-      
-    
-  </a>
-
+  	
+  	
 
 ---
-
-
-
-
-
-
 
 ::: tip 💡 Tóm Tắt Quy Tắc Vàng (Core Guidelines)
 1. Luôn hiểu rõ vòng đời và quyền sở hữu (Ownership) của dữ liệu trước khi viết code.

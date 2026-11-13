@@ -284,7 +284,8 @@ For similar reasons, the declaration syntax allows parenthesis-based grouping, a
 :::
 
 ::: info For advanced readers
-<p>Let’s look at a slightly more complicated case.  Consider the câu lệnh `Foo * bar();`.  By using (or not using) parentheses, we can completely change the meaning of this câu lệnh:
+
+Let’s look at a slightly more complicated case.  Consider the câu lệnh `Foo * bar();`.  By using (or not using) parentheses, we can completely change the meaning of this câu lệnh:
 
 - `Foo * bar();` (with no additional parenthesis) groups the `*` with `Foo` by default.  `Foo* bar();` is the declaration of a hàm named `bar` that has no tham số and returns a `Foo*`.
 
@@ -470,28 +471,10 @@ We cover list các hàm tạo (constructors) in lesson [16.2 -- Introduction to 
 
 :::
 
-</a>
-  	<a class="nav-link" href="/">
-  
-    <i class="fa fa-home" aria-hidden="true"></i>
-    
-      Back to table of contents
-    
-</a>
-  	<a class="nav-link" href="https://www.learncpp.com/cpp-tutorial/delegating-các hàm tạo (constructors)/">
-  
-    <i class="fa fa-chevron-circle-left" aria-hidden="true"></i>
-    
-      Previous lesson
-      
-        14.12Delegating các hàm tạo (constructors)
-      
-    
-  </a>
-
+  	
+  	
 
 ---
-
 
 ```mermaid
 classDiagram
@@ -503,13 +486,9 @@ classDiagram
     note for DoiTuong "Đóng gói (Encapsulation):\nDữ liệu được bảo vệ trong private\nThao tác qua phương thức public"
 ```
 
-
 ::: warning Cạm Bẫy: Khởi Tạo Không Đồng Nhất (Initialization Pitfalls)
 Hãy luôn khởi tạo biến thành viên ngay tại nơi khai báo hoặc sử dụng **Danh sách khởi tạo thành viên (Member Initializer List)** trong hàm tạo để tránh việc đối tượng bị gán giá trị 2 lần gây lãng phí chu kỳ CPU.
 :::
-
-
-
 
 ::: tip 💡 Tóm Tắt Quy Tắc Vàng (Core Guidelines)
 1. Luôn hiểu rõ vòng đời và quyền sở hữu (Ownership) của dữ liệu trước khi viết code.

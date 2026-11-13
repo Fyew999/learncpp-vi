@@ -140,35 +140,12 @@ Because there’s a lot of material to cover here, we’ll do it over multiple c
 A **class type** is a type that is a struct, class, or union.  We’ll use this term a lot in future lessons.
 :::
 
-<p>Got your game face on?  Let’s go!
+Got your game face on?  Let’s go!
 
-</a>
-  	<a class="nav-link" href="/">
-  
-    <i class="fa fa-home" aria-hidden="true"></i>
-    
-      Back to table of contents
-    
-</a>
-  	<a class="nav-link" href="https://www.learncpp.com/cpp-tutorial/chapter-f-summary-and-quiz/">
-  
-    <i class="fa fa-chevron-circle-left" aria-hidden="true"></i>
-    
-      Previous lesson
-      
-        F.XChapter F summary and quiz
-      
-    
-  </a>
-
+  	
+  	
 
 ---
-
-
-
-
-
-
 
 ::: tip 💡 Tóm Tắt Quy Tắc Vàng (Core Guidelines)
 1. Luôn hiểu rõ vòng đời và quyền sở hữu (Ownership) của dữ liệu trước khi viết code.

@@ -116,7 +116,7 @@ We use `->` to select a member from a con trỏ to an object.  `this->m_id` is t
 We cover `toán tử->` in lesson [13.12 -- Member selection with các con trỏ and các tham chiếu](https://www.learncpp.com/cpp-tutorial/member-selection-with-các con trỏ-and-các tham chiếu/).
 :::
 
-<p class="cpp-section cpp-topline" style="clear: both">How is `this` set?
+How is `this` set?
 
 Let’s take a closer look at this hàm call:
 
@@ -151,7 +151,7 @@ Note that our `setId` hàm has a new leftmost tham số named `this`, which is a
 In this context, the `static` keyword means the hàm is not associated with đối tượng of the class, but instead is treated as if it were a normal hàm inside the phạm vi truy cập (scope) region of the class.  We cover static member các hàm in lesson [15.7 -- Static member các hàm](https://www.learncpp.com/cpp-tutorial/static-member-các hàm/).
 :::
 
-<p>Putting it all together:
+Putting it all together:
 
 <ol start="1">
 - When we call `simple.setID(2)`, the trình biên dịch actually calls `Simple::setID(&simple, 2)`, and `simple` is passed by address to the hàm.
@@ -167,7 +167,7 @@ The good news is that all of this happens automatically, and it doesn’t really
 All non-static member các hàm have a `this` const con trỏ that holds the address of the implicit object.
 :::
 
-<p class="cpp-section cpp-topline" style="clear: both">`this` always points to the object being operated on
+`this` always points to the object being operated on
 
 New programmers are sometimes confused about how many `this` các con trỏ exist. Each member hàm has a single `this` con trỏ tham số that points to the implicit object.  Consider:
 
@@ -355,7 +355,6 @@ public:
     void reset() { *this = {}; }
 };
 
-
 int main()
 {
     Calc calc{};
@@ -390,28 +389,10 @@ Since the `this` con trỏ always points to the implicit object (and can never b
 
 If `this` were added to the C++ language today, it would undoubtedly be a tham chiếu instead of a con trỏ.  In other more modern C++-like languages, such as Java and C#, `this` is implemented as a tham chiếu.
 
-</a>
-  	<a class="nav-link" href="/">
-  
-    <i class="fa fa-home" aria-hidden="true"></i>
-    
-      Back to table of contents
-    
-</a>
-  	<a class="nav-link" href="https://www.learncpp.com/cpp-tutorial/chapter-14-summary-and-quiz/">
-  
-    <i class="fa fa-chevron-circle-left" aria-hidden="true"></i>
-    
-      Previous lesson
-      
-        14.xChapter 14 summary and quiz
-      
-    
-  </a>
-
+  	
+  	
 
 ---
-
 
 ```mermaid
 flowchart LR
@@ -424,11 +405,9 @@ flowchart LR
     RefR -.->|Đồng nhất với| VarA
 ```
 
-
 ::: danger Cạm Bẫy Thực Chiến: Con Trỏ Lơ Lửng (Dangling Pointer) & UB
 Tuyệt đối không giải phóng vùng nhớ mà con trỏ đang trỏ tới rồi tiếp tục truy cập nó, hoặc trả về tham chiếu/con trỏ tới một biến cục bộ trên Stack. Khi hàm kết thúc, biến cục bộ bị hủy và con trỏ sẽ trỏ vào vùng nhớ rác, dẫn đến **Hành vi không xác định (Undefined Behavior)** cực kỳ nguy hiểm!
 :::
-
 
 ::: tip Nâng Cấp C++ Hiện Đại: Thay Thế Con Trỏ Thô Bằng Smart Pointers
 Trong C++ hiện đại (C++11 đến C++23), hãy hạn chế tối đa việc sử dụng con trỏ thô (`T*`) cùng các toán tử `new`/`delete`. Thay vào đó, hãy luôn ưu tiên:
@@ -436,7 +415,6 @@ Trong C++ hiện đại (C++11 đến C++23), hãy hạn chế tối đa việc 
 - `std::shared_ptr<T>`: Sở hữu chia sẻ tài nguyên có cơ chế đếm tham chiếu (Reference counting).
 - `std::span<T>` (C++20) hoặc `std::string_view` (C++17): Xem qua vùng nhớ mà không sở hữu, an toàn và tốc độ cực cao.
 :::
-
 
 ::: tip 💡 Tóm Tắt Quy Tắc Vàng (Core Guidelines)
 1. Luôn hiểu rõ vòng đời và quyền sở hữu (Ownership) của dữ liệu trước khi viết code.

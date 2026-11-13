@@ -42,7 +42,7 @@ C++11 standard library ships with 4 smart con trỏ classes: std::auto_ptr (remo
 
 std::unique_ptr
 
-std::unique_ptr is the C++11 replacement for std::auto_ptr.  It should be used to manage any dynamically allocated object that is not shared by multiple đối tượng.  That is, std::unique_ptr should completely own the object it manages, not share that ownership with other classes.  std::unique_ptr lives in the <memory> header.
+std::unique_ptr is the C++11 replacement for std::auto_ptr.  It should be used to manage any dynamically allocated object that is not shared by multiple đối tượng.  That is, std::unique_ptr should completely own the object it manages, not share that ownership with other classes.  std::unique_ptr lives in the `<memory>` header.
 
 Let’s take a look at a simple smart con trỏ example:
 
@@ -201,7 +201,6 @@ public:
 	}
 };
 
-
 int main()
 {
 	// Create a single dynamically allocated Fraction with numerator 3 and denominator 5
@@ -232,7 +231,7 @@ Use std::make_unique() instead of creating std::unique_ptr and using new yoursel
 
 :::
 
-<a name="smartpointerexceptionsafety"></a>The exception safety issue in more detail [<i class="fa fa-link" style="font-size: 0.8em;"></i>](#smartpointerexceptionsafety)
+The exception safety issue in more detail [](#smartpointerexceptionsafety)
 
 For those wondering what the “exception safety issue” mentioned above is, here’s a description of the issue.
 
@@ -503,33 +502,10 @@ int main()
 ```
 :::
 
-</a>
-  	<a class="nav-link" href="/">
-  
-    <i class="fa fa-home" aria-hidden="true"></i>
-    
-      Back to table of contents
-    
-</a>
-  	<a class="nav-link" href="https://www.learncpp.com/cpp-tutorial/stdmove/">
-  
-    <i class="fa fa-chevron-circle-left" aria-hidden="true"></i>
-    
-      Previous lesson
-      
-        22.4std::move
-      
-    
-  </a>
-
+  	
+  	
 
 ---
-
-
-
-
-
-
 
 ::: tip 💡 Tóm Tắt Quy Tắc Vàng (Core Guidelines)
 1. Luôn hiểu rõ vòng đời và quyền sở hữu (Ownership) của dữ liệu trước khi viết code.

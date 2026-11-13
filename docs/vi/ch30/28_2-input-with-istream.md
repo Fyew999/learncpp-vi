@@ -222,33 +222,10 @@ There are a few more useful input các hàm that you might want to make use of:
 
 istream contains many other các hàm and variants of the above mentioned các hàm that may be useful, depending on what you need to do.  You can find these on a tham chiếu site such as [https://en.cppreference.com/w/cpp/io/basic_istream](https://en.cppreference.com/w/cpp/io/basic_istream).
 
-</a>
-  	<a class="nav-link" href="/">
-  
-    <i class="fa fa-home" aria-hidden="true"></i>
-    
-      Back to table of contents
-    
-</a>
-  	<a class="nav-link" href="https://www.learncpp.com/cpp-tutorial/input-and-output-io-streams/">
-  
-    <i class="fa fa-chevron-circle-left" aria-hidden="true"></i>
-    
-      Previous lesson
-      
-        28.1Input and output (I/O) streams
-      
-    
-  </a>
-
+  	
+  	
 
 ---
-
-
-
-
-
-
 
 ::: tip 💡 Tóm Tắt Quy Tắc Vàng (Core Guidelines)
 1. Luôn hiểu rõ vòng đời và quyền sở hữu (Ownership) của dữ liệu trước khi viết code.

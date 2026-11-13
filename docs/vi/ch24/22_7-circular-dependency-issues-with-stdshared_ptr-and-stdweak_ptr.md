@@ -331,11 +331,10 @@ Conclusion
 
 std::shared_ptr can be used when you need multiple smart các con trỏ that can co-own a resource.  The resource will be deallocated when the last std::shared_ptr goes out of phạm vi truy cập (scope).  std::weak_ptr can be used when you want a smart con trỏ that can see and use a shared resource, but does not participate in the ownership of that resource.
 
-<p class="cpp-section cpp-topline" style="clear: both">Hệ thống Câu hỏi & Quiz Tự Luyện
+Hệ thống Câu hỏi & Quiz Tự Luyện
 
 Câu hỏi #1
 
-</p>
 <ol start="1">
 - Fix the program presented in the section “A reductive case” so that the Resource is properly deallocated.  Do not alter the code in `main()`.
 
@@ -389,33 +388,10 @@ int main()
 ```
 :::
 
-</a>
-  	<a class="nav-link" href="/">
-  
-    <i class="fa fa-home" aria-hidden="true"></i>
-    
-      Back to table of contents
-    
-</a>
-  	<a class="nav-link" href="https://www.learncpp.com/cpp-tutorial/stdshared_ptr/">
-  
-    <i class="fa fa-chevron-circle-left" aria-hidden="true"></i>
-    
-      Previous lesson
-      
-        22.6std::shared_ptr
-      
-    
-  </a>
-
+  	
+  	
 
 ---
-
-
-
-
-
-
 
 ::: tip 💡 Tóm Tắt Quy Tắc Vàng (Core Guidelines)
 1. Luôn hiểu rõ vòng đời và quyền sở hữu (Ownership) của dữ liệu trước khi viết code.

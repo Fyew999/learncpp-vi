@@ -16,8 +16,6 @@
 
 The ios_base class contains several state flags that are used to signal various conditions that may occur when using streams:
 
-</p>
-
 Flag
 Meaning
 
@@ -33,11 +31,9 @@ The stream has reached the end of a file
 failbit
 A non-fatal error occurred (e.g. the user entered letters when the program was expecting an integer)
 
-<p>Although these flags live in ios_base, because ios is derived from ios_base and ios takes less typing than ios_base, they are generally accessed through ios (e.g. as std::ios::failbit).
+Although these flags live in ios_base, because ios is derived from ios_base and ios takes less typing than ios_base, they are generally accessed through ios (e.g. as std::ios::failbit).
 
 ios also provides a number of member các hàm in order to conveniently access these states:
-
-</p>
 
 Member hàm
 Meaning
@@ -66,7 +62,7 @@ Returns the currently set flags
 setstate(state)
 Sets the state flag passed in
 
-<p>The most commonly dealt with bit is the failbit, which is set when the user enters invalid input.  For example, consider the following program:
+The most commonly dealt with bit is the failbit, which is set when the user enters invalid input.  For example, consider the following program:
 
 ```cpp
 std::cout << "Enter your age: ";
@@ -87,8 +83,6 @@ With string validation, we accept all user input as a string, and then accept or
 With numerical validation, we are typically concerned with making sure the number the user enters is within a particular range (e.g. between 0 and 20).  However, unlike with string validation, it’s possible for the user to enter things that aren’t numbers at all -- and we need to handle these cases too.
 
 To help us out, C++ provides a number of useful các hàm that we can use to determine whether specific characters are numbers or letters.  The following các hàm live in the cctype header:
-
-</p>
 
 Function
 Meaning
@@ -120,7 +114,7 @@ Returns non-zero if the tham số is whitespace
 std::isxdigit(int)
 Returns non-zero if the tham số is a hexadecimal digit (0-9, a-f, A-F)
 
-<p class="cpp-section cpp-topline" style="clear: both">String validation
+String validation
 
 Let’s do a simple case of string validation by asking the user to enter their name.  Our validation criteria will be that the user enters only alphabetic characters or spaces.  If anything else is encountered, the input will be rejected.
 
@@ -167,7 +161,7 @@ Note that this code isn’t perfect: the user could say their name was “asf w 
 Reader “Waldo” provides a C++20 solution (using std::ranges) that addresses these shortcomings [here](#comment-571052)
 :::
 
-<p>Now let’s take a look at another example where we are going to ask the user to enter their phone number.  Unlike a user’s name, which is biến-length and where the validation criteria are the same for every character, a phone number is a fixed length but the validation criteria differ depending on the position of the character.  Consequently, we are going to take a different approach to validating our phone number input.  In this case, we’re going to write a hàm that will check the user’s input against a predetermined template to see whether it matches.  The template will work as follows:
+Now let’s take a look at another example where we are going to ask the user to enter their phone number.  Unlike a user’s name, which is biến-length and where the validation criteria are the same for every character, a phone number is a fixed length but the validation criteria differ depending on the position of the character.  Consequently, we are going to take a different approach to validating our phone number input.  In this case, we’re going to write a hàm that will check the user’s input against a predetermined template to see whether it matches.  The template will work as follows:
 
 A # will match any digit in the user input.
 
@@ -435,33 +429,10 @@ Whether this approach is more or less work than straight numeric extraction depe
 
 As you can see, doing input validation in C++ is a lot of work.  Fortunately, many such tasks (e.g. doing numeric validation as a string) can be easily turned into các hàm that can be reused in a wide variety of situations.
 
-</a>
-  	<a class="nav-link" href="/">
-  
-    <i class="fa fa-home" aria-hidden="true"></i>
-    
-      Back to table of contents
-    
-</a>
-  	<a class="nav-link" href="https://www.learncpp.com/cpp-tutorial/stream-classes-for-strings/">
-  
-    <i class="fa fa-chevron-circle-left" aria-hidden="true"></i>
-    
-      Previous lesson
-      
-        28.4Stream classes for strings
-      
-    
-  </a>
-
+  	
+  	
 
 ---
-
-
-
-
-
-
 
 ::: tip 💡 Tóm Tắt Quy Tắc Vàng (Core Guidelines)
 1. Luôn hiểu rõ vòng đời và quyền sở hữu (Ownership) của dữ liệu trước khi viết code.

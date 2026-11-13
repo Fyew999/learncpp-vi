@@ -36,7 +36,7 @@ In everyday life, we count using **decimal** numbers, which have 10 digits.  Com
 
 A **string** is a collection of sequential characters that is used to represent text (such as names, words, and sentences).  String các hằng giá trị (literals) are always placed between double quotes.  String các hằng giá trị (literals) in C++ are C-style strings, which have a strange type that is hard to work with.
 
-**std::string** offers an easy and safe way to deal with text strings.  std::string lives in the <string> header.  `std::string` is expensive to khởi tạo (or assign to) and copy.
+**std::string** offers an easy and safe way to deal with text strings.  std::string lives in the `<string>` header.  `std::string` is expensive to khởi tạo (or assign to) and copy.
 
 **std::string_view** provides read-only access to an existing string (a C-style string hằng giá trị (literal), a std::string, or a char array) without making a copy.  A `std::string_view` that is viewing a string that has been destroyed is sometimes called a **dangling** view.  When a `std::string` is modified, all views into that `std::string` are **invalidated**, meaning those views are now invalid.  Using an invalidated view (other than to revalidate it) will produce hành vi không xác định (Hành vi không xác định (Undefined Behavior - UB) - UB).
 
@@ -129,7 +129,7 @@ What can go wrong when using a `std::string_view`?
 `std::string_view` provide a read-only view of a string that exists elsewhere.  It is inexpensive to khởi tạo and copy.  `std::string_view` can be dangerous when the string being viewed is destroyed before the `std::string_view` that is viewing it.
 :::
 
-<p class="cpp-quiz-question cpp-topline" style="clear: both">Câu hỏi #4
+Câu hỏi #4
 
 Write a program that asks for the name and age of two people, then prints which person is older.
 
@@ -199,36 +199,14 @@ Câu hỏi #5
 In the solution to the above quiz, why can’t biến `age1` in `main` be constexpr?
 
 ::: details Xem lời giải (Solution)
-<p>A constexpr biến requires a hằng số biểu thức initializer, and the call to `getAge()` isn’t allowed in a hằng số biểu thức.  Therefore, we can only make the biến const.
+
+A constexpr biến requires a hằng số biểu thức initializer, and the call to `getAge()` isn’t allowed in a hằng số biểu thức.  Therefore, we can only make the biến const.
 :::
 
-</a>
-  	<a class="nav-link" href="/">
-  
-    <i class="fa fa-home" aria-hidden="true"></i>
-    
-      Back to table of contents
-    
-</a>
-  	<a class="nav-link" href="https://www.learncpp.com/cpp-tutorial/stdstring_view-part-2/">
-  
-    <i class="fa fa-chevron-circle-left" aria-hidden="true"></i>
-    
-      Previous lesson
-      
-        5.9std::string_view (part 2)
-      
-    
-  </a>
-
+  	
+  	
 
 ---
-
-
-
-
-
-
 
 ::: tip 💡 Tóm Tắt Quy Tắc Vàng (Core Guidelines)
 1. Luôn hiểu rõ vòng đời và quyền sở hữu (Ownership) của dữ liệu trước khi viết code.

@@ -260,9 +260,9 @@ MyString& MyString::operator=(const MyString& source)
 
 Note that our phép gán toán tử is very similar to our copy hàm tạo (constructor), but there are three major differences:
 
-<li> We added a self-phép gán check.
-<li> We return *this so we can chain the phép gán toán tử.
-<li> We need to explicitly deallocate any value that the string is already holding (so we don’t have a rò rỉ bộ nhớ (memory leak) when m_data is reallocated later).  This is handled inside deepCopy().
+`<li>` We added a self-phép gán check.
+`<li>` We return *this so we can chain the phép gán toán tử.
+`<li>` We need to explicitly deallocate any value that the string is already holding (so we don’t have a rò rỉ bộ nhớ (memory leak) when m_data is reallocated later).  This is handled inside deepCopy().
 
 When the overloaded phép gán toán tử is called, the item being assigned to may already contain a previous value, which we need to make sure we clean up before we assign memory for new values.  For non-dynamically allocated các biến (which are a fixed size), we don’t have to bother because the new value just overwrites the old one.  However, for dynamically allocated các biến, we need to explicitly deallocate any old memory before we allocate any new memory.  If we don’t, the code will not crash, but we will have a rò rỉ bộ nhớ (memory leak) that will eat away our free memory every time we do an phép gán!
 
@@ -276,37 +276,14 @@ Classes in the standard library that deal with dynamic memory, such as std::stri
 
 Tổng kết bài học
 
-<li>The default copy hàm tạo (constructor) and default phép gán các toán tử do shallow copies, which is fine for classes that contain no dynamically allocated các biến.
-<li>Classes with dynamically allocated các biến need to have a copy hàm tạo (constructor) and phép gán toán tử that do a deep copy.
-<li>Favor using classes in the standard library over doing your own memory management.
+`<li>`The default copy hàm tạo (constructor) and default phép gán các toán tử do shallow copies, which is fine for classes that contain no dynamically allocated các biến.
+`<li>`Classes with dynamically allocated các biến need to have a copy hàm tạo (constructor) and phép gán toán tử that do a deep copy.
+`<li>`Favor using classes in the standard library over doing your own memory management.
 
-</a>
-  	<a class="nav-link" href="/">
-  
-    <i class="fa fa-home" aria-hidden="true"></i>
-    
-      Back to table of contents
-    
-</a>
-  	<a class="nav-link" href="https://www.learncpp.com/cpp-tutorial/overloading-the-phép gán-toán tử/">
-  
-    <i class="fa fa-chevron-circle-left" aria-hidden="true"></i>
-    
-      Previous lesson
-      
-        21.12Overloading the phép gán toán tử
-      
-    
-  </a>
-
+  	
+  	
 
 ---
-
-
-
-
-
-
 
 ::: tip 💡 Tóm Tắt Quy Tắc Vàng (Core Guidelines)
 1. Luôn hiểu rõ vòng đời và quyền sở hữu (Ownership) của dữ liệu trước khi viết code.

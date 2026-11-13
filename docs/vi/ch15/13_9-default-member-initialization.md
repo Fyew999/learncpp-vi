@@ -197,33 +197,10 @@ That said, it’s not uncommon for programmers to use default sự khởi tạo 
 
 Therefore, we won’t be militant about enforcing use of value sự khởi tạo for structs and classes in these tutorials, but we do strongly recommend it.
 
-</a>
-  	<a class="nav-link" href="/">
-  
-    <i class="fa fa-home" aria-hidden="true"></i>
-    
-      Back to table of contents
-    
-</a>
-  	<a class="nav-link" href="https://www.learncpp.com/cpp-tutorial/struct-aggregate-sự khởi tạo/">
-  
-    <i class="fa fa-chevron-circle-left" aria-hidden="true"></i>
-    
-      Previous lesson
-      
-        13.8Struct aggregate sự khởi tạo
-      
-    
-  </a>
-
+  	
+  	
 
 ---
-
-
-
-
-
-
 
 ::: tip 💡 Tóm Tắt Quy Tắc Vàng (Core Guidelines)
 1. Luôn hiểu rõ vòng đời và quyền sở hữu (Ownership) của dữ liệu trước khi viết code.

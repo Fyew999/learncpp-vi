@@ -220,7 +220,7 @@ Do not khởi tạo a `std::string_view` with a `std::string` hằng giá trị 
 It is okay to khởi tạo a `std::string_view` with a C-style string hằng giá trị (literal) or a `std::string_view` hằng giá trị (literal).  It’s also okay to khởi tạo a `std::string_view` with a C-style string object, a `std::string` object, or a `std::string_view` object, as long as that string object outlives the view.
 :::
 
-<p>We can also get hành vi không xác định (Hành vi không xác định (Undefined Behavior - UB) - UB) when the underlying string is modified:
+We can also get hành vi không xác định (Hành vi không xác định (Undefined Behavior - UB) - UB) when the underlying string is modified:
 
 ```cpp
 #include <iostream>
@@ -254,7 +254,7 @@ In this example, `sv` is again set to view `s`.  `s` is then modified.  When a `
 Modifying a `std::string` is likely to invalidate all views into that `std::string`.
 :::
 
-<p class="cpp-section cpp-topline" style="clear: both">Revalidating an invalid `std::string_view`
+Revalidating an invalid `std::string_view`
 
 Invalidated đối tượng can often be revalidated (made valid again) by setting them back to a known good state.  For an invalidated `std::string_view`, we can do this by assigning the invalidated `std::string_view` object a valid string to view.
 
@@ -380,7 +380,7 @@ There is one important subtlety here.  If the đối số is a temporary object 
 If an đối số is a temporary that is destroyed at the end of the full biểu thức containing the hàm call, the returned `std::string_view` must be used immediately, as it will be left dangling after the temporary is destroyed.
 :::
 
-<p class="cpp-section cpp-topline" style="clear: both">View modification các hàm
+View modification các hàm
 
 Consider a window in your house, looking at an electric car sitting on the street. You can look through the window and see the car, but you can’t touch or move the car. Your window just provides a view to the car, which is a completely separate object.
 
@@ -450,7 +450,7 @@ A C-style string hằng giá trị (literal) and a `std::string` are always null
 A `std::string_view` may or may not be null-terminated.
 :::
 
-<p>In almost all cases, this doesn’t matter -- a `std::string_view` keeps track of the length of the string or substring it is viewing, so it doesn’t need the null-terminator.  Converting a `std::string_view` to a `std::string` will work regardless of whether or not the `std::string_view` is null-terminated.
+In almost all cases, this doesn’t matter -- a `std::string_view` keeps track of the length of the string or substring it is viewing, so it doesn’t need the null-terminator.  Converting a `std::string_view` to a `std::string` will work regardless of whether or not the `std::string_view` is null-terminated.
 
 ::: danger Cảnh báo nguy hiểm
 
@@ -458,10 +458,11 @@ Take care not to write any code that assumes a `std::string_view` is null termin
 :::
 
 ::: info Tip
-<p>If you have a non-null-terminated `std::string_view` and you need a null-terminated string for some reason, convert the `std::string_view` into a `std::string`.
+
+If you have a non-null-terminated `std::string_view` and you need a null-terminated string for some reason, convert the `std::string_view` into a `std::string`.
 :::
 
-<p class="cpp-section cpp-topline" style="clear: both"><a name="stringvsstringview"></a>A quick guide on when to use `std::string` vs `std::string_view` [<i class="fa fa-link" style="font-size: 0.8em;"></i>](#stringvsstringview)
+A quick guide on when to use `std::string` vs `std::string_view` [](#stringvsstringview)
 
 This guide is not meant to be comprehensive, but is intended to highlight the most common cases:
 
@@ -577,33 +578,10 @@ Things to remember about `std::string_view`:
 
 - A `std::string_view` may or may not be null-terminated.
 
-</a>
-  	<a class="nav-link" href="/">
-  
-    <i class="fa fa-home" aria-hidden="true"></i>
-    
-      Back to table of contents
-    
-</a>
-  	<a class="nav-link" href="https://www.learncpp.com/cpp-tutorial/introduction-to-stdstring_view/">
-  
-    <i class="fa fa-chevron-circle-left" aria-hidden="true"></i>
-    
-      Previous lesson
-      
-        5.8Introduction to std::string_view
-      
-    
-  </a>
-
+  	
+  	
 
 ---
-
-
-
-
-
-
 
 ::: tip 💡 Tóm Tắt Quy Tắc Vàng (Core Guidelines)
 1. Luôn hiểu rõ vòng đời và quyền sở hữu (Ownership) của dữ liệu trước khi viết code.

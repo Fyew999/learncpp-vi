@@ -402,31 +402,14 @@ Câu hỏi #3
 In the solution to the prior quiz question, why does `getFraction()` return by value instead of by tham chiếu?
 
 ::: details Xem lời giải (Solution)
-<p>Because our `temp` Fraction is a local biến, it will go out of phạm vi truy cập (scope) at the end of the hàm.  If we were to return `temp` as tham chiếu, we’d return a dangling tham chiếu back to the caller.
+
+Because our `temp` Fraction is a local biến, it will go out of phạm vi truy cập (scope) at the end of the hàm.  If we were to return `temp` as tham chiếu, we’d return a dangling tham chiếu back to the caller.
 :::
 
-</a>
-  	<a class="nav-link" href="/">
-  
-    <i class="fa fa-home" aria-hidden="true"></i>
-    
-      Back to table of contents
-    
-</a>
-  	<a class="nav-link" href="https://www.learncpp.com/cpp-tutorial/default-member-sự khởi tạo/">
-  
-    <i class="fa fa-chevron-circle-left" aria-hidden="true"></i>
-    
-      Previous lesson
-      
-        13.9Default member sự khởi tạo
-      
-    
-  </a>
-
+  	
+  	
 
 ---
-
 
 ```mermaid
 classDiagram
@@ -438,13 +421,9 @@ classDiagram
     note for DoiTuong "Đóng gói (Encapsulation):\nDữ liệu được bảo vệ trong private\nThao tác qua phương thức public"
 ```
 
-
 ::: warning Cạm Bẫy: Khởi Tạo Không Đồng Nhất (Initialization Pitfalls)
 Hãy luôn khởi tạo biến thành viên ngay tại nơi khai báo hoặc sử dụng **Danh sách khởi tạo thành viên (Member Initializer List)** trong hàm tạo để tránh việc đối tượng bị gán giá trị 2 lần gây lãng phí chu kỳ CPU.
 :::
-
-
-
 
 ::: tip 💡 Tóm Tắt Quy Tắc Vàng (Core Guidelines)
 1. Luôn hiểu rõ vòng đời và quyền sở hữu (Ownership) của dữ liệu trước khi viết code.

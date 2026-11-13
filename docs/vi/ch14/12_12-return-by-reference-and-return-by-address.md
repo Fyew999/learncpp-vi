@@ -237,7 +237,7 @@ Thus, both `s1` and `s2` end up viewing `s_name` (which was assigned the last na
 Note that if we use `std::string_view` tham số instead, the first `std::string_view` tham số will be invalidated when the underlying `std::string` is changed.
 :::
 
-<p>Another issue that commonly occurs with programs that return a non-const static local by tham chiếu is that there is no standardized way to reset `s_x` back to the default state.  Such programs must either use a non-conventional solution (e.g. a reset hàm tham số), or can only be reset by quitting and restarting the program.
+Another issue that commonly occurs with programs that return a non-const static local by tham chiếu is that there is no standardized way to reset `s_x` back to the default state.  Such programs must either use a non-conventional solution (e.g. a reset hàm tham số), or can only be reset by quitting and restarting the program.
 
 ::: tip Thực hành tốt nhất (Best Practice)
 
@@ -453,36 +453,20 @@ Prefer return by tham chiếu over return by address unless the ability to retur
 :::
 
 ::: info Related content
-<p>If you need the ability to return “no object” or a value (rather than an object) [12.15 -- std::optional](https://www.learncpp.com/cpp-tutorial/stdoptional/) describes a good alternative.
+
+If you need the ability to return “no object” or a value (rather than an object) [12.15 -- std::optional](https://www.learncpp.com/cpp-tutorial/stdoptional/) describes a good alternative.
 
 :::
 
 ::: info Related content
-<p>See [5.9 -- std::string_view (part 2)](https://www.learncpp.com/cpp-tutorial/stdstring_view-part-2/#stringvsstringview) for a quick guide on when to return `std::string_view` vs `const std::string&` .
+
+See [5.9 -- std::string_view (part 2)](https://www.learncpp.com/cpp-tutorial/stdstring_view-part-2/#stringvsstringview) for a quick guide on when to return `std::string_view` vs `const std::string&` .
 :::
 
-</a>
-  	<a class="nav-link" href="/">
-  
-    <i class="fa fa-home" aria-hidden="true"></i>
-    
-      Back to table of contents
-    
-</a>
-  	<a class="nav-link" href="https://www.learncpp.com/cpp-tutorial/pass-by-address-part-2/">
-  
-    <i class="fa fa-chevron-circle-left" aria-hidden="true"></i>
-    
-      Previous lesson
-      
-        12.11Pass by address (part 2)
-      
-    
-  </a>
-
+  	
+  	
 
 ---
-
 
 ```mermaid
 flowchart LR
@@ -495,11 +479,9 @@ flowchart LR
     RefR -.->|Đồng nhất với| VarA
 ```
 
-
 ::: danger Cạm Bẫy Thực Chiến: Con Trỏ Lơ Lửng (Dangling Pointer) & UB
 Tuyệt đối không giải phóng vùng nhớ mà con trỏ đang trỏ tới rồi tiếp tục truy cập nó, hoặc trả về tham chiếu/con trỏ tới một biến cục bộ trên Stack. Khi hàm kết thúc, biến cục bộ bị hủy và con trỏ sẽ trỏ vào vùng nhớ rác, dẫn đến **Hành vi không xác định (Undefined Behavior)** cực kỳ nguy hiểm!
 :::
-
 
 ::: tip Nâng Cấp C++ Hiện Đại: Thay Thế Con Trỏ Thô Bằng Smart Pointers
 Trong C++ hiện đại (C++11 đến C++23), hãy hạn chế tối đa việc sử dụng con trỏ thô (`T*`) cùng các toán tử `new`/`delete`. Thay vào đó, hãy luôn ưu tiên:
@@ -507,7 +489,6 @@ Trong C++ hiện đại (C++11 đến C++23), hãy hạn chế tối đa việc 
 - `std::shared_ptr<T>`: Sở hữu chia sẻ tài nguyên có cơ chế đếm tham chiếu (Reference counting).
 - `std::span<T>` (C++20) hoặc `std::string_view` (C++17): Xem qua vùng nhớ mà không sở hữu, an toàn và tốc độ cực cao.
 :::
-
 
 ::: tip 💡 Tóm Tắt Quy Tắc Vàng (Core Guidelines)
 1. Luôn hiểu rõ vòng đời và quyền sở hữu (Ownership) của dữ liệu trước khi viết code.

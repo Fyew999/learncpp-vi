@@ -71,7 +71,7 @@ This example makes two copies of the C-style string “Hello, world!”: one whe
 
 std::string_view C++17
 
-To address the issue with `std::string` being expensive to khởi tạo (or copy), C++17 introduced `std::string_view` (which lives in the <string_view> header).  `std::string_view` provides read-only access to an *existing* string (a C-style string, a `std::string`, or another `std::string_view`) without making a copy.  **Read-only** means that we can access and use the value being viewed, but we can not modify it.
+To address the issue with `std::string` being expensive to khởi tạo (or copy), C++17 introduced `std::string_view` (which lives in the `<string_view>` header).  `std::string_view` provides read-only access to an *existing* string (a C-style string, a `std::string`, or another `std::string_view`) without making a copy.  **Read-only** means that we can access and use the value being viewed, but we can not modify it.
 
 The following example is identical to the prior one, except we’ve replaced `std::string` with `std::string_view`.
 
@@ -103,7 +103,7 @@ When we khởi tạo `std::string_view s` with C-style string hằng giá trị 
 Prefer `std::string_view` over `std::string` when you need a read-only string, especially for hàm tham số.
 :::
 
-<p class="cpp-section cpp-topline" style="clear: both">`std::string_view` can be được khởi tạo with many different types of strings
+`std::string_view` can be được khởi tạo with many different types of strings
 
 One of the neat things about a `std::string_view` is how flexible it is.  A `std::string_view` object can be được khởi tạo with a C-style string, a `std::string`, or another `std::string_view`:
 
@@ -249,7 +249,7 @@ int main()
 We discuss this use of `using namespace` in lesson [5.7 -- Introduction to std::string](https://www.learncpp.com/cpp-tutorial/introduction-to-stdstring/).  The same advice applies here.
 :::
 
-<p>It’s fine to khởi tạo a `std::string_view` object with a C-style string hằng giá trị (literal) (you don’t need to khởi tạo it with a `std::string_view` hằng giá trị (literal)).
+It’s fine to khởi tạo a `std::string_view` object with a C-style string hằng giá trị (literal) (you don’t need to khởi tạo it with a `std::string_view` hằng giá trị (literal)).
 
 That said, initializing a `std::string_view` using a `std::string_view` hằng giá trị (literal) won’t cause problems (as such các hằng giá trị (literals) are actually C-style string các hằng giá trị (literals) in disguise).
 
@@ -274,33 +274,10 @@ This makes `constexpr std::string_view` the preferred choice when string symboli
 
 We will continue discussing `std::string_view` in the next lesson.
 
-</a>
-  	<a class="nav-link" href="/">
-  
-    <i class="fa fa-home" aria-hidden="true"></i>
-    
-      Back to table of contents
-    
-</a>
-  	<a class="nav-link" href="https://www.learncpp.com/cpp-tutorial/introduction-to-stdstring/">
-  
-    <i class="fa fa-chevron-circle-left" aria-hidden="true"></i>
-    
-      Previous lesson
-      
-        5.7Introduction to std::string
-      
-    
-  </a>
-
+  	
+  	
 
 ---
-
-
-
-
-
-
 
 ::: tip 💡 Tóm Tắt Quy Tắc Vàng (Core Guidelines)
 1. Luôn hiểu rõ vòng đời và quyền sở hữu (Ownership) của dữ liệu trước khi viết code.

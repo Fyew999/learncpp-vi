@@ -178,7 +178,7 @@ We show how to convert an enumeration into a string in lesson [13.4 -- Convertin
 We teach `std::cout` how to print an enumerator in lesson [13.5 -- Introduction to overloading the I/O các toán tử](https://www.learncpp.com/cpp-tutorial/introduction-to-overloading-the-i-o-các toán tử/).
 :::
 
-<p class="cpp-section cpp-topline" style="clear: both"><a name="base"></a>Enumeration size and underlying type (base) [<i class="fa fa-link" style="font-size: 0.8em;"></i>](#base)
+Enumeration size and underlying type (base) [](#base)
 
 Enumerators have values that are of an integral type.  But what integral type?  The specific integral type used to represent the value of enumerators is called the enumeration’s **underlying type** (or **base**).
 
@@ -218,7 +218,7 @@ Specify the base type of an enumeration only when necessary.
 Because `std::int8_t` and `std::uint8_t` are usually type aliases for char types, using either of these types as the enum base will most likely cause the enumerators to print as char values rather than int values.
 :::
 
-<p class="cpp-section cpp-topline" style="clear: both">Integer to unscoped enumerator conversion
+Integer to unscoped enumerator conversion
 
 While the trình biên dịch will implicitly convert an unscoped enumeration to an integer, it will *not* implicitly convert an integer to an unscoped enumeration.  The following will produce a trình biên dịch error:
 
@@ -367,33 +367,10 @@ False.  Since enumerators are constexpr, their values must also be constexpr.
 
 :::
 
-</a>
-  	<a class="nav-link" href="/">
-  
-    <i class="fa fa-home" aria-hidden="true"></i>
-    
-      Back to table of contents
-    
-</a>
-  	<a class="nav-link" href="https://www.learncpp.com/cpp-tutorial/unscoped-enumerations/">
-  
-    <i class="fa fa-chevron-circle-left" aria-hidden="true"></i>
-    
-      Previous lesson
-      
-        13.2Unscoped enumerations
-      
-    
-  </a>
-
+  	
+  	
 
 ---
-
-
-
-
-
-
 
 ::: tip 💡 Tóm Tắt Quy Tắc Vàng (Core Guidelines)
 1. Luôn hiểu rõ vòng đời và quyền sở hữu (Ownership) của dữ liệu trước khi viết code.

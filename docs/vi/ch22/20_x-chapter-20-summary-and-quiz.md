@@ -164,8 +164,6 @@ argv[1] may not exist.  If it does, argv[1] is a string đối số, and can’t
 
 :::
 
-</p>
-
 Câu hỏi #3
 
 The best algorithm for determining whether a value exists in a sorted array is called binary search.  
@@ -342,35 +340,10 @@ Don’t use these các hàm to solve the quiz, but use them in the future if you
 
 :::
 
-</p>
-
-</a>
-  	<a class="nav-link" href="/">
-  
-    <i class="fa fa-home" aria-hidden="true"></i>
-    
-      Back to table of contents
-    
-</a>
-  	<a class="nav-link" href="https://www.learncpp.com/cpp-tutorial/lambda-captures/">
-  
-    <i class="fa fa-chevron-circle-left" aria-hidden="true"></i>
-    
-      Previous lesson
-      
-        20.7Lambda captures
-      
-    
-  </a>
-
+  	
+  	
 
 ---
-
-
-
-
-
-
 
 ::: tip 💡 Tóm Tắt Quy Tắc Vàng (Core Guidelines)
 1. Luôn hiểu rõ vòng đời và quyền sở hữu (Ownership) của dữ liệu trước khi viết code.

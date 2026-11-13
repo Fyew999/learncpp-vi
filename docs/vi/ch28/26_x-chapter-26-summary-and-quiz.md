@@ -28,8 +28,8 @@ Sử dụng Non-Type Template Parameter để xây dựng lớp Ma trận toán 
 - Nạp chồng `operator()` để truy cập `matrix(row, col)`.
 - Phương thức `fill(T value)` và `print()`.
 
-<details>
-<summary><b>Xem mã nguồn lời giải hoàn chỉnh</b></summary>
+`<details>`
+`<summary>``<b>`Xem mã nguồn lời giải hoàn chỉnh</b></summary>
 
 ```cpp
 #include <iostream>

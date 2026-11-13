@@ -12,7 +12,7 @@
 
 # 13.14 &#8212; Class template đối số deduction (CTAD) and deduction guides
 
-## <a name="CTAD"></a>Class template đối số deduction (CTAD) C++17 [<i class="fa fa-link" style="font-size: 0.8em;"></i>](#CTAD)
+## Class template đối số deduction (CTAD) C++17 [](#CTAD)
 
 Starting in C++17, when instantiating an object from a class template, the trình biên dịch can deduce the template types from the types of the object’s initializer (this is called **class template đối số deduction** or **CTAD** for short).  For example:
 
@@ -62,7 +62,7 @@ int main()
 }
 ```
 
-<a name="DeductionGuide"></a>Template đối số deduction guides C++17 [<i class="fa fa-link" style="font-size: 0.8em;"></i>](#DeductionGuide)
+Template đối số deduction guides C++17 [](#DeductionGuide)
 
 In most cases, CTAD works right out of the box.  However, in certain cases, the trình biên dịch may need a little extra help understanding how to deduce the template đối số properly.
 
@@ -165,7 +165,8 @@ Because of this, the version of `Pair` without the deduction guides should compi
 :::
 
 ::: info For advanced readers
-<p>Non-aggregates don’t need deduction guides in C++17 because the presence of a hàm tạo (constructor) serves the same purpose.
+
+Non-aggregates don’t need deduction guides in C++17 because the presence of a hàm tạo (constructor) serves the same purpose.
 
 :::
 
@@ -264,28 +265,10 @@ int main()
 }
 ```
 
-</a>
-  	<a class="nav-link" href="/">
-  
-    <i class="fa fa-home" aria-hidden="true"></i>
-    
-      Back to table of contents
-    
-</a>
-  	<a class="nav-link" href="https://www.learncpp.com/cpp-tutorial/class-templates/">
-  
-    <i class="fa fa-chevron-circle-left" aria-hidden="true"></i>
-    
-      Previous lesson
-      
-        13.13Class templates
-      
-    
-  </a>
-
+  	
+  	
 
 ---
-
 
 ```mermaid
 classDiagram
@@ -297,13 +280,9 @@ classDiagram
     note for DoiTuong "Đóng gói (Encapsulation):\nDữ liệu được bảo vệ trong private\nThao tác qua phương thức public"
 ```
 
-
 ::: warning Cạm Bẫy: Khởi Tạo Không Đồng Nhất (Initialization Pitfalls)
 Hãy luôn khởi tạo biến thành viên ngay tại nơi khai báo hoặc sử dụng **Danh sách khởi tạo thành viên (Member Initializer List)** trong hàm tạo để tránh việc đối tượng bị gán giá trị 2 lần gây lãng phí chu kỳ CPU.
 :::
-
-
-
 
 ::: tip 💡 Tóm Tắt Quy Tắc Vàng (Core Guidelines)
 1. Luôn hiểu rõ vòng đời và quyền sở hữu (Ownership) của dữ liệu trước khi viết code.

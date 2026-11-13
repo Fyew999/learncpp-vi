@@ -15,10 +15,10 @@
 The memory that a program uses is typically divided into a few different areas, called segments:
 
 - The code segment (also called a text segment), where the compiled program sits in memory.  The code segment is typically read-only.
-<li>The bss segment (also called the chưa được khởi tạo data segment), where zero-được khởi tạo global and static các biến are stored.
-<li>The data segment (also called the được khởi tạo data segment), where được khởi tạo global and static các biến are stored.
-<li>The vùng nhớ Heap (Free Store), where dynamically allocated các biến are allocated from.
-<li>The call ngăn xếp Stack, where hàm tham số, local các biến, and other hàm-related information are stored.
+`<li>`The bss segment (also called the chưa được khởi tạo data segment), where zero-được khởi tạo global and static các biến are stored.
+`<li>`The data segment (also called the được khởi tạo data segment), where được khởi tạo global and static các biến are stored.
+`<li>`The vùng nhớ Heap (Free Store), where dynamically allocated các biến are allocated from.
+`<li>`The call ngăn xếp Stack, where hàm tham số, local các biến, and other hàm-related information are stored.
 
 For this lesson, we’ll focus primarily on the vùng nhớ Heap (Free Store) and the ngăn xếp Stack, as that is where most of the interesting stuff takes place.
 
@@ -47,7 +47,7 @@ When a dynamically allocated biến is deleted, the memory is “returned” to 
 
 The vùng nhớ Heap (Free Store) has advantages and disadvantages:
 
-<li>Allocating memory on the vùng nhớ Heap (Free Store) is comparatively slow.
+`<li>`Allocating memory on the vùng nhớ Heap (Free Store) is comparatively slow.
 
 - Allocated memory stays allocated until it is specifically deallocated (beware memory leaks) or the application ends (at which point the OS should clean it up).
 
@@ -274,41 +274,19 @@ The ngăn xếp Stack has advantages and disadvantages:
 
 - Allocating memory on the ngăn xếp Stack is comparatively fast.
 
-<li>Memory allocated on the ngăn xếp Stack stays in phạm vi truy cập (scope) as long as it is on the ngăn xếp Stack.  It is destroyed when it is popped off the ngăn xếp Stack.
-<li>All memory allocated on the ngăn xếp Stack is known at compile time.  Consequently, this memory can be accessed directly through a biến.
-<li>Because the ngăn xếp Stack is relatively small, it is generally not a good idea to do anything that eats up lots of ngăn xếp Stack space.  This includes allocating or copying large arrays or other memory-intensive structures.
+`<li>`Memory allocated on the ngăn xếp Stack stays in phạm vi truy cập (scope) as long as it is on the ngăn xếp Stack.  It is destroyed when it is popped off the ngăn xếp Stack.
+`<li>`All memory allocated on the ngăn xếp Stack is known at compile time.  Consequently, this memory can be accessed directly through a biến.
+`<li>`Because the ngăn xếp Stack is relatively small, it is generally not a good idea to do anything that eats up lots of ngăn xếp Stack space.  This includes allocating or copying large arrays or other memory-intensive structures.
 
 ::: info Author’s note
-<p>[This comment](https://www.learncpp.com/cpp-tutorial/introduction-to-đối tượng-and-các biến/#comment-560618) has some additional (simplified) information about how các biến on the ngăn xếp Stack are laid out and receive actual memory addresses at runtime.
+
+[This comment](https://www.learncpp.com/cpp-tutorial/introduction-to-đối tượng-and-các biến/#comment-560618) has some additional (simplified) information about how các biến on the ngăn xếp Stack are laid out and receive actual memory addresses at runtime.
 :::
 
-</a>
-  	<a class="nav-link" href="/">
-  
-    <i class="fa fa-home" aria-hidden="true"></i>
-    
-      Back to table of contents
-    
-</a>
-  	<a class="nav-link" href="https://www.learncpp.com/cpp-tutorial/hàm-các con trỏ/">
-  
-    <i class="fa fa-chevron-circle-left" aria-hidden="true"></i>
-    
-      Previous lesson
-      
-        20.1Function Pointers
-      
-    
-  </a>
-
+  	
+  	
 
 ---
-
-
-
-
-
-
 
 ::: tip 💡 Tóm Tắt Quy Tắc Vàng (Core Guidelines)
 1. Luôn hiểu rõ vòng đời và quyền sở hữu (Ownership) của dữ liệu trước khi viết code.

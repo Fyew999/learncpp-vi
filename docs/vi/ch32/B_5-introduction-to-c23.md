@@ -20,13 +20,13 @@ New improvements in C++23
 
 For your interest, here’s a list of the major changes that C++23 adds. Note that this list is not comprehensive, but rather intended to highlight some of the key changes of interest.
 
-- Constexpr <cmath> (e.g. `std::abs()`), and <cstdlib> ([6.7 -- Relational các toán tử and floating point comparisons](https://www.learncpp.com/cpp-tutorial/relational-các toán tử-and-floating-point-comparisons/)).
+- Constexpr `<cmath>` (e.g. `std::abs()`), and `<cstdlib>` ([6.7 -- Relational các toán tử and floating point comparisons](https://www.learncpp.com/cpp-tutorial/relational-các toán tử-and-floating-point-comparisons/)).
 
 - Constexpr `std::unique_ptr` (no lesson yet).
 
 - Explicit `this` tham số (no lesson yet).
 
-- Fixed-size floating point types (via <stdfloat>) (no lesson yet).
+- Fixed-size floating point types (via `<stdfloat>`) (no lesson yet).
 
 - Formatted printing các hàm `std::print` and `std::println` (no lesson yet)
 
@@ -60,33 +60,10 @@ For your interest, here’s a list of the major changes that C++23 adds. Note th
 
 - Using unknown các con trỏ and các tham chiếu in hằng số biểu thức ([17.2 -- std::array length and indexing](https://www.learncpp.com/cpp-tutorial/stdarray-length-and-indexing/)).
 
-</a>
-  	<a class="nav-link" href="/">
-  
-    <i class="fa fa-home" aria-hidden="true"></i>
-    
-      Back to table of contents
-    
-</a>
-  	<a class="nav-link" href="https://www.learncpp.com/cpp-tutorial/introduction-to-c20/">
-  
-    <i class="fa fa-chevron-circle-left" aria-hidden="true"></i>
-    
-      Previous lesson
-      
-        B.4Introduction to C++20
-      
-    
-  </a>
-
+  	
+  	
 
 ---
-
-
-
-
-
-
 
 ::: tip 💡 Tóm Tắt Quy Tắc Vàng (Core Guidelines)
 1. Luôn hiểu rõ vòng đời và quyền sở hữu (Ownership) của dữ liệu trước khi viết code.

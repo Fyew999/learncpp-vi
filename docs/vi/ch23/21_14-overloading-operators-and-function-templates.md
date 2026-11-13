@@ -366,28 +366,10 @@ Finally, our code will compile and run!  Here is the result:
 
 Note that we didn’t have to modify `average()` at all to make it work with đối tượng of type `Cents`.  We simply had to define the các toán tử used to implement `average()` for the `Cents` class, and the trình biên dịch took care of the rest!
 
-</a>
-  	<a class="nav-link" href="/">
-  
-    <i class="fa fa-home" aria-hidden="true"></i>
-    
-      Back to table of contents
-    
-</a>
-  	<a class="nav-link" href="https://www.learncpp.com/cpp-tutorial/shallow-vs-deep-copying/">
-  
-    <i class="fa fa-chevron-circle-left" aria-hidden="true"></i>
-    
-      Previous lesson
-      
-        21.13Shallow vs. deep copying
-      
-    
-  </a>
-
+  	
+  	
 
 ---
-
 
 ```mermaid
 flowchart TD
@@ -398,9 +380,6 @@ flowchart TD
         FrameFunc -->|Trả về giá trị (return)| FrameMain
     end
 ```
-
-
-
 
 ::: tip C++20 / C++23: Định Dạng & In Ấn Hiện Đại
 Thay vì dùng `std::cout` kèm `<<` cồng kềnh và dễ chậm, trong C++23 bạn có thể dùng `std::println`:
@@ -414,7 +393,6 @@ int main()
 }
 ```
 :::
-
 
 ::: tip 💡 Tóm Tắt Quy Tắc Vàng (Core Guidelines)
 1. Luôn hiểu rõ vòng đời và quyền sở hữu (Ownership) của dữ liệu trước khi viết code.

@@ -16,7 +16,7 @@ Before we talk about our next subject, we’re going to sidebar into the topic o
 
 **Scientific notation** is a useful shorthand for writing lengthy numbers in a concise manner.  And although scientific notation may seem foreign at first, understanding scientific notation will help you understand how floating point numbers work, and more importantly, what their limitations are.
 
-Numbers in scientific notation take the following form: *significand* x 10<sup>*exponent*</sup>.  For example, in the scientific notation `1.2 x 10⁴`, `1.2` is the significand and `4` is the exponent.  Since 10⁴ evaluates to 10,000, 1.2 x 10⁴ evaluates to 12,000.
+Numbers in scientific notation take the following form: *significand* x 10`<sup>`*exponent*</sup>.  For example, in the scientific notation `1.2 x 10⁴`, `1.2` is the significand and `4` is the exponent.  Since 10⁴ evaluates to 10,000, 1.2 x 10⁴ evaluates to 12,000.
 
 By convention, numbers in scientific notation are written with one digit before the decimal point, and the rest of the digits afterward.
 
@@ -33,7 +33,7 @@ For numbers smaller than 1, the exponent can be negative.  The number `5e-2` is 
 If you’re using arch linux and the superscript of `5 * 10⁻²` is missing the negative sign, you may need to install a font that can display these characters.  See [this reddit thread for more info](https://www.reddit.com/r/archlinux/comments/1af46vq/some_unicode_characters_not_rendering_properly/).
 :::
 
-<p class="cpp-section cpp-topline" style="clear: both">Significant digits
+Significant digits
 
 Let’s say you need to know the value of the mathematical hằng số pi for some equation, but you’ve forgotten.  You ask two people.  One tells you the value of pi is `3.14`.  The other tells you the value of pi is `3.14159`.  Both of these values are “correct”, but the latter is far more precise.
 
@@ -176,7 +176,7 @@ f) 0.0000000008
 g) 34500.0
 
 ::: details Xem lời giải (Solution)
-3.45000e4 (6 significant digits). We don’t trim the trailing zeros here because the number *does* have a decimal point.  Even though the decimal point doesn’t affect the value of the number, it affects the precision, so it needs to be included in the significand.  </p>
+3.45000e4 (6 significant digits). We don’t trim the trailing zeros here because the number *does* have a decimal point.  Even though the decimal point doesn’t affect the value of the number, it affects the precision, so it needs to be included in the significand.  
 
 If the number had been specified as 34500, then the answer would have been 3.45e4 (3 significant digits).
 
@@ -188,33 +188,10 @@ h) 146000 (assume you have knowledge that zeros are significant)
 1.46000e5 (6 significant digits).
 :::
 
-</a>
-  	<a class="nav-link" href="/">
-  
-    <i class="fa fa-home" aria-hidden="true"></i>
-    
-      Back to table of contents
-    
-</a>
-  	<a class="nav-link" href="https://www.learncpp.com/cpp-tutorial/fixed-width-integers-and-size-t/">
-  
-    <i class="fa fa-chevron-circle-left" aria-hidden="true"></i>
-    
-      Previous lesson
-      
-        4.6Fixed-width integers and size_t
-      
-    
-  </a>
-
+  	
+  	
 
 ---
-
-
-
-
-
-
 
 ::: tip 💡 Tóm Tắt Quy Tắc Vàng (Core Guidelines)
 1. Luôn hiểu rõ vòng đời và quyền sở hữu (Ownership) của dữ liệu trước khi viết code.

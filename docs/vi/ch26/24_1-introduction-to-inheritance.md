@@ -78,8 +78,8 @@ Xác định xem các cặp thực thể sau đây có mối quan hệ **Kế th
 3. Bệnh viện và Bác sĩ.
 4. Chó và Động vật có vú.
 
-<details>
-<summary><b>Xem lời giải</b></summary>
+`<details>`
+`<summary>``<b>`Xem lời giải</b></summary>
 
 1. **has-a (Composition/Aggregation)**: Xe hơi *có* bánh xe (không phải Xe hơi là một bánh xe).
 2. **is-a (Inheritance)**: Tam giác *là một* Hình đa giác.

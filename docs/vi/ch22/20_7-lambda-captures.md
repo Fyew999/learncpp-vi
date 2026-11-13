@@ -161,7 +161,8 @@ The captured các biến of a lambda are *copies* of the outer phạm vi truy c�
 :::
 
 ::: info For advanced readers
-<p>Although lambdas look like các hàm, they’re actually đối tượng that can be called like các hàm (these are called **functors** -- we’ll discuss how to create your own functors from scratch in a future lesson).
+
+Although lambdas look like các hàm, they’re actually đối tượng that can be called like các hàm (these are called **functors** -- we’ll discuss how to create your own functors from scratch in a future lesson).
 
 When the trình biên dịch encounters a lambda definition, it creates a custom object definition for the lambda.  Each captured biến becomes a data member of the object.
 
@@ -522,7 +523,7 @@ Be extra careful when you capture các biến by tham chiếu, especially with a
 
 If we want the captured `name` to be valid when the lambda is used, we need to capture it by value instead (either explicitly or using a default-capture by value).
 
-<a name="mutable_copy"></a>Unintended copies of mutable lambdas [<i class="fa fa-link" style="font-size: 0.8em;"></i>](#mutable_copy)
+Unintended copies of mutable lambdas [](#mutable_copy)
 
 Because lambdas are đối tượng, they can be copied.  In some cases, this can cause problems.  Consider the following code:
 
@@ -638,7 +639,7 @@ Our output is now as expected:
 3
 ```
 
-An alternate solution is to use a tham chiếu wrapper.  C++ provides a convenient type (as part of the <functional> header) called `std::reference_wrapper` that allows us to pass a normal type as if it was a tham chiếu.  For even more convenience, a `std::reference_wrapper` can be created by using the `std::ref()` hàm. By wrapping our lambda in a `std::reference_wrapper`, whenever anybody tries to make a copy of our lambda, they’ll make a copy of the reference_wrapper instead (avoiding making a copy of the lambda).
+An alternate solution is to use a tham chiếu wrapper.  C++ provides a convenient type (as part of the `<functional>` header) called `std::reference_wrapper` that allows us to pass a normal type as if it was a tham chiếu.  For even more convenience, a `std::reference_wrapper` can be created by using the `std::ref()` hàm. By wrapping our lambda in a `std::reference_wrapper`, whenever anybody tries to make a copy of our lambda, they’ll make a copy of the reference_wrapper instead (avoiding making a copy of the lambda).
 
 Here’s our updated code using `std::ref`:
 
@@ -687,7 +688,8 @@ Standard library các hàm may copy hàm đối tượng (reminder: lambdas are 
 :::
 
 ::: tip Thực hành tốt nhất (Best Practice)
-<p>Try to avoid mutable lambdas. Non-mutable lambdas are easier to understand and don’t suffer from the above issues, as well as more dangerous issues that arise when you add parallel execution.
+
+Try to avoid mutable lambdas. Non-mutable lambdas are easier to understand and don’t suffer from the above issues, as well as more dangerous issues that arise when you add parallel execution.
 
 :::
 
@@ -736,7 +738,6 @@ int main()
 ```
 
 ::: details Xem lời giải (Solution)
-</p>
 
 Variable
 Usable without explicit capture
@@ -896,7 +897,7 @@ myVector.erase(found);
 - Use `std::min_element` and a lambda to find the number closest to the user’s guess. `std::min_element` works analogous to `std::max_element` from the previous quiz.
 
 ::: details Gợi ý (Hint)
-Hint: Use `std::abs` from <cmath> to calculate the positive difference between two numbers.</p>
+Hint: Use `std::abs` from `<cmath>` to calculate the positive difference between two numbers.
 
 ```cpp
 int distance{ std::abs(3 - 5) }; // 2
@@ -989,7 +990,6 @@ int findClosestNumber(const Numbers& numbers, int guess)
         });
 }
 
-
 // Called when the user guesses a number correctly.
 void printSuccess(const Numbers& numbers)
 {
@@ -1039,33 +1039,10 @@ int main()
 ```
 :::
 
-</a>
-  	<a class="nav-link" href="/">
-  
-    <i class="fa fa-home" aria-hidden="true"></i>
-    
-      Back to table of contents
-    
-</a>
-  	<a class="nav-link" href="https://www.learncpp.com/cpp-tutorial/introduction-to-lambdas-anonymous-các hàm/">
-  
-    <i class="fa fa-chevron-circle-left" aria-hidden="true"></i>
-    
-      Previous lesson
-      
-        20.6Introduction to lambdas (anonymous các hàm)
-      
-    
-  </a>
-
+  	
+  	
 
 ---
-
-
-
-
-
-
 
 ::: tip 💡 Tóm Tắt Quy Tắc Vàng (Core Guidelines)
 1. Luôn hiểu rõ vòng đời và quyền sở hữu (Ownership) của dữ liệu trước khi viết code.

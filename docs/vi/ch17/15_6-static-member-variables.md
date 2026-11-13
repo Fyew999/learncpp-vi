@@ -217,7 +217,7 @@ public:
 Make your static members `inline` or `constexpr` so they can be được khởi tạo inside the class definition.
 :::
 
-<p class="cpp-section cpp-topline" style="clear: both">An example of static member các biến
+An example of static member các biến
 
 Why use static các biến inside classes?  One use is to assign a unique ID to every instance of the class.  Here’s an example:
 
@@ -298,33 +298,10 @@ int main()
 }
 ```
 
-</a>
-  	<a class="nav-link" href="/">
-  
-    <i class="fa fa-home" aria-hidden="true"></i>
-    
-      Back to table of contents
-    
-</a>
-  	<a class="nav-link" href="https://www.learncpp.com/cpp-tutorial/class-templates-with-member-các hàm/">
-  
-    <i class="fa fa-chevron-circle-left" aria-hidden="true"></i>
-    
-      Previous lesson
-      
-        15.5Class templates with member các hàm
-      
-    
-  </a>
-
+  	
+  	
 
 ---
-
-
-
-
-
-
 
 ::: tip 💡 Tóm Tắt Quy Tắc Vàng (Core Guidelines)
 1. Luôn hiểu rõ vòng đời và quyền sở hữu (Ownership) của dữ liệu trước khi viết code.

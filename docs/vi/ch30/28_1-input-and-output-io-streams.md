@@ -46,42 +46,19 @@ The **iostream** class can handle both input and output, allowing bidirectional 
 
 A **standard stream** is a pre-connected stream provided to a computer program by its environment.  C++ comes with four predefined standard stream đối tượng that have already been set up for your use.  The first three, you have seen before:
 
-<li>**cin** -- an istream object tied to the standard input (typically the keyboard)
-<li>**cout** -- an ostream object tied to the standard output (typically the monitor)
-<li>**cerr** -- an ostream object tied to the standard error (typically the monitor), providing unbuffered output
-<li>**clog** -- an ostream object tied to the standard error (typically the monitor), providing buffered output
+`<li>`**cin** -- an istream object tied to the standard input (typically the keyboard)
+`<li>`**cout** -- an ostream object tied to the standard output (typically the monitor)
+`<li>`**cerr** -- an ostream object tied to the standard error (typically the monitor), providing unbuffered output
+`<li>`**clog** -- an ostream object tied to the standard error (typically the monitor), providing buffered output
 
 Unbuffered output is typically handled immediately, whereas buffered output is typically stored and written out as a block.  Because clog isn’t used very often, it is often omitted from the list of standard streams.
 
 In the next lesson, we’ll take a look at some more I/O related functionality in more detail.
 
-</a>
-  	<a class="nav-link" href="/">
-  
-    <i class="fa fa-home" aria-hidden="true"></i>
-    
-      Back to table of contents
-    
-</a>
-  	<a class="nav-link" href="https://www.learncpp.com/cpp-tutorial/chapter-27-summary-and-quiz/">
-  
-    <i class="fa fa-chevron-circle-left" aria-hidden="true"></i>
-    
-      Previous lesson
-      
-        27.xChapter 27 summary and quiz
-      
-    
-  </a>
-
+  	
+  	
 
 ---
-
-
-
-
-
-
 
 ::: tip 💡 Tóm Tắt Quy Tắc Vàng (Core Guidelines)
 1. Luôn hiểu rõ vòng đời và quyền sở hữu (Ownership) của dữ liệu trước khi viết code.

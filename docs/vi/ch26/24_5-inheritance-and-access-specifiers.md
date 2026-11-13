@@ -71,8 +71,8 @@ Lý do: Nếu bạn cho phép lớp con truy cập trực tiếp vào biến, sa
 
 ### Câu hỏi:
 Nếu lớp `Child` kế thừa theo kiểu `private` từ `Parent` (`class Child : private Parent`), thì đối tượng `Child c;` có thể gọi được các hàm `public` của `Parent` từ hàm `main()` không?
-<details>
-<summary><b>Xem lời giải</b></summary>
+`<details>`
+`<summary>``<b>`Xem lời giải</b></summary>
 
 **Đáp án**: **KHÔNG THỂ!** Vì qua kế thừa `private`, tất cả các thành viên `public` của `Parent` đã bị biến thành `private` bên trong `Child`. Do đó, người dùng từ bên ngoài `Child` hoàn toàn không thể nhìn thấy chúng.
 </details>

@@ -50,7 +50,7 @@ int main()
 }
 ```
 
-However, there are many cases where it is useful to define các biến with values that can not be changed.  For example, consider the gravity of Earth (near the surface): 9.8 meters/second<sup>2</sup>.  This isn’t likely to change any time soon (and if it does, you’ve likely got bigger problems than learning C++).  Defining this value as a hằng số helps ensure that this value isn’t accidentally changed.  Constants also have other benefits that we’ll explore in subsequent lessons.
+However, there are many cases where it is useful to define các biến with values that can not be changed.  For example, consider the gravity of Earth (near the surface): 9.8 meters/second`<sup>`2</sup>.  This isn’t likely to change any time soon (and if it does, you’ve likely got bigger problems than learning C++).  Defining this value as a hằng số helps ensure that this value isn’t accidentally changed.  Constants also have other benefits that we’ll explore in subsequent lessons.
 
 Although it is a well-known oxymoron, a biến whose value cannot be changed after sự khởi tạo is called a **hằng số biến**.
 
@@ -71,14 +71,16 @@ Due to the way that the trình biên dịch parses more complex declarations, so
 :::
 
 ::: tip Thực hành tốt nhất (Best Practice)
-<p>Place `const` before the type (because it is more conventional to do so).
+
+Place `const` before the type (because it is more conventional to do so).
 :::
 
 ::: info Hiểu biết cốt lõi
-<p>The type of an object includes the const qualifier, so when we define `const double gravity { 9.8 };` the type of `gravity` is `const double`.
+
+The type of an object includes the const qualifier, so when we define `const double gravity { 9.8 };` the type of `gravity` is `const double`.
 :::
 
-<p class="cpp-section cpp-topline" style="clear: both">Const các biến must be được khởi tạo
+Const các biến must be được khởi tạo
 
 Const các biến *must* be được khởi tạo when you define them, and then that value can not be changed via phép gán:
 
@@ -158,7 +160,7 @@ Making a hàm tham số hằng số enlists the trình biên dịch’s help to 
 Don’t use `const` for value tham số.
 :::
 
-<p>Later in this tutorial series, we’ll talk about two other ways to pass đối số to các hàm: pass by tham chiếu, and pass by address.  When using either of these methods, proper use of `const` is important.
+Later in this tutorial series, we’ll talk about two other ways to pass đối số to các hàm: pass by tham chiếu, and pass by address.  When using either of these methods, proper use of `const` is important.
 
 Const các giá trị trả về
 
@@ -189,7 +191,7 @@ For other types (which we’ll cover later), there is typically little point in 
 Don’t use `const` when returning by value.
 :::
 
-<p class="cpp-section cpp-topline" style="clear: both">Why các biến should be made hằng số
+Why các biến should be made hằng số
 
 If a biến can be made hằng số, it generally should be made hằng số.  This is important for a number of reasons:
 
@@ -314,33 +316,10 @@ But at least now you can appreciate this joke from [JF Bastien](https://x.com/jf
 
 :::
 
-</a>
-  	<a class="nav-link" href="/">
-  
-    <i class="fa fa-home" aria-hidden="true"></i>
-    
-      Back to table of contents
-    
-</a>
-  	<a class="nav-link" href="https://www.learncpp.com/cpp-tutorial/chapter-4-summary-and-quiz/">
-  
-    <i class="fa fa-chevron-circle-left" aria-hidden="true"></i>
-    
-      Previous lesson
-      
-        4.xChapter 4 summary and quiz
-      
-    
-  </a>
-
+  	
+  	
 
 ---
-
-
-
-
-
-
 
 ::: tip 💡 Tóm Tắt Quy Tắc Vàng (Core Guidelines)
 1. Luôn hiểu rõ vòng đời và quyền sở hữu (Ownership) của dữ liệu trước khi viết code.

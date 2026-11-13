@@ -211,7 +211,7 @@ Our game board is a 4×4 grid of tiles that can slide around.  Therefore, it wil
 
 - Draw to the console with the appropriate spacing (so the tiles will line up when the board is displayed).  See the sample output below for an example indicating how tiles should be spaced.
 
-<a class="tasks_link_show" href="javascript:void(0)" onclick="cppTasksToggle(document.getElementById('cpp_tasks_id_0'), this, 'Show Tasks', 'Hide Tasks')">Show Tasks</a>
+Show Tasks
 
 Our `Tile` class should have this functionality:
 
@@ -316,7 +316,7 @@ Define a `Board` class that will represent 4×4 grid of tiles. A newly created `
 
 Why initiate the board in the solved state?  When you buy a physical version of these puzzles, the puzzles typically start in the solved state -- you have to manually mix them up (by sliding tiles around) before trying to solve them.  We will mimic that process in our program (we’ll do the mixing up in a future step).
 
-<a class="tasks_link_show" href="javascript:void(0)" onclick="cppTasksToggle(document.getElementById('cpp_tasks_id_1'), this, 'Show Tasks', 'Hide Tasks')">Show Tasks</a>
+Show Tasks
 
 The `Board` class should have the following functionality:
 
@@ -469,7 +469,7 @@ For each valid game command:
 
 Because our user input routines do not need to maintain any state, implement them inside a namespace named `UserInput`.
 
-<a class="tasks_link_show" href="javascript:void(0)" onclick="cppTasksToggle(document.getElementById('cpp_tasks_id_2'), this, 'Show Tasks', 'Hide Tasks')">Show Tasks</a>
+Show Tasks
 
 Implement the `UserInput` namespace:
 
@@ -500,7 +500,6 @@ f
 g
 h
 Valid command: q
-
 
 Bye!
 ```
@@ -649,7 +648,7 @@ Implement a helper class named `Direction`, which will allow us to create đối
 
 The more we can use `Direction` instead of directional game commands, the easier our code will be to read and understand.
 
-<a class="tasks_link_show" href="javascript:void(0)" onclick="cppTasksToggle(document.getElementById('cpp_tasks_id_3'), this, 'Show Tasks', 'Hide Tasks')">Show Tasks</a>
+Show Tasks
 
 Implement the class `Direction`, which has:
 
@@ -690,7 +689,6 @@ You entered direction: down
 d
 You entered direction: right
 q
-
 
 Bye!
 ```
@@ -929,7 +927,7 @@ Our game board is a 4×4 grid of `Tile`, which we store in two-dimensional array
 
 Since we’ll be working with coordinates a lot, create a helper class named `Point` that stores an {x, y} pair of coordinates.  We should be able to compare two Point đối tượng for equality and inequality.  Also implement a member hàm named `getAdjacentPoint` that takes a Direction object as a tham số and returns the Point in that direction.  For example, `Point{1, 1}.getAdjacentPoint(Direction::right)` == `Point{2, 1}`.
 
-<a class="tasks_link_show" href="javascript:void(0)" onclick="cppTasksToggle(document.getElementById('cpp_tasks_id_4'), this, 'Show Tasks', 'Hide Tasks')">Show Tasks</a>
+Show Tasks
 
 Implement a struct named `Point`.  This should contain:
 
@@ -1022,7 +1020,6 @@ public:
 private:
     Type m_type{};
 };
-
 
 std::ostream& operator<<(std::ostream& stream, Direction dir)
 {
@@ -1246,7 +1243,7 @@ Let’s generalize this procedure.  When the user enters a directional command, 
 
 Implement this by adding a member hàm `moveTile(Direction)` to the class `Board`.  Add this to your game loop from step 5.  If the user successfully slides a tile, the game should redraw the updated board.
 
-<a class="tasks_link_show" href="javascript:void(0)" onclick="cppTasksToggle(document.getElementById('cpp_tasks_id_5'), this, 'Show Tasks', 'Hide Tasks')">Show Tasks</a>
+Show Tasks
 
 Implement the following member các hàm in our `Board` class:
 
@@ -1318,7 +1315,6 @@ public:
 private:
     Type m_type{};
 };
-
 
 std::ostream& operator<<(std::ostream& stream, Direction dir)
 {
@@ -1570,7 +1566,7 @@ We can have our program randomize the board in the same way.
 
 Once the user has solved the puzzle, the program should print `"\n\nYou won!\n\n"` and then exit normally.
 
-<a class="tasks_link_show" href="javascript:void(0)" onclick="cppTasksToggle(document.getElementById('cpp_tasks_id_6'), this, 'Show Tasks', 'Hide Tasks')">Show Tasks</a>
+Show Tasks
 
 - Add a `randomize()` member hàm to the `Board` class which randomizes the tiles in the game board.  Pick a random direction and if the adjacent point is valid, then slide a tile in that direction.  Doing this 1000 times should be sufficient to mix up the board.
 
@@ -1901,33 +1897,10 @@ int main()
 ```
 :::
 
-</a>
-  	<a class="nav-link" href="/">
-  
-    <i class="fa fa-home" aria-hidden="true"></i>
-    
-      Back to table of contents
-    
-</a>
-  	<a class="nav-link" href="https://www.learncpp.com/cpp-tutorial/chapter-21-summary-and-quiz/">
-  
-    <i class="fa fa-chevron-circle-left" aria-hidden="true"></i>
-    
-      Previous lesson
-      
-        21.xChapter 21 summary and quiz
-      
-    
-  </a>
-
+  	
+  	
 
 ---
-
-
-
-
-
-
 
 ::: tip 💡 Tóm Tắt Quy Tắc Vàng (Core Guidelines)
 1. Luôn hiểu rõ vòng đời và quyền sở hữu (Ownership) của dữ liệu trước khi viết code.

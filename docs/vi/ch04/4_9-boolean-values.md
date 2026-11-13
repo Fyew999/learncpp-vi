@@ -221,7 +221,7 @@ However, when `std::boolalpha` is enabled for input, numeric values will no long
 Enabling `std::boolalpha` for input will only allow lower-cased `false` or `true` to be accepted.  Variations with capital letters will not be accepted.  `0` and `1` will also no longer be accepted.
 :::
 
-<p>Note that we use `std::cin >> std::boolalpha;` to input bool values as `true` or `false`, and `std::cout << std::boolalpha;` to output bool values as `true` or `false`.  These are independent controls that can be turned on (using `std::boolalpha`) or off (using `std::noboolalpha`) separately.
+Note that we use `std::cin >> std::boolalpha;` to input bool values as `true` or `false`, and `std::cout << std::boolalpha;` to output bool values as `true` or `false`.  These are independent controls that can be turned on (using `std::boolalpha`) or off (using `std::noboolalpha`) separately.
 
 Boolean các giá trị trả về
 
@@ -277,33 +277,10 @@ Boolean values take a little bit of getting used to, but once you get your mind 
 
 We’ll continue our exploration of Boolean values in the next lesson.
 
-</a>
-  	<a class="nav-link" href="/">
-  
-    <i class="fa fa-home" aria-hidden="true"></i>
-    
-      Back to table of contents
-    
-</a>
-  	<a class="nav-link" href="https://www.learncpp.com/cpp-tutorial/floating-point-numbers/">
-  
-    <i class="fa fa-chevron-circle-left" aria-hidden="true"></i>
-    
-      Previous lesson
-      
-        4.8Floating point numbers
-      
-    
-  </a>
-
+  	
+  	
 
 ---
-
-
-
-
-
-
 
 ::: tip 💡 Tóm Tắt Quy Tắc Vàng (Core Guidelines)
 1. Luôn hiểu rõ vòng đời và quyền sở hữu (Ownership) của dữ liệu trước khi viết code.

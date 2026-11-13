@@ -97,7 +97,7 @@ In the above example, we switch on `color`, which holds the enumerator we passed
 Because C-style string các hằng giá trị (literals) exist for the entire program, it’s okay to return a `std::string_view` that is viewing a C-style string hằng giá trị (literal).  When the `std::string_view` is copied back to the caller, the C-style string hằng giá trị (literal) being viewed will still exist.
 :::
 
-<p>The hàm is constexpr so that we can use the color’s name in a hằng số biểu thức.
+The hàm is constexpr so that we can use the color’s name in a hằng số biểu thức.
 
 ::: info Related content
 
@@ -248,7 +248,7 @@ int main()
 }
 ```
 
-<p>In the above solution, we use a series of if-else câu lệnh to do string comparisons.  If the user’s input string matches an enumerator string, we return the appropriate enumerator.  If none of the strings match, we return `{}`, which means “no value”.
+In the above solution, we use a series of if-else câu lệnh to do string comparisons.  If the user’s input string matches an enumerator string, we return the appropriate enumerator.  If none of the strings match, we return `{}`, which means “no value”.
 
 ::: info For advanced readers
 
@@ -283,33 +283,10 @@ We cover lambdas in lesson [20.6 -- Introduction to lambdas (anonymous các hàm
 
 Similar to the output case, it would be better if we could just `std::cin >> pet`.  We’ll cover this in upcoming lesson [13.5 -- Introduction to overloading the I/O các toán tử](https://www.learncpp.com/cpp-tutorial/introduction-to-overloading-the-i-o-các toán tử/).
 
-</a>
-  	<a class="nav-link" href="/">
-  
-    <i class="fa fa-home" aria-hidden="true"></i>
-    
-      Back to table of contents
-    
-</a>
-  	<a class="nav-link" href="https://www.learncpp.com/cpp-tutorial/unscoped-enumerator-integral-conversions/">
-  
-    <i class="fa fa-chevron-circle-left" aria-hidden="true"></i>
-    
-      Previous lesson
-      
-        13.3Unscoped enumerator integral conversions
-      
-    
-  </a>
-
+  	
+  	
 
 ---
-
-
-
-
-
-
 
 ::: tip 💡 Tóm Tắt Quy Tắc Vàng (Core Guidelines)
 1. Luôn hiểu rõ vòng đời và quyền sở hữu (Ownership) của dữ liệu trước khi viết code.

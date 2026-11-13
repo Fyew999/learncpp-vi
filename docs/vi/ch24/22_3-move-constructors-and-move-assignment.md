@@ -273,7 +273,7 @@ Move các hàm tạo (constructors) and move phép gán should be marked as `noe
 We introduce `noexcept` in lesson [27.9 -- Exception specifications and noexcept](https://www.learncpp.com/cpp-tutorial/exception-specifications-and-noexcept/) and discuss why move các hàm tạo (constructors) and move phép gán are marked as `noexcept` in lesson [27.10 -- std::move_if_noexcept](https://www.learncpp.com/cpp-tutorial/stdmove_if_noexcept/).
 :::
 
-<p class="cpp-section cpp-topline" style="clear: both">When are the move hàm tạo (constructor) and move phép gán called?
+When are the move hàm tạo (constructor) and move phép gán called?
 
 The move hàm tạo (constructor) and move phép gán are called when those các hàm have been defined, and the đối số for construction or phép gán is an rvalue.  Most typically, this rvalue will be a hằng giá trị (literal) or temporary value.
 
@@ -857,28 +857,10 @@ Move assign
 Joe
 ```
 
-</a>
-  	<a class="nav-link" href="/">
-  
-    <i class="fa fa-home" aria-hidden="true"></i>
-    
-      Back to table of contents
-    
-</a>
-  	<a class="nav-link" href="https://www.learncpp.com/cpp-tutorial/rvalue-các tham chiếu/">
-  
-    <i class="fa fa-chevron-circle-left" aria-hidden="true"></i>
-    
-      Previous lesson
-      
-        22.2R-value các tham chiếu
-      
-    
-  </a>
-
+  	
+  	
 
 ---
-
 
 ```mermaid
 classDiagram
@@ -890,13 +872,9 @@ classDiagram
     note for DoiTuong "Đóng gói (Encapsulation):\nDữ liệu được bảo vệ trong private\nThao tác qua phương thức public"
 ```
 
-
 ::: warning Cạm Bẫy: Khởi Tạo Không Đồng Nhất (Initialization Pitfalls)
 Hãy luôn khởi tạo biến thành viên ngay tại nơi khai báo hoặc sử dụng **Danh sách khởi tạo thành viên (Member Initializer List)** trong hàm tạo để tránh việc đối tượng bị gán giá trị 2 lần gây lãng phí chu kỳ CPU.
 :::
-
-
-
 
 ::: tip 💡 Tóm Tắt Quy Tắc Vàng (Core Guidelines)
 1. Luôn hiểu rõ vòng đời và quyền sở hữu (Ownership) của dữ liệu trước khi viết code.

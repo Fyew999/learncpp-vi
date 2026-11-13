@@ -322,28 +322,10 @@ Prefer to implement a hàm as a non-friend when possible and reasonable.
 
 Be cautious when adding new members to the public interface of an existing class, as every hàm (even trivial ones) adds some level of clutter and complexity.  In the case of `Accumulator` above, it’s totally reasonable to have an access hàm to get the current accumulated value.  In more complex cases, it may be preferable to use friendship instead of adding many new access các hàm to the interface of a class.
 
-</a>
-  	<a class="nav-link" href="/">
-  
-    <i class="fa fa-home" aria-hidden="true"></i>
-    
-      Back to table of contents
-    
-</a>
-  	<a class="nav-link" href="https://www.learncpp.com/cpp-tutorial/static-member-các hàm/">
-  
-    <i class="fa fa-chevron-circle-left" aria-hidden="true"></i>
-    
-      Previous lesson
-      
-        15.7Static member các hàm
-      
-    
-  </a>
-
+  	
+  	
 
 ---
-
 
 ```mermaid
 flowchart TD
@@ -354,9 +336,6 @@ flowchart TD
         FrameFunc -->|Trả về giá trị (return)| FrameMain
     end
 ```
-
-
-
 
 ::: tip C++20 / C++23: Định Dạng & In Ấn Hiện Đại
 Thay vì dùng `std::cout` kèm `<<` cồng kềnh và dễ chậm, trong C++23 bạn có thể dùng `std::println`:
@@ -370,7 +349,6 @@ int main()
 }
 ```
 :::
-
 
 ::: tip 💡 Tóm Tắt Quy Tắc Vàng (Core Guidelines)
 1. Luôn hiểu rõ vòng đời và quyền sở hữu (Ownership) của dữ liệu trước khi viết code.

@@ -40,7 +40,7 @@ Trong bài học [20.2 -- The ngăn xếp Stack and the vùng nhớ Heap (Free S
 A **tail call** is a hàm call that occurs at the tail (end) of a hàm.  Functions with recursive tail calls are fairly easy for the trình biên dịch to optimize into an iterative (non-recursive) hàm.  Such a hàm would not cause the system to run out of ngăn xếp Stack space in the above example.  If you run the above program and it runs forever, this is likely what happened.
 :::
 
-<p>**Recursive termination conditions**
+**Recursive termination conditions**
 
 Recursive hàm calls generally work just like normal hàm calls.  However, the program above illustrates the most important difference with recursive các hàm: you must include a recursive termination condition, or they will run “forever” (actually, until the call ngăn xếp Stack runs out of memory).  A **recursive termination** is a condition that, when met, will cause the recursive hàm to stop calling itself.
 
@@ -168,14 +168,12 @@ Each of the Fibonacci numbers is the length of the side of the square that the n
 
 Fibonacci numbers are defined mathematically as:
 
-</p>
-
 F(n) = 
 0 if n = 0
 1 if n = 1
 f(n-1) + f(n-2) if n > 1
 
-<p>Consequently, it’s rather simple to write a (not very efficient) recursive hàm to calculate the nth Fibonacci number:
+Consequently, it’s rather simple to write a (not very efficient) recursive hàm to calculate the nth Fibonacci number:
 
 ```cpp
 #include <iostream>
@@ -401,33 +399,10 @@ As the hints note, converting between signed and unsigned does not change the bi
 
 :::
 
-</a>
-  	<a class="nav-link" href="/">
-  
-    <i class="fa fa-home" aria-hidden="true"></i>
-    
-      Back to table of contents
-    
-</a>
-  	<a class="nav-link" href="https://www.learncpp.com/cpp-tutorial/the-ngăn xếp Stack-and-the-vùng nhớ Heap (Free Store)/">
-  
-    <i class="fa fa-chevron-circle-left" aria-hidden="true"></i>
-    
-      Previous lesson
-      
-        20.2The ngăn xếp Stack and the vùng nhớ Heap (Free Store)
-      
-    
-  </a>
-
+  	
+  	
 
 ---
-
-
-
-
-
-
 
 ::: tip 💡 Tóm Tắt Quy Tắc Vàng (Core Guidelines)
 1. Luôn hiểu rõ vòng đời và quyền sở hữu (Ownership) của dữ liệu trước khi viết code.

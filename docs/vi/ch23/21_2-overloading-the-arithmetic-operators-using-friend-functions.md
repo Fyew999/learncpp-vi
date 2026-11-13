@@ -198,7 +198,6 @@ public:
 	// add int + Cents using a friend function
 	friend Cents operator+(int value, const Cents& c1);
 
-
 	int getCents() const { return m_cents; }
 };
 
@@ -532,7 +531,7 @@ The non-explicit `Fraction(int, int)` hàm tạo (constructor) will be used to c
 Because this requires converting `2` to a `Fraction`, this is slightly slower than the implementation with overloaded các toán tử for integer multiplication.
 :::
 
-<p>d) If we make the tham chiếu tham số of the `toán tử*(Fraction, Fraction)` non-const, the following line from the `main` hàm no longer works. Why?
+d) If we make the tham chiếu tham số of the `toán tử*(Fraction, Fraction)` non-const, the following line from the `main` hàm no longer works. Why?
 
 ```cpp
 // The non-const multiplication operator looks like this
@@ -547,9 +546,9 @@ Fraction f6{ Fraction{1, 2} * Fraction{2, 3} * Fraction{3, 4} };
 We’re multiplying temporary `Fraction` đối tượng, but non-const các tham chiếu cannot bind to temporaries.
 :::
 
-<p>e) Extra credit: the fraction 2/4 is the same as 1/2, but 2/4 is not reduced to the lowest terms.  We can reduce any given fraction to lowest terms by finding the greatest common divisor (GCD) between the numerator and denominator, and then dividing both the numerator and denominator by the GCD.
+e) Extra credit: the fraction 2/4 is the same as 1/2, but 2/4 is not reduced to the lowest terms.  We can reduce any given fraction to lowest terms by finding the greatest common divisor (GCD) between the numerator and denominator, and then dividing both the numerator and denominator by the GCD.
 
-`std::gcd()` was added to the standard library in C++17 (in the <numeric> header).
+`std::gcd()` was added to the standard library in C++17 (in the `<numeric>` header).
 
 If you’re on an older trình biên dịch, you can use this hàm to find the GCD:
 
@@ -691,28 +690,10 @@ int main()
 ```
 :::
 
-</a>
-  	<a class="nav-link" href="/">
-  
-    <i class="fa fa-home" aria-hidden="true"></i>
-    
-      Back to table of contents
-    
-</a>
-  	<a class="nav-link" href="https://www.learncpp.com/cpp-tutorial/introduction-to-toán tử-overloading/">
-  
-    <i class="fa fa-chevron-circle-left" aria-hidden="true"></i>
-    
-      Previous lesson
-      
-        21.1Introduction to toán tử overloading
-      
-    
-  </a>
-
+  	
+  	
 
 ---
-
 
 ```mermaid
 flowchart TD
@@ -723,9 +704,6 @@ flowchart TD
         FrameFunc -->|Trả về giá trị (return)| FrameMain
     end
 ```
-
-
-
 
 ::: tip C++20 / C++23: Định Dạng & In Ấn Hiện Đại
 Thay vì dùng `std::cout` kèm `<<` cồng kềnh và dễ chậm, trong C++23 bạn có thể dùng `std::println`:
@@ -739,7 +717,6 @@ int main()
 }
 ```
 :::
-
 
 ::: tip 💡 Tóm Tắt Quy Tắc Vàng (Core Guidelines)
 1. Luôn hiểu rõ vòng đời và quyền sở hữu (Ownership) của dữ liệu trước khi viết code.

@@ -46,8 +46,6 @@ Because of this, the names “ten”, “eleven”, “twelve”, etc… are typ
 
 **Octal** is base 8 -- that is, the only digits available are: 0, 1, 2, 3, 4, 5, 6, and 7.  In Octal, we count like this: 0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 12, … (note: no 8 and 9, so we skip from 7 to 10).
 
-</p>
-
 Decimal
 0
 1
@@ -76,7 +74,7 @@ Octal
 12
 13
 
-<p>To use an octal hằng giá trị (literal), prefix your hằng giá trị (literal) with a 0 (zero):
+To use an octal hằng giá trị (literal), prefix your hằng giá trị (literal) with a 0 (zero):
 
 ```cpp
 #include <iostream>
@@ -100,8 +98,6 @@ Why 10 instead of 12?  Because numbers are output in decimal by default, and 12 
 Octal is hardly ever used, and we recommend you avoid it.
 
 **Hexadecimal** is base 16.  In hexadecimal, we count like this: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, A, B, C, D, E, F, 10, 11, 12, …
-
-</p>
 
 Decimal
 0
@@ -143,7 +139,7 @@ F
 10
 11
 
-<p>You can also use lower case letters (though upper case is more common).
+You can also use lower case letters (though upper case is more common).
 
 To use a hexadecimal hằng giá trị (literal), prefix your hằng giá trị (literal) with `0x`:
 
@@ -188,8 +184,6 @@ Using hexadecimal to represent binary
 
 Because there are 16 different values for a hexadecimal digit, we can say that a single hexadecimal digit encompasses 4 bits.  Consequently, a pair of hexadecimal digits can be used to exactly represent a full byte.
 
-</p>
-
 Hexadecimal
 0
 1
@@ -226,7 +220,7 @@ Binary
 1110
 1111
 
-<p>Consider a 32-bit integer with binary value 0011 1010 0111 1111 1001 1000 0010 0110.  Because of the length and repetition of digits, that’s not easy to read.  In hexadecimal, this same value would be: 3A7F 9826, which is much more concise.  For this reason, hexadecimal values are often used to represent memory addresses or raw data in memory (whose type isn’t known).
+Consider a 32-bit integer with binary value 0011 1010 0111 1111 1001 1000 0010 0110.  Because of the length and repetition of digits, that’s not easy to read.  In hexadecimal, this same value would be: 3A7F 9826, which is much more concise.  For this reason, hexadecimal values are often used to represent memory addresses or raw data in memory (whose type isn’t known).
 
 Binary các hằng giá trị (literals)
 
@@ -331,7 +325,7 @@ Note that once applied, the I/O manipulator remains set for future output until 
 
 Outputting values in binary
 
-Outputting values in binary is a little harder, as `std::cout` doesn’t come with this capability built-in.  Fortunately, the C++ standard library includes a type called `std::bitset` that will do this for us (in the <bitset> header).
+Outputting values in binary is a little harder, as `std::cout` doesn’t come with this capability built-in.  Fortunately, the C++ standard library includes a type called `std::bitset` that will do this for us (in the `<bitset>` header).
 
 To use `std::bitset`, we can define a `std::bitset` biến and tell `std::bitset` how many bits we want to store.  The number of bits must be a compile-time hằng số.  `std::bitset` can be được khởi tạo with an integral value (in any format, including decimal, octal, hex, or binary).
 
@@ -416,33 +410,10 @@ Hex: 20
 
 :::
 
-</a>
-  	<a class="nav-link" href="/">
-  
-    <i class="fa fa-home" aria-hidden="true"></i>
-    
-      Back to table of contents
-    
-</a>
-  	<a class="nav-link" href="https://www.learncpp.com/cpp-tutorial/các hằng giá trị (literals)/">
-  
-    <i class="fa fa-chevron-circle-left" aria-hidden="true"></i>
-    
-      Previous lesson
-      
-        5.2Literals
-      
-    
-  </a>
-
+  	
+  	
 
 ---
-
-
-
-
-
-
 
 ::: tip 💡 Tóm Tắt Quy Tắc Vàng (Core Guidelines)
 1. Luôn hiểu rõ vòng đời và quyền sở hữu (Ownership) của dữ liệu trước khi viết code.

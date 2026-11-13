@@ -323,7 +323,8 @@ In this implementation, we’re not overwriting the data members directly with t
 :::
 
 ::: info Tip
-<p>Transactional operations can be implemented using a number of different strategies.  For example:
+
+Transactional operations can be implemented using a number of different strategies.  For example:
 
 - Alter on success: Store the result of each sub-operation.  If all sub-operations succeed, replace the relevant data with the stored results.  This is the strategy we use in the `Point` example above.
 
@@ -587,33 +588,10 @@ int main()
 ```
 :::
 
-</a>
-  	<a class="nav-link" href="/">
-  
-    <i class="fa fa-home" aria-hidden="true"></i>
-    
-      Back to table of contents
-    
-</a>
-  	<a class="nav-link" href="https://www.learncpp.com/cpp-tutorial/overloading-các toán tử-using-normal-các hàm/">
-  
-    <i class="fa fa-chevron-circle-left" aria-hidden="true"></i>
-    
-      Previous lesson
-      
-        21.3Overloading các toán tử using normal các hàm
-      
-    
-  </a>
-
+  	
+  	
 
 ---
-
-
-
-
-
-
 
 ::: tip 💡 Tóm Tắt Quy Tắc Vàng (Core Guidelines)
 1. Luôn hiểu rõ vòng đời và quyền sở hữu (Ownership) của dữ liệu trước khi viết code.

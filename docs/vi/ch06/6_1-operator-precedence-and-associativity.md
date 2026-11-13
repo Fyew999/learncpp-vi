@@ -76,21 +76,21 @@ a = b = c = 5; // Gom nhóm thành: a = (b = (c = 5))
 | Cấp | Toán tử | Tên toán tử | Tính kết hợp |
 | :---: | :--- | :--- | :---: |
 | **1** | `::` | Phân giải phạm vi toàn cục / namespace / class | L->R |
-| **2** | `()`<br>`[]`<br>`.`<br>`->`<br>`++`<br>`--`<br>`typeid`<br>`cast` | Gọi hàm<br>Chỉ mục mảng<br>Truy cập thành viên trực tiếp<br>Truy cập thành viên qua con trỏ<br>Hậu tố tăng / giảm<br>Định danh kiểu runtime<br>`static_cast`, `const_cast`, `dynamic_cast`, `reinterpret_cast` | L->R |
-| **3** | `+`<br>`-`<br>`++`<br>`--`<br>`!`<br>`~`<br>`(type)`<br>`*`<br>`&`<br>`sizeof`<br>`co_await` | Dấu dương / âm 1 ngôi<br>Tiền tố tăng / giảm<br>Phủ định logic (NOT)<br>Đảo bit (Bitwise NOT)<br>Ép kiểu kiểu C<br>Giải tham chiếu con trỏ (Dereference)<br>Lấy địa chỉ bộ nhớ (Address-of)<br>Đo kích thước kiểu/biến<br>Coroutine await (C++20) | R->L |
-| **4** | `.*`<br>`->*` | Con trỏ tới thành viên | L->R |
-| **5** | `*`<br>`/`<br>`%` | Phép nhân số học<br>Phép chia số học<br>Phép chia lấy phần dư | L->R |
-| **6** | `+`<br>`-` | Phép cộng số học<br>Phép trừ số học | L->R |
-| **7** | `<<`<br>`>>` | Dịch bit trái (hoặc xuất stream)<br>Dịch bit phải (hoặc nhập stream) | L->R |
+| **2** | `()``<br>``[]``<br>``.``<br>``->``<br>``++``<br>``--``<br>``typeid``<br>``cast` | Gọi hàm`<br>`Chỉ mục mảng`<br>`Truy cập thành viên trực tiếp`<br>`Truy cập thành viên qua con trỏ`<br>`Hậu tố tăng / giảm`<br>`Định danh kiểu runtime`<br>``static_cast`, `const_cast`, `dynamic_cast`, `reinterpret_cast` | L->R |
+| **3** | `+``<br>``-``<br>``++``<br>``--``<br>``!``<br>``~``<br>``(type)``<br>``*``<br>``&``<br>``sizeof``<br>``co_await` | Dấu dương / âm 1 ngôi`<br>`Tiền tố tăng / giảm`<br>`Phủ định logic (NOT)`<br>`Đảo bit (Bitwise NOT)`<br>`Ép kiểu kiểu C`<br>`Giải tham chiếu con trỏ (Dereference)`<br>`Lấy địa chỉ bộ nhớ (Address-of)`<br>`Đo kích thước kiểu/biến`<br>`Coroutine await (C++20) | R->L |
+| **4** | `.*``<br>``->*` | Con trỏ tới thành viên | L->R |
+| **5** | `*``<br>``/``<br>``%` | Phép nhân số học`<br>`Phép chia số học`<br>`Phép chia lấy phần dư | L->R |
+| **6** | `+``<br>``-` | Phép cộng số học`<br>`Phép trừ số học | L->R |
+| **7** | `<<``<br>``>>` | Dịch bit trái (hoặc xuất stream)`<br>`Dịch bit phải (hoặc nhập stream) | L->R |
 | **8** | `<=>` | Toán tử so sánh ba chiều (Spaceship operator - C++20) | L->R |
-| **9** | `<`<br>`<=`<br>`>`<br>`>=` | Nhỏ hơn<br>Nhỏ hơn hoặc bằng<br>Lớn hơn<br>Lớn hơn hoặc bằng | L->R |
-| **10** | `==`<br>`!=` | So sánh bằng<br>So sánh khác | L->R |
+| **9** | `<``<br>``<=``<br>``>``<br>``>=` | Nhỏ hơn`<br>`Nhỏ hơn hoặc bằng`<br>`Lớn hơn`<br>`Lớn hơn hoặc bằng | L->R |
+| **10** | `==``<br>``!=` | So sánh bằng`<br>`So sánh khác | L->R |
 | **11** | `&` | Phép toán Bitwise AND | L->R |
 | **12** | `^` | Phép toán Bitwise XOR | L->R |
 | **13** | `\|` | Phép toán Bitwise OR | L->R |
 | **14** | `&&` | Phép toán Logical AND | L->R |
 | **15** | `\|\|` | Phép toán Logical OR | L->R |
-| **16** | `?:`<br>`=`<br>`+=`, `-=`, v.v.<br>`throw`<br>`co_yield` | Toán tử điều kiện ba ngôi<br>Toán tử gán giá trị<br>Các toán tử gán phức hợp<br>Ném ngoại lệ<br>Coroutine yield (C++20) | R->L |
+| **16** | `?:``<br>``=``<br>``+=`, `-=`, v.v.`<br>``throw``<br>``co_yield` | Toán tử điều kiện ba ngôi`<br>`Toán tử gán giá trị`<br>`Các toán tử gán phức hợp`<br>`Ném ngoại lệ`<br>`Coroutine yield (C++20) | R->L |
 | **17** | `,` | Toán tử dấu phẩy (Comma operator) | L->R |
 
 ---

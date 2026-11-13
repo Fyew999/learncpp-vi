@@ -16,15 +16,13 @@
 
 There are two almost identical ways to access characters in a string.  The easier to use and faster version is the overloaded toán tử[]:
 
-</p>
-
 **char& string::toán tử[] (size_type nIndex)**
 
-**const char& string::toán tử[] (size_type nIndex) const**</p>
+**const char& string::toán tử[] (size_type nIndex) const**
 
-<li>Both of these các hàm return the character with index nIndex
-<li>Passing an invalid index results in hành vi không xác định (Hành vi không xác định (Undefined Behavior - UB) - UB)
-<li>Because char& is the return type, you can use this to edit characters in the array
+`<li>`Both of these các hàm return the character with index nIndex
+`<li>`Passing an invalid index results in hành vi không xác định (Hành vi không xác định (Undefined Behavior - UB) - UB)
+`<li>`Because char& is the return type, you can use this to edit characters in the array
 
 Sample code:
 
@@ -42,17 +40,15 @@ f
 abcdeXg
 ```
 
-<p>There is also a non-toán tử version.  This version is slower since it uses exceptions to check if the nIndex is valid.  If you are not sure whether nIndex is valid, you should use this version to access the array:
-
-</p>
+There is also a non-toán tử version.  This version is slower since it uses exceptions to check if the nIndex is valid.  If you are not sure whether nIndex is valid, you should use this version to access the array:
 
 **char& string::at (size_type nIndex)**
 
-**const char& string::at (size_type nIndex) const**</p>
+**const char& string::at (size_type nIndex) const**
 
-<li>Both of these các hàm return the character with index nIndex
-<li>Passing an invalid index results in an out_of_range exception
-<li>Because char& is the return type, you can use this to edit characters in the array
+`<li>`Both of these các hàm return the character with index nIndex
+`<li>`Passing an invalid index results in an out_of_range exception
+`<li>`Because char& is the return type, you can use this to edit characters in the array
 
 Sample code:
 
@@ -70,17 +66,15 @@ f
 abcdeXg
 ```
 
-<p>**Conversion to C-style arrays**
+**Conversion to C-style arrays**
 
 Many các hàm (including all C các hàm) expect strings to be formatted as C-style strings rather than std::string.  For this reason, std::string provides 3 different ways to convert std::string to C-style strings.
 
-</p>
+**const char* string::c_str () const**
 
-**const char* string::c_str () const**</p>
-
-<li>Returns the contents of the string as a const C-style string
-<li>A null terminator is appended
-<li>The C-style string is owned by the std::string and should not be deleted
+`<li>`Returns the contents of the string as a const C-style string
+`<li>`A null terminator is appended
+`<li>`The C-style string is owned by the std::string and should not be deleted
 
 Sample code:
 
@@ -97,11 +91,11 @@ Output:
 7
 ```
 
-**const char* string::data () const**</p>
+**const char* string::data () const**
 
-<li>Returns the contents of the string as a const C-style string
-<li>A null terminator is appended. This hàm performs the same action as `c_str()`
-<li>The C-style string is owned by the std::string and should not be deleted
+`<li>`Returns the contents of the string as a const C-style string
+`<li>`A null terminator is appended. This hàm performs the same action as `c_str()`
+`<li>`The C-style string is owned by the std::string and should not be deleted
 
 Sample code:
 
@@ -123,12 +117,12 @@ Output:
 The strings are equal
 ```
 
-**size_type string::copy(char* szBuf, size_type nLength, size_type nIndex = 0) const**</p>
+**size_type string::copy(char* szBuf, size_type nLength, size_type nIndex = 0) const**
 
-<li>Both flavors copy at most nLength characters of the string to szBuf, beginning with character nIndex
-<li>The number of characters copied is returned
-<li>No null is appended.  It is up to the caller to ensure szBuf is được khởi tạo to NULL or terminate the string using the returned length
-<li>The caller is responsible for not overflowing szBuf
+`<li>`Both flavors copy at most nLength characters of the string to szBuf, beginning with character nIndex
+`<li>`The number of characters copied is returned
+`<li>`No null is appended.  It is up to the caller to ensure szBuf is được khởi tạo to NULL or terminate the string using the returned length
+`<li>`The caller is responsible for not overflowing szBuf
 
 Sample code:
 
@@ -148,35 +142,12 @@ Output:
 black
 ```
 
-<p>This hàm should be avoided where possible as it is relatively dangerous (as it is up to the caller to provide null-termination and avoid buffer overflows).
+This hàm should be avoided where possible as it is relatively dangerous (as it is up to the caller to provide null-termination and avoid buffer overflows).
 
-</a>
-  	<a class="nav-link" href="/">
-  
-    <i class="fa fa-home" aria-hidden="true"></i>
-    
-      Back to table of contents
-    
-</a>
-  	<a class="nav-link" href="https://www.learncpp.com/cpp-tutorial/stdstring-length-and-capacity/">
-  
-    <i class="fa fa-chevron-circle-left" aria-hidden="true"></i>
-    
-      Previous lesson
-      
-        22.3std::string length and capacity
-      
-    
-  </a>
-
+  	
+  	
 
 ---
-
-
-
-
-
-
 
 ::: tip 💡 Tóm Tắt Quy Tắc Vàng (Core Guidelines)
 1. Luôn hiểu rõ vòng đời và quyền sở hữu (Ownership) của dữ liệu trước khi viết code.

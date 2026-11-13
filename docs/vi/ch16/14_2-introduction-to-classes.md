@@ -126,7 +126,7 @@ And that is exactly what we see later, when we call `printFractionValue(f)`: the
 A small improvement would be to `assert(f.denominator != 0);` at the top of the body of `printFractionValue`.  This adds documentation value to the code, and makes it more obvious what precondition is being violated.  However, behaviorally, this doesn’t really change anything.  We really want to catch these problems at the source of the problem (when the member is được khởi tạo or assigned a bad value), not somewhere downstream (when the bad value is used).
 :::
 
-<p>Given the relative simplicitly of the Fraction example, it shouldn’t be too difficult to simply avoid creating invalid Fraction đối tượng.  However, in a more complex code base that uses many structs, structs with many members, or structs whose members have complex relationships, understanding what combination of values might violate some class invariant may not be so obvious.
+Given the relative simplicitly of the Fraction example, it shouldn’t be too difficult to simply avoid creating invalid Fraction đối tượng.  However, in a more complex code base that uses many structs, structs with many members, or structs whose members have complex relationships, understanding what combination of values might violate some class invariant may not be so obvious.
 
 A more complex class invariant
 
@@ -265,31 +265,14 @@ struct minMax
 However, as written, this struct has an unspecified class invariant.  What is the invariant?
 
 ::: details Xem lời giải (Solution)
-<p>The invariant is that `min <= max`.  If `min` is ever greater than `max`, any code that uses this struct may malfunction.
+
+The invariant is that `min <= max`.  If `min` is ever greater than `max`, any code that uses this struct may malfunction.
 :::
 
-</a>
-  	<a class="nav-link" href="/">
-  
-    <i class="fa fa-home" aria-hidden="true"></i>
-    
-      Back to table of contents
-    
-</a>
-  	<a class="nav-link" href="https://www.learncpp.com/cpp-tutorial/introduction-to-object-oriented-programming/">
-  
-    <i class="fa fa-chevron-circle-left" aria-hidden="true"></i>
-    
-      Previous lesson
-      
-        14.1Introduction to object-oriented programming
-      
-    
-  </a>
-
+  	
+  	
 
 ---
-
 
 ```mermaid
 classDiagram
@@ -301,13 +284,9 @@ classDiagram
     note for DoiTuong "Đóng gói (Encapsulation):\nDữ liệu được bảo vệ trong private\nThao tác qua phương thức public"
 ```
 
-
 ::: warning Cạm Bẫy: Khởi Tạo Không Đồng Nhất (Initialization Pitfalls)
 Hãy luôn khởi tạo biến thành viên ngay tại nơi khai báo hoặc sử dụng **Danh sách khởi tạo thành viên (Member Initializer List)** trong hàm tạo để tránh việc đối tượng bị gán giá trị 2 lần gây lãng phí chu kỳ CPU.
 :::
-
-
-
 
 ::: tip 💡 Tóm Tắt Quy Tắc Vàng (Core Guidelines)
 1. Luôn hiểu rõ vòng đời và quyền sở hữu (Ownership) của dữ liệu trước khi viết code.

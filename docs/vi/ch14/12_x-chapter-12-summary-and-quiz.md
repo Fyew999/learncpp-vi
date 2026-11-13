@@ -62,11 +62,9 @@ Type deduction for các biến (via the `auto` keyword) will drop any tham chi�
 
 **Return by address** works almost identically to return by tham chiếu, except a con trỏ to an object is returned instead of a tham chiếu to an object.
 
-<p class="cpp-section cpp-topline" style="clear: both">Hệ thống Câu hỏi & Quiz Tự Luyện
+Hệ thống Câu hỏi & Quiz Tự Luyện
 
 Câu hỏi #1
-
-</p>
 
 For each of the following biểu thức on the right side of toán tử <<, indicate whether the biểu thức is an lvalue or rvalue:
 
@@ -206,7 +204,7 @@ Câu hỏi #5
 
 Write a hàm named `sort2` which allows the caller to pass 2 int các biến as đối số.  When the hàm returns, the first đối số should hold the lesser of the two values, and the second đối số should hold the greater of the two values.
 
-Hint: The `std::swap()` hàm (in the <algorithm> header) can be used to swap the values of two các biến.  e.g. `std::swap(x, y)` swaps the values of the các biến `x` and `y`.
+Hint: The `std::swap()` hàm (in the `<algorithm>` header) can be used to swap the values of two các biến.  e.g. `std::swap(x, y)` swaps the values of the các biến `x` and `y`.
 
 The following code should run and print the values noted in the comments:
 
@@ -266,33 +264,10 @@ int main()
 ```
 :::
 
-</a>
-  	<a class="nav-link" href="/">
-  
-    <i class="fa fa-home" aria-hidden="true"></i>
-    
-      Back to table of contents
-    
-</a>
-  	<a class="nav-link" href="https://www.learncpp.com/cpp-tutorial/stdoptional/">
-  
-    <i class="fa fa-chevron-circle-left" aria-hidden="true"></i>
-    
-      Previous lesson
-      
-        12.15std::optional
-      
-    
-  </a>
-
+  	
+  	
 
 ---
-
-
-
-
-
-
 
 ::: tip 💡 Tóm Tắt Quy Tắc Vàng (Core Guidelines)
 1. Luôn hiểu rõ vòng đời và quyền sở hữu (Ownership) của dữ liệu trước khi viết code.

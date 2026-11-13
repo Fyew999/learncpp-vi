@@ -369,14 +369,14 @@ Modern các trình biên dịch support a simpler, alternate form of header guar
 There is one known case where `#pragma once` will typically fail.  If a header file is copied so that it exists in multiple places on the file system, if somehow both copies of the header get included, header guards will successfully de-dupe the identical headers, but `#pragma once` won’t (because the trình biên dịch won’t realize they are actually identical content).
 :::
 
-<p>For most projects, `#pragma once` works fine, and many developers now prefer it because it is easier and less error-prone.  Many IDEs will also auto-include `#pragma once` at the top of a new header file generated through the IDE.
+For most projects, `#pragma once` works fine, and many developers now prefer it because it is easier and less error-prone.  Many IDEs will also auto-include `#pragma once` at the top of a new header file generated through the IDE.
 
 ::: danger Cảnh báo nguy hiểm
 
 The `#pragma` directive was designed for trình biên dịch implementers to use for whatever purposes they desire.  As such, which pragmas are supported and what meaning those pragmas have is completely implementation-specific.  With the exception of `#pragma once`, do not expect a pragma that works on one trình biên dịch to be supported by another.
 :::
 
-<p>Because `#pragma once` is not defined by the C++ standard, it is possible that some các trình biên dịch may not implement it.  For this reason, some development houses (such as Google) recommend using traditional header guards.  In this tutorial series, we will favor header guards, as they are the most conventional way to guard headers.  However, support for `#pragma once` is fairly ubiquitous at this point, and if you wish to use `#pragma once` instead, that is generally accepted in modern C++.
+Because `#pragma once` is not defined by the C++ standard, it is possible that some các trình biên dịch may not implement it.  For this reason, some development houses (such as Google) recommend using traditional header guards.  In this tutorial series, we will favor header guards, as they are the most conventional way to guard headers.  However, support for `#pragma once` is fairly ubiquitous at this point, and if you wish to use `#pragma once` instead, that is generally accepted in modern C++.
 
 Tổng kết bài học
 
@@ -409,33 +409,10 @@ int add(int x, int y);
 ```
 :::
 
-</a>
-  	<a class="nav-link" href="/">
-  
-    <i class="fa fa-home" aria-hidden="true"></i>
-    
-      Back to table of contents
-    
-</a>
-  	<a class="nav-link" href="https://www.learncpp.com/cpp-tutorial/header-files/">
-  
-    <i class="fa fa-chevron-circle-left" aria-hidden="true"></i>
-    
-      Previous lesson
-      
-        2.11Header files
-      
-    
-  </a>
-
+  	
+  	
 
 ---
-
-
-
-
-
-
 
 ::: tip 💡 Tóm Tắt Quy Tắc Vàng (Core Guidelines)
 1. Luôn hiểu rõ vòng đời và quyền sở hữu (Ownership) của dữ liệu trước khi viết code.

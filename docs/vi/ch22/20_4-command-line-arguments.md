@@ -239,33 +239,10 @@ Other characters may also require backslashing or escaping depending on how your
 
 Command line đối số provide a great way for users or other programs to pass input data into a program at startup.  Consider making any input data that a program requires at startup to operate a command line tham số.  If the command line isn’t passed in, you can always detect that and ask the user for input.  That way, your program can operate either way.
 
-</a>
-  	<a class="nav-link" href="/">
-  
-    <i class="fa fa-home" aria-hidden="true"></i>
-    
-      Back to table of contents
-    
-</a>
-  	<a class="nav-link" href="https://www.learncpp.com/cpp-tutorial/recursion/">
-  
-    <i class="fa fa-chevron-circle-left" aria-hidden="true"></i>
-    
-      Previous lesson
-      
-        20.3Recursion
-      
-    
-  </a>
-
+  	
+  	
 
 ---
-
-
-
-
-
-
 
 ::: tip 💡 Tóm Tắt Quy Tắc Vàng (Core Guidelines)
 1. Luôn hiểu rõ vòng đời và quyền sở hữu (Ownership) của dữ liệu trước khi viết code.

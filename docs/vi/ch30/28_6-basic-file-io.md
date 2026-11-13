@@ -155,8 +155,6 @@ One interesting note is that std::endl; also flushes the output stream.  Consequ
 
 What happens if we try to write to a file that already exists?  Running the output example again shows that the original file is completely overwritten each time the program is run.  What if, instead, we wanted to append some more data to the end of the file?  It turns out that the file stream các hàm tạo (constructors) take an optional second tham số that allows you to specify information about how the file should be opened.  This tham số is called mode, and the valid flags that it accepts live in the ios class.
 
-</p>
-
 Ios file mode
 Meaning
 
@@ -178,7 +176,7 @@ Opens the file in write mode (default for ofstream)
 trunc
 Erases the file if it already exists
 
-<p>It is possible to specify multiple flags by bitwise ORing them together (using the | toán tử).  ifstream defaults to std::ios::in file mode.  ofstream defaults to std::ios::out file mode.  And fstream defaults to std::ios::in | std::ios::out file mode, meaning you can both read and write by default.
+It is possible to specify multiple flags by bitwise ORing them together (using the | toán tử).  ifstream defaults to std::ios::in file mode.  ofstream defaults to std::ios::out file mode.  And fstream defaults to std::ios::in | std::ios::out file mode, meaning you can both read and write by default.
 
 ::: info Tip
 
@@ -246,28 +244,10 @@ outf.close();
 
 You can find more information about the open() hàm [here](https://en.cppreference.com/w/cpp/io/basic_filebuf/open).
 
-</a>
-  	<a class="nav-link" href="/">
-  
-    <i class="fa fa-home" aria-hidden="true"></i>
-    
-      Back to table of contents
-    
-</a>
-  	<a class="nav-link" href="https://www.learncpp.com/cpp-tutorial/stream-states-and-input-validation/">
-  
-    <i class="fa fa-chevron-circle-left" aria-hidden="true"></i>
-    
-      Previous lesson
-      
-        28.5Stream states and input validation
-      
-    
-  </a>
-
+  	
+  	
 
 ---
-
 
 ```mermaid
 flowchart TD
@@ -278,9 +258,6 @@ flowchart TD
         FrameFunc -->|Trả về giá trị (return)| FrameMain
     end
 ```
-
-
-
 
 ::: tip C++20 / C++23: Định Dạng & In Ấn Hiện Đại
 Thay vì dùng `std::cout` kèm `<<` cồng kềnh và dễ chậm, trong C++23 bạn có thể dùng `std::println`:
@@ -294,7 +271,6 @@ int main()
 }
 ```
 :::
-
 
 ::: tip 💡 Tóm Tắt Quy Tắc Vàng (Core Guidelines)
 1. Luôn hiểu rõ vòng đời và quyền sở hữu (Ownership) của dữ liệu trước khi viết code.

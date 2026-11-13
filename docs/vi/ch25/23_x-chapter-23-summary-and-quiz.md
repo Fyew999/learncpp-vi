@@ -39,8 +39,8 @@ Mỗi trường hợp sau đây tương ứng với mối quan hệ nào (Compos
 3. Một người lập trình viên và bàn phím máy tính anh ấy đang gõ.
 4. Một hàm tính căn bậc hai `Math::sqrt` nhận vào một số `double`.
 
-<details>
-<summary><b>Xem lời giải</b></summary>
+`<details>`
+`<summary>``<b>`Xem lời giải</b></summary>
 
 1. **Composition (part-of)**: Bo mạch chủ là thành phần sống còn của máy tính.
 2. **Aggregation (has-a)**: Thư viện chứa sách, nhưng sách mượn ra ngoài vẫn tồn tại độc lập.
@@ -55,8 +55,8 @@ Hãy viết một chương trình C++ hoàn chỉnh mô phỏng mối quan hệ:
 - Quái vật có thể nhặt một vũ khí và sử dụng nó để tấn công. Vũ khí tồn tại độc lập với quái vật (Khi quái vật chết, vũ khí rơi ra đất và không bị hủy).
 - Xác định đây là mối quan hệ gì và viết code minh họa.
 
-<details>
-<summary><b>Xem lời giải</b></summary>
+`<details>`
+`<summary>``<b>`Xem lời giải</b></summary>
 
 Đây là quan hệ **Aggregation (has-a)**: Quái vật *có* vũ khí, nhưng không sở hữu vòng đời của vũ khí.
 

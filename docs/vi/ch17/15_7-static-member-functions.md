@@ -330,31 +330,13 @@ Any object declared in a namespace is a global biến.  When we declare `inline 
 
 In contrast, when a class object is instantiated, that class object contains a copy of each non-static data members.  We don’t want each class object to have its own copy of `std::mt19937`.  Therefore, we declare `static inline std::mt19937 mt`, which tells the trình biên dịch that a single instance of `std::mt19937` should exist as part of the `Random` class.  Defining `mt` as `static inline` makes it an inline biến, allowing us to khởi tạo it inside the class definition (we cover this point in lesson [15.6 -- Static member các biến](https://www.learncpp.com/cpp-tutorial/static-member-các biến/)).
 
-<p>We also make the member các hàm `static` so that they can be accessed without instantiating a `Random` object.
+We also make the member các hàm `static` so that they can be accessed without instantiating a `Random` object.
 :::
 
-</a>
-  	<a class="nav-link" href="/">
-  
-    <i class="fa fa-home" aria-hidden="true"></i>
-    
-      Back to table of contents
-    
-</a>
-  	<a class="nav-link" href="https://www.learncpp.com/cpp-tutorial/static-member-các biến/">
-  
-    <i class="fa fa-chevron-circle-left" aria-hidden="true"></i>
-    
-      Previous lesson
-      
-        15.6Static member các biến
-      
-    
-  </a>
-
+  	
+  	
 
 ---
-
 
 ```mermaid
 flowchart TD
@@ -365,9 +347,6 @@ flowchart TD
         FrameFunc -->|Trả về giá trị (return)| FrameMain
     end
 ```
-
-
-
 
 ::: tip C++20 / C++23: Định Dạng & In Ấn Hiện Đại
 Thay vì dùng `std::cout` kèm `<<` cồng kềnh và dễ chậm, trong C++23 bạn có thể dùng `std::println`:
@@ -381,7 +360,6 @@ int main()
 }
 ```
 :::
-
 
 ::: tip 💡 Tóm Tắt Quy Tắc Vàng (Core Guidelines)
 1. Luôn hiểu rõ vòng đời và quyền sở hữu (Ownership) của dữ liệu trước khi viết code.

@@ -81,8 +81,8 @@ void identify() const
 
 ### Câu hỏi:
 Từ một đối tượng lớp con `Derived d;`, người dùng từ hàm `main()` có thể gọi tường minh hàm gốc của `Base` được không?
-<details>
-<summary><b>Xem lời giải</b></summary>
+`<details>`
+`<summary>``<b>`Xem lời giải</b></summary>
 
 **Đáp án**: **HOÀN TOÀN ĐƯỢC!** Người dùng có thể chỉ định rõ toán tử phạm vi: `d.Base::identify();` để buộc trình biên dịch gọi phiên bản của lớp cha thay vì phiên bản bị ghi đè của lớp con.
 </details>

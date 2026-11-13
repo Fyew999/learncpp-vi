@@ -225,7 +225,7 @@ Conversely, not all declarations are definitions.  Declarations that aren’t de
 In common language, the term “declaration” is typically used to mean “a pure declaration”, and “definition” is used to mean “a definition that also serves as a declaration”.  Thus, we’d typically call `int x;` a definition, even though it is both a definition and a declaration.
 :::
 
-<p>When the trình biên dịch encounters an identifier, it will check to ensure use of that identifier is valid (e.g. that the identifier is in phạm vi truy cập (scope), that it is used in a syntactically valid manner, etc…).
+When the trình biên dịch encounters an identifier, it will check to ensure use of that identifier is valid (e.g. that the identifier is in phạm vi truy cập (scope), that it is used in a syntactically valid manner, etc…).
 
 In most cases, a declaration is sufficient to allow the trình biên dịch to ensure an identifier is being used properly.  For example, when the trình biên dịch encounters hàm call `add(5, 6)`, if it has already seen the declaration for `add(int, int)`, then it can validate that `add` is actually a hàm that takes two `int` tham số.  It does not need to have actually seen the definition for hàm `add` (which may exist in some other file).
 
@@ -259,7 +259,7 @@ int x; // biến definition
 
 The term “declaration” is commonly used to mean “pure declaration”, and the term “definition” used for anything that is both a definition and a declaration.  We use this common nomenclature in the example column comments.
 
-<a name="ODR"></a>The one definition rule (ODR) [<i class="fa fa-link" style="font-size: 0.8em;"></i>](#ODR)
+The one definition rule (ODR) [](#ODR)
 
 The **one definition rule** (or ODR for short) is a well-known rule in C++.  The ODR has three parts:
 
@@ -508,33 +508,10 @@ int main()
 Compiles and links.  The forward declaration of add() with two tham số is not used.
 :::
 
-</a>
-  	<a class="nav-link" href="/">
-  
-    <i class="fa fa-home" aria-hidden="true"></i>
-    
-      Back to table of contents
-    
-</a>
-  	<a class="nav-link" href="https://www.learncpp.com/cpp-tutorial/why-các hàm-are-useful-and-how-to-use-them-effectively/">
-  
-    <i class="fa fa-chevron-circle-left" aria-hidden="true"></i>
-    
-      Previous lesson
-      
-        2.6Why các hàm are useful, and how to use them effectively
-      
-    
-  </a>
-
+  	
+  	
 
 ---
-
-
-
-
-
-
 
 ::: tip 💡 Tóm Tắt Quy Tắc Vàng (Core Guidelines)
 1. Luôn hiểu rõ vòng đời và quyền sở hữu (Ownership) của dữ liệu trước khi viết code.

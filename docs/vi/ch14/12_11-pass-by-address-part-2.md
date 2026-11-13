@@ -157,7 +157,7 @@ Because `refptr` is now a tham chiếu to a con trỏ, when `ptr` is passed as a
 Because các tham chiếu to các con trỏ are fairly uncommon, it can be easy to mix up the syntax (is it `int*&` or `int&*`?).  The good news is that if you do it backwards, the trình biên dịch will error because you can’t have a con trỏ to a tham chiếu (because các con trỏ must hold the address of an object, and các tham chiếu aren’t đối tượng).  Then you can switch it around.
 :::
 
-<p class="cpp-section cpp-topline" style="clear: both">Why using `0` or `NULL` is no longer preferred (optional)
+Why using `0` or `NULL` is no longer preferred (optional)
 
 In this subsection, we’ll explain why using `0` or `NULL` is no longer preferred.
 
@@ -219,7 +219,7 @@ Using `nullptr` removes this ambiguity (it will always call `print(int*)`), sinc
 
 std::nullptr_t (optional)
 
-Since `nullptr` can be differentiated from integer values in hàm overloads, it must have a different type.  So what type is `nullptr`?  The answer is that `nullptr` has type `std::nullptr_t` (defined in header <cstddef>).  `std::nullptr_t` can only hold one value: `nullptr`!  While this may seem kind of silly, it’s useful in one situation.  If we want to write a hàm that accepts only a `nullptr` hằng giá trị (literal) đối số, we can make the tham số a `std::nullptr_t`.
+Since `nullptr` can be differentiated from integer values in hàm overloads, it must have a different type.  So what type is `nullptr`?  The answer is that `nullptr` has type `std::nullptr_t` (defined in header `<cstddef>`).  `std::nullptr_t` can only hold one value: `nullptr`!  While this may seem kind of silly, it’s useful in one situation.  If we want to write a hàm that accepts only a `nullptr` hằng giá trị (literal) đối số, we can make the tham số a `std::nullptr_t`.
 
 ```cpp
 #include <iostream>
@@ -267,33 +267,10 @@ And in the previous lesson, we mentioned that pass by address just copies an add
 
 Therefore, we can conclude that C++ really passes everything by value! The properties of pass by address (and tham chiếu) come solely from the fact that we can dereference the passed address to change the đối số, which we can not do with a normal value tham số!
 
-</a>
-  	<a class="nav-link" href="/">
-  
-    <i class="fa fa-home" aria-hidden="true"></i>
-    
-      Back to table of contents
-    
-</a>
-  	<a class="nav-link" href="https://www.learncpp.com/cpp-tutorial/pass-by-address/">
-  
-    <i class="fa fa-chevron-circle-left" aria-hidden="true"></i>
-    
-      Previous lesson
-      
-        12.10Pass by address
-      
-    
-  </a>
-
+  	
+  	
 
 ---
-
-
-
-
-
-
 
 ::: tip 💡 Tóm Tắt Quy Tắc Vàng (Core Guidelines)
 1. Luôn hiểu rõ vòng đời và quyền sở hữu (Ownership) của dữ liệu trước khi viết code.

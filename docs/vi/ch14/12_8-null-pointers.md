@@ -103,7 +103,7 @@ In the above example, we use phép gán to set the value of `ptr2` to `nullptr`,
 Use `nullptr` when you need a null con trỏ hằng giá trị (literal) for sự khởi tạo, phép gán, or passing a null con trỏ to a hàm.
 :::
 
-<p class="cpp-section cpp-topline" style="clear: both">Dereferencing a null con trỏ results in hành vi không xác định (Hành vi không xác định (Undefined Behavior - UB) - UB)
+Dereferencing a null con trỏ results in hành vi không xác định (Hành vi không xác định (Undefined Behavior - UB) - UB)
 
 Much like dereferencing a dangling (or wild) con trỏ leads to hành vi không xác định (Hành vi không xác định (Undefined Behavior - UB) - UB), dereferencing a null con trỏ also leads to hành vi không xác định (Hành vi không xác định (Undefined Behavior - UB) - UB).  In most cases, it will crash your application.
 
@@ -224,7 +224,7 @@ Unfortunately, avoiding dangling các con trỏ isn’t always easy: when an obj
 When an object is destroyed, any các con trỏ to the destroyed object will be left dangling (they will not be automatically set to `nullptr`).  It is your responsibility to detect these cases and ensure those các con trỏ are subsequently set to `nullptr`.
 :::
 
-<p class="cpp-section cpp-topline" style="clear: both">Legacy null con trỏ các hằng giá trị (literals): 0 and NULL
+Legacy null con trỏ các hằng giá trị (literals): 0 and NULL
 
 In older code, you may see two other hằng giá trị (literal) values used instead of `nullptr`.
 
@@ -247,7 +247,7 @@ int main()
 On modern architectures, the address `0` is typically used to represent a null con trỏ.  However, this value is not guaranteed by the C++ standard, and some architectures use other values.  The hằng giá trị (literal) `0`, when used in the context of a null con trỏ, will be translated into whatever address the architecture uses to represent a null con trỏ.
 :::
 
-<p>Additionally, there is a preprocessor macro named `NULL` (defined in the <cstddef> header).  This macro is inherited from C, where it is commonly used to indicate a null con trỏ.
+Additionally, there is a preprocessor macro named `NULL` (defined in the `<cstddef>` header).  This macro is inherited from C, where it is commonly used to indicate a null con trỏ.
 
 ```cpp
 #include <cstddef> // for NULL
@@ -315,7 +315,7 @@ Câu hỏi #1
 Yes, we can use a conditional (if câu lệnh or conditional toán tử) on the con trỏ.  A con trỏ will convert to Boolean `false` if it is a null con trỏ, and `true` otherwise.
 :::
 
-<p>1b) Can we determine whether a non-null con trỏ is valid or dangling?  If so, how?
+1b) Can we determine whether a non-null con trỏ is valid or dangling?  If so, how?
 
 ::: details Xem lời giải (Solution)
 
@@ -385,31 +385,13 @@ Why should we set các con trỏ that aren’t pointing to a valid object to ‘
 
 We can not determine whether a non-null con trỏ is valid or dangling, and accessing a dangling con trỏ will result in hành vi không xác định (Hành vi không xác định (Undefined Behavior - UB) - UB).  Therefore, we need to ensure that we do not have any dangling các con trỏ in our program.
 
-<p>If we ensure all các con trỏ are either pointing to valid đối tượng or set to `nullptr`, then we can use a conditional to test for null to ensure we don’t dereference a null con trỏ, and assume all non-null các con trỏ are pointing to valid đối tượng.
+If we ensure all các con trỏ are either pointing to valid đối tượng or set to `nullptr`, then we can use a conditional to test for null to ensure we don’t dereference a null con trỏ, and assume all non-null các con trỏ are pointing to valid đối tượng.
 :::
 
-</a>
-  	<a class="nav-link" href="/">
-  
-    <i class="fa fa-home" aria-hidden="true"></i>
-    
-      Back to table of contents
-    
-</a>
-  	<a class="nav-link" href="https://www.learncpp.com/cpp-tutorial/introduction-to-các con trỏ/">
-  
-    <i class="fa fa-chevron-circle-left" aria-hidden="true"></i>
-    
-      Previous lesson
-      
-        12.7Introduction to các con trỏ
-      
-    
-  </a>
-
+  	
+  	
 
 ---
-
 
 ```mermaid
 flowchart LR
@@ -422,11 +404,9 @@ flowchart LR
     RefR -.->|Đồng nhất với| VarA
 ```
 
-
 ::: danger Cạm Bẫy Thực Chiến: Con Trỏ Lơ Lửng (Dangling Pointer) & UB
 Tuyệt đối không giải phóng vùng nhớ mà con trỏ đang trỏ tới rồi tiếp tục truy cập nó, hoặc trả về tham chiếu/con trỏ tới một biến cục bộ trên Stack. Khi hàm kết thúc, biến cục bộ bị hủy và con trỏ sẽ trỏ vào vùng nhớ rác, dẫn đến **Hành vi không xác định (Undefined Behavior)** cực kỳ nguy hiểm!
 :::
-
 
 ::: tip Nâng Cấp C++ Hiện Đại: Thay Thế Con Trỏ Thô Bằng Smart Pointers
 Trong C++ hiện đại (C++11 đến C++23), hãy hạn chế tối đa việc sử dụng con trỏ thô (`T*`) cùng các toán tử `new`/`delete`. Thay vào đó, hãy luôn ưu tiên:
@@ -434,7 +414,6 @@ Trong C++ hiện đại (C++11 đến C++23), hãy hạn chế tối đa việc 
 - `std::shared_ptr<T>`: Sở hữu chia sẻ tài nguyên có cơ chế đếm tham chiếu (Reference counting).
 - `std::span<T>` (C++20) hoặc `std::string_view` (C++17): Xem qua vùng nhớ mà không sở hữu, an toàn và tốc độ cực cao.
 :::
-
 
 ::: tip 💡 Tóm Tắt Quy Tắc Vàng (Core Guidelines)
 1. Luôn hiểu rõ vòng đời và quyền sở hữu (Ownership) của dữ liệu trước khi viết code.

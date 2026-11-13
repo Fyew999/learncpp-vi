@@ -137,7 +137,7 @@ It turns out that `std::cout`‘s name isn’t really `std::cout`.  It’s actua
 When you use an identifier that is defined inside a non-global namespace (e.g. the `std` namespace), you need to tell the trình biên dịch that the identifier lives inside the namespace.”
 :::
 
-<p>There are a few different ways to do this.
+There are a few different ways to do this.
 
 Explicit namespace qualifier std::
 
@@ -217,7 +217,8 @@ Avoid using-directives (such as `using namespace std;`) at the top of your progr
 :::
 
 ::: info Related content
-<p>We talk more about using-declarations and using-directives (and how to use them responsibly) in lesson [7.13 -- Using declarations and using directives](https://www.learncpp.com/cpp-tutorial/using-declarations-and-using-directives/).
+
+We talk more about using-declarations and using-directives (and how to use them responsibly) in lesson [7.13 -- Using declarations and using directives](https://www.learncpp.com/cpp-tutorial/using-declarations-and-using-directives/).
 
 :::
 
@@ -253,33 +254,10 @@ The code that exists inside a nested phạm vi truy cập (scope) region is conv
 
 The `#include` and hàm definitions for `foo()` and `main()` exist in the global phạm vi truy cập (scope) region, so they are not indented.  The câu lệnh inside each hàm exist inside the nested phạm vi truy cập (scope) region of the hàm, so they are indented one level.
 
-</a>
-  	<a class="nav-link" href="/">
-  
-    <i class="fa fa-home" aria-hidden="true"></i>
-    
-      Back to table of contents
-    
-</a>
-  	<a class="nav-link" href="https://www.learncpp.com/cpp-tutorial/programs-with-multiple-code-files/">
-  
-    <i class="fa fa-chevron-circle-left" aria-hidden="true"></i>
-    
-      Previous lesson
-      
-        2.8Programs with multiple code files
-      
-    
-  </a>
-
+  	
+  	
 
 ---
-
-
-
-
-
-
 
 ::: tip 💡 Tóm Tắt Quy Tắc Vàng (Core Guidelines)
 1. Luôn hiểu rõ vòng đời và quyền sở hữu (Ownership) của dữ liệu trước khi viết code.

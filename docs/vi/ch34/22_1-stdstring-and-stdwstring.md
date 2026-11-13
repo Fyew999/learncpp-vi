@@ -21,7 +21,7 @@ Note: C-style strings will be referred to as “C-style strings”, whereas std:
 This chapter is somewhat outdated and will likely be condensed in a future update.  Feel free to scan the material for ideas and useful examples, but technical tham chiếu sites (e.g. [cppreference](https://en.cppreference.com/w/cpp/string/basic_string)) should be preferred for the most up-to-date information.
 :::
 
-<p>**Motivation for a string class**
+**Motivation for a string class**
 
 In a previous lesson, we covered  [C-style strings](http://www.learncpp.com/cpp-tutorial/66-c-style-strings/), which uses char arrays to store a string of characters.  If you’ve tried to do anything with C-style strings, you’ll very quickly come to the conclusion that they are a pain to work with, easy to mess up, and hard to debug.
 
@@ -59,7 +59,7 @@ Sign me up!
 
 **String overview**
 
-All string functionality in the standard library lives in the <string> header file.  To use it, simply include the string header:
+All string functionality in the standard library lives in the `<string>` header file.  To use it, simply include the string header:
 
 ```cpp
 #include <string>
@@ -92,8 +92,6 @@ These are the two classes that you will actually use.  std::string is used for s
 Although you will directly use std::string and std::wstring, all of the string functionality is implemented in the basic_string<> class.  String and wstring are able to access that functionality directly by virtue of being templated.  Consequently, all of the các hàm presented will work for both string and wstring.  However, because basic_string is a templated class, it also means the trình biên dịch will produce horrible looking template errors when you do something syntactically incorrect with a string or wstring.  Don’t be intimidated by these errors; they look far worse than they are!
 
 Here’s a list of all the các hàm in the string class.  Most of these các hàm have multiple flavors to handle different types of inputs, which we will cover in more depth in the next lessons.
-
-</p>
 
 Function
 Effect
@@ -255,7 +253,7 @@ Effect
 
         Find index of last character not from a set of characters
 
-        Find index of last character/substring</p>
+        Find index of last character/substring
 
 **Iterator and allocator support**
 
@@ -273,48 +271,25 @@ Effect
         Reverse-direction iterator support for beginning/end of string
     
 
-<p>While the standard library string classes provide a lot of functionality, there are a few notable omissions:
+While the standard library string classes provide a lot of functionality, there are a few notable omissions:
 
-<li>Constructors for creating strings from numbers
-<li>Capitalization / upper case / lower case các hàm
-<li>Case-insensitive comparisons
-<li>Tokenization / splitting string into array
-<li>Easy các hàm for getting the left or right hand portion of string
-<li>Whitespace trimming
-<li>Formatting a string sprintf style
-<li>Conversion from utf-8 to utf-16 or vice-versa
+`<li>`Constructors for creating strings from numbers
+`<li>`Capitalization / upper case / lower case các hàm
+`<li>`Case-insensitive comparisons
+`<li>`Tokenization / splitting string into array
+`<li>`Easy các hàm for getting the left or right hand portion of string
+`<li>`Whitespace trimming
+`<li>`Formatting a string sprintf style
+`<li>`Conversion from utf-8 to utf-16 or vice-versa
 
 For most of these, you will have to either write your own các hàm, or convert your string to a C-style string (using c_str()) and use the C các hàm that offer this functionality.
 
 In the next lessons, we will look at the various các hàm of the string class in more depth.  Although we will use string for our examples, everything is equally applicable to wstring.
 
-</a>
-  	<a class="nav-link" href="/">
-  
-    <i class="fa fa-home" aria-hidden="true"></i>
-    
-      Back to table of contents
-    
-</a>
-  	<a class="nav-link" href="https://www.learncpp.com/cpp-tutorial/stl-algorithms-overview/">
-  
-    <i class="fa fa-chevron-circle-left" aria-hidden="true"></i>
-    
-      Previous lesson
-      
-        21.4STL algorithms overview
-      
-    
-  </a>
-
+  	
+  	
 
 ---
-
-
-
-
-
-
 
 ::: tip 💡 Tóm Tắt Quy Tắc Vàng (Core Guidelines)
 1. Luôn hiểu rõ vòng đời và quyền sở hữu (Ownership) của dữ liệu trước khi viết code.

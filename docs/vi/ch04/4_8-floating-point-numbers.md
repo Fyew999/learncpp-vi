@@ -24,14 +24,13 @@ C++ floating point types
 
 C++ has three fundamental floating point các kiểu dữ liệu: a single-precision `float`, a double-precision `double`, and an extended-precision `long double`.  As with integers, C++ does not define the actual size of these types.
 
-</p>
-
 Category
 C++ Type
 Typical Size
 
 floating point
-float</p>
+float
+
 4 bytes
 
 double
@@ -40,7 +39,7 @@ double
 long double
 8, 12, or 16 bytes
 
-<p>On modern architectures, floating-point types are conventionally implemented using one of the floating-point formats defined in the IEEE 754 standard (see [https://en.wikipedia.org/wiki/IEEE_754](https://en.wikipedia.org/wiki/IEEE_754)).  As a result, `float` is almost always 4 bytes, and `double` is almost always 8 bytes.
+On modern architectures, floating-point types are conventionally implemented using one of the floating-point formats defined in the IEEE 754 standard (see [https://en.wikipedia.org/wiki/IEEE_754](https://en.wikipedia.org/wiki/IEEE_754)).  As a result, `float` is almost always 4 bytes, and `double` is almost always 8 bytes.
 
 On the other hand, `long double` is a strange type.  On different platforms, its size can vary between 8 and 16 bytes, and it may or may not use an IEEE 754 compliant format.  We recommend avoiding `long double`.
 
@@ -144,30 +143,29 @@ In the third case, it printed the number in scientific notation (if you need a r
 
 Floating point range
 
-</p>
-
 Format
 Range
 Precision
 
 IEEE 754 single-precision (4 bytes)
-±1.18 x 10<sup>-38</sup> to ±3.4 x 10<sup>38</sup> and 0.0
+±1.18 x 10`<sup>`-38</sup> to ±3.4 x 10`<sup>`38</sup> and 0.0
 6-9 significant digits, typically 7
 
 IEEE 754 double-precision (8 bytes)
-±2.23 x 10<sup>-308</sup> to ±1.80 x 10<sup>308</sup> and 0.0
+±2.23 x 10`<sup>`-308</sup> to ±1.80 x 10`<sup>`308</sup> and 0.0
 15-18 significant digits, typically 16
 
 x87 extended-precision (80 bits)
-±3.36 x 10<sup>-4932</sup> to ±1.18 x 10<sup>4932</sup> and 0.0
+±3.36 x 10`<sup>`-4932</sup> to ±1.18 x 10`<sup>`4932</sup> and 0.0
 18-21 significant digits
 
 IEEE 754 quadruple-precision (16 bytes)
-±3.36 x 10<sup>-4932</sup> to ±1.18 x 10<sup>4932</sup> and 0.0
+±3.36 x 10`<sup>`-4932</sup> to ±1.18 x 10`<sup>`4932</sup> and 0.0
 33-36 significant digits
 
 ::: info For advanced readers
-<p>The 80-bit x87 extended-precision floating point type is a bit of a historical anomaly.  On modern processors, đối tượng of this type are typically padded to 12 or 16 bytes (which is a more natural size for processors to handle).  This means those đối tượng have 80-bits of floating point data, and the remaining memory is filler.
+
+The 80-bit x87 extended-precision floating point type is a bit of a historical anomaly.  On modern processors, đối tượng of this type are typically padded to 12 or 16 bytes (which is a more natural size for processors to handle).  This means those đối tượng have 80-bits of floating point data, and the remaining memory is filler.
 
 It may seem a little odd that the 80-bit floating point type has the same range as the 16-byte floating point type.  This is because they have the same number of bits dedicated to the exponent -- however, the 16-byte number can store more significant digits.
 
@@ -260,7 +258,7 @@ Output manipulators (and input manipulators) are sticky -- meaning if you set th
 The one exception is `std::setw`.  Some IO operations reset `std::setw`, so `std::setw` should be used every time it is needed.
 :::
 
-<p>Precision issues don’t just impact fractional numbers, they impact any number with too many significant digits.  Let’s consider a big number:
+Precision issues don’t just impact fractional numbers, they impact any number with too many significant digits.  Let’s consider a big number:
 
 ```cpp
 #include <iomanip> // for std::setprecision()
@@ -368,7 +366,7 @@ For more insight into how floating point numbers are stored in binary, check out
 To learn more about floating point numbers and rounding errors, [floating-point-gui.de](https://floating-point-gui.de/) and [fabiensanglard.net](https://fabiensanglard.net/floating_point_visually_explained/index.html) have approachable guides on the topic.
 :::
 
-<p class="cpp-section cpp-topline" style="clear: both">NaN and Inf
+NaN and Inf
 
 IEEE 754 compatible formats additionally support some special values:
 
@@ -425,7 +423,7 @@ Note that the results of printing `Inf` and `NaN` are platform specific, so your
 Avoid division by `0.0`, even if your trình biên dịch supports it.
 :::
 
-<p class="cpp-section cpp-topline" style="clear: both">Conclusion
+Conclusion
 
 To summarize, the two things you should remember about floating point numbers:
 
@@ -434,33 +432,10 @@ To summarize, the two things you should remember about floating point numbers:
 
 - Floating point numbers often have small rounding errors, even when the number has fewer significant digits than the precision.  Many times these go unnoticed because they are so small, and because the numbers are truncated for output.  However, comparisons of floating point numbers may not give the expected results.  Performing mathematical operations on these values will cause the rounding errors to grow larger.
 
-</a>
-  	<a class="nav-link" href="/">
-  
-    <i class="fa fa-home" aria-hidden="true"></i>
-    
-      Back to table of contents
-    
-</a>
-  	<a class="nav-link" href="https://www.learncpp.com/cpp-tutorial/introduction-to-scientific-notation/">
-  
-    <i class="fa fa-chevron-circle-left" aria-hidden="true"></i>
-    
-      Previous lesson
-      
-        4.7Introduction to scientific notation
-      
-    
-  </a>
-
+  	
+  	
 
 ---
-
-
-
-
-
-
 
 ::: tip 💡 Tóm Tắt Quy Tắc Vàng (Core Guidelines)
 1. Luôn hiểu rõ vòng đời và quyền sở hữu (Ownership) của dữ liệu trước khi viết code.

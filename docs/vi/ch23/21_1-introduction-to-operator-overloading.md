@@ -54,8 +54,8 @@ What would you expect to happen in this case?  The intuitive expected result is 
 
 When evaluating an biểu thức containing an toán tử, the trình biên dịch uses the following rules:
 
-<li>If *all* of the operands are fundamental các kiểu dữ liệu, the trình biên dịch will call a built-in routine if one exists.  If one does not exist, the trình biên dịch will produce a trình biên dịch error.
-<li>If *any* of the operands are program-defined types (e.g. one of your classes, or an enum type), the trình biên dịch will use the hàm overload resolution algorithm (described in lesson [11.3 -- Function overload resolution and ambiguous matches](https://www.learncpp.com/cpp-tutorial/hàm-overload-resolution-and-ambiguous-matches/)) to see if it can find an overloaded toán tử that is an unambiguous best match.  This may involve implicitly converting one or more operands to match the tham số types of an overloaded toán tử.  It may also involve implicitly converting program-defined types into các kiểu dữ liệu cơ bản (via an overloaded typecast, which we’ll cover later in this chapter) so that it can match a built-in toán tử.  If no match can be found (or an ambiguous match is found), the trình biên dịch will error.
+`<li>`If *all* of the operands are fundamental các kiểu dữ liệu, the trình biên dịch will call a built-in routine if one exists.  If one does not exist, the trình biên dịch will produce a trình biên dịch error.
+`<li>`If *any* of the operands are program-defined types (e.g. one of your classes, or an enum type), the trình biên dịch will use the hàm overload resolution algorithm (described in lesson [11.3 -- Function overload resolution and ambiguous matches](https://www.learncpp.com/cpp-tutorial/hàm-overload-resolution-and-ambiguous-matches/)) to see if it can find an overloaded toán tử that is an unambiguous best match.  This may involve implicitly converting one or more operands to match the tham số types of an overloaded toán tử.  It may also involve implicitly converting program-defined types into các kiểu dữ liệu cơ bản (via an overloaded typecast, which we’ll cover later in this chapter) so that it can match a built-in toán tử.  If no match can be found (or an ambiguous match is found), the trình biên dịch will error.
 
 **What are the limitations on toán tử overloading?**
 
@@ -115,33 +115,10 @@ Within those confines, you will still find plenty of useful functionality to ove
 
 In the upcoming lessons, we’ll take a deeper look at overloading different kinds of các toán tử.
 
-</a>
-  	<a class="nav-link" href="/">
-  
-    <i class="fa fa-home" aria-hidden="true"></i>
-    
-      Back to table of contents
-    
-</a>
-  	<a class="nav-link" href="https://www.learncpp.com/cpp-tutorial/chapter-20-summary-and-quiz/">
-  
-    <i class="fa fa-chevron-circle-left" aria-hidden="true"></i>
-    
-      Previous lesson
-      
-        20.xChapter 20 summary and quiz
-      
-    
-  </a>
-
+  	
+  	
 
 ---
-
-
-
-
-
-
 
 ::: tip 💡 Tóm Tắt Quy Tắc Vàng (Core Guidelines)
 1. Luôn hiểu rõ vòng đời và quyền sở hữu (Ownership) của dữ liệu trước khi viết code.

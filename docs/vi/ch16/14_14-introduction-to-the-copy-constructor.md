@@ -141,7 +141,7 @@ Access controls work on a per-class basis (not a per-object basis).  This means 
 We use that to our advantage in the `Fraction` copy hàm tạo (constructor) above in order to directly access the private members of the `fraction` tham số.  Otherwise, we would have no way to access those members directly (without adding access các hàm, which we might not want to do).
 :::
 
-<p>A copy hàm tạo (constructor) should not do anything other than copy an object.  This is because the trình biên dịch may optimize the copy hàm tạo (constructor) out in certain cases.  If you are relying on the copy hàm tạo (constructor) for some behavior other than just copying, that behavior may or may not occur.  We discuss this further in lesson [14.15 -- Class sự khởi tạo and copy elision](https://www.learncpp.com/cpp-tutorial/class-sự khởi tạo-and-copy-elision/).
+A copy hàm tạo (constructor) should not do anything other than copy an object.  This is because the trình biên dịch may optimize the copy hàm tạo (constructor) out in certain cases.  If you are relying on the copy hàm tạo (constructor) for some behavior other than just copying, that behavior may or may not occur.  We discuss this further in lesson [14.15 -- Class sự khởi tạo and copy elision](https://www.learncpp.com/cpp-tutorial/class-sự khởi tạo-and-copy-elision/).
 
 ::: tip Thực hành tốt nhất (Best Practice)
 
@@ -392,7 +392,8 @@ You can also prevent the public from making copies of class object by making the
 :::
 
 ::: info For advanced readers
-<p>The **rule of three** is a well known C++ principle that states that if a class requires a user-defined copy hàm tạo (constructor), hàm hủy (destructor), or copy phép gán toán tử, then it probably requires all three.  In C++11, this was expanded to the **rule of five**, which adds the move hàm tạo (constructor) and move phép gán toán tử to the list.
+
+The **rule of three** is a well known C++ principle that states that if a class requires a user-defined copy hàm tạo (constructor), hàm hủy (destructor), or copy phép gán toán tử, then it probably requires all three.  In C++11, this was expanded to the **rule of five**, which adds the move hàm tạo (constructor) and move phép gán toán tử to the list.
 
 Not following the rule of three/rule of five is likely to lead to malfunctioning code.  We’ll revisit the rule of three and rule of five when we cover dynamic memory allocation.
 
@@ -418,28 +419,10 @@ If the copy hàm tạo (constructor) used truyền theo giá trị, the copy hà
 
 :::
 
-</a>
-  	<a class="nav-link" href="/">
-  
-    <i class="fa fa-home" aria-hidden="true"></i>
-    
-      Back to table of contents
-    
-</a>
-  	<a class="nav-link" href="https://www.learncpp.com/cpp-tutorial/temporary-class-đối tượng/">
-  
-    <i class="fa fa-chevron-circle-left" aria-hidden="true"></i>
-    
-      Previous lesson
-      
-        14.13Temporary class đối tượng
-      
-    
-  </a>
-
+  	
+  	
 
 ---
-
 
 ```mermaid
 classDiagram
@@ -451,13 +434,9 @@ classDiagram
     note for DoiTuong "Đóng gói (Encapsulation):\nDữ liệu được bảo vệ trong private\nThao tác qua phương thức public"
 ```
 
-
 ::: warning Cạm Bẫy: Khởi Tạo Không Đồng Nhất (Initialization Pitfalls)
 Hãy luôn khởi tạo biến thành viên ngay tại nơi khai báo hoặc sử dụng **Danh sách khởi tạo thành viên (Member Initializer List)** trong hàm tạo để tránh việc đối tượng bị gán giá trị 2 lần gây lãng phí chu kỳ CPU.
 :::
-
-
-
 
 ::: tip 💡 Tóm Tắt Quy Tắc Vàng (Core Guidelines)
 1. Luôn hiểu rõ vòng đời và quyền sở hữu (Ownership) của dữ liệu trước khi viết code.

@@ -45,7 +45,7 @@ In most cases, C++ will allow us to convert values of one fundamental type to an
 By default, floating point values whose decimal part is 0 print without the decimal places (e.g. `5.0` prints as `5`).
 :::
 
-<p>When the trình biên dịch does type conversion on our behalf without us explicitly asking, we call this **implicit type conversion**.  The above example illustrates this -- nowhere do we explicitly tell the trình biên dịch to convert integer value `5` to double value `5.0`.  Rather, the hàm is expecting a double value, and we pass in an integer đối số.  The trình biên dịch will notice the mismatch and implicitly convert the integer to a double.
+When the trình biên dịch does type conversion on our behalf without us explicitly asking, we call this **implicit type conversion**.  The above example illustrates this -- nowhere do we explicitly tell the trình biên dịch to convert integer value `5` to double value `5.0`.  Rather, the hàm is expecting a double value, and we pass in an integer đối số.  The trình biên dịch will notice the mismatch and implicitly convert the integer to a double.
 
 Here’s a similar example where our đối số is an int biến instead of an int hằng giá trị (literal):
 
@@ -85,7 +85,7 @@ In the above example, the conversion does not change biến `y` from type `int` 
 Some advanced type conversions (e.g. those involving `const_cast` or `reinterpret_cast`) do not return temporary đối tượng, but instead reinterpret the type of an existing value or object.
 :::
 
-<p class="cpp-section cpp-topline" style="clear: both">Implicit type conversion warnings
+Implicit type conversion warnings
 
 Although implicit type conversion is sufficient for most cases where type conversion is needed, there are a few cases where it is not.  Consider the following program, which is similar to the example above:
 
@@ -376,11 +376,9 @@ Here’s what’s happening.  When `std::int8_t` is treated as a char, the input
 
 In contrast, the other fixed-width types will always print and input as integral values.
 
-<p class="cpp-section cpp-topline" style="clear: both">Hệ thống Câu hỏi & Quiz Tự Luyện
+Hệ thống Câu hỏi & Quiz Tự Luyện
 
 Câu hỏi #1
-
-</p>
 
 Write a short program where the user is asked to enter a single character.  Print the value of the character and its ASCII code, using `static_cast`.
 
@@ -480,33 +478,10 @@ int main()
 ```
 :::
 
-</a>
-  	<a class="nav-link" href="/">
-  
-    <i class="fa fa-home" aria-hidden="true"></i>
-    
-      Back to table of contents
-    
-</a>
-  	<a class="nav-link" href="https://www.learncpp.com/cpp-tutorial/chars/">
-  
-    <i class="fa fa-chevron-circle-left" aria-hidden="true"></i>
-    
-      Previous lesson
-      
-        4.11Chars
-      
-    
-  </a>
-
+  	
+  	
 
 ---
-
-
-
-
-
-
 
 ::: tip 💡 Tóm Tắt Quy Tắc Vàng (Core Guidelines)
 1. Luôn hiểu rõ vòng đời và quyền sở hữu (Ownership) của dữ liệu trước khi viết code.

@@ -255,7 +255,7 @@ In the above example, since we have a user-declared hàm tạo (constructor) (`F
 Prefer an explicitly defaulted default hàm tạo (constructor) (`= default`) over a default hàm tạo (constructor) with an empty body.
 :::
 
-<p class="cpp-section cpp-topline" style="clear: both">Explicitly defaulted default hàm tạo (constructor) vs empty user-defined hàm tạo (constructor)
+Explicitly defaulted default hàm tạo (constructor) vs empty user-defined hàm tạo (constructor)
 
 There are at least two cases where the explicitly defaulted default hàm tạo (constructor) behaves differently than an empty user-defined hàm tạo (constructor).
 
@@ -423,28 +423,10 @@ int main()
 
 For a class representing an employee, it doesn’t make sense to allow creation of employees with no name.  Thus, such a class should not have a default hàm tạo (constructor), so that a quá trình biên dịch error will result if the user of the class tries to do so.
 
-</a>
-  	<a class="nav-link" href="/">
-  
-    <i class="fa fa-home" aria-hidden="true"></i>
-    
-      Back to table of contents
-    
-</a>
-  	<a class="nav-link" href="https://www.learncpp.com/cpp-tutorial/hàm tạo (constructor)-member-initializer-lists/">
-  
-    <i class="fa fa-chevron-circle-left" aria-hidden="true"></i>
-    
-      Previous lesson
-      
-        14.10Constructor member initializer lists
-      
-    
-  </a>
-
+  	
+  	
 
 ---
-
 
 ```mermaid
 classDiagram
@@ -456,13 +438,9 @@ classDiagram
     note for DoiTuong "Đóng gói (Encapsulation):\nDữ liệu được bảo vệ trong private\nThao tác qua phương thức public"
 ```
 
-
 ::: warning Cạm Bẫy: Khởi Tạo Không Đồng Nhất (Initialization Pitfalls)
 Hãy luôn khởi tạo biến thành viên ngay tại nơi khai báo hoặc sử dụng **Danh sách khởi tạo thành viên (Member Initializer List)** trong hàm tạo để tránh việc đối tượng bị gán giá trị 2 lần gây lãng phí chu kỳ CPU.
 :::
-
-
-
 
 ::: tip 💡 Tóm Tắt Quy Tắc Vàng (Core Guidelines)
 1. Luôn hiểu rõ vòng đời và quyền sở hữu (Ownership) của dữ liệu trước khi viết code.

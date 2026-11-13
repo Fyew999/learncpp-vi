@@ -351,7 +351,7 @@ Making the hàm tạo (constructor) explicit prevents it from being used to crea
 `f1.multiply(true)` requires that `true` be implicitly converted to a `Fraction`. Normally the trình biên dịch would use `Fraction(int numerator=0, int denominator=1)` for this, but if we make that hàm tạo (constructor) explicit, it is not eligible to be used for implicit conversions.  Since the trình biên dịch will then be unable to find a way to convert `true` into a `Fraction`, it will emit a quá trình biên dịch error.
 :::
 
-<p class="cpp-quiz-question cpp-topline" style="clear: both">Câu hỏi #4
+Câu hỏi #4
 
 In the prior quiz question, why might it be better to leave `getFraction()` and `print()` as non-members?
 
@@ -359,36 +359,13 @@ In the prior quiz question, why might it be better to leave `getFraction()` and 
 
 With the non-member version of `getFraction()`, we can define and khởi tạo a Fraction in a single step.  The member version requires two steps, as we must first create an object and then call the member hàm on it.  It also prints application-specific text prompts for the user to follow.
 
-<p>By moving `print()` to be a non-member (and using access các hàm to access the members), we remove the hàm from the interface of the class, making the core functionality of the class less cluttered.  It also means that if the implementation of the class is ever changed, we don’t need to consider whether `print()` needs to be updated, so long as the interface isn’t changed (since we know it can’t access any data members directly).
+By moving `print()` to be a non-member (and using access các hàm to access the members), we remove the hàm from the interface of the class, making the core functionality of the class less cluttered.  It also means that if the implementation of the class is ever changed, we don’t need to consider whether `print()` needs to be updated, so long as the interface isn’t changed (since we know it can’t access any data members directly).
 :::
 
-</a>
-  	<a class="nav-link" href="/">
-  
-    <i class="fa fa-home" aria-hidden="true"></i>
-    
-      Back to table of contents
-    
-</a>
-  	<a class="nav-link" href="https://www.learncpp.com/cpp-tutorial/constexpr-aggregates-and-classes/">
-  
-    <i class="fa fa-chevron-circle-left" aria-hidden="true"></i>
-    
-      Previous lesson
-      
-        14.17Constexpr aggregates and classes
-      
-    
-  </a>
-
+  	
+  	
 
 ---
-
-
-
-
-
-
 
 ::: tip 💡 Tóm Tắt Quy Tắc Vàng (Core Guidelines)
 1. Luôn hiểu rõ vòng đời và quyền sở hữu (Ownership) của dữ liệu trước khi viết code.

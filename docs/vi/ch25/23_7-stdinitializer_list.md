@@ -140,8 +140,8 @@ int main()
 
 ### Câu hỏi:
 Có thể sửa đổi các phần tử bên trong `std::initializer_list<T>` được không (ví dụ: `*list.begin() = 10;`)?
-<details>
-<summary><b>Xem lời giải</b></summary>
+`<details>`
+`<summary>``<b>`Xem lời giải</b></summary>
 
 **Đáp án**: **HOÀN TOÀN KHÔNG!** Các phần tử trong `std::initializer_list<T>` luôn có thuộc tính `const`. Trình biên dịch cấm tuyệt đối mọi hành vi sửa đổi giá trị bên trong danh sách này để đảm bảo tính an toàn và cho phép đặt mảng dữ liệu vào vùng nhớ chỉ đọc (Read-only memory).
 </details>

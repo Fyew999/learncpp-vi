@@ -16,7 +16,7 @@ Unlike std::unique_ptr, which is designed to singly own and manage a resource, s
 
 This means that it is fine to have multiple std::shared_ptr pointing to the same resource.  Internally, std::shared_ptr keeps track of how many std::shared_ptr are sharing the resource.  As long as at least one std::shared_ptr is pointing to the resource, the resource will not be deallocated, even if individual std::shared_ptr are destroyed.  As soon as the last std::shared_ptr managing the resource goes out of phạm vi truy cập (scope) (or is reassigned to point at something else), the resource will be deallocated.
 
-Like std::unique_ptr, std::shared_ptr lives in the <memory> header.
+Like std::unique_ptr, std::shared_ptr lives in the `<memory>` header.
 
 ```cpp
 #include <iostream>
@@ -171,33 +171,10 @@ Conclusion
 
 std::shared_ptr is designed for the case where you need multiple smart các con trỏ co-managing the same resource.  The resource will be deallocated when the last std::shared_ptr managing the resource is destroyed.   
 
-</a>
-  	<a class="nav-link" href="/">
-  
-    <i class="fa fa-home" aria-hidden="true"></i>
-    
-      Back to table of contents
-    
-</a>
-  	<a class="nav-link" href="https://www.learncpp.com/cpp-tutorial/stdunique_ptr/">
-  
-    <i class="fa fa-chevron-circle-left" aria-hidden="true"></i>
-    
-      Previous lesson
-      
-        22.5std::unique_ptr
-      
-    
-  </a>
-
+  	
+  	
 
 ---
-
-
-
-
-
-
 
 ::: tip 💡 Tóm Tắt Quy Tắc Vàng (Core Guidelines)
 1. Luôn hiểu rõ vòng đời và quyền sở hữu (Ownership) của dữ liệu trước khi viết code.

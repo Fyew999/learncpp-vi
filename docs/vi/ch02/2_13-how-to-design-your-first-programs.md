@@ -329,11 +329,11 @@ Words of advice when writing programs
 
 **Optimize for maintainability, not performance**.  There is a famous quote (by Donald Knuth) that says “premature optimization is the root of all evil”.  New programmers often spend far too much time thinking about how to micro-optimize their code (e.g. trying to figure out which of 2 câu lệnh is faster).  This rarely matters.  Most performance benefits come from good program structure, using the right tools and capabilities for the problem at hand, and following best practices.  Additional time should be used to improve the maintainability of your code.  Find redundancy and remove it.  Split up long các hàm into shorter ones.  Replace awkward or hard to use code with something better.  The end result will be code that is easier to improve and optimize later (after you’ve determined where optimization is actually needed) and fewer bugs.  We offer some additional suggestions in lesson [3.10 -- Finding issues before they become problems](https://www.learncpp.com/cpp-tutorial/finding-issues-before-they-become-problems/).
 
-<blockquote>
+`<blockquote>`
 
 A complex system that works is invariably found to have evolved from a simple system that worked
 
-<footer>—John Gall, Systemantics: How Systems Really Work and How They Fail p. 71</footer>
+`<footer>`—John Gall, Systemantics: How Systems Really Work and How They Fail p. 71</footer>
 </blockquote>
 
 Conclusion
@@ -344,43 +344,20 @@ Many new programmers shortcut the design process (because it seems like a lot of
 
 Spending a little time up front thinking about how to structure your program will lead to better code and less time spent finding and fixing errors.
 
-<blockquote>
+`<blockquote>`
 
 I would say this is arguably the most important thing in programming and some of us, like me at first, took it for granted.
 
-<footer>—Reader Emeka Daniel, comment on learncpp.com</footer>
+`<footer>`—Reader Emeka Daniel, comment on learncpp.com</footer>
 </blockquote>
 :::
 
 As you become more comfortable with these concepts and tips, they will start coming more naturally to you.  Eventually you will get to the point where you can write entire các hàm (and short programs) with minimal pre-planning.
 
-</a>
-  	<a class="nav-link" href="/">
-  
-    <i class="fa fa-home" aria-hidden="true"></i>
-    
-      Back to table of contents
-    
-</a>
-  	<a class="nav-link" href="https://www.learncpp.com/cpp-tutorial/header-guards/">
-  
-    <i class="fa fa-chevron-circle-left" aria-hidden="true"></i>
-    
-      Previous lesson
-      
-        2.12Header guards
-      
-    
-  </a>
-
+  	
+  	
 
 ---
-
-
-
-
-
-
 
 ::: tip 💡 Tóm Tắt Quy Tắc Vàng (Core Guidelines)
 1. Luôn hiểu rõ vòng đời và quyền sở hữu (Ownership) của dữ liệu trước khi viết code.

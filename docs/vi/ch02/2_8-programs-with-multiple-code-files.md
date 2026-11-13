@@ -70,7 +70,8 @@ From the command line, you can create the additional file yourself, using your f
 :::
 
 ::: cảnh báo For VS Code users
-<p>To create a new file, choose *View > Explorer* from the top nav to open the Explorer pane, and then click the *New File* icon to the right of the project name.  Alternately, choose *File > New File* from the top nav.  Then give your new file a name (don’t forget the .cpp extension).  If the file appears inside the *.vscode* folder, drag it up one level to the project folder.
+
+To create a new file, choose *View > Explorer* from the top nav to open the Explorer pane, and then click the *New File* icon to the right of the project name.  Alternately, choose *File > New File* from the top nav.  Then give your new file a name (don’t forget the .cpp extension).  If the file appears inside the *.vscode* folder, drag it up one level to the project folder.
 
 Next open the *tasks.json* file, and find the line `"${file}",`.
 
@@ -194,7 +195,8 @@ In the above example, if `add.cpp` had used `std::cout` or `std::cin`, it would 
 :::
 
 ::: info Hiểu biết cốt lõi
-<p>When an identifier is used in an biểu thức, the identifier must be connected to its definition.
+
+When an identifier is used in an biểu thức, the identifier must be connected to its definition.
 
 - If the trình biên dịch has seen neither a forward declaration nor a definition for the identifier in the file being compiled, it will error at the point where the identifier is used.
 
@@ -303,28 +305,10 @@ int main()
 If you get an error from the trình liên kết regarding an undefined tham chiếu to `getInteger()`, then you probably forgot to compile *input.cpp*.
 :::
 
-</a>
-  	<a class="nav-link" href="/">
-  
-    <i class="fa fa-home" aria-hidden="true"></i>
-    
-      Back to table of contents
-    
-</a>
-  	<a class="nav-link" href="https://www.learncpp.com/cpp-tutorial/forward-declarations/">
-  
-    <i class="fa fa-chevron-circle-left" aria-hidden="true"></i>
-    
-      Previous lesson
-      
-        2.7Forward declarations and definitions
-      
-    
-  </a>
-
+  	
+  	
 
 ---
-
 
 ```mermaid
 flowchart TD
@@ -335,9 +319,6 @@ flowchart TD
         FrameFunc -->|Trả về giá trị (return)| FrameMain
     end
 ```
-
-
-
 
 ::: tip C++20 / C++23: Định Dạng & In Ấn Hiện Đại
 Thay vì dùng `std::cout` kèm `<<` cồng kềnh và dễ chậm, trong C++23 bạn có thể dùng `std::println`:
@@ -351,7 +332,6 @@ int main()
 }
 ```
 :::
-
 
 ::: tip 💡 Tóm Tắt Quy Tắc Vàng (Core Guidelines)
 1. Luôn hiểu rõ vòng đời và quyền sở hữu (Ownership) của dữ liệu trước khi viết code.

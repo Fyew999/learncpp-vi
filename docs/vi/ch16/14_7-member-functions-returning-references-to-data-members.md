@@ -154,7 +154,7 @@ int main()
 We cover `auto` return types in lesson [10.9 -- Type deduction for các hàm](https://www.learncpp.com/cpp-tutorial/type-deduction-for-các hàm/).
 :::
 
-<p>However, using an `auto` return type obscures the return type of the getter from a documentation perspective.  For example:
+However, using an `auto` return type obscures the return type of the getter from a documentation perspective.  For example:
 
 ```cpp
 const auto& getName() const { return m_name; } // uses `auto` to deduce return type from m_name
@@ -238,7 +238,7 @@ In case 2, we run into problems.  First, `createEmployee("Garbo")` returns an rv
 The evaluation of a full biểu thức ends *after* any uses of that full biểu thức as an initializer.  This allows đối tượng to be được khởi tạo with an rvalue of the same type (as the rvalue won’t be destroyed until after sự khởi tạo occurs).
 :::
 
-<p>But what if we want to save a value from a hàm that returns a member by tham chiếu for use later?  Instead of using the returned tham chiếu to khởi tạo a local tham chiếu biến, we can instead use the returned tham chiếu to khởi tạo a non-tham chiếu local biến.
+But what if we want to save a value from a hàm that returns a member by tham chiếu for use later?  Instead of using the returned tham chiếu to khởi tạo a local tham chiếu biến, we can instead use the returned tham chiếu to khởi tạo a non-tham chiếu local biến.
 
 In case 3, we’re using the returned tham chiếu to khởi tạo non-tham chiếu local biến `val`.  This will cause the member being referenced to be copied into `val`.  After sự khởi tạo, `val` exists independently of the tham chiếu.  So when the rvalue object is subsequently destroyed, `val` is not impacted by this.  Thus `val` can be output in future câu lệnh without issue.
 
@@ -298,28 +298,10 @@ A const member hàm is not allowed to return a non-const tham chiếu to members
 
 If a const member hàm was allowed to return a non-const tham chiếu to a member, it would be handing the caller a way to directly modify that member.  This violates the intent of a const member hàm.
 
-</a>
-  	<a class="nav-link" href="/">
-  
-    <i class="fa fa-home" aria-hidden="true"></i>
-    
-      Back to table of contents
-    
-</a>
-  	<a class="nav-link" href="https://www.learncpp.com/cpp-tutorial/access-các hàm/">
-  
-    <i class="fa fa-chevron-circle-left" aria-hidden="true"></i>
-    
-      Previous lesson
-      
-        14.6Access các hàm
-      
-    
-  </a>
-
+  	
+  	
 
 ---
-
 
 ```mermaid
 flowchart LR
@@ -332,11 +314,9 @@ flowchart LR
     RefR -.->|Đồng nhất với| VarA
 ```
 
-
 ::: danger Cạm Bẫy Thực Chiến: Con Trỏ Lơ Lửng (Dangling Pointer) & UB
 Tuyệt đối không giải phóng vùng nhớ mà con trỏ đang trỏ tới rồi tiếp tục truy cập nó, hoặc trả về tham chiếu/con trỏ tới một biến cục bộ trên Stack. Khi hàm kết thúc, biến cục bộ bị hủy và con trỏ sẽ trỏ vào vùng nhớ rác, dẫn đến **Hành vi không xác định (Undefined Behavior)** cực kỳ nguy hiểm!
 :::
-
 
 ::: tip Nâng Cấp C++ Hiện Đại: Thay Thế Con Trỏ Thô Bằng Smart Pointers
 Trong C++ hiện đại (C++11 đến C++23), hãy hạn chế tối đa việc sử dụng con trỏ thô (`T*`) cùng các toán tử `new`/`delete`. Thay vào đó, hãy luôn ưu tiên:
@@ -344,7 +324,6 @@ Trong C++ hiện đại (C++11 đến C++23), hãy hạn chế tối đa việc 
 - `std::shared_ptr<T>`: Sở hữu chia sẻ tài nguyên có cơ chế đếm tham chiếu (Reference counting).
 - `std::span<T>` (C++20) hoặc `std::string_view` (C++17): Xem qua vùng nhớ mà không sở hữu, an toàn và tốc độ cực cao.
 :::
-
 
 ::: tip 💡 Tóm Tắt Quy Tắc Vàng (Core Guidelines)
 1. Luôn hiểu rõ vòng đời và quyền sở hữu (Ownership) của dữ liệu trước khi viết code.

@@ -20,8 +20,6 @@ L-value các tham chiếu recap
 
 Prior to C++11, only one type of tham chiếu existed in C++, and so it was just called a “tham chiếu”.  However, in C++11, it’s called an l-value tham chiếu.  L-value các tham chiếu can only be được khởi tạo with modifiable l-values.
 
-</p>
-
 L-value tham chiếu
 Can be được khởi tạo with
 Can modify
@@ -38,9 +36,7 @@ R-values
 No
 No
 
-<p>L-value các tham chiếu to const đối tượng can be được khởi tạo with modifiable and non-modifiable l-values and r-values alike.  However, those values can’t be modified.
-
-</p>
+L-value các tham chiếu to const đối tượng can be được khởi tạo with modifiable and non-modifiable l-values and r-values alike.  However, those values can’t be modified.
 
 L-value tham chiếu to const
 Can be được khởi tạo with
@@ -58,7 +54,7 @@ R-values
 Yes
 No
 
-<p>L-value các tham chiếu to const đối tượng are particularly useful because they allow us to pass any type of đối số (l-value or r-value) into a hàm without making a copy of the đối số.
+L-value các tham chiếu to const đối tượng are particularly useful because they allow us to pass any type of đối số (l-value or r-value) into a hàm without making a copy of the đối số.
 
 R-value các tham chiếu
 
@@ -71,8 +67,6 @@ int&& rref{ 5 }; // r-value reference initialized with r-value 5
 ```
 
 R-values các tham chiếu cannot be được khởi tạo with l-values.
-
-</p>
 
 R-value tham chiếu
 Can be được khởi tạo with
@@ -106,7 +100,7 @@ R-values
 Yes
 No
 
-<p>R-value các tham chiếu have two properties that are useful.  First, r-value các tham chiếu extend the lifespan of the object they are được khởi tạo with to the lifespan of the r-value tham chiếu (l-value các tham chiếu to const đối tượng can do this too).  Second, non-const r-value các tham chiếu allow you to modify the r-value!
+R-value các tham chiếu have two properties that are useful.  First, r-value các tham chiếu extend the lifespan of the object they are được khởi tạo with to the lifespan of the r-value tham chiếu (l-value các tham chiếu to const đối tượng can do this too).  Second, non-const r-value các tham chiếu allow you to modify the r-value!
 
 Let’s take a look at some examples:
 
@@ -284,28 +278,10 @@ Recapping the binding combinations:
 
 :::
 
-</a>
-  	<a class="nav-link" href="/">
-  
-    <i class="fa fa-home" aria-hidden="true"></i>
-    
-      Back to table of contents
-    
-</a>
-  	<a class="nav-link" href="https://www.learncpp.com/cpp-tutorial/introduction-to-smart-các con trỏ-move-semantics/">
-  
-    <i class="fa fa-chevron-circle-left" aria-hidden="true"></i>
-    
-      Previous lesson
-      
-        22.1Introduction to smart các con trỏ and move semantics
-      
-    
-  </a>
-
+  	
+  	
 
 ---
-
 
 ```mermaid
 flowchart LR
@@ -318,11 +294,9 @@ flowchart LR
     RefR -.->|Đồng nhất với| VarA
 ```
 
-
 ::: danger Cạm Bẫy Thực Chiến: Con Trỏ Lơ Lửng (Dangling Pointer) & UB
 Tuyệt đối không giải phóng vùng nhớ mà con trỏ đang trỏ tới rồi tiếp tục truy cập nó, hoặc trả về tham chiếu/con trỏ tới một biến cục bộ trên Stack. Khi hàm kết thúc, biến cục bộ bị hủy và con trỏ sẽ trỏ vào vùng nhớ rác, dẫn đến **Hành vi không xác định (Undefined Behavior)** cực kỳ nguy hiểm!
 :::
-
 
 ::: tip Nâng Cấp C++ Hiện Đại: Thay Thế Con Trỏ Thô Bằng Smart Pointers
 Trong C++ hiện đại (C++11 đến C++23), hãy hạn chế tối đa việc sử dụng con trỏ thô (`T*`) cùng các toán tử `new`/`delete`. Thay vào đó, hãy luôn ưu tiên:
@@ -330,7 +304,6 @@ Trong C++ hiện đại (C++11 đến C++23), hãy hạn chế tối đa việc 
 - `std::shared_ptr<T>`: Sở hữu chia sẻ tài nguyên có cơ chế đếm tham chiếu (Reference counting).
 - `std::span<T>` (C++20) hoặc `std::string_view` (C++17): Xem qua vùng nhớ mà không sở hữu, an toàn và tốc độ cực cao.
 :::
-
 
 ::: tip 💡 Tóm Tắt Quy Tắc Vàng (Core Guidelines)
 1. Luôn hiểu rõ vòng đời và quyền sở hữu (Ownership) của dữ liệu trước khi viết code.

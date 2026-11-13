@@ -40,8 +40,6 @@ Here’s a full table of ASCII characters:
 
  
 
-</p>
-
 Code
 Symbol
 Code
@@ -339,7 +337,7 @@ _
 127
 DEL (delete)
 
-<p>Codes 0-31 and 127 are called the unprintable chars.  These codes were designed to control peripheral devices such as printers (e.g. by instructing the printer how to move the print head).  Most of these are obsolete now.  If you try to print these chars, the results are dependent upon your OS (you may get some emoji-like characters).
+Codes 0-31 and 127 are called the unprintable chars.  These codes were designed to control peripheral devices such as printers (e.g. by instructing the printer how to move the print head).  Most of these are obsolete now.  If you try to print these chars, the results are dependent upon your OS (you may get some emoji-like characters).
 
 Codes 32-126 are called the printable characters, and they represent the letters, number characters, and punctuation that most computers use to display basic English text.
 
@@ -386,7 +384,6 @@ int main()
 
     char ch2{ 98 }; // code point for 'b' (not preferred)
     std::cout << ch2; // cout prints a character ('b')
-
 
     return 0;
 }
@@ -583,8 +580,6 @@ Three other notable escape sequences are:
 
 Here’s a table of all of the escape sequences:
 
-</p>
-
 Name
 Symbol
 Meaning
@@ -636,13 +631,13 @@ No longer relevant. You can use question marks unescaped.
 
 Octal number
 \(number)
-Translates into char represented by octal </p>
+Translates into char represented by octal 
 
 Hex number
 \x(number)
 Translates into char represented by hex number
 
-<p>Here are some examples:
+Here are some examples:
 
 ```cpp
 #include <iostream>
@@ -685,7 +680,7 @@ Text between double quotes (e.g. “Hello, world!”) is treated as a C-style st
 Single characters should usually be single-quoted, not double-quoted (e.g. `'t'` or `'\n'`, not `"t"` or `"\n"`).  One possible exception occurs when doing output, where it can be preferential to double quote everything for consistency (see lesson [1.5 -- Introduction to iostream: cout, cin, and endl](https://www.learncpp.com/cpp-tutorial/introduction-to-iostream-cout-cin-and-endl/)).
 :::
 
-<p class="cpp-section cpp-topline" style="clear: both">Avoid multicharacter các hằng giá trị (literals)
+Avoid multicharacter các hằng giá trị (literals)
 
 For backwards compatibility reasons, many C++ các trình biên dịch support **multicharacter các hằng giá trị (literals)**, which are char các hằng giá trị (literals) that contain multiple characters (e.g. `'56'`).  If supported, these have an implementation-defined value (meaning it varies depending on the trình biên dịch).  Because they are not part of the C++ standard, and their value is not strictly defined, multicharacter các hằng giá trị (literals) should be avoided.
 
@@ -694,7 +689,7 @@ For backwards compatibility reasons, many C++ các trình biên dịch support *
 Avoid multicharacter các hằng giá trị (literals) (e.g. `'56'`).
 :::
 
-<p>Multicharacter hằng giá trị (literal) support often causes problems for new programmers when the forget whether escape sequences use forward slashes or backslashes:
+Multicharacter hằng giá trị (literal) support often causes problems for new programmers when the forget whether escape sequences use forward slashes or backslashes:
 
 ```cpp
 #include <iostream>
@@ -726,10 +721,11 @@ Make sure that your newlines are using escape sequence `'\n'` , not multicharact
 :::
 
 ::: info Hiểu biết cốt lõi
-<p>Note that if we’d double-quoted the output `"/n"`, the program would have printed `3/n`, which is still wrong, but much less confusing.
+
+Note that if we’d double-quoted the output `"/n"`, the program would have printed `3/n`, which is still wrong, but much less confusing.
 :::
 
-<p>Here’s another example.  Let’s start with the following:
+Here’s another example.  Let’s start with the following:
 
 ```cpp
 #include <iostream>
@@ -789,33 +785,10 @@ You won’t need to use `char8_t`, `char16_t`, or `char32_t` unless you’re pla
 
 Unicode and localization are generally outside the phạm vi truy cập (scope) of these tutorials, so we won’t cover it further.  In the meantime, you should only use ASCII characters when working with characters (and strings).  Using characters from other character sets may cause your characters to display incorrectly.
 
-</a>
-  	<a class="nav-link" href="/">
-  
-    <i class="fa fa-home" aria-hidden="true"></i>
-    
-      Back to table of contents
-    
-</a>
-  	<a class="nav-link" href="https://www.learncpp.com/cpp-tutorial/introduction-to-if-câu lệnh/">
-  
-    <i class="fa fa-chevron-circle-left" aria-hidden="true"></i>
-    
-      Previous lesson
-      
-        4.10Introduction to if câu lệnh
-      
-    
-  </a>
-
+  	
+  	
 
 ---
-
-
-
-
-
-
 
 ::: tip 💡 Tóm Tắt Quy Tắc Vàng (Core Guidelines)
 1. Luôn hiểu rõ vòng đời và quyền sở hữu (Ownership) của dữ liệu trước khi viết code.

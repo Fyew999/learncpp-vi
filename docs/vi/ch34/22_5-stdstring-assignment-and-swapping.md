@@ -16,8 +16,6 @@
 
 The easiest way to assign a value to a string is to use the overloaded toán tử= hàm.  There is also an assign() member hàm that duplicates some of this functionality.
 
-</p>
-
 **string& string::toán tử= (const string& str)**
 
 **string& string::assign (const string& str)**
@@ -28,11 +26,9 @@ The easiest way to assign a value to a string is to use the overloaded toán t�
 
 **string& string::toán tử= (char c)**
 
-</p>
-
-<li>These các hàm assign values of various types to the string.
-<li>These các hàm return *this so they can be “chained”.
-<li>Note that there is no assign() hàm that takes a single char.
+`<li>`These các hàm assign values of various types to the string.
+`<li>`These các hàm return *this so they can be “chained”.
+`<li>`Note that there is no assign() hàm that takes a single char.
 
 Sample code:
 
@@ -75,15 +71,13 @@ Four
 Six Six
 ```
 
-<p>The assign() member hàm also comes in a few other flavors:
+The assign() member hàm also comes in a few other flavors:
 
-</p>
+**string& string::assign (const string& str, size_type index, size_type len)**
 
-**string& string::assign (const string& str, size_type index, size_type len)**</p>
-
-<li>Assigns a substring of str, starting from index, and of length len
-<li>Throws an out_of_range exception if the index is out of bounds
-<li>Returns *this so it can be “chained”.
+`<li>`Assigns a substring of str, starting from index, and of length len
+`<li>`Throws an out_of_range exception if the index is out of bounds
+`<li>`Returns *this so it can be “chained”.
 
 Sample code:
 
@@ -101,11 +95,11 @@ Output:
 cdef
 ```
 
-**string& string::assign (const char* chars, size_type len)**</p>
+**string& string::assign (const char* chars, size_type len)**
 
-<li>Assigns len characters from the C-style array chars
-<li>Throws an length_error exception if the result exceeds the maximum number of characters
-<li>Returns *this so it can be “chained”.
+`<li>`Assigns len characters from the C-style array chars
+`<li>`Throws an length_error exception if the result exceeds the maximum number of characters
+`<li>`Returns *this so it can be “chained”.
 
 Sample code:
 
@@ -124,11 +118,11 @@ abcd
 
 This hàm is potentially dangerous and its use is not recommended.
 
-**string& string::assign (size_type len, char c)**</p>
+**string& string::assign (size_type len, char c)**
 
-<li>Assigns len occurrences of the character c
-<li>Throws a length_error exception if the result exceeds the maximum number of characters
-<li>Returns *this so it can be “chained”.
+`<li>`Assigns len occurrences of the character c
+`<li>`Throws a length_error exception if the result exceeds the maximum number of characters
+`<li>`Returns *this so it can be “chained”.
 
 Sample code:
 
@@ -145,18 +139,16 @@ Output:
 gggg
 ```
 
-<p>**Swapping**
+**Swapping**
 
 If you have two strings and want to swap their values, there are two các hàm both named swap() that you can use.
 
-</p>
-
 **void string::swap (string& str)**
 
-**void swap (string& str1, string& str2)**</p>
+**void swap (string& str1, string& str2)**
 
-<li>Both các hàm swap the value of the two strings.  The member hàm swaps *this and str, the global hàm swaps str1 and str2.
-<li>These các hàm are efficient and should be used instead of assignments to perform a string swap.
+`<li>`Both các hàm swap the value of the two strings.  The member hàm swaps *this and str, the global hàm swaps str1 and str2.
+`<li>`These các hàm are efficient and should be used instead of assignments to perform a string swap.
 
 Sample code:
 
@@ -179,34 +171,10 @@ blue red
 red blue
 ```
 
-<p>
-</a>
-  	<a class="nav-link" href="/">
-  
-    <i class="fa fa-home" aria-hidden="true"></i>
-    
-      Back to table of contents
-    
-</a>
-  	<a class="nav-link" href="https://www.learncpp.com/cpp-tutorial/stdstring-character-access-and-conversion-to-c-style-arrays/">
-  
-    <i class="fa fa-chevron-circle-left" aria-hidden="true"></i>
-    
-      Previous lesson
-      
-        22.4std::string character access and conversion to C-style arrays
-      
-    
-  </a>
-
+  	
+  	
 
 ---
-
-
-
-
-
-
 
 ::: tip 💡 Tóm Tắt Quy Tắc Vàng (Core Guidelines)
 1. Luôn hiểu rõ vòng đời và quyền sở hữu (Ownership) của dữ liệu trước khi viết code.

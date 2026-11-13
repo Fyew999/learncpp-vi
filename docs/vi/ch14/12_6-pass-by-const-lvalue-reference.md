@@ -233,7 +233,7 @@ However, it can be hard to know whether a class type object has setup costs or n
 An object of type T is cheap to copy if `sizeof(T) <= 2 * sizeof(void*)` and has no additional setup costs.
 :::
 
-<p class="cpp-section cpp-topline" style="clear: both"><a name="stringparameter"></a>For hàm tham số, prefer `std::string_view` over `const std::string&` in most cases [<i class="fa fa-link" style="font-size: 0.8em;"></i>](#stringparameter)
+For hàm tham số, prefer `std::string_view` over `const std::string&` in most cases [](#stringparameter)
 
 One question that comes up often in modern C++: when writing a hàm that has a string tham số, should the type of the tham số be `const std::string&` or `std::string_view`?
 
@@ -255,7 +255,7 @@ There are a few cases where using a `const std::string&` tham số may be more a
 Prefer passing strings using `std::string_view` (by value) instead of `const std::string&`, unless your hàm calls other các hàm that require C-style strings or `std::string` tham số.
 :::
 
-<p class="cpp-section cpp-topline" style="clear: both">Why `std::string_view` tham số are more efficient than `const std::string&` Advanced
+Why `std::string_view` tham số are more efficient than `const std::string&` Advanced
 
 In C++, a string đối số will typically be a `std::string`, a `std::string_view`, or a C-style string/string hằng giá trị (literal).
 
@@ -348,28 +348,10 @@ Additionally, we need to consider the cost of accessing the tham số inside the
 
 Finally, if we want to pass in a substring of an existing string (of any type), it is comparatively cheap to create a `std::string_view` substring, which can then be cheaply passed to a `std::string_view` tham số.  In comparison, passing a substring to a `const std::string&` is more expensive, as the substring must at some point be copied into the `std::string` that the tham chiếu tham số binds to.
 
-</a>
-  	<a class="nav-link" href="/">
-  
-    <i class="fa fa-home" aria-hidden="true"></i>
-    
-      Back to table of contents
-    
-</a>
-  	<a class="nav-link" href="https://www.learncpp.com/cpp-tutorial/pass-by-lvalue-tham chiếu/">
-  
-    <i class="fa fa-chevron-circle-left" aria-hidden="true"></i>
-    
-      Previous lesson
-      
-        12.5Pass by lvalue tham chiếu
-      
-    
-  </a>
-
+  	
+  	
 
 ---
-
 
 ```mermaid
 flowchart LR
@@ -382,11 +364,9 @@ flowchart LR
     RefR -.->|Đồng nhất với| VarA
 ```
 
-
 ::: danger Cạm Bẫy Thực Chiến: Con Trỏ Lơ Lửng (Dangling Pointer) & UB
 Tuyệt đối không giải phóng vùng nhớ mà con trỏ đang trỏ tới rồi tiếp tục truy cập nó, hoặc trả về tham chiếu/con trỏ tới một biến cục bộ trên Stack. Khi hàm kết thúc, biến cục bộ bị hủy và con trỏ sẽ trỏ vào vùng nhớ rác, dẫn đến **Hành vi không xác định (Undefined Behavior)** cực kỳ nguy hiểm!
 :::
-
 
 ::: tip Nâng Cấp C++ Hiện Đại: Thay Thế Con Trỏ Thô Bằng Smart Pointers
 Trong C++ hiện đại (C++11 đến C++23), hãy hạn chế tối đa việc sử dụng con trỏ thô (`T*`) cùng các toán tử `new`/`delete`. Thay vào đó, hãy luôn ưu tiên:
@@ -394,7 +374,6 @@ Trong C++ hiện đại (C++11 đến C++23), hãy hạn chế tối đa việc 
 - `std::shared_ptr<T>`: Sở hữu chia sẻ tài nguyên có cơ chế đếm tham chiếu (Reference counting).
 - `std::span<T>` (C++20) hoặc `std::string_view` (C++17): Xem qua vùng nhớ mà không sở hữu, an toàn và tốc độ cực cao.
 :::
-
 
 ::: tip 💡 Tóm Tắt Quy Tắc Vàng (Core Guidelines)
 1. Luôn hiểu rõ vòng đời và quyền sở hữu (Ownership) của dữ liệu trước khi viết code.

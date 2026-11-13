@@ -57,7 +57,7 @@ Access các hàm come in two flavors: getters and setters.  **Getters** (also so
 The term “mutator” is often used interchangably with “setter”.  But more broadly, a **mutator** is any member hàm that modifies (mutates) the state of the object.  Under this definition, a setter is a specific kind of mutator.  However, it is also possible to have non-setter các hàm that qualify as mutators.
 :::
 
-<p>Getters are usually made const, so they can be called on both const and non-const đối tượng.  Setters should be non-const, so they can modify the data members.
+Getters are usually made const, so they can be called on both const and non-const đối tượng.  Setters should be non-const, so they can modify the data members.
 
 For illustrative purposes, let’s update our `Date` class to have a full set of getters and setters:
 
@@ -174,28 +174,10 @@ Why make data private if we’re going to provide a public access hàm to it?
 
 So glad you asked.  We’ll answer this question in upcoming lesson [14.8 -- The benefits of data hiding (encapsulation)](https://www.learncpp.com/cpp-tutorial/the-benefits-of-data-hiding-encapsulation/).
 
-</a>
-  	<a class="nav-link" href="/">
-  
-    <i class="fa fa-home" aria-hidden="true"></i>
-    
-      Back to table of contents
-    
-</a>
-  	<a class="nav-link" href="https://www.learncpp.com/cpp-tutorial/public-and-private-members-and-access-specifiers/">
-  
-    <i class="fa fa-chevron-circle-left" aria-hidden="true"></i>
-    
-      Previous lesson
-      
-        14.5Public and private members and access specifiers
-      
-    
-  </a>
-
+  	
+  	
 
 ---
-
 
 ```mermaid
 flowchart TD
@@ -206,9 +188,6 @@ flowchart TD
         FrameFunc -->|Trả về giá trị (return)| FrameMain
     end
 ```
-
-
-
 
 ::: tip C++20 / C++23: Định Dạng & In Ấn Hiện Đại
 Thay vì dùng `std::cout` kèm `<<` cồng kềnh và dễ chậm, trong C++23 bạn có thể dùng `std::println`:
@@ -222,7 +201,6 @@ int main()
 }
 ```
 :::
-
 
 ::: tip 💡 Tóm Tắt Quy Tắc Vàng (Core Guidelines)
 1. Luôn hiểu rõ vòng đời và quyền sở hữu (Ownership) của dữ liệu trước khi viết code.

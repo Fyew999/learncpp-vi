@@ -78,33 +78,10 @@ Simply #include the header file(s) from the library in your project.
 
 See the tutorial [A.1 -- static and dynamic libraries](http://www.learncpp.com/cpp-tutorial/a1-static-and-dynamic-libraries/) for more information step 7.
 
-</a>
-  	<a class="nav-link" href="/">
-  
-    <i class="fa fa-home" aria-hidden="true"></i>
-    
-      Back to table of contents
-    
-</a>
-  	<a class="nav-link" href="https://www.learncpp.com/cpp-tutorial/a2-using-libraries-with-visual-studio-2005-express/">
-  
-    <i class="fa fa-chevron-circle-left" aria-hidden="true"></i>
-    
-      Previous lesson
-      
-        A.2Using libraries with Visual Studio
-      
-    
-  </a>
-
+  	
+  	
 
 ---
-
-
-
-
-
-
 
 ::: tip 💡 Tóm Tắt Quy Tắc Vàng (Core Guidelines)
 1. Luôn hiểu rõ vòng đời và quyền sở hữu (Ownership) của dữ liệu trước khi viết code.

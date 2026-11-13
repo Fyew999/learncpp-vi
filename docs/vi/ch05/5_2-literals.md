@@ -123,10 +123,11 @@ Additional (rarely used) suffixes exist for complex numbers and chrono (time) c�
 :::
 
 ::: info For advanced readers
-<p>Excepting the `f` suffix, suffixes are most often used in cases where type deduction is involved.  See [10.8 -- Type deduction for đối tượng using the auto keyword](https://www.learncpp.com/cpp-tutorial/type-deduction-for-đối tượng-using-the-auto-keyword/) and [13.14 -- Class template đối số deduction (CTAD) and deduction guides](https://www.learncpp.com/cpp-tutorial/class-template-đối số-deduction-ctad-and-deduction-guides/).
+
+Excepting the `f` suffix, suffixes are most often used in cases where type deduction is involved.  See [10.8 -- Type deduction for đối tượng using the auto keyword](https://www.learncpp.com/cpp-tutorial/type-deduction-for-đối tượng-using-the-auto-keyword/) and [13.14 -- Class template đối số deduction (CTAD) and deduction guides](https://www.learncpp.com/cpp-tutorial/class-template-đối số-deduction-ctad-and-deduction-guides/).
 :::
 
-<p class="cpp-section cpp-topline" style="clear: both">Suffix casing
+Suffix casing
 
 Most of the suffixes are not case sensitive.  The exceptions are:
 
@@ -258,7 +259,7 @@ There are two non-obvious things worth knowing about C-style string các hằng 
 This is the reason the string `"Hello, world!"` has type `const char[14]` rather than `const char[13]` -- the hidden null terminator counts as a character.
 :::
 
-<p>The reason for the null-terminator is also historical: it can be used to determine where the string ends.
+The reason for the null-terminator is also historical: it can be used to determine where the string ends.
 
 <ol start="2">
 - Unlike most other các hằng giá trị (literals) (which are values, not đối tượng), C-style string các hằng giá trị (literals) are const đối tượng that are created at the start of the program and are guaranteed to exist for the entirety of the program.  This fact will become important in a few lessons, when we discuss `std::string_view`.
@@ -276,7 +277,7 @@ Unlike C-style string các hằng giá trị (literals), `std::string` and `std:
 We discuss `std::string` and `std::string_view` các hằng giá trị (literals) in lesson [5.7 -- Introduction to std::string](https://www.learncpp.com/cpp-tutorial/introduction-to-stdstring/) and [5.8 -- Introduction to std::string_view](https://www.learncpp.com/cpp-tutorial/introduction-to-stdstring_view/) respectively.
 :::
 
-<p class="cpp-section cpp-topline" style="clear: both">Magic numbers
+Magic numbers
 
 A **magic number** is a hằng giá trị (literal) (usually a number) that either has an unclear meaning or may need to be changed later.
 
@@ -349,33 +350,10 @@ Avoid magic numbers in your code (use constexpr các biến instead, see lesson 
 
 :::
 
-</a>
-  	<a class="nav-link" href="/">
-  
-    <i class="fa fa-home" aria-hidden="true"></i>
-    
-      Back to table of contents
-    
-</a>
-  	<a class="nav-link" href="https://www.learncpp.com/cpp-tutorial/hằng số-các biến-named-các hằng số/">
-  
-    <i class="fa fa-chevron-circle-left" aria-hidden="true"></i>
-    
-      Previous lesson
-      
-        5.1Constant các biến (named các hằng số)
-      
-    
-  </a>
-
+  	
+  	
 
 ---
-
-
-
-
-
-
 
 ::: tip 💡 Tóm Tắt Quy Tắc Vàng (Core Guidelines)
 1. Luôn hiểu rõ vòng đời và quyền sở hữu (Ownership) của dữ liệu trước khi viết code.

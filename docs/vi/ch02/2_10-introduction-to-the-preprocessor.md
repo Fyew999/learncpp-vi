@@ -33,7 +33,7 @@ The entire process of preprocessing, compiling, and linking is called **translat
 If you’re curious, here is a list of [translation phases](https://en.cppreference.com/w/cpp/language/translation_phases).  As of the time of writing, preprocessing encompasses phases 1 through 4, and quá trình biên dịch is phases 5 through 7.
 :::
 
-<p class="cpp-section cpp-topline" style="clear: both">Preprocessor directives
+Preprocessor directives
 
 When the preprocessor runs, it scans through the code file (from top to bottom), looking for preprocessor directives.  **Preprocessor directives** (often just called *directives*) are instructions that start with a *#* symbol and end with a newline (NOT a semicolon).  These directives tell the preprocessor to perform certain text manipulation tasks.  Note that the preprocessor does not understand C++ syntax -- instead, the directives have their own syntax (which in some cases resembles C++ syntax, and in other cases, not so much).
 
@@ -48,9 +48,9 @@ The final output of the preprocessor contains no directives -- only the output o
 `Using directives` (introduced in lesson [2.9 -- Naming collisions and an introduction to namespaces](https://www.learncpp.com/cpp-tutorial/naming-collisions-and-an-introduction-to-namespaces/)) are not preprocessor directives (and thus are not processed by the preprocessor).  So while the term `directive` *usually* means a `preprocessor directive`, this is not always the case.
 :::
 
-<p class="cpp-section cpp-topline" style="clear: both">#Include
+#Include
 
-You’ve already seen the *#include* directive in action (generally to #include <iostream>).  When you *#include* a file, the preprocessor replaces the #include directive with the contents of the included file.  The included contents are then preprocessed (which may result in additional #includes being preprocessed recursively), then the rest of the file is preprocessed.
+You’ve already seen the *#include* directive in action (generally to #include `<iostream>`).  When you *#include* a file, the preprocessor replaces the #include directive with the contents of the included file.  The included contents are then preprocessed (which may result in additional #includes being preprocessed recursively), then the rest of the file is preprocessed.
 
 Consider the following program:
 
@@ -207,7 +207,7 @@ In place of `#ifdef PRINT_BOB` and `#ifndef PRINT_BOB`, you’ll also see `#if d
 
 You can see a practical use of this feature in lesson [0.13 -- What language standard is my trình biên dịch using?](https://www.learncpp.com/cpp-tutorial/what-language-standard-is-my-trình biên dịch-using/).
 
-<a name="if0"></a>#if 0 [<i class="fa fa-link" style="font-size: 0.8em;"></i>](#if0)
+#if 0 [](#if0)
 
 One more common use of conditional quá trình biên dịch involves using *#if 0* to exclude a block of code from being compiled (as if it were inside a comment block):
 
@@ -299,7 +299,7 @@ In most cases, macro substitution does not occur when a macro identifier is used
 There is at least one exception to this rule: most forms of `#if` and `#elif` do macro substitution within the preprocessor command.
 :::
 
-<p>As another example:
+As another example:
 
 ```cpp
 #define FOO 9 // Here's a macro substitution
@@ -398,33 +398,10 @@ Not printing!
 
 Even though PRINT was defined in *main.cpp*, that doesn’t have any impact on any of the code in *hàm.cpp* (PRINT is only #defined from the point of definition to the end of main.cpp).  This will be of consequence when we discuss header guards in a future lesson.
 
-</a>
-  	<a class="nav-link" href="/">
-  
-    <i class="fa fa-home" aria-hidden="true"></i>
-    
-      Back to table of contents
-    
-</a>
-  	<a class="nav-link" href="https://www.learncpp.com/cpp-tutorial/naming-collisions-and-an-introduction-to-namespaces/">
-  
-    <i class="fa fa-chevron-circle-left" aria-hidden="true"></i>
-    
-      Previous lesson
-      
-        2.9Naming collisions and an introduction to namespaces
-      
-    
-  </a>
-
+  	
+  	
 
 ---
-
-
-
-
-
-
 
 ::: tip 💡 Tóm Tắt Quy Tắc Vàng (Core Guidelines)
 1. Luôn hiểu rõ vòng đời và quyền sở hữu (Ownership) của dữ liệu trước khi viết code.

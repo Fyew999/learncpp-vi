@@ -80,7 +80,7 @@ In addition to having member các biến, class types (which includes structs, c
 In other object-oriented languages (such as Java and C#), these are called **methods**.  Although the term “method” is not used in C++, programmers who learned one of those other languages first may still use that term.
 :::
 
-<p>Functions that are not member các hàm are called **non-member các hàm** (or occasionally **free các hàm**) to distinguish them from member các hàm.  The `print()` hàm above is a non-member hàm.
+Functions that are not member các hàm are called **non-member các hàm** (or occasionally **free các hàm**) to distinguish them from member các hàm.  The `print()` hàm above is a non-member hàm.
 
 ::: info Author’s note
 
@@ -261,7 +261,7 @@ When the `kisses()` member hàm executes, the identifier `name` doesn’t use th
 Without a member hàm, we would have written `kisses(joe, kate)`.  With a member hàm, we write `joe.kisses(kate)`.  Note how much better the latter reads, and how it makes clear exactly which object is initiating the action and which is in support.
 :::
 
-<p class="cpp-section cpp-topline" style="clear: both">Member các biến and các hàm can be defined in any order
+Member các biến and các hàm can be defined in any order
 
 The C++ trình biên dịch normally compiles code from top to bottom.  For each name encountered, the trình biên dịch determines whether it has already seen a declaration for that name, so that it can do proper type checking.
 
@@ -622,28 +622,10 @@ int main()
 ```
 :::
 
-</a>
-  	<a class="nav-link" href="/">
-  
-    <i class="fa fa-home" aria-hidden="true"></i>
-    
-      Back to table of contents
-    
-</a>
-  	<a class="nav-link" href="https://www.learncpp.com/cpp-tutorial/introduction-to-classes/">
-  
-    <i class="fa fa-chevron-circle-left" aria-hidden="true"></i>
-    
-      Previous lesson
-      
-        14.2Introduction to classes
-      
-    
-  </a>
-
+  	
+  	
 
 ---
-
 
 ```mermaid
 flowchart TD
@@ -654,9 +636,6 @@ flowchart TD
         FrameFunc -->|Trả về giá trị (return)| FrameMain
     end
 ```
-
-
-
 
 ::: tip C++20 / C++23: Định Dạng & In Ấn Hiện Đại
 Thay vì dùng `std::cout` kèm `<<` cồng kềnh và dễ chậm, trong C++23 bạn có thể dùng `std::println`:
@@ -670,7 +649,6 @@ int main()
 }
 ```
 :::
-
 
 ::: tip 💡 Tóm Tắt Quy Tắc Vàng (Core Guidelines)
 1. Luôn hiểu rõ vòng đời và quyền sở hữu (Ownership) của dữ liệu trước khi viết code.

@@ -55,7 +55,7 @@ Modern các trình biên dịch employ a variety of different techniques in orde
 [Wikipedia](https://en.wikipedia.org/wiki/Optimizing_compiler#Specific_techniques) has list of specific techniques that các trình biên dịch use.
 :::
 
-<p class="cpp-section cpp-topline" style="clear: both">An optimization opportunity
+An optimization opportunity
 
 Consider the following short program:
 
@@ -279,7 +279,7 @@ To help minimize such issues, debug builds will typically leave optimizations tu
 Compile-time debugging is an underdeveloped area.  As of C++23, there are a number of papers under consideration for future language standards (such as [this one](https://www.open-std.org/jtc1/sc22/wg21/docs/papers/2023/p2758r1.html)) that (if approved) will add capabilities to the language that will help.
 :::
 
-<p class="cpp-section cpp-topline" style="clear: both">Nomenclature: Compile-time các hằng số vs runtime các hằng số
+Nomenclature: Compile-time các hằng số vs runtime các hằng số
 
 Constants in C++ are sometimes divided into two informal categories.
 
@@ -344,33 +344,10 @@ We are in the process of phasing these terms out of future articles.
 
 :::
 
-</a>
-  	<a class="nav-link" href="/">
-  
-    <i class="fa fa-home" aria-hidden="true"></i>
-    
-      Back to table of contents
-    
-</a>
-  	<a class="nav-link" href="https://www.learncpp.com/cpp-tutorial/numeral-systems-decimal-binary-hexadecimal-and-octal/">
-  
-    <i class="fa fa-chevron-circle-left" aria-hidden="true"></i>
-    
-      Previous lesson
-      
-        5.3Numeral systems (decimal, binary, hexadecimal, and octal)
-      
-    
-  </a>
-
+  	
+  	
 
 ---
-
-
-
-
-
-
 
 ::: tip 💡 Tóm Tắt Quy Tắc Vàng (Core Guidelines)
 1. Luôn hiểu rõ vòng đời và quyền sở hữu (Ownership) của dữ liệu trước khi viết code.

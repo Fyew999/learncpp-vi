@@ -102,7 +102,7 @@ Prior to C++17, when `printFoo(5)` is called, `5` is implicitly converted to a t
 In C++17 onward, the copy is mandatorily elided.  Parameter `f` is copy được khởi tạo with value `5`, and no call to the copy hàm tạo (constructor) is required (and it will work even if the copy hàm tạo (constructor) is deleted).
 :::
 
-<p>A hàm tạo (constructor) that can be used to perform an implicit conversion is called a **converting hàm tạo (constructor)**.  By default, all các hàm tạo (constructors) are converting các hàm tạo (constructors).
+A hàm tạo (constructor) that can be used to perform an implicit conversion is called a **converting hàm tạo (constructor)**.  By default, all các hàm tạo (constructors) are converting các hàm tạo (constructors).
 
 Only one user-defined conversion may be applied
 
@@ -389,28 +389,10 @@ Do not make copy or move các hàm tạo (constructors) explicit, as these do no
 
 :::
 
-</a>
-  	<a class="nav-link" href="/">
-  
-    <i class="fa fa-home" aria-hidden="true"></i>
-    
-      Back to table of contents
-    
-</a>
-  	<a class="nav-link" href="https://www.learncpp.com/cpp-tutorial/class-sự khởi tạo-and-copy-elision/">
-  
-    <i class="fa fa-chevron-circle-left" aria-hidden="true"></i>
-    
-      Previous lesson
-      
-        14.15Class sự khởi tạo and copy elision
-      
-    
-  </a>
-
+  	
+  	
 
 ---
-
 
 ```mermaid
 classDiagram
@@ -422,13 +404,9 @@ classDiagram
     note for DoiTuong "Đóng gói (Encapsulation):\nDữ liệu được bảo vệ trong private\nThao tác qua phương thức public"
 ```
 
-
 ::: warning Cạm Bẫy: Khởi Tạo Không Đồng Nhất (Initialization Pitfalls)
 Hãy luôn khởi tạo biến thành viên ngay tại nơi khai báo hoặc sử dụng **Danh sách khởi tạo thành viên (Member Initializer List)** trong hàm tạo để tránh việc đối tượng bị gán giá trị 2 lần gây lãng phí chu kỳ CPU.
 :::
-
-
-
 
 ::: tip 💡 Tóm Tắt Quy Tắc Vàng (Core Guidelines)
 1. Luôn hiểu rõ vòng đời và quyền sở hữu (Ownership) của dữ liệu trước khi viết code.

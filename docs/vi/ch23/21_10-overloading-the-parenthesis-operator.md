@@ -297,7 +297,7 @@ What might we do instead?
 `std::string_view` is capable of viewing a substring of an existing string without making a copy.  If our `toán tử()` were to return a `std::string_view`, then the caller could use the `std::string_view` when that suffices, or convert it to a `std::string` or `MyString` if they need to modify or persist the substring.
 :::
 
-<p class="cpp-quiz-question cpp-topline" style="clear: both">> Step #3
+> Step #3
 
 Update `toán tử()` from the prior quiz solution to return the substring as a `std::string_view` instead.
 
@@ -360,36 +360,13 @@ int main()
 
 Let’s explore `return std::string_view{ m_string }.substr();` further.  First, we’re creating a temporary `std::string_view` of `m_string`, which is inexpensive and lets us access `std::string_view` member các hàm.  Next, we call `std::string_view::substr` on this temporary to get our substring (as a non-null-terminated view of `m_string`).  We then return this view to the caller.  Since the `std::string_view` we return to the caller is still a view of `m_string` (which is still in phạm vi truy cập (scope)), our returned `std::string_view` is not dangling. 
 
-<p>The end result is we create 3 `std::string_view` instead of 3 `std::string`, which is more efficient.
+The end result is we create 3 `std::string_view` instead of 3 `std::string`, which is more efficient.
 :::
 
-</a>
-  	<a class="nav-link" href="/">
-  
-    <i class="fa fa-home" aria-hidden="true"></i>
-    
-      Back to table of contents
-    
-</a>
-  	<a class="nav-link" href="https://www.learncpp.com/cpp-tutorial/overloading-the-subscript-toán tử/">
-  
-    <i class="fa fa-chevron-circle-left" aria-hidden="true"></i>
-    
-      Previous lesson
-      
-        21.9Overloading the subscript toán tử
-      
-    
-  </a>
-
+  	
+  	
 
 ---
-
-
-
-
-
-
 
 ::: tip 💡 Tóm Tắt Quy Tắc Vàng (Core Guidelines)
 1. Luôn hiểu rõ vòng đời và quyền sở hữu (Ownership) của dữ liệu trước khi viết code.

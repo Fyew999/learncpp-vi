@@ -41,7 +41,7 @@ Because we have not provided any initializers, when `joe` is instantiated, `joe.
 
 However, before we show you how to khởi tạo a struct, let’s take a short detour.
 
-<a name="aggregate"></a>What is an aggregate? [<i class="fa fa-link" style="font-size: 0.8em;"></i>](#aggregate)
+What is an aggregate? [](#aggregate)
 
 In general programming, an **aggregate kiểu dữ liệu** (also called an **aggregate**) is any type that can contain multiple data members.  Some types of aggregates allow members to have different types (e.g. structs), while others require that all members must be of a single type (e.g. arrays).
 
@@ -68,7 +68,7 @@ The popular type `std::array` ([17.1 -- Introduction to std::array](https://www.
 You can find the precise definition of a C++ aggregate [here](https://en.cppreference.com/w/cpp/language/aggregate_initialization).
 :::
 
-<p>The key thing to understand at this point is that structs with only data members are aggregates.
+The key thing to understand at this point is that structs with only data members are aggregates.
 
 Aggregate sự khởi tạo of a struct
 
@@ -454,28 +454,10 @@ Note that this uses the standard forms of sự khởi tạo that we’re familia
 
 This is most commonly seen when initializing a struct with the giá trị trả về of a hàm that returns a struct of the same type.  We cover this in more detail in lesson [13.10 -- Passing and returning structs](https://www.learncpp.com/cpp-tutorial/passing-and-returning-structs/).
 
-</a>
-  	<a class="nav-link" href="/">
-  
-    <i class="fa fa-home" aria-hidden="true"></i>
-    
-      Back to table of contents
-    
-</a>
-  	<a class="nav-link" href="https://www.learncpp.com/cpp-tutorial/introduction-to-structs-members-and-member-selection/">
-  
-    <i class="fa fa-chevron-circle-left" aria-hidden="true"></i>
-    
-      Previous lesson
-      
-        13.7Introduction to structs, members, and member selection
-      
-    
-  </a>
-
+  	
+  	
 
 ---
-
 
 ```mermaid
 classDiagram
@@ -487,13 +469,9 @@ classDiagram
     note for DoiTuong "Đóng gói (Encapsulation):\nDữ liệu được bảo vệ trong private\nThao tác qua phương thức public"
 ```
 
-
 ::: warning Cạm Bẫy: Khởi Tạo Không Đồng Nhất (Initialization Pitfalls)
 Hãy luôn khởi tạo biến thành viên ngay tại nơi khai báo hoặc sử dụng **Danh sách khởi tạo thành viên (Member Initializer List)** trong hàm tạo để tránh việc đối tượng bị gán giá trị 2 lần gây lãng phí chu kỳ CPU.
 :::
-
-
-
 
 ::: tip 💡 Tóm Tắt Quy Tắc Vàng (Core Guidelines)
 1. Luôn hiểu rõ vòng đời và quyền sở hữu (Ownership) của dữ liệu trước khi viết code.

@@ -326,7 +326,8 @@ A tham chiếu to a tham chiếu (to an `int`) would have syntax `int&&` -- but 
 :::
 
 ::: info Author’s note
-<p>If các tham chiếu seem a bit useless at this point, don’t worry.  References are used a lot, and we’ll cover one of the primary reasons why shortly, in lessons [12.5 -- Pass by lvalue tham chiếu](https://www.learncpp.com/cpp-tutorial/pass-by-lvalue-tham chiếu/) and [12.6 -- Pass by const lvalue tham chiếu](https://www.learncpp.com/cpp-tutorial/pass-by-const-lvalue-tham chiếu/).
+
+If các tham chiếu seem a bit useless at this point, don’t worry.  References are used a lot, and we’ll cover one of the primary reasons why shortly, in lessons [12.5 -- Pass by lvalue tham chiếu](https://www.learncpp.com/cpp-tutorial/pass-by-lvalue-tham chiếu/) and [12.6 -- Pass by const lvalue tham chiếu](https://www.learncpp.com/cpp-tutorial/pass-by-const-lvalue-tham chiếu/).
 
 :::
 
@@ -368,31 +369,13 @@ int main()
 
 44
 
-<p>Because `ref` is bound to `x`, `x` and `ref` are synonymous, so they will always print the same value.  The line `ref = y` assigns the value of `y` (2) to `ref` -- it does not change `ref` to tham chiếu `y`.  The subsequent line `y = 3` only changes `y`.
+Because `ref` is bound to `x`, `x` and `ref` are synonymous, so they will always print the same value.  The line `ref = y` assigns the value of `y` (2) to `ref` -- it does not change `ref` to tham chiếu `y`.  The subsequent line `y = 3` only changes `y`.
 :::
 
-</a>
-  	<a class="nav-link" href="/">
-  
-    <i class="fa fa-home" aria-hidden="true"></i>
-    
-      Back to table of contents
-    
-</a>
-  	<a class="nav-link" href="https://www.learncpp.com/cpp-tutorial/value-categories-lvalues-and-rvalues/">
-  
-    <i class="fa fa-chevron-circle-left" aria-hidden="true"></i>
-    
-      Previous lesson
-      
-        12.2Value categories (lvalues and rvalues)
-      
-    
-  </a>
-
+  	
+  	
 
 ---
-
 
 ```mermaid
 flowchart LR
@@ -405,11 +388,9 @@ flowchart LR
     RefR -.->|Đồng nhất với| VarA
 ```
 
-
 ::: danger Cạm Bẫy Thực Chiến: Con Trỏ Lơ Lửng (Dangling Pointer) & UB
 Tuyệt đối không giải phóng vùng nhớ mà con trỏ đang trỏ tới rồi tiếp tục truy cập nó, hoặc trả về tham chiếu/con trỏ tới một biến cục bộ trên Stack. Khi hàm kết thúc, biến cục bộ bị hủy và con trỏ sẽ trỏ vào vùng nhớ rác, dẫn đến **Hành vi không xác định (Undefined Behavior)** cực kỳ nguy hiểm!
 :::
-
 
 ::: tip Nâng Cấp C++ Hiện Đại: Thay Thế Con Trỏ Thô Bằng Smart Pointers
 Trong C++ hiện đại (C++11 đến C++23), hãy hạn chế tối đa việc sử dụng con trỏ thô (`T*`) cùng các toán tử `new`/`delete`. Thay vào đó, hãy luôn ưu tiên:
@@ -417,7 +398,6 @@ Trong C++ hiện đại (C++11 đến C++23), hãy hạn chế tối đa việc 
 - `std::shared_ptr<T>`: Sở hữu chia sẻ tài nguyên có cơ chế đếm tham chiếu (Reference counting).
 - `std::span<T>` (C++20) hoặc `std::string_view` (C++17): Xem qua vùng nhớ mà không sở hữu, an toàn và tốc độ cực cao.
 :::
-
 
 ::: tip 💡 Tóm Tắt Quy Tắc Vàng (Core Guidelines)
 1. Luôn hiểu rõ vòng đời và quyền sở hữu (Ownership) của dữ liệu trước khi viết code.

@@ -99,7 +99,7 @@ If `sin` and `cos` had been passed by value instead of tham chiếu, `getSinCos(
 [This answer on StackOverflow](https://stackoverflow.com/a/9779765) is an interesting read that explains why non-const lvalue các tham chiếu are not allowed to bind to rvalues/temporary đối tượng (due to implicit type conversion producing unexpected behavior when combined with out-tham số).
 :::
 
-<p class="cpp-section cpp-topline" style="clear: both">Out tham số have an unnatural usage syntax
+Out tham số have an unnatural usage syntax
 
 Out-tham số, while functional, have a few downsides.
 
@@ -210,7 +210,7 @@ If you’re going to pass by tham chiếu in order to avoid making a copy of the
 In the following examples, we will use `Foo` to represent some type that we care about.  For now, you can imagine `Foo` as a type alias for a type of your choice (e.g. `std::string`).
 :::
 
-<p>However, there are two primary cases where pass by non-const tham chiếu may be the better choice.
+However, there are two primary cases where pass by non-const tham chiếu may be the better choice.
 
 First, use pass by non-const tham chiếu when a tham số is an in-out-tham số.  Since we’re already passing in the object we need back out, it’s often more straightforward and performant to just modify that object.
 
@@ -289,35 +289,12 @@ int main()
 The most common example of the above is when a hàm needs to fill a large C-style array or `std::array` with data, and the array has an expensive-to-copy element type.  We discuss arrays in a future chapter.
 :::
 
-<p>That said, đối tượng are rarely so expensive to copy that resorting to non-conventional methods of returning those đối tượng is worthwhile.
+That said, đối tượng are rarely so expensive to copy that resorting to non-conventional methods of returning those đối tượng is worthwhile.
 
-</a>
-  	<a class="nav-link" href="/">
-  
-    <i class="fa fa-home" aria-hidden="true"></i>
-    
-      Back to table of contents
-    
-</a>
-  	<a class="nav-link" href="https://www.learncpp.com/cpp-tutorial/return-by-tham chiếu-and-return-by-address/">
-  
-    <i class="fa fa-chevron-circle-left" aria-hidden="true"></i>
-    
-      Previous lesson
-      
-        12.12Return by tham chiếu and return by address
-      
-    
-  </a>
-
+  	
+  	
 
 ---
-
-
-
-
-
-
 
 ::: tip 💡 Tóm Tắt Quy Tắc Vàng (Core Guidelines)
 1. Luôn hiểu rõ vòng đời và quyền sở hữu (Ownership) của dữ liệu trước khi viết code.

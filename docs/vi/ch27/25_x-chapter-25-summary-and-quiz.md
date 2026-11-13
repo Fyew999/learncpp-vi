@@ -34,8 +34,8 @@
    - `Rectangle`: Có chiều dài `m_width` và chiều rộng `m_height`.
 3. Viết hàm `main()` khởi tạo một danh sách các hình học thông qua `std::vector<std::unique_ptr<Shape>>`, duyệt qua danh sách và tính tổng diện tích toàn bộ các hình.
 
-<details>
-<summary><b>Xem lời giải mã nguồn C++20 hoàn chỉnh</b></summary>
+`<details>`
+`<summary>``<b>`Xem lời giải mã nguồn C++20 hoàn chỉnh</b></summary>
 
 ```cpp
 #include <iostream>

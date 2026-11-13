@@ -62,7 +62,7 @@ Write a single-file program (named main.cpp) that reads two separate integers fr
 
 - A hàm named “writeAnswer” should be used to output the answer.  This hàm should take a single tham số and have no giá trị trả về.
 
-<li>A main() hàm should be used to glue the above các hàm together.
+`<li>`A main() hàm should be used to glue the above các hàm together.
 
 ::: details Gợi ý (Hint)
 Hint: You do not need to write a separate hàm to do the adding (just use toán tử+ directly).
@@ -203,7 +203,7 @@ int main()
 While technically *io.cpp* doesn’t require the inclusion of *io.h*, it is a thực hành tốt nhất (Best Practice) for code files to include their paired header files.  This is covered in lesson [2.11 -- Header files](https://www.learncpp.com/cpp-tutorial/header-files/#corresponding_include).
 :::
 
-<p>If you compile your program and get errors like one of these:
+If you compile your program and get errors like one of these:
 
 ```cpp
 unresolved external symbol "int __cdecl readNumber(void)" (?readNumber@@YAHXZ)
@@ -212,33 +212,10 @@ undefined reference to `readNumber()'
 
 Then you probably forgot to include `io.cpp` in your project, so the definitions for `readNumber()` (and `writeAnswer()`) aren’t being compiled into your project.
 
-</a>
-  	<a class="nav-link" href="/">
-  
-    <i class="fa fa-home" aria-hidden="true"></i>
-    
-      Back to table of contents
-    
-</a>
-  	<a class="nav-link" href="https://www.learncpp.com/cpp-tutorial/how-to-design-your-first-programs/">
-  
-    <i class="fa fa-chevron-circle-left" aria-hidden="true"></i>
-    
-      Previous lesson
-      
-        2.13How to design your first programs
-      
-    
-  </a>
-
+  	
+  	
 
 ---
-
-
-
-
-
-
 
 ::: tip 💡 Tóm Tắt Quy Tắc Vàng (Core Guidelines)
 1. Luôn hiểu rõ vòng đời và quyền sở hữu (Ownership) của dữ liệu trước khi viết code.

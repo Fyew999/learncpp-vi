@@ -35,10 +35,10 @@ flowchart TD
 
 | Kiểu có dấu (Signed) | Kiểu không dấu (Unsigned) | Số bit | Số byte | Dải giá trị an toàn |
 | :--- | :--- | :--- | :--- | :--- |
-| `std::int8_t` | `std::uint8_t` | 8 bits | 1 byte | Có dấu: $-128 \dots 127$<br>Không dấu: $0 \dots 255$ |
-| `std::int16_t` | `std::uint16_t` | 16 bits | 2 bytes | Có dấu: $-32.768 \dots 32.767$<br>Không dấu: $0 \dots 65.535$ |
-| **`std::int32_t`** | **`std::uint32_t`** | 32 bits | 4 bytes | Có dấu: $\approx \pm 2,14 \text{ tỷ}$<br>Không dấu: $0 \dots 4,29 \text{ tỷ}$ |
-| **`std::int64_t`** | **`std::uint64_t`** | 64 bits | 8 bytes | Có dấu: $\approx \pm 9,22 \times 10^{18}$<br>Không dấu: $0 \dots 18,4 \times 10^{18}$ |
+| `std::int8_t` | `std::uint8_t` | 8 bits | 1 byte | Có dấu: $-128 \dots 127$`<br>`Không dấu: $0 \dots 255$ |
+| `std::int16_t` | `std::uint16_t` | 16 bits | 2 bytes | Có dấu: $-32.768 \dots 32.767$`<br>`Không dấu: $0 \dots 65.535$ |
+| **`std::int32_t`** | **`std::uint32_t`** | 32 bits | 4 bytes | Có dấu: $\approx \pm 2,14 \text{ tỷ}$`<br>`Không dấu: $0 \dots 4,29 \text{ tỷ}$ |
+| **`std::int64_t`** | **`std::uint64_t`** | 64 bits | 8 bytes | Có dấu: $\approx \pm 9,22 \times 10^{18}$`<br>`Không dấu: $0 \dots 18,4 \times 10^{18}$ |
 
 ```cpp
 #include <iostream>

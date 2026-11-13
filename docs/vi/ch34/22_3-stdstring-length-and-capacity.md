@@ -18,13 +18,11 @@ Once you’ve created strings, it’s often useful to know how long they are.  T
 
 The length of the string is quite simple -- it’s the number of characters in the string.  There are two identical các hàm for determining string length:
 
-</p>
-
 **size_type string::length() const**
 
-**size_type string::size() const**</p>
+**size_type string::size() const**
 
-<li>Both of these các hàm return the current number of characters in the string, excluding the null terminator.
+`<li>`Both of these các hàm return the current number of characters in the string, excluding the null terminator.
 
 Sample code:
 
@@ -39,13 +37,11 @@ Output:
 9
 ```
 
-<p>Although it’s possible to use length() to determine whether a string has any characters or not, it’s more efficient to use the empty() hàm:
+Although it’s possible to use length() to determine whether a string has any characters or not, it’s more efficient to use the empty() hàm:
 
-</p>
+**bool string::empty() const**
 
-**bool string::empty() const**</p>
-
-<li>Returns true if the string has no characters, false otherwise.
+`<li>`Returns true if the string has no characters, false otherwise.
 
 Sample code:
 
@@ -63,14 +59,12 @@ false
 true
 ```
 
-<p>There is one more size-related hàm that you will probably never use, but we’ll include it here for completeness:
+There is one more size-related hàm that you will probably never use, but we’ll include it here for completeness:
 
-</p>
+**size_type string::max_size() const**
 
-**size_type string::max_size() const**</p>
-
-<li>Returns the maximum number of characters that a string is allowed to have.
-<li>This value will vary depending on operating system and system architecture.
+`<li>`Returns the maximum number of characters that a string is allowed to have.
+`<li>`This value will vary depending on operating system and system architecture.
 
 Sample code:
 
@@ -85,15 +79,13 @@ Output:
 4294967294
 ```
 
-<p>**Capacity of a string**
+**Capacity of a string**
 
 The capacity of a string reflects how much memory the string allocated to hold its contents.  This value is measured in string characters, excluding the NULL terminator.  For example, a string with capacity 8 could hold 8 characters.
 
-</p>
+**size_type string::capacity() const**
 
-**size_type string::capacity() const**</p>
-
-<li>Returns the number of characters a string can hold without reallocation.
+`<li>`Returns the number of characters a string can hold without reallocation.
 
 Sample code:
 
@@ -110,7 +102,7 @@ Length: 8
 Capacity: 15
 ```
 
-<p>Note that the capacity is higher than the length of the string!  Although our string was length 8, the string actually allocated enough memory for 15 characters!  Why was this done?
+Note that the capacity is higher than the length of the string!  Although our string was length 8, the string actually allocated enough memory for 15 characters!  Why was this done?
 
 The important thing to recognize here is that if a user wants to put more characters into a string than the string has capacity for, the string has to be reallocated to a larger capacity.  For example, if a string had both length and capacity of 8, then adding any characters to the string would force a reallocation.  By making the capacity larger than the actual string, this gives the user some buffer room to expand the string before reallocation needs to be done.
 
@@ -159,14 +151,12 @@ Length: 16
 Capacity: 31
 ```
 
-</p>
-
 **void string::reserve() **
 
-**void string::reserve(size_type unSize) **</p>
+**void string::reserve(size_type unSize) **
 
-<li>The second flavor of this hàm sets the capacity of the string to at least unSize (it can be greater).  Note that this may require a reallocation to occur.
-<li>If the first flavor of the hàm is called, or the second flavor is called with unSize less than the current capacity, the hàm will try to shrink the capacity to match the length.  This request to shrink the capacity may be ignored, depending on implementation.
+`<li>`The second flavor of this hàm sets the capacity of the string to at least unSize (it can be greater).  Note that this may require a reallocation to occur.
+`<li>`If the first flavor of the hàm is called, or the second flavor is called with unSize less than the current capacity, the hàm will try to shrink the capacity to match the length.  This request to shrink the capacity may be ignored, depending on implementation.
 
 Sample code:
 
@@ -195,7 +185,7 @@ Length: 8
 Capacity: 207
 ```
 
-<p>This example shows two interesting things.  First, although we requested a capacity of 200, we actually got a capacity of 207.  The capacity is always guaranteed to be at least as large as your request, but may be larger.  We then requested the capacity change to fit the string.  This request was ignored, as the capacity did not change.
+This example shows two interesting things.  First, although we requested a capacity of 200, we actually got a capacity of 207.  The capacity is always guaranteed to be at least as large as your request, but may be larger.  We then requested the capacity change to fit the string.  This request was ignored, as the capacity did not change.
 
 If you know in advance that you’re going to be constructing a large string by doing lots of string operations that will add to the size of the string, you can avoid having the string reallocated multiple times by reserving enough capacity from the outset:
 
@@ -228,33 +218,10 @@ wzpzujwuaokbakgijqdawvzjqlgcipiiuuxhyfkdppxpyycvytvyxwqsbtielxpy
 
 Rather than having to reallocate s multiple times, we set the capacity once and then fill the string up.  This can make a huge difference in performance when constructing large strings via concatenation.
 
-</a>
-  	<a class="nav-link" href="/">
-  
-    <i class="fa fa-home" aria-hidden="true"></i>
-    
-      Back to table of contents
-    
-</a>
-  	<a class="nav-link" href="https://www.learncpp.com/cpp-tutorial/stdstring-construction-and-destruction/">
-  
-    <i class="fa fa-chevron-circle-left" aria-hidden="true"></i>
-    
-      Previous lesson
-      
-        22.2std::string construction and destruction
-      
-    
-  </a>
-
+  	
+  	
 
 ---
-
-
-
-
-
-
 
 ::: tip 💡 Tóm Tắt Quy Tắc Vàng (Core Guidelines)
 1. Luôn hiểu rõ vòng đời và quyền sở hữu (Ownership) của dữ liệu trước khi viết code.

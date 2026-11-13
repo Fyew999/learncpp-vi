@@ -15,11 +15,11 @@ Trình biên dịch căn cứ vào **Chữ ký hàm (Function Signature)** để
 
 | Yếu tố | Có phân biệt được Overload không? | Ví dụ minh họa |
 | :--- | :---: | :--- |
-| **Số lượng tham số** | **CÓ** | `void print(int);`<br>`void print(int, int);` |
-| **Kiểu dữ liệu tham số** | **CÓ** | `void print(int);`<br>`void print(double);` |
-| **Thứ tự các kiểu tham số** | **CÓ** | `void print(int, double);`<br>`void print(double, int);` |
+| **Số lượng tham số** | **CÓ** | `void print(int);``<br>``void print(int, int);` |
+| **Kiểu dữ liệu tham số** | **CÓ** | `void print(int);``<br>``void print(double);` |
+| **Thứ tự các kiểu tham số** | **CÓ** | `void print(int, double);``<br>``void print(double, int);` |
 | **Tham chiếu vs Giá trị** | **LƯU Ý** | Xem phân tích chi tiết bên dưới |
-| **Kiểu trả về (Return Type)** | ❌ **KHÔNG** | `int getValue();`<br>`double getValue();` -> **LỖI!** |
+| **Kiểu trả về (Return Type)** | ❌ **KHÔNG** | `int getValue();``<br>``double getValue();` -> **LỖI!** |
 
 ```mermaid
 flowchart TD

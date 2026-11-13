@@ -226,10 +226,11 @@ Return a `std::optional` (instead of a sentinel value) for các hàm that may fa
 :::
 
 ::: info Related content
-<p>`std::expected` (introduced in C++23) is designed to handle the case where a hàm can return either an expected value or an unexpected error code.  See the [std::expected tham chiếu](https://en.cppreference.com/w/cpp/utility/expected) for more information.
+
+`std::expected` (introduced in C++23) is designed to handle the case where a hàm can return either an expected value or an unexpected error code.  See the [std::expected tham chiếu](https://en.cppreference.com/w/cpp/utility/expected) for more information.
 :::
 
-<p class="cpp-section cpp-topline" style="clear: both">Using `std::optional` as an optional hàm tham số
+Using `std::optional` as an optional hàm tham số
 
 Trong bài học [12.11 -- Pass by address (part 2)](https://www.learncpp.com/cpp-tutorial/pass-by-address-part-2/), we discussed how pass by address can be used to allow a hàm to accept an “optional” đối số (that is, the caller can either pass in `nullptr` to represent “no đối số” or an object).  However, one downside of this approach is that a non-nullptr đối số must be an lvalue (so that its address can be passed to the hàm).
 
@@ -404,36 +405,13 @@ int main()
 
 Prefer `std::optional` for optional return types.
 
-<p>Prefer hàm overloading for optional hàm tham số (when possible).  Otherwise, use `std::optional<T>` for optional đối số when `T` would normally be passed by value.  Favor `const T*` when `T` is expensive to copy.
+Prefer hàm overloading for optional hàm tham số (when possible).  Otherwise, use `std::optional<T>` for optional đối số when `T` would normally be passed by value.  Favor `const T*` when `T` is expensive to copy.
 :::
 
-</a>
-  	<a class="nav-link" href="/">
-  
-    <i class="fa fa-home" aria-hidden="true"></i>
-    
-      Back to table of contents
-    
-</a>
-  	<a class="nav-link" href="https://www.learncpp.com/cpp-tutorial/type-deduction-with-các con trỏ-các tham chiếu-and-const/">
-  
-    <i class="fa fa-chevron-circle-left" aria-hidden="true"></i>
-    
-      Previous lesson
-      
-        12.14Type deduction with các con trỏ, các tham chiếu, and const
-      
-    
-  </a>
-
+  	
+  	
 
 ---
-
-
-
-
-
-
 
 ::: tip 💡 Tóm Tắt Quy Tắc Vàng (Core Guidelines)
 1. Luôn hiểu rõ vòng đời và quyền sở hữu (Ownership) của dữ liệu trước khi viết code.

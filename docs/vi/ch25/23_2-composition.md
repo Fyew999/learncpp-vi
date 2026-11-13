@@ -173,8 +173,8 @@ Hãy áp dụng quan hệ Composition khi:
 
 ### Câu hỏi:
 Lớp `Car` sở hữu 4 đối tượng kiểu `Tire`. Nếu đối tượng `Car` được cấp phát động trên Heap (`Car* car = new Car;`), thì 4 đối tượng `Tire` nằm trên vùng nhớ nào (Stack hay Heap)?
-<details>
-<summary><b>Xem lời giải</b></summary>
+`<details>`
+`<summary>``<b>`Xem lời giải</b></summary>
 
 **Đáp án**: Chúng nằm trên **Heap**! Vì trong Composition, đối tượng con được nhúng trực tiếp vào không gian bộ nhớ của đối tượng cha. Nếu đối tượng cha nằm trên Heap, thì toàn bộ các thành viên của nó cũng nằm trên Heap cùng một khối bộ nhớ liền mạch.
 </details>

@@ -100,8 +100,8 @@ Do phần đầu của đối tượng `Employee` hoàn toàn trùng khớp vớ
 
 ### Câu hỏi:
 Kích thước `sizeof(Employee)` có bằng tổng `sizeof(Person) + sizeof(double) + sizeof(long)` không?
-<details>
-<summary><b>Xem lời giải</b></summary>
+`<details>`
+`<summary>``<b>`Xem lời giải</b></summary>
 
 **Đáp án**: Thông thường sẽ bằng hoặc lớn hơn một chút do quy tắc căn chỉnh bộ nhớ (Data Structure Padding/Alignment). Tuy nhiên, chắc chắn kích thước của đối tượng con luôn bao hàm toàn bộ dung lượng của đối tượng cha.
 </details>

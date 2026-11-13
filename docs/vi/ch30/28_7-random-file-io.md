@@ -24,8 +24,6 @@ Random file access is done by manipulating the file con trỏ using either seekg
 
 The seekg() and seekp() các hàm take two tham số.  The first tham số is an offset that determines how many bytes to move the file con trỏ.  The second tham số is an ios flag that specifies what the offset tham số should be offset from.
 
-</p>
-
 Ios seek flag
 Meaning
 
@@ -38,7 +36,7 @@ The offset is relative to the current location of the file con trỏ
 end
 The offset is relative to the end of the file
 
-<p>A positive offset means move the file con trỏ towards the end of the file, whereas a negative offset means move the file con trỏ towards the beginning of the file.
+A positive offset means move the file con trỏ towards the end of the file, whereas a negative offset means move the file con trỏ towards the beginning of the file.
 
 Here are some examples:
 
@@ -159,7 +157,7 @@ which is how long sample.txt is in bytes (assuming a newline after the last line
 The result of `64` in the prior example occurred on Windows.  If you run the example on Unix, you’ll get `60` instead, due to the smaller newline representation.  You may get something else if your file is padded with trailing zero bytes.
 :::
 
-<p>**Reading and writing a file at the same time using fstream**
+**Reading and writing a file at the same time using fstream**
 
 The fstream class is capable of both reading and writing a file at the same time -- almost!  The big caveat here is that it is not possible to switch between reading and writing arbitrarily.  Once a read or write has taken place, the only way to switch between the two is to perform an operation that modifies the file position (e.g. a seek).  If you don’t actually want to move the file con trỏ (because it’s already in the spot you want), you can always seek to the current position:
 
@@ -262,28 +260,10 @@ Do not write memory addresses to files.  The các biến that were originally at
 
 :::
 
-</a>
-  	<a class="nav-link" href="/">
-  
-    <i class="fa fa-home" aria-hidden="true"></i>
-    
-      Back to table of contents
-    
-</a>
-  	<a class="nav-link" href="https://www.learncpp.com/cpp-tutorial/basic-file-io/">
-  
-    <i class="fa fa-chevron-circle-left" aria-hidden="true"></i>
-    
-      Previous lesson
-      
-        28.6Basic file I/O
-      
-    
-  </a>
-
+  	
+  	
 
 ---
-
 
 ```mermaid
 flowchart TD
@@ -294,9 +274,6 @@ flowchart TD
         FrameFunc -->|Trả về giá trị (return)| FrameMain
     end
 ```
-
-
-
 
 ::: tip C++20 / C++23: Định Dạng & In Ấn Hiện Đại
 Thay vì dùng `std::cout` kèm `<<` cồng kềnh và dễ chậm, trong C++23 bạn có thể dùng `std::println`:
@@ -310,7 +287,6 @@ int main()
 }
 ```
 :::
-
 
 ::: tip 💡 Tóm Tắt Quy Tắc Vàng (Core Guidelines)
 1. Luôn hiểu rõ vòng đời và quyền sở hữu (Ownership) của dữ liệu trước khi viết code.

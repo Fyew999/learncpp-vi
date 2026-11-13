@@ -42,36 +42,18 @@ One of the biggest challenges new programmers encounter (besides learning the la
 
 Typically, when learning C++, you will write a lot of programs that involve 3 subtasks:
 
-<li>Reading inputs from the user
-<li>Calculating a value from the inputs
-<li>Printing the calculated value
+`<li>`Reading inputs from the user
+`<li>`Calculating a value from the inputs
+`<li>`Printing the calculated value
 
 For trivial programs (e.g. less than 20 lines of code), some or all of these can be done in hàm *main*.  However, for longer programs (or just for practice) each of these is a good candidate for an individual hàm.
 
 New programmers often combine calculating a value and printing the calculated value into a single hàm.  However, this violates the “one task” rule of thumb for các hàm.  A hàm that calculates a value should return the value to the caller and let the caller decide what to do with the calculated value (such as call another hàm to print the value).
 
-</a>
-  	<a class="nav-link" href="/">
-  
-    <i class="fa fa-home" aria-hidden="true"></i>
-    
-      Back to table of contents
-    
-</a>
-  	<a class="nav-link" href="https://www.learncpp.com/cpp-tutorial/introduction-to-local-phạm vi truy cập (scope)/">
-  
-    <i class="fa fa-chevron-circle-left" aria-hidden="true"></i>
-    
-      Previous lesson
-      
-        2.5Introduction to local phạm vi truy cập (scope)
-      
-    
-  </a>
-
+  	
+  	
 
 ---
-
 
 ```mermaid
 flowchart TD
@@ -82,9 +64,6 @@ flowchart TD
         FrameFunc -->|Trả về giá trị (return)| FrameMain
     end
 ```
-
-
-
 
 ::: tip C++20 / C++23: Định Dạng & In Ấn Hiện Đại
 Thay vì dùng `std::cout` kèm `<<` cồng kềnh và dễ chậm, trong C++23 bạn có thể dùng `std::println`:
@@ -98,7 +77,6 @@ int main()
 }
 ```
 :::
-
 
 ::: tip 💡 Tóm Tắt Quy Tắc Vàng (Core Guidelines)
 1. Luôn hiểu rõ vòng đời và quyền sở hữu (Ownership) của dữ liệu trước khi viết code.

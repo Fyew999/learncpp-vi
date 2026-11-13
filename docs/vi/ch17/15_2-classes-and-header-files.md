@@ -232,7 +232,7 @@ Functions defined inside the class definition are implicitly inline, which allow
 Functions defined outside the class definition are not implicitly inline.  They can be made inline by using the `inline` keyword.
 :::
 
-<p class="cpp-section cpp-topline" style="clear: both">Inline expansion of member các hàm
+Inline expansion of member các hàm
 
 The trình biên dịch must be able to see a full definition of a hàm in order to perform inline expansion.  Most often, such các hàm (e.g. access các hàm) are defined inside the class definition.  However, if you want to define a member hàm outside the class definition, but still want it to be eligible for inline expansion, you can define it as an inline hàm just below the class definition (in the same header file).  That way the definition of the hàm is accessible to anybody who #includes the header.
 
@@ -362,28 +362,10 @@ d) Non-trivial member các hàm should always be defined in the header file.
 c). Member các hàm defined inside the class definition are implicitly inline, and thus exempt from the one-definition rule.
 :::
 
-</a>
-  	<a class="nav-link" href="/">
-  
-    <i class="fa fa-home" aria-hidden="true"></i>
-    
-      Back to table of contents
-    
-</a>
-  	<a class="nav-link" href="https://www.learncpp.com/cpp-tutorial/the-hidden-this-con trỏ-and-member-hàm-chaining/">
-  
-    <i class="fa fa-chevron-circle-left" aria-hidden="true"></i>
-    
-      Previous lesson
-      
-        15.1The hidden “this” con trỏ and member hàm chaining
-      
-    
-  </a>
-
+  	
+  	
 
 ---
-
 
 ```mermaid
 flowchart TD
@@ -394,9 +376,6 @@ flowchart TD
         FrameFunc -->|Trả về giá trị (return)| FrameMain
     end
 ```
-
-
-
 
 ::: tip C++20 / C++23: Định Dạng & In Ấn Hiện Đại
 Thay vì dùng `std::cout` kèm `<<` cồng kềnh và dễ chậm, trong C++23 bạn có thể dùng `std::println`:
@@ -410,7 +389,6 @@ int main()
 }
 ```
 :::
-
 
 ::: tip 💡 Tóm Tắt Quy Tắc Vàng (Core Guidelines)
 1. Luôn hiểu rõ vòng đời và quyền sở hữu (Ownership) của dữ liệu trước khi viết code.

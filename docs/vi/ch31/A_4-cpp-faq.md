@@ -14,7 +14,7 @@
 
 There are certain questions that tend to get asked over and over.  This FAQ will attempt to answer the most common ones.
 
-<a name="usingnamespace"></a>Q1: Why shouldn’t we use “using namespace std”? [<i class="fa fa-link" style="font-size: 0.8em;"></i>](#usingnamespace)
+Q1: Why shouldn’t we use “using namespace std”? [](#usingnamespace)
 
 The câu lệnh `using namespace std;` is a **using directive**.  A using-directive allows all of the identifiers from a given namespace to be accessed within the phạm vi truy cập (scope) of the using-directive câu lệnh.
 
@@ -51,13 +51,13 @@ See lesson [7.13 -- Using declarations and using directives](https://www.learncp
 
 :::
 
-<a name="transitiveInclude"></a>Q2: Why can I use some hàm or type without including the header that declares that hàm or type? [<i class="fa fa-link" style="font-size: 0.8em;"></i>](#transitiveInclude)
+Q2: Why can I use some hàm or type without including the header that declares that hàm or type? [](#transitiveInclude)
 
 For example, many readers ask why their program that uses `std::string_view` needs to `#include <string_view>` when it seems to work fine without the #include.
 
 Headers can #include other headers.  When you #include a header, you also get all of the additional headers that it includes (and all of the headers that those headers include too). All of the additional headers that come along for the ride that you didn’t explicitly include are called “transitive includes”.
 
-In your *main.cpp* file, you probably `#include <iostream>`.  On your trình biên dịch, if your <iostream> header includes the <string_view> header (for its own use), then when you `#include <iostream>` you will get the contents of the <string_view> header (and any other headers that <iostream> includes).  This means your *main.cpp* will be able to use the `std::string_view` type without explicitly including <string_view> header.
+In your *main.cpp* file, you probably `#include <iostream>`.  On your trình biên dịch, if your `<iostream>` header includes the `<string_view>` header (for its own use), then when you `#include <iostream>` you will get the contents of the `<string_view>` header (and any other headers that `<iostream>` includes).  This means your *main.cpp* will be able to use the `std::string_view` type without explicitly including `<string_view>` header.
 
 Even though this may compile on your trình biên dịch, you should not rely on this.  What compiles for you now may not compile on another trình biên dịch, or even on a future version of your trình biên dịch.
 
@@ -69,7 +69,7 @@ Covered in lesson [2.11 -- Header files](https://www.learncpp.com/cpp-tutorial/h
 
 :::
 
-<a name="undefinedbehavior"></a>Q3: My code that produces hành vi không xác định (Hành vi không xác định (Undefined Behavior - UB) - UB) appears to be working fine.  Is this okay? [<i class="fa fa-link" style="font-size: 0.8em;"></i>](#undefinedbehavior)
+Q3: My code that produces hành vi không xác định (Hành vi không xác định (Undefined Behavior - UB) - UB) appears to be working fine.  Is this okay? [](#undefinedbehavior)
 
 aka: “I did that thing you told me not to do, and it worked.  So what’s the issue?”
 
@@ -99,13 +99,13 @@ Hành vi không xác định (Hành vi không xác định (Undefined Behavior -
 
 :::
 
-<a name="howundefinedworks"></a>Q4: Why does my code that produces hành vi không xác định (Hành vi không xác định (Undefined Behavior - UB) - UB) generate a certain result? [<i class="fa fa-link" style="font-size: 0.8em;"></i>](#howundefinedworks)
+Q4: Why does my code that produces hành vi không xác định (Hành vi không xác định (Undefined Behavior - UB) - UB) generate a certain result? [](#howundefinedworks)
 
 Readers often ask what is happening to produce a specific result on their system.  In most cases, it’s difficult to say, as the result produced may be dependent upon the current program state, your trình biên dịch settings, how the trình biên dịch implements a feature, the computer’s architecture, and/or the operating system.  For example, if you print the value of an chưa được khởi tạo biến, you might get garbage, or you might always get a particular value.  It depends on what type of biến it is, how the trình biên dịch lays out the biến in memory, and what’s in that memory beforehand (which might be impacted by the OS or the state of the program prior to that point).
 
 And while such an answer may be interesting mechanically, it’s rarely useful overall (and likely to change if and when anything else changes).  It’s like asking, “When I put my seat belt through the steering wheel and connect it to the accelerator, why does the car pull left when I turn my head on a rainy day?”  The best answer isn’t a physical explanation of what’s occurring, it’s “don’t do that”.
 
-<a name="languagestandard"></a>Q5: Why am I getting a compile error when I try to compile an example that seems like it should work? [<i class="fa fa-link" style="font-size: 0.8em;"></i>](#languagestandard)
+Q5: Why am I getting a compile error when I try to compile an example that seems like it should work? [](#languagestandard)
 
 The most common reason for this is that your project is being compiled using the wrong language standard.
 
@@ -123,7 +123,7 @@ It is also possible that your trình biên dịch either doesn’t support a spe
 
 The CPPReference website tracks trình biên dịch support for each feature per language standard. You can find those support tables linked from their [home page](https://en.cppreference.com/w/cpp), top right, under “Compiler Support” (by language standard). For example, you can see which C++23 features are supported [here](https://en.cppreference.com/w/cpp/compiler_support/23).
 
-<a name="pairedheader"></a>Q6: Why should I #include “foo.h” from foo.cpp? [<i class="fa fa-link" style="font-size: 0.8em;"></i>](#pairedheader)
+Q6: Why should I #include “foo.h” from foo.cpp? [](#pairedheader)
 
 It is a thực hành tốt nhất (Best Practice) for a source file (e.g. foo.cpp) to include its paired header (e.g. foo.h).  In many cases, foo.h will contain definitions that foo.cpp will need to compile correctly.
 
@@ -137,7 +137,7 @@ Covered in lesson [2.11 -- Header files](https://www.learncpp.com/cpp-tutorial/h
 
 :::
 
-<a name="includecpp"></a>Q7: Why does my project only compile when I #include “foo.cpp” from “main.cpp”? [<i class="fa fa-link" style="font-size: 0.8em;"></i>](#includecpp)
+Q7: Why does my project only compile when I #include “foo.cpp” from “main.cpp”? [](#includecpp)
 
 This is almost always due to forgetting to add foo.cpp to your project and/or quá trình biên dịch command line.  Update your project and/or command line to include each source (.cpp) file.  When you compile your project, you should see each source file being compiled.
 
@@ -160,7 +160,7 @@ Covered in lesson [2.11 -- Header files](https://www.learncpp.com/cpp-tutorial/h
 
 :::
 
-<a name="reteurnzero"></a>Q8: Why do I need to `return 0` at the bottom of main? [<i class="fa fa-link" style="font-size: 0.8em;"></i>](#reteurnzero)
+Q8: Why do I need to `return 0` at the bottom of main? [](#reteurnzero)
 
 You don’t.  The `main()` hàm is special in that it will implicitly return 0 if you do not provide a return câu lệnh.
 
@@ -174,7 +174,7 @@ Covered in lesson [2.2 -- Function các giá trị trả về (value-returning c
 
 :::
 
-<a name="CTAD"></a>Q9: When I compile an example from this website, I get an error similar to “đối số list for class template XXX is missing”.  Why? [<i class="fa fa-link" style="font-size: 0.8em;"></i>](#CTAD)
+Q9: When I compile an example from this website, I get an error similar to “đối số list for class template XXX is missing”.  Why? [](#CTAD)
 
 The most likely reason is that the example makes use of a feature called Class Template Argument Deduction (CTAD), which is a C++17 feature.  Many các trình biên dịch default to C++14, which doesn’t support this feature.
 
@@ -199,7 +199,7 @@ We cover CTAD in lesson [13.14 -- Class template đối số deduction (CTAD) an
 
 :::
 
-<a name="constbyvalue"></a>Q10: Why don’t we make hàm tham số or return types const when passing or returning by value? [<i class="fa fa-link" style="font-size: 0.8em;"></i>](#constbyvalue)
+Q10: Why don’t we make hàm tham số or return types const when passing or returning by value? [](#constbyvalue)
 
 We typically don’t `const` by-value hàm tham số because:
 
@@ -221,7 +221,7 @@ Covered in lesson [5.1 -- Constant các biến (named các hằng số)](https:/
 
 :::
 
-<a name="whyconstexpr"></a>Q11: Why should I use constexpr? [<i class="fa fa-link" style="font-size: 0.8em;"></i>](#whyconstexpr)
+Q11: Why should I use constexpr? [](#whyconstexpr)
 
 Constexpr and other compile-time programming techniques provide many benefits, including:
 
@@ -241,7 +241,7 @@ Covered in lesson [5.5 -- Constant biểu thức](https://www.learncpp.com/cpp-t
 
 :::
 
-<a name="constexprruntimeeval"></a>Q12: Why should I constexpr an eligible hàm when I know it will only be evaluated at runtime in my program? [<i class="fa fa-link" style="font-size: 0.8em;"></i>](#constexprruntimeeval)
+Q12: Why should I constexpr an eligible hàm when I know it will only be evaluated at runtime in my program? [](#constexprruntimeeval)
 
 There are a few reasons you might want to do so:
 
@@ -260,7 +260,7 @@ Covered in lesson [F.1 -- Constexpr các hàm](https://www.learncpp.com/cpp-tuto
 
 :::
 
-<a name="unspecifiedevaluationorder"></a>Q13: Why shouldn’t I call the same input hàm more than once in an biểu thức? [<i class="fa fa-link" style="font-size: 0.8em;"></i>](#unspecifiedevaluationorder)
+Q13: Why shouldn’t I call the same input hàm more than once in an biểu thức? [](#unspecifiedevaluationorder)
 
 In most cases, the C++ standard does not specify the order in which operands (including hàm đối số) are evaluated.  The precedence and associativity of các toán tử is used only to determine how operands are grouped with các toán tử, and the order of value computation. 
 
@@ -274,7 +274,7 @@ Covered in lesson [6.1 -- Operator precedence and associativity](https://www.lea
 
 :::
 
-<a name="morepractice"></a>Q14: There aren’t enough quizzes!  Where can I get more practice? [<i class="fa fa-link" style="font-size: 0.8em;"></i>](#morepractice)
+Q14: There aren’t enough quizzes!  Where can I get more practice? [](#morepractice)
 
 We recommend [https://www.codewars.com/](https://www.codewars.com/), which has plenty of bite-sized exercises to help improve your general problem-solving and C++ implementation skills.  It’s also fun!
 
@@ -284,33 +284,10 @@ However, because disposable exercises have disposable answers, solving such quiz
 
 Start with something small -- a simple game or simulation.  Then layer in features over time.  As the complexity of your project increases, you’ll start the see the various deficiencies in your code show up.  This will help you identify what areas of your code are in need of quality improvements.
 
-</a>
-  	<a class="nav-link" href="/">
-  
-    <i class="fa fa-home" aria-hidden="true"></i>
-    
-      Back to table of contents
-    
-</a>
-  	<a class="nav-link" href="https://www.learncpp.com/cpp-tutorial/a3-using-libraries-with-codeblocks/">
-  
-    <i class="fa fa-chevron-circle-left" aria-hidden="true"></i>
-    
-      Previous lesson
-      
-        A.3Using libraries with Code::Blocks
-      
-    
-  </a>
-
+  	
+  	
 
 ---
-
-
-
-
-
-
 
 ::: tip 💡 Tóm Tắt Quy Tắc Vàng (Core Guidelines)
 1. Luôn hiểu rõ vòng đời và quyền sở hữu (Ownership) của dữ liệu trước khi viết code.

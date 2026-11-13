@@ -100,7 +100,7 @@ The `class` keyword (along with the `static` keyword), is one of the most overlo
 `enum struct` also works in this context, and behaves identically to `enum class`.  However, use of `enum struct` is non-idiomatic, so avoid its use.
 :::
 
-<p class="cpp-section cpp-topline" style="clear: both">Scoped enumerations define their own phạm vi truy cập (scope) regions
+Scoped enumerations define their own phạm vi truy cập (scope) regions
 
 Unlike unscoped enumerations, which place their enumerators in the same phạm vi truy cập (scope) as the enumeration itself, scoped enumerations place their enumerators *only* in the phạm vi truy cập (scope) region of the enumeration.  In other words, scoped enumerations act like a namespace for their enumerators.  This built-in namespacing helps reduce global namespace pollution and the potential for name conflicts when scoped enumerations are used in the global phạm vi truy cập (scope).
 
@@ -155,7 +155,7 @@ int main()
 }
 ```
 
-There are occasionally cases where it is useful to be able to treat a scoped enumerator as an integral value.  In these cases, you can explicitly convert a scoped enumerator to an integer by using a `static_cast`.  A better choice in C++23 is to use `std::to_underlying()` (defined in the <utility> header), which converts an enumerator to a value of the underlying type of the enumeration.
+There are occasionally cases where it is useful to be able to treat a scoped enumerator as an integral value.  In these cases, you can explicitly convert a scoped enumerator to an integer by using a `static_cast`.  A better choice in C++23 is to use `std::to_underlying()` (defined in the `<utility>` header), which converts an enumerator to a value of the underlying type of the enumeration.
 
 ```cpp
 #include <iostream>
@@ -220,7 +220,7 @@ Favor scoped enumerations over unscoped enumerations unless there’s a compelli
 
 Despite the benefits that scoped enumerations offer, unscoped enumerations are still commonly used in C++ because there are situations where we desire the implicit conversion to int (doing lots of static_casting gets annoying) and we don’t need the extra namespacing.
 
-<a name="operatorplus"></a>Easing the conversion of scoped enumerators to integers (advanced) [<i class="fa fa-link" style="font-size: 0.8em;"></i>](#operatorplus)
+Easing the conversion of scoped enumerators to integers (advanced) [](#operatorplus)
 
 Scoped enumerations are great, but the lack of implicit conversion to integers can sometimes be a pain point.  If we need to convert a scoped enumeration to integers often (e.g. cases where we want to use scoped enumerators as array indices), having to use static_cast every time we want a conversion can clutter our code significantly.
 
@@ -400,28 +400,10 @@ int main()
 ```
 :::
 
-</a>
-  	<a class="nav-link" href="/">
-  
-    <i class="fa fa-home" aria-hidden="true"></i>
-    
-      Back to table of contents
-    
-</a>
-  	<a class="nav-link" href="https://www.learncpp.com/cpp-tutorial/introduction-to-overloading-the-i-o-các toán tử/">
-  
-    <i class="fa fa-chevron-circle-left" aria-hidden="true"></i>
-    
-      Previous lesson
-      
-        13.5Introduction to overloading the I/O các toán tử
-      
-    
-  </a>
-
+  	
+  	
 
 ---
-
 
 ```mermaid
 classDiagram
@@ -433,13 +415,9 @@ classDiagram
     note for DoiTuong "Đóng gói (Encapsulation):\nDữ liệu được bảo vệ trong private\nThao tác qua phương thức public"
 ```
 
-
 ::: warning Cạm Bẫy: Khởi Tạo Không Đồng Nhất (Initialization Pitfalls)
 Hãy luôn khởi tạo biến thành viên ngay tại nơi khai báo hoặc sử dụng **Danh sách khởi tạo thành viên (Member Initializer List)** trong hàm tạo để tránh việc đối tượng bị gán giá trị 2 lần gây lãng phí chu kỳ CPU.
 :::
-
-
-
 
 ::: tip 💡 Tóm Tắt Quy Tắc Vàng (Core Guidelines)
 1. Luôn hiểu rõ vòng đời và quyền sở hữu (Ownership) của dữ liệu trước khi viết code.
