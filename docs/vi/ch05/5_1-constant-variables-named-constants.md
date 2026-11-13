@@ -50,7 +50,7 @@ int main()
 }
 ```
 
-However, there are many cases where it is useful to define các biến with values that can not be changed.  For example, consider the gravity of Earth (near the surface): 9.8 meters/second`<sup>`2</sup>.  This isn’t likely to change any time soon (and if it does, you’ve likely got bigger problems than learning C++).  Defining this value as a hằng số helps ensure that this value isn’t accidentally changed.  Constants also have other benefits that we’ll explore in subsequent lessons.
+However, there are many cases where it is useful to define các biến with values that can not be changed.  For example, consider the gravity of Earth (near the surface): 9.8 meters/second`<sup>`2.  This isn’t likely to change any time soon (and if it does, you’ve likely got bigger problems than learning C++).  Defining this value as a hằng số helps ensure that this value isn’t accidentally changed.  Constants also have other benefits that we’ll explore in subsequent lessons.
 
 Although it is a well-known oxymoron, a biến whose value cannot be changed after sự khởi tạo is called a **hằng số biến**.
 

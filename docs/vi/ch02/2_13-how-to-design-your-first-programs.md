@@ -333,8 +333,8 @@ Words of advice when writing programs
 
 A complex system that works is invariably found to have evolved from a simple system that worked
 
-`<footer>`—John Gall, Systemantics: How Systems Really Work and How They Fail p. 71</footer>
-</blockquote>
+`<footer>`—John Gall, Systemantics: How Systems Really Work and How They Fail p. 71
+
 
 Conclusion
 
@@ -348,8 +348,8 @@ Spending a little time up front thinking about how to structure your program wil
 
 I would say this is arguably the most important thing in programming and some of us, like me at first, took it for granted.
 
-`<footer>`—Reader Emeka Daniel, comment on learncpp.com</footer>
-</blockquote>
+`<footer>`—Reader Emeka Daniel, comment on learncpp.com
+
 :::
 
 As you become more comfortable with these concepts and tips, they will start coming more naturally to you.  Eventually you will get to the point where you can write entire các hàm (and short programs) with minimal pre-planning.

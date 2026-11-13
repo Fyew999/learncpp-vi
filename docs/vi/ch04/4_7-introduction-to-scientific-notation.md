@@ -16,7 +16,7 @@ Before we talk about our next subject, we’re going to sidebar into the topic o
 
 **Scientific notation** is a useful shorthand for writing lengthy numbers in a concise manner.  And although scientific notation may seem foreign at first, understanding scientific notation will help you understand how floating point numbers work, and more importantly, what their limitations are.
 
-Numbers in scientific notation take the following form: *significand* x 10`<sup>`*exponent*</sup>.  For example, in the scientific notation `1.2 x 10⁴`, `1.2` is the significand and `4` is the exponent.  Since 10⁴ evaluates to 10,000, 1.2 x 10⁴ evaluates to 12,000.
+Numbers in scientific notation take the following form: *significand* x 10`<sup>`*exponent*.  For example, in the scientific notation `1.2 x 10⁴`, `1.2` is the significand and `4` is the exponent.  Since 10⁴ evaluates to 10,000, 1.2 x 10⁴ evaluates to 12,000.
 
 By convention, numbers in scientific notation are written with one digit before the decimal point, and the rest of the digits afterward.
 

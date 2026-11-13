@@ -166,9 +166,9 @@ Mô hình này giúp tách rời hoàn toàn liên kết bộ nhớ, cực kỳ 
 ### Câu hỏi:
 Sự khác biệt căn bản giữa Aggregation và Association là gì?
 `<details>`
-`<summary>``<b>`Xem lời giải</b></summary>
+`<summary>``<b>`Xem lời giải
 
 **Đáp án**: 
 - **Aggregation** thể hiện mối quan hệ "sở hữu không chặt chẽ" (*whole/part* hay *has-a*), tức có một thực thể đóng vai trò là "vỏ chứa" hoặc "chủ quản" của thực thể kia (như Khoa và Giáo viên).
 - **Association** thể hiện mối quan hệ liên kết ngang hàng bình đẳng (*peer-to-peer*), không bên nào chứa hay quản lý bên nào (như Bác sĩ và Bệnh nhân).
-</details>
+

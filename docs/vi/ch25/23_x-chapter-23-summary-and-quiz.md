@@ -40,13 +40,13 @@ Mỗi trường hợp sau đây tương ứng với mối quan hệ nào (Compos
 4. Một hàm tính căn bậc hai `Math::sqrt` nhận vào một số `double`.
 
 `<details>`
-`<summary>``<b>`Xem lời giải</b></summary>
+`<summary>``<b>`Xem lời giải
 
 1. **Composition (part-of)**: Bo mạch chủ là thành phần sống còn của máy tính.
 2. **Aggregation (has-a)**: Thư viện chứa sách, nhưng sách mượn ra ngoài vẫn tồn tại độc lập.
 3. **Association (uses-a)**: Lập trình viên và bàn phím là 2 thực thể độc lập tương tác với nhau.
 4. **Dependency (depends-on)**: Hàm toán học chỉ nhận dữ liệu tham số để tính toán tạm thời.
-</details>
+
 
 ### Câu hỏi 2:
 Hãy viết một chương trình C++ hoàn chỉnh mô phỏng mối quan hệ:
@@ -56,7 +56,7 @@ Hãy viết một chương trình C++ hoàn chỉnh mô phỏng mối quan hệ:
 - Xác định đây là mối quan hệ gì và viết code minh họa.
 
 `<details>`
-`<summary>``<b>`Xem lời giải</b></summary>
+`<summary>``<b>`Xem lời giải
 
 Đây là quan hệ **Aggregation (has-a)**: Quái vật *có* vũ khí, nhưng không sở hữu vòng đời của vũ khí.
 
@@ -127,7 +127,7 @@ int main()
     return 0;
 }
 ```
-</details>
+
 
 ---
 

@@ -573,7 +573,7 @@ See [20.6 -- Introduction to lambdas (anonymous các hàm)](https://www.learncpp
 
 ::: info Tip
 
-Since maps are common, the standard library offers [`std::map`</code>](https://en.cppreference.com/w/cpp/container/map), which is not currently covered on learncpp. Using `std::map`, we can simplify our code to
+Since maps are common, the standard library offers [`std::map`](https://en.cppreference.com/w/cpp/container/map), which is not currently covered on learncpp. Using `std::map`, we can simplify our code to
 
 ```cpp
 #include <iostream>

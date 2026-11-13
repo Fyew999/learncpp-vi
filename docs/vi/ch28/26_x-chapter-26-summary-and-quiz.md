@@ -29,7 +29,7 @@ Sử dụng Non-Type Template Parameter để xây dựng lớp Ma trận toán 
 - Phương thức `fill(T value)` và `print()`.
 
 `<details>`
-`<summary>``<b>`Xem mã nguồn lời giải hoàn chỉnh</b></summary>
+`<summary>``<b>`Xem mã nguồn lời giải hoàn chỉnh
 
 ```cpp
 #include <iostream>
@@ -91,4 +91,4 @@ int main()
     return 0;
 }
 ```
-</details>
+

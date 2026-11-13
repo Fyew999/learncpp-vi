@@ -32,7 +32,7 @@
 4. Viết hàm `main()` mô phỏng một hiệp chiến đấu giữa Player và Dragon.
 
 `<details>`
-`<summary>``<b>`Xem lời giải mã nguồn hoàn chỉnh</b></summary>
+`<summary>``<b>`Xem lời giải mã nguồn hoàn chỉnh
 
 ```cpp
 #include <iostream>
@@ -145,7 +145,7 @@ int main()
     return 0;
 }
 ```
-</details>
+
 
 ---
 

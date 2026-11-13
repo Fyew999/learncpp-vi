@@ -90,7 +90,7 @@ Hạn chế tối đa việc các lớp cấp cao phụ thuộc trực tiếp v�
 ### Câu hỏi:
 Nếu hàm `printData(const User& u)` nhận một đối tượng `User` làm tham số và in ra màn hình, thì hàm này có quan hệ gì với `User`?
 `<details>`
-`<summary>``<b>`Xem lời giải</b></summary>
+`<summary>``<b>`Xem lời giải
 
 **Đáp án**: Quan hệ **Dependency (Phụ thuộc)**. Hàm chỉ mượn tạm `User` để đọc dữ liệu trong quá trình thực thi, không chịu trách nhiệm cấp phát hay hủy bỏ `User`.
-</details>
+

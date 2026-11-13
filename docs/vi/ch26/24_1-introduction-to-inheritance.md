@@ -79,10 +79,10 @@ Xác định xem các cặp thực thể sau đây có mối quan hệ **Kế th
 4. Chó và Động vật có vú.
 
 `<details>`
-`<summary>``<b>`Xem lời giải</b></summary>
+`<summary>``<b>`Xem lời giải
 
 1. **has-a (Composition/Aggregation)**: Xe hơi *có* bánh xe (không phải Xe hơi là một bánh xe).
 2. **is-a (Inheritance)**: Tam giác *là một* Hình đa giác.
 3. **has-a (Aggregation)**: Bệnh viện *có* bác sĩ làm việc.
 4. **is-a (Inheritance)**: Chó *là một* loài Động vật có vú.
-</details>
+

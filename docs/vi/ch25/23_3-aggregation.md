@@ -167,7 +167,7 @@ dept->showTeachers(); // UNDEFINED BEHAVIOR! Crash hoac in ky tu rac!
 ### Câu hỏi:
 Khi nào Destructor của lớp `Department` có quyền gọi lệnh `delete` lên con trỏ giáo viên?
 `<details>`
-`<summary>``<b>`Xem lời giải</b></summary>
+`<summary>``<b>`Xem lời giải
 
 **Đáp án**: **KHÔNG BAO GIỜ!** Trong quan hệ Aggregation, lớp cha không sở hữu vòng đời của đối tượng con. Nếu Destructor của `Department` tự ý `delete` giáo viên, sẽ xảy ra lỗi **Double Free** hoặc làm sập chương trình khi các đối tượng khác đang sử dụng chung giáo viên đó.
-</details>
+

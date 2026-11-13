@@ -107,7 +107,7 @@ Ngay cả khi `m_name` là public, việc gán trong thân constructor cũng khi
 ### Câu hỏi:
 Tên lớp cơ sở `Person{ name, age }` trong danh sách khởi tạo của `Employee` bắt buộc phải đặt ở vị trí nào?
 `<details>`
-`<summary>``<b>`Xem lời giải</b></summary>
+`<summary>``<b>`Xem lời giải
 
 **Đáp án**: Theo chuẩn C++, lớp cơ sở luôn được khởi tạo **trước** bất kỳ biến thành viên nào của lớp con, bất kể bạn viết nó ở vị trí nào trong danh sách. Tuy nhiên, quy tắc phong cách (Best Practice) là luôn luôn đặt lệnh gọi lớp cơ sở ở **vị trí đầu tiên** của Member Initializer List để code phản ánh đúng thực tế thực thi.
-</details>
+

@@ -29,7 +29,7 @@ Xây dựng lớp `BankAccount` với:
 - Hàm thực hiện giao dịch chuyển tiền giữa 2 tài khoản đảm bảo an toàn ngoại lệ (Nếu rút tiền từ tài khoản nguồn thất bại, tài khoản đích không bị ảnh hưởng).
 
 `<details>`
-`<summary>``<b>`Xem lời giải mã nguồn C++ hoàn chỉnh</b></summary>
+`<summary>``<b>`Xem lời giải mã nguồn C++ hoàn chỉnh
 
 ```cpp
 #include <iostream>
@@ -135,4 +135,4 @@ int main()
     return 0;
 }
 ```
-</details>
+

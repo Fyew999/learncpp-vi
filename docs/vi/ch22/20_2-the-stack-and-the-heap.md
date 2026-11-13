@@ -122,10 +122,10 @@ Let’s examine in more detail how the call ngăn xếp Stack works.  Here is th
 <ol start="1">
 - The program encounters a hàm call.
 
-</li>
+
 - A ngăn xếp Stack frame is constructed and pushed on the ngăn xếp Stack. The ngăn xếp Stack frame consists of:
 
-</li>
+
 
 - The address of the instruction beyond the hàm call (called the **return address**).  This is how the CPU remembers where to return to after the called hàm exits.
 

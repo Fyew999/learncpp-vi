@@ -148,19 +148,19 @@ Range
 Precision
 
 IEEE 754 single-precision (4 bytes)
-±1.18 x 10`<sup>`-38</sup> to ±3.4 x 10`<sup>`38</sup> and 0.0
+±1.18 x 10`<sup>`-38 to ±3.4 x 10`<sup>`38 and 0.0
 6-9 significant digits, typically 7
 
 IEEE 754 double-precision (8 bytes)
-±2.23 x 10`<sup>`-308</sup> to ±1.80 x 10`<sup>`308</sup> and 0.0
+±2.23 x 10`<sup>`-308 to ±1.80 x 10`<sup>`308 and 0.0
 15-18 significant digits, typically 16
 
 x87 extended-precision (80 bits)
-±3.36 x 10`<sup>`-4932</sup> to ±1.18 x 10`<sup>`4932</sup> and 0.0
+±3.36 x 10`<sup>`-4932 to ±1.18 x 10`<sup>`4932 and 0.0
 18-21 significant digits
 
 IEEE 754 quadruple-precision (16 bytes)
-±3.36 x 10`<sup>`-4932</sup> to ±1.18 x 10`<sup>`4932</sup> and 0.0
+±3.36 x 10`<sup>`-4932 to ±1.18 x 10`<sup>`4932 and 0.0
 33-36 significant digits
 
 ::: info For advanced readers

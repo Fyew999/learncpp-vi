@@ -206,7 +206,7 @@ int main()
 ### Câu hỏi:
 Tại sao trong hàm `resize()`, chúng ta phải cấp phát con trỏ mới `int* data = new int[newLength];` trước khi gọi `delete[] m_data;`?
 `<details>`
-`<summary>``<b>`Xem lời giải</b></summary>
+`<summary>``<b>`Xem lời giải
 
 **Đáp án**: Nếu bạn gọi `delete[] m_data;` trước, toàn bộ dữ liệu cũ sẽ bị giải phóng ngay lập tức trên Heap! Khi đó, bạn không còn dữ liệu để sao chép sang mảng mới. Ngoài ra, việc cấp phát trước còn đảm bảo tính an toàn ngoại lệ (Exception Safety): nếu `new` bị lỗi ném ra ngoại lệ `std::bad_alloc`, dữ liệu cũ của đối tượng vẫn còn nguyên vẹn.
-</details>
+

@@ -98,7 +98,7 @@ Hậu quả:
 ### Câu hỏi:
 Tại sao nhiều ngôn ngữ hiện đại như Java hay C# lại cấm đa kế thừa lớp?
 `<details>`
-`<summary>``<b>`Xem lời giải</b></summary>
+`<summary>``<b>`Xem lời giải
 
 **Đáp án**: Đa kế thừa làm tăng vọt độ phức tạp của mã nguồn, dễ tạo ra nhập nhằng xung đột tên hàm và phát sinh lỗi bài toán kim cương. Java và C# chỉ cho phép kế thừa 1 lớp và thực thi nhiều Interface để tránh hoàn toàn các rủi ro kiến trúc này.
-</details>
+
