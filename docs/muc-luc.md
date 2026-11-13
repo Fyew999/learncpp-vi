@@ -4,6 +4,24 @@
 
 Dưới đây là mục lục đầy đủ của toàn bộ giáo trình, được phân loại theo từng chương chủ đề bằng tiếng Việt chuẩn.
 
+---
+
+## 🏆 Phụ Lục CP: C++ Thi Đấu & Luyện Thi Chuyên Tin (9 chuyên đề)
+
+> **Dành riêng cho các bạn học sinh ôn thi Chuyên Tin học (vào lớp 10, HSG Tỉnh/Thành phố/Quốc gia) & Lập trình thi đấu (Competitive Programming - Codeforces, VNOI, LeetCode)**.
+
+- **[CP.01 - Khuôn mẫu Code Thi Đấu & Kỹ Thuật Fast I/O C++17](/vi/cp/cp-01-template-fast-io)**: Template chuẩn phòng thi, giải mã `sync_with_stdio(false)`, `cin.tie(nullptr)`, `freopen` đọc ghi tệp `.INP`/`.OUT`, tránh tràn ngăn xếp (Stack Overflow).
+- **[CP.02 - Ước Lượng Thời Gian, Bộ Nhớ & Kỹ Thuật Ăn Subtask](/vi/cp/cp-02-time-space-complexity)**: Quy tắc $10^8$ phép tính/giây, bảng tra cứu độ phức tạp theo $N$, cạm bẫy tràn số `int` $\to$ `long long` $\to$ `__int128_t`, chiến lược chia nhánh vét cạn ăn chắc từng Subtask.
+- **[CP.03 - Kho Vũ Khí STL C++17 Thi Đấu Thực Chiến](/vi/cp/cp-03-stl-weapons)**: Tối ưu `std::vector`, Structured Binding C++17 cho `pair`/`tuple`, `std::sort` với Lambda C++17, chặt nhị phân thần tốc (`lower_bound`, `upper_bound`), Min/Max Heap với `std::priority_queue`, `std::set`/`multiset` vs `unordered_map`, các thuật toán `<numeric>` mới của C++17 (`std::gcd`, `std::lcm`).
+- **[CP.04 - Số Học & Toán Học Cốt Lõi Cho Chuyên Tin](/vi/cp/cp-04-number-theory-math)**: Phép toán đồng dư Modulo, lũy thừa nhị phân $O(\log B)$, Sàng nguyên tố Eratosthenes $O(N \log \log N)$, định lý Fermat nhỏ & nghịch đảo modulo, tính tổ hợp $nCk \pmod M$ trong $O(1)$.
+- **[CP.05 - 5 Kỹ Thuật Lập Trình Kinh Điển Trong Đề Thi](/vi/cp/cp-05-classical-techniques)**: Mảng cộng dồn 1D/2D, mảng hiệu cập nhật đoạn $O(1)$, Hai con trỏ & Cửa sổ trượt, Chặt nhị phân trên tập kết quả, Quay lui và nhánh cận.
+- **[CP.06 - Quy Hoạch Động (DP) - Chìa Khóa Vàng Điểm Cao](/vi/cp/cp-06-dp-introduction)**: 4 bước xây dựng thuật toán DP, Dãy con tăng dài nhất (LIS) $O(N \log N)$, Bài toán Cái Túi (0/1 Knapsack) tối ưu $O(W)$, Xâu con chung dài nhất (LCS).
+- **[CP.07 - Đồ Thị & Cây Căn Bản Cho Đề Thi Chuyên](/vi/cp/cp-07-graphs-and-trees)**: Danh sách kề, BFS tìm đường đi ngắn nhất không trọng số, DFS phát hiện chu trình, Cấu trúc tập hợp rời rạc (DSU) nén đường đi, Thuật toán Dijkstra với `priority_queue`, Cây khung nhỏ nhất Kruskal MST.
+- **[CP.08 - Cây Phân Đoạn (Segment Tree) & Cây Fenwick (BIT)](/vi/cp/cp-08-segment-tree-fenwick)**: Range Query & Point Update trong $O(\log N)$, 10 dòng code cài đặt Fenwick Tree, Segment Tree đa năng tìm Min/Max/Tổng.
+- **[CP.09 - 10 Bẫy Phòng Thi, Bắt Lỗi & Cheatsheet C++17](/vi/cp/cp-09-contest-traps-cheatsheet)**: 10 lỗi kinh điển mất điểm oan (quên reset test, sai tên file, ép kiểu unsigned), cờ biên dịch `-fsanitize=address` bắt lỗi bộ nhớ, Cheatsheet tổng hợp các hàm STL dùng ngay.
+
+---
+
 ## Chương 00: Bắt đầu & Thiết lập Môi trường Lập trình (Chuẩn C++17) (13 bài)
 
 - **[0.1 - Giới thiệu về chuỗi bài hướng dẫn](/vi/ch00/0_1-introduction-to-these-tutorials)**

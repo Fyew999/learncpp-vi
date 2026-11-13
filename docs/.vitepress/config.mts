@@ -18,11 +18,54 @@ export default defineConfig({
     nav: [
       { text: 'Trang Chủ', link: '/' },
       { text: 'Mục Lục 35 Chương', link: '/muc-luc' },
-      { text: 'Quy Chuẩn Thuật Ngữ', link: '/quy-chuan-thuat-ngu' },
-      { text: 'Lộ Trình C++17 Master', link: '/lo-trinh' }
+      { text: 'Lộ Trình C++17 Master', link: '/lo-trinh' },
+      { text: '🏆 Luyện Thi Chuyên Tin (CP)', link: '/vi/cp/cp-01-template-fast-io' },
+      { text: 'Quy Chuẩn Thuật Ngữ', link: '/quy-chuan-thuat-ngu' }
     ],
 
     sidebar: [
+      {
+            "text": "🏆 Phụ Lục CP: C++ Thi Đấu & Luyện Thi Chuyên Tin",
+            "collapsed": false,
+            "items": [
+                  {
+                        "text": "CP.01 - Khuôn mẫu Code Thi đấu & Kỹ thuật Fast I/O C++17",
+                        "link": "/vi/cp/cp-01-template-fast-io"
+                  },
+                  {
+                        "text": "CP.02 - Ước lượng Thời gian, Bộ nhớ & Kỹ thuật Ăn Subtask",
+                        "link": "/vi/cp/cp-02-time-space-complexity"
+                  },
+                  {
+                        "text": "CP.03 - Kho Vũ khí STL C++17 Thi đấu Thực chiến",
+                        "link": "/vi/cp/cp-03-stl-weapons"
+                  },
+                  {
+                        "text": "CP.04 - Số học & Toán học Cốt lõi cho Chuyên Tin",
+                        "link": "/vi/cp/cp-04-number-theory-math"
+                  },
+                  {
+                        "text": "CP.05 - 5 Kỹ thuật Lập trình Kinh điển trong Đề thi",
+                        "link": "/vi/cp/cp-05-classical-techniques"
+                  },
+                  {
+                        "text": "CP.06 - Quy hoạch Động (DP) - Chìa khóa Vàng Điểm cao",
+                        "link": "/vi/cp/cp-06-dp-introduction"
+                  },
+                  {
+                        "text": "CP.07 - Đồ thị & Cây Căn bản cho Đề thi Chuyên",
+                        "link": "/vi/cp/cp-07-graphs-and-trees"
+                  },
+                  {
+                        "text": "CP.08 - Cây Phân đoạn (Segment Tree) & Cây Fenwick (BIT)",
+                        "link": "/vi/cp/cp-08-segment-tree-fenwick"
+                  },
+                  {
+                        "text": "CP.09 - 10 Bẫy Phòng thi, Bắt lỗi & Cheatsheet C++17",
+                        "link": "/vi/cp/cp-09-contest-traps-cheatsheet"
+                  }
+            ]
+      },
       {
             "text": "Chương 00: Bắt đầu & Thiết lập Môi trường Lập trình (Chuẩn C++17)",
             "collapsed": false,

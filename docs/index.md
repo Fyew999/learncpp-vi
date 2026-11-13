@@ -9,14 +9,20 @@ hero:
     - theme: brand
       text: 🚀 Bắt Đầu Học Ngay (Chương 00)
       link: /vi/ch00/0_1-introduction-to-these-tutorials
+    - theme: brand
+      text: 🏆 Luyện Thi Chuyên Tin (CP)
+      link: /vi/cp/cp-01-template-fast-io
     - theme: alt
       text: 📖 Mục Lục 35 Chương Toàn Diện
       link: /muc-luc
     - theme: alt
-      text: 📐 Quy Chuẩn Thuật Ngữ ISO
-      link: /quy-chuan-thuat-ngu
+      text: 🗺️ Lộ Trình C++17 Master
+      link: /lo-trinh
 
 features:
+  - icon: 🏆
+    title: "Cẩm Nang Thi Đấu & Luyện Thi Chuyên Tin (CP)"
+    details: "Chuyên mục phụ lục độc quyền: Fast I/O thần tốc, kỹ thuật vét điểm Subtask, kho vũ khí STL C++17, Số học & Đồng dư, Quy hoạch động, Đồ thị, Segment Tree và 10 bẫy phòng thi kinh điển."
   - icon: 🛡️
     title: "Chuẩn Mực C++17 Thực Chiến"
     details: "Mọi mã nguồn và bài tập trong giáo trình đều tương thích 100% với chuẩn C++17 - tiêu chuẩn được dùng phổ biến nhất tại các doanh nghiệp và dự án phần mềm lớn."
