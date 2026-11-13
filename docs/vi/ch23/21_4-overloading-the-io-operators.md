@@ -1,0 +1,622 @@
+# 21.4 — Overloading the I/O operators
+
+---
+
+## 🎯 Mục Tiêu Bài Học
+- Nắm vững bản chất lý thuyết và cơ chế hoạt động của **Overloading the I/O operators** trong tiêu chuẩn ISO C++.
+- Hiểu rõ cách máy tính tổ chức bộ nhớ (RAM, CPU registers) khi thực thi mã nguồn liên quan.
+- Nhận biết các cạm bẫy lỗi kinh điển (**Undefined Behavior**, Memory Leak, Bug logic) và cách phòng tránh.
+- Áp dụng các quy tắc thực hành tốt nhất (**Best Practices**) chuẩn công nghiệp và cập nhật C++20/C++23 hiện đại.
+
+---
+
+# 21.4 &#8212; Overloading the I/O các toán tử
+
+For classes that have multiple member các biến, printing each of the individual các biến on the screen can get tiresome fast.  For example, consider the following class:
+
+```cpp
+class Point
+{
+private:
+    double m_x{};
+    double m_y{};
+    double m_z{};
+
+public:
+    Point(double x=0.0, double y=0.0, double z=0.0)
+      : m_x{x}, m_y{y}, m_z{z}
+    {
+    }
+
+    double getX() const { return m_x; }
+    double getY() const { return m_y; }
+    double getZ() const { return m_z; }
+};
+```
+
+If you wanted to print an instance of this class to the screen, you’d have to do something like this:
+
+```cpp
+Point point { 5.0, 6.0, 7.0 };
+
+std::cout << "Point(" << point.getX() << ", " <<
+    point.getY() << ", " <<
+    point.getZ() << ')';
+```
+
+Of course, it makes more sense to do this as a reusable hàm.  And in previous examples, you’ve seen us create `print()` các hàm that work like this:
+
+```cpp
+class Point
+{
+private:
+    double m_x{};
+    double m_y{};
+    double m_z{};
+
+public:
+    Point(double x=0.0, double y=0.0, double z=0.0)
+      : m_x{x}, m_y{y}, m_z{z}
+    {
+    }
+
+    double getX() const { return m_x; }
+    double getY() const { return m_y; }
+    double getZ() const { return m_z; }
+
+    void print() const
+    {
+        std::cout << "Point(" << m_x << ", " << m_y << ", " << m_z << ')';
+    }
+};
+```
+
+While this is much better, it still has some downsides.  Because `print()` returns `void`, it can’t be called in the middle of an output câu lệnh.  Instead, you have to do this:
+
+```cpp
+int main()
+{
+    const Point point { 5.0, 6.0, 7.0 };
+
+    std::cout << "My point is: ";
+    point.print();
+    std::cout << " in Cartesian space.\n";
+}
+```
+
+It would be much easier if you could simply type:
+
+```cpp
+Point point{5.0, 6.0, 7.0};
+cout << "My point is: " << point << " in Cartesian space.\n";
+```
+
+and get the same result.  There would be no breaking up output across multiple câu lệnh, and no having to remember what you named the print hàm.
+
+Fortunately, by overloading `toán tử<<`, you can!
+
+Overloading `toán tử<<`
+
+Overloading `toán tử<<` is similar to overloading toán tử+ (they are both binary các toán tử), except that the tham số types are different.
+
+Consider the biểu thức `std::cout << point`.  If the toán tử is `<<`, what are the operands?  The left operand is the `std::cout` object, and the right operand is your `Point` class object.  `std::cout` is actually an object of type `std::ostream`.  Therefore, our overloaded hàm will look like this:
+
+```cpp
+// std::ostream is the type for object std::cout
+friend std::ostream& operator<< (std::ostream& out, const Point& point);
+```
+
+Implementation of `toán tử<<` for our `Point` class is fairly straightforward -- because C++ already knows how to output doubles using `toán tử<<`, and our members are all doubles, we can simply use `toán tử<<` to output the data members of our `Point`.  Here is the above `Point` class with the overloaded `toán tử<<`.
+
+```cpp
+#include <iostream>
+
+class Point
+{
+private:
+    double m_x{};
+    double m_y{};
+    double m_z{};
+
+public:
+    Point(double x=0.0, double y=0.0, double z=0.0)
+      : m_x{x}, m_y{y}, m_z{z}
+    {
+    }
+
+    friend std::ostream& operator<< (std::ostream& out, const Point& point);
+};
+
+std::ostream& operator<< (std::ostream& out, const Point& point)
+{
+    // Since operator<< is a friend of the Point class, we can access Point's members directly.
+    out << "Point(" << point.m_x << ", " << point.m_y << ", " << point.m_z << ')'; // actual output done here
+
+    return out; // return std::ostream so we can chain calls to operator<<
+}
+
+int main()
+{
+    const Point point1 { 2.0, 3.0, 4.0 };
+
+    std::cout << point1 << '\n';
+
+    return 0;
+}
+```
+
+This is pretty straightforward -- note how similar our output line is to the line in the `print()` hàm we wrote previously.  The most notable difference is that `std::cout` has become tham số `out` (which will be a tham chiếu to `std::cout` when the hàm is called).
+
+The trickiest part here is the return type.  With the arithmetic các toán tử, we calculated and returned a single answer by value (because we were creating and returning a new result).  However, if you try to return `std::ostream` by value, you’ll get a trình biên dịch error.  This happens because `std::ostream` specifically disallows being copied.
+
+In this case, we return the left hand tham số as a tham chiếu.  This not only prevents a copy of `std::ostream` from being made, it also allows us to “chain” output commands together, such as `std::cout << point << '\n'`.
+
+Consider what would happen if our `toán tử<<` returned `void` instead.  When the trình biên dịch evaluates `std::cout << point << '\n'`, due to the precedence/associativity rules, it evaluates this biểu thức as `(std::cout << point) << '\n';`.  `std::cout << point` would call our void-returning overloaded `toán tử<<` hàm, which returns `void`.  Then the partially evaluated biểu thức becomes: `void << '\n';`, which makes no sense!
+
+By returning the `out` tham số as the return type instead, `(std::cout << point)` returns `std::cout`.  Then our partially evaluated biểu thức becomes: `std::cout << '\n';`, which then gets evaluated itself!
+
+Any time we want our overloaded binary các toán tử to be chainable in such a manner, the left operand should be returned (by tham chiếu).  Returning the left-hand tham số by tham chiếu is okay in this case -- since the left-hand tham số was passed in by the calling hàm, it must still exist when the called hàm returns.  Therefore, we don’t have to worry about referencing something that will go out of phạm vi truy cập (scope) and get destroyed when the toán tử returns.
+
+Just to prove it works, consider the following example, which uses the Point class with the overloaded `toán tử<<` we wrote above:
+
+```cpp
+#include <iostream>
+
+class Point
+{
+private:
+    double m_x{};
+    double m_y{};
+    double m_z{};
+
+public:
+    Point(double x=0.0, double y=0.0, double z=0.0)
+      : m_x{x}, m_y{y}, m_z{z}
+    {
+    }
+
+    friend std::ostream& operator<< (std::ostream& out, const Point& point);
+};
+
+std::ostream& operator<< (std::ostream& out, const Point& point)
+{
+    // Since operator<< is a friend of the Point class, we can access Point's members directly.
+    out << "Point(" << point.m_x << ", " << point.m_y << ", " << point.m_z << ')';
+
+    return out;
+}
+
+int main()
+{
+    Point point1 { 2.0, 3.5, 4.0 };
+    Point point2 { 6.0, 7.5, 8.0 };
+
+    std::cout << point1 << ' ' << point2 << '\n';
+
+    return 0;
+}
+```
+
+This produces the following result:
+
+```cpp
+Point(2, 3.5, 4) Point(6, 7.5, 8)
+```
+
+In the above example, `toán tử<<` is a friend because it needs direct access to the member of `Point`.  However, if the members could be accessed via getters, then `toán tử<<` could be implemented as a non-friend.
+
+Overloading `toán tử>>`
+
+It is also possible to overload the input toán tử.  This is done in a manner analogous to overloading the output toán tử.  The key thing you need to know is that `std::cin` is an object of type `std::istream`.  Here’s our `Point` class with an overloaded `toán tử>>` added:
+
+```cpp
+#include <iostream>
+
+class Point
+{
+private:
+    double m_x{};
+    double m_y{};
+    double m_z{};
+
+public:
+    Point(double x=0.0, double y=0.0, double z=0.0)
+      : m_x{x}, m_y{y}, m_z{z}
+    {
+    }
+
+    friend std::ostream& operator<< (std::ostream& out, const Point& point);
+    friend std::istream& operator>> (std::istream& out, Point& point);
+};
+
+std::ostream& operator<< (std::ostream& out, const Point& point)
+{
+    // Since operator<< is a friend of the Point class, we can access Point's members directly.
+    out << "Point(" << point.m_x << ", " << point.m_y << ", " << point.m_z << ')';
+
+    return out;
+}
+
+// note that point must be non-const so we can modify the object
+std::istream& operator>> (std::istream& in, Point& point)
+{
+    // This version subject to partial extraction issues (see below)
+    in >> point.m_x >> point.m_y >> point.m_z;
+
+    return in;
+}
+
+int main()
+{
+    std::cout << "Enter a point: ";
+
+    Point point{ 1.0, 2.0, 3.0 }; // non-zero test data
+    std::cin >> point;
+
+    std::cout << "You entered: " << point << '\n';
+
+    return 0;
+}
+```
+
+Assuming the user enters `4.0 5.6 7.26` as input, the program produces the following result:
+
+```cpp
+You entered: Point(4, 5.6, 7.26)
+```
+
+Now let’s see what happens when the user enters `4.0b 5.6 7.26` as input (notice the `b` after the `4.0`):
+
+```cpp
+You entered: Point(4, 0, 3)
+```
+
+Our point is now a weird hybrid consisting of one value from the user’s input (`4.0`), one value that has been zero-được khởi tạo (`0.0`), and one value that was untouched by the input hàm (`3.0`).  That’s…  not great!
+
+Guarding against partial extraction
+
+When we’re extracting a single value, there are only two possible outcomes: the extraction fails, or it is successful.  However, when we’re extracting more than one value as part of an input operation, things get a bit more complicated.
+
+The above implementation of `toán tử>>` can result in a partial extraction.  And this is exactly what we’re seeing with input `4.0b 5.6 7.26`.  The extraction to `x_y` successfully extracts `4.0` from the user’s input, leaving `b 5.6 7.26` in the input stream.  The extraction to `m_y` fails to extract `b`, so `m_y` is copy-assigned the value `0.0` and the input stream is set to failure mode.  Since we haven’t cleared failure mode, the extraction to `m_z` aborts immediately, and the value that `m_z` had before the extraction attempt remains (`3.0`).
+
+There is no case where this is a desirable outcome.  And in some cases, it might even be actively dangerous.  Imagine we were writing an `toán tử>>` for a `Fraction` object instead.  After successfully extracting the numerator, a failed extraction to the denominator would set the denominator to `0.0`, which might later cause a divide by zero and cause the application to crash.
+
+So how might we avoid this?  One way is to make our operations transactional.  A **transactional operation** must either completely succeed or completely fail -- no partial successes or failures are allowed.  This is sometimes known as “all or nothing”.  If a failure occurs at any point during the transaction, prior changes made by the operation must be undone.
+
+::: info Hiểu biết cốt lõi
+
+Transactions occur all the time in real life.  Consider the case where I want to transfer money from one bank account to another.  This requires two steps: First the money must first be deducted from one account, and then it must be credited to the other account.  In the execution of this operation, there are three possibilities:
+
+- The deduction step fails (e.g. not enough funds).  The transaction fails, and neither account balance reflects the transfer.
+
+- The crediting step fails (e.g. due to a technical problem).  In this case, the deduction (which has already succeeded) must be undone.  The transaction fails, and neither account balance reflects the transfer.
+
+- Both steps succeed.  The transaction is successful, and both account balances reflect the transfer.
+
+The end result is that there are only two possible outcomes: the transfer fully fails and the account balances are unchanged, or the transfer succeeds and the account balances are both changed.
+
+:::
+
+Let’s reimplement our overloaded `Point` `toán tử>>` as a transactional operation:
+
+```cpp
+// note that point must be non-const so we can modify the object
+// note that this implementation is a non-friend
+std::istream& operator>> (std::istream& in, Point& point)
+{
+    double x{};
+    double y{};
+    double z{};
+    
+    if (in >> x >> y >> z)      // if all extractions succeeded
+        point = Point{x, y, z}; // overwrite our existing point
+        
+    return in;
+}
+```
+
+In this implementation, we’re not overwriting the data members directly with the user’s input.  Instead, we’re extracting the user’s input to temporary các biến (`x`, `y`, and `z`).  Once all extraction attempts have completed, we check whether all extractions were successful.  If so, then we update all the members of `Point` together.  Otherwise, we do not update any of them.
+
+::: info Tip
+
+`if (in >> x >> y >> z)` is equivalent to `in >> x >> y >> z;  if (in)`.  Remember, each extraction returns `in` so that multiple extractions can be chained together.  The single-câu lệnh version uses the `in` returned from the last extraction as the condition of the if-câu lệnh, whereas the multi-câu lệnh version uses `in` explicitly.
+:::
+
+::: info Tip
+<p>Transactional operations can be implemented using a number of different strategies.  For example:
+
+- Alter on success: Store the result of each sub-operation.  If all sub-operations succeed, replace the relevant data with the stored results.  This is the strategy we use in the `Point` example above.
+
+- Restore on failure: Copy any data that can be altered.  If any sub-operation fails, the changes made by prior sub-operations can be reverted using the data from copy.
+
+- Rollback on failure: If any sub-operation fails, each prior sub-operation is reversed (using an opposite sub-operation).  This strategy is often used in databases, where the data is too large to back up, and the result of sub-operations can’t be stored.
+
+:::
+
+While the above `toán tử>>` prevents partial extractions, it is inconsistent with how `toán tử>>` works for các kiểu dữ liệu cơ bản.  When extraction to an object with a fundamental type fails, the object isn’t left unaltered -- it is copy assigned the value `0` (this ensures the object has some consistent value in case it wasn’t được khởi tạo before the extraction attempt).  Therefore, for consistency, you may wish to have a failed extraction reset the object to its default state (at least in cases where such a thing exists).
+
+Here’s an alternate version of `toán tử>>` that resets `Point` to its default state if any extraction fails:
+
+```cpp
+// note that point must be non-const so we can modify the object
+// note that this implementation is a non-friend
+std::istream& operator>> (std::istream& in, Point& point)
+{
+    double x{};
+    double y{};
+    double z{};
+    
+    in >> x >> y >> z;
+    point = in ? Point{x, y, z} : Point{};
+        
+    return in;
+}
+```
+
+::: info Author’s note
+
+Such an operation is technically no longer transactional (because failure doesn’t “do nothing”).  There doesn’t appear to be a general term for operations that guarantee no partial results.  Perhaps “indivisible operation”.
+
+:::
+
+Handling semantically invalid input
+
+Extraction can fail in different ways.
+
+In cases where `toán tử>>` simply fails to extract anything to a biến, `std::cin` will automatically be placed in failure mode (which we discuss in lesson [9.5 -- std::cin and handling invalid input](https://www.learncpp.com/cpp-tutorial/stdcin-and-handling-invalid-input/)).  The caller of this hàm can then check `std::cin` to see if it failed and handle that case as appropriate.
+
+But what about cases where the user inputs a value that is extractable but semantically invalid (e.g. a `Fraction` with a denominator of `0`)?  Because `std::cin` did extract something, it won’t go into failure mode automatically.  And then the caller probably won’t realize something went wrong.
+
+To address this, we can have our overloaded `toán tử>>` determine whether any of the values that were extracted are semantically invalid, and if so, manually put the input stream in failure mode.  This can be done by calling `std::cin.setstate(std::ios_base::failbit);`.
+
+Here’s an example of a transactional overloaded `toán tử>>` for `Point` that will cause the input stream to enter failure mode if the user inputs an extractable negative value:
+
+```cpp
+std::istream& operator>> (std::istream& in, Point& point)
+{
+    double x{};
+    double y{};
+    double z{};
+    
+    in >> x >> y >> z;
+    if (x < 0.0 || y < 0.0 || z < 0.0)       // if any extractable input is negative
+        in.setstate(std::ios_base::failbit); // set failure mode manually
+    point = in ? Point{x, y, z} : Point{};
+       
+    return in;
+}
+```
+
+Conclusion
+
+Overloading `toán tử<<` and `toán tử>>` make it easy to output your class to screen and accept user input from the console.  
+
+Hệ thống Câu hỏi & Quiz Tự Luyện
+
+Câu hỏi #1
+
+Take the Fraction class below and add an overloaded `toán tử<<` and `toán tử>>` to it.  Your `toán tử>>` should avoid partial extractions and fail if user inputs a denominator of `0`.  It should not reset the Fraction to default on failure.
+
+The following program should compile:
+
+```cpp
+int main()
+{
+	Fraction f1{};
+	std::cout << "Enter fraction 1: ";
+	std::cin >> f1;
+
+	Fraction f2{};
+	std::cout << "Enter fraction 2: ";
+	std::cin >> f2;
+
+	std::cout << f1 << " * " << f2 << " is " << f1 * f2 << '\n'; // note: The result of f1 * f2 is an r-value
+
+	return 0;
+}
+```
+
+And produce the result:
+
+```cpp
+Enter fraction 1: 2/3
+Enter fraction 2: 3/8
+2/3 * 3/8 is 1/4
+```
+
+Here’s the Fraction class:
+
+```cpp
+#include <iostream>
+#include <numeric> // for std::gcd
+ 
+class Fraction
+{
+private:
+	int m_numerator{};
+	int m_denominator{};
+ 
+public:
+	Fraction(int numerator=0, int denominator=1):
+		m_numerator{numerator}, m_denominator{denominator}
+	{
+		// We put reduce() in the constructor to ensure any new fractions we make get reduced!
+		// Any fractions that are overwritten will need to be re-reduced
+		reduce();
+	}
+
+	void reduce()
+	{
+		int gcd{ std::gcd(m_numerator, m_denominator) };
+		if (gcd)
+		{
+			m_numerator /= gcd;
+			m_denominator /= gcd;
+		}
+	}
+ 
+	friend Fraction operator*(const Fraction& f1, const Fraction& f2);
+	friend Fraction operator*(const Fraction& f1, int value);
+	friend Fraction operator*(int value, const Fraction& f1);
+ 
+	void print() const
+	{
+		std::cout << m_numerator << '/' << m_denominator << '\n';
+	}
+};
+ 
+Fraction operator*(const Fraction& f1, const Fraction& f2)
+{
+	return Fraction { f1.m_numerator * f2.m_numerator, f1.m_denominator * f2.m_denominator };
+}
+ 
+Fraction operator*(const Fraction& f1, int value)
+{
+	return Fraction { f1.m_numerator * value, f1.m_denominator };
+}
+ 
+Fraction operator*(int value, const Fraction& f1)
+{
+	return Fraction { f1.m_numerator * value, f1.m_denominator };
+}
+```
+
+If you’re on a pre-C++17 trình biên dịch, you can replace std::gcd with this hàm:
+
+```cpp
+#include <cmath>
+ 
+int gcd(int a, int b) {
+    return (b == 0) ? std::abs(a) : gcd(b, a % b);
+}
+```
+
+::: details Xem lời giải (Solution)
+```cpp
+#include <iostream>
+#include <limits>
+#include <numeric> // for std::gcd
+
+class Fraction
+{
+private:
+    int m_numerator{ 0 };
+    int m_denominator{ 1 };
+
+public:
+    Fraction(int numerator=0, int denominator = 1) :
+        m_numerator{ numerator }, m_denominator{ denominator }
+    {
+        // We put reduce() in the constructor to ensure any new fractions we make get reduced!
+        // Any fractions that are overwritten will need to be re-reduced
+        reduce();
+    }
+
+    void reduce()
+    {
+        int gcd{ std::gcd(m_numerator, m_denominator) };
+        if (gcd)
+        {
+            m_numerator /= gcd;
+            m_denominator /= gcd;
+        }
+    }
+
+    friend Fraction operator*(const Fraction& f1, const Fraction& f2);
+    friend Fraction operator*(const Fraction& f1, int value);
+    friend Fraction operator*(int value, const Fraction& f1);
+
+    friend std::ostream& operator<<(std::ostream& out, const Fraction& f1);
+
+    void print() const
+    {
+        std::cout << m_numerator << '/' << m_denominator << '\n';
+    }
+};
+
+Fraction operator*(const Fraction& f1, const Fraction& f2)
+{
+    return Fraction { f1.m_numerator * f2.m_numerator, f1.m_denominator * f2.m_denominator };
+}
+
+Fraction operator*(const Fraction& f1, int value)
+{
+    return Fraction { f1.m_numerator * value, f1.m_denominator };
+}
+
+Fraction operator*(int value, const Fraction& f1)
+{
+    return Fraction { f1.m_numerator * value, f1.m_denominator };
+}
+
+std::ostream& operator<<(std::ostream& out, const Fraction& f1)
+{
+    out << f1.m_numerator << '/' << f1.m_denominator;
+    return out;
+}
+
+std::istream& operator>>(std::istream& in, Fraction& f1)
+{
+    int numerator {};
+    char ignore {};
+    int denominator {};
+    
+    in >> numerator >> ignore >> denominator;
+    if (denominator == 0)                       // if our denominator is semantically invalid
+        in.setstate(std::ios_base::failbit);    // set failure mode manually
+    if (in)                                     // if we're not in failure mode
+        f1 = Fraction {numerator, denominator}; // update our object to the extracted values
+
+    return in;
+}
+
+int main()
+{
+    Fraction f1{};
+    std::cout << "Enter fraction 1: ";
+    std::cin >> f1;
+
+    Fraction f2{};
+    std::cout << "Enter fraction 2: ";
+    std::cin >> f2;
+
+    std::cout << f1 << " * " << f2 << " is " << f1 * f2 << '\n'; // note: The result of f1 * f2 is an r-value
+
+    return 0;
+}
+```
+:::
+
+</a>
+  	<a class="nav-link" href="/">
+  
+    <i class="fa fa-home" aria-hidden="true"></i>
+    
+      Back to table of contents
+    
+</a>
+  	<a class="nav-link" href="https://www.learncpp.com/cpp-tutorial/overloading-các toán tử-using-normal-các hàm/">
+  
+    <i class="fa fa-chevron-circle-left" aria-hidden="true"></i>
+    
+      Previous lesson
+      
+        21.3Overloading các toán tử using normal các hàm
+      
+    
+  </a>
+
+
+---
+
+
+
+
+
+
+
+::: tip 💡 Tóm Tắt Quy Tắc Vàng (Core Guidelines)
+1. Luôn hiểu rõ vòng đời và quyền sở hữu (Ownership) của dữ liệu trước khi viết code.
+2. Ưu tiên khởi tạo đồng nhất với dấu ngoặc nhọn `{}` để ngăn chặn lỗi thu hẹp kiểu dữ liệu (Narrowing conversions).
+3. Bật toàn bộ cờ cảnh báo `-Wall -Wextra -Wpedantic` để compiler giúp bạn phát hiện bug từ sớm!
+:::

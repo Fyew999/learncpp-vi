@@ -1,0 +1,323 @@
+# 22.1 — std::string and std::wstring
+
+---
+
+## 🎯 Mục Tiêu Bài Học
+- Nắm vững bản chất lý thuyết và cơ chế hoạt động của **std::string and std::wstring** trong tiêu chuẩn ISO C++.
+- Hiểu rõ cách máy tính tổ chức bộ nhớ (RAM, CPU registers) khi thực thi mã nguồn liên quan.
+- Nhận biết các cạm bẫy lỗi kinh điển (**Undefined Behavior**, Memory Leak, Bug logic) và cách phòng tránh.
+- Áp dụng các quy tắc thực hành tốt nhất (**Best Practices**) chuẩn công nghiệp và cập nhật C++20/C++23 hiện đại.
+
+---
+
+# 22.1 &#8212; std::string and std::wstring
+
+The standard library contains many useful classes -- but perhaps the most useful is std::string.  std::string (and std::wstring) is a string class that provides many operations to assign, compare, and modify strings.  In this chapter, we’ll look into these string classes in depth.
+
+Note: C-style strings will be referred to as “C-style strings”, whereas std::string (and std::wstring) will be referred to simply as “strings”.
+
+::: info Author’s note
+
+This chapter is somewhat outdated and will likely be condensed in a future update.  Feel free to scan the material for ideas and useful examples, but technical tham chiếu sites (e.g. [cppreference](https://en.cppreference.com/w/cpp/string/basic_string)) should be preferred for the most up-to-date information.
+:::
+
+<p>**Motivation for a string class**
+
+In a previous lesson, we covered  [C-style strings](http://www.learncpp.com/cpp-tutorial/66-c-style-strings/), which uses char arrays to store a string of characters.  If you’ve tried to do anything with C-style strings, you’ll very quickly come to the conclusion that they are a pain to work with, easy to mess up, and hard to debug.
+
+C-style strings have many shortcomings, primarily revolving around the fact that you have to do all the memory management yourself.  For example, if you want to assign the string “hello!” into a buffer, you have to first dynamically allocate a buffer of the correct length:
+
+```cpp
+char* strHello { new char[7] };
+```
+
+Don’t forget to account for an extra character for the null terminator!
+
+Then you have to actually copy the value in:
+
+```cpp
+strcpy(strHello, "hello!");
+```
+
+Hopefully you made your buffer large enough so there’s no buffer overflow!
+
+And of course, because the string is dynamically allocated, you have to remember to deallocate it properly when you’re done with it:
+
+```cpp
+delete[] strHello;
+```
+
+Don’t forget to use array delete instead of normal delete!
+
+Furthermore, many of the intuitive các toán tử that C provides to work with numbers, such as phép gán and comparisons, simply don’t work with C-style strings.  Sometimes these will appear to work but actually produce incorrect results -- for example, comparing two C-style strings using == will actually do a con trỏ comparison, not a string comparison.  Assigning one C-style string to another using toán tử= will appear to work at first, but is actually doing a con trỏ copy (shallow copy), which is not generally what you want.  These kinds of things can lead to program crashes that are very hard to find and debug!
+
+The bottom line is that working with C-style strings requires remembering a lot of nit-picky rules about what is safe/unsafe, memorizing a bunch of các hàm that have funny names like strcat() and strcmp() instead of using intuitive các toán tử, and doing lots of manual memory management.
+
+Fortunately, C++ and the standard library provide a much better way to deal with strings: the std::string and std::wstring classes.  By making use of C++ concepts such as các hàm tạo (constructors), các hàm hủy (destructors), and toán tử overloading, std::string allows you to create and manipulate strings in an intuitive and safe manner!  No more memory management, no more weird hàm names, and a much reduced potential for disaster.
+
+Sign me up!
+
+**String overview**
+
+All string functionality in the standard library lives in the <string> header file.  To use it, simply include the string header:
+
+```cpp
+#include <string>
+```
+
+There are actually 3 different string classes in the string header.  The first is a templated base class named basic_string<>:
+
+```cpp
+namespace std
+{
+    template<class charT, class traits = char_traits<charT>, class Allocator = allocator<charT> >
+        class basic_string;
+}
+```
+
+You won’t be working with this class directly, so don’t worry about what traits or an Allocator is for the time being.  The default values will suffice in almost every imaginable case.
+
+There are two flavors of basic_string<> provided by the standard library:
+
+```cpp
+namespace std
+{
+    typedef basic_string<char> string;
+    typedef basic_string<wchar_t> wstring;
+}
+```
+
+These are the two classes that you will actually use.  std::string is used for standard ascii and utf-8 strings.  std::wstring is used for wide-character/unicode (utf-16) strings.  There is no built-in class for utf-32 strings (though you should be able to extend your own from basic_string<> if you need one).
+
+Although you will directly use std::string and std::wstring, all of the string functionality is implemented in the basic_string<> class.  String and wstring are able to access that functionality directly by virtue of being templated.  Consequently, all of the các hàm presented will work for both string and wstring.  However, because basic_string is a templated class, it also means the trình biên dịch will produce horrible looking template errors when you do something syntactically incorrect with a string or wstring.  Don’t be intimidated by these errors; they look far worse than they are!
+
+Here’s a list of all the các hàm in the string class.  Most of these các hàm have multiple flavors to handle different types of inputs, which we will cover in more depth in the next lessons.
+
+</p>
+
+Function
+Effect
+
+**Creation and destruction**
+
+         [(hàm tạo (constructor))](http://www.learncpp.com/cpp-tutorial/17-2-ststring-construction-and-destruction/)
+
+         [(hàm hủy (destructor))](http://www.learncpp.com/cpp-tutorial/17-2-ststring-construction-and-destruction/)
+    
+
+         Create or copy a string
+
+         Destroy a string
+    
+
+**Size and capacity**
+
+        [capacity()](http://www.learncpp.com/cpp-tutorial/17-3-stdstring-length-and-capacity/)
+
+        [empty()](http://www.learncpp.com/cpp-tutorial/17-3-stdstring-length-and-capacity/)
+
+        [length(), size()](http://www.learncpp.com/cpp-tutorial/17-3-stdstring-length-and-capacity/)
+
+        [max_size()](http://www.learncpp.com/cpp-tutorial/17-3-stdstring-length-and-capacity/)
+
+        [reserve()](http://www.learncpp.com/cpp-tutorial/17-3-stdstring-length-and-capacity/)
+    
+
+        Returns the number of characters that can be held without reallocation
+
+        Returns a boolean indicating whether the string is empty
+
+        Returns the number of characters in string
+
+        Returns the maximum string size that can be allocated
+
+        Expand or shrink the capacity of the string
+    
+
+**Element access**
+
+        [[], at()](http://www.learncpp.com/cpp-tutorial/17-4-stdstring-character-access-and-conversion-to-c-style-arrays/)
+    
+
+        Accesses the character at a particular index
+    
+
+**Modification**
+
+        [=, assign()](http://www.learncpp.com/cpp-programming/17-5-stdstring-phép gán-and-swapping/)
+
+        [+=, append(), push_back()](http://www.learncpp.com/uncategorized/17-6-stdstring-appending/)
+
+        [insert()](http://www.learncpp.com/cpp-tutorial/17-7-stdstring-inserting/)
+
+        clear()
+
+        erase()
+
+        replace()
+
+        resize()
+
+        [swap()](http://www.learncpp.com/cpp-programming/17-5-stdstring-phép gán-and-swapping/)
+    
+
+        Assigns a new value to the string
+
+        Concatenates characters to end of the string
+
+        Inserts characters at an arbitrary index in string
+
+        Delete all characters in the string
+
+        Erase characters at an arbitrary index in string
+
+        Replace characters at an arbitrary index with other characters
+
+        Expand or shrink the string (truncates or adds characters at end of string)
+
+        Swaps the value of two strings
+    
+
+**Input and Output**
+
+        >>, getline()
+
+        <<
+
+        [c_str()](http://www.learncpp.com/cpp-tutorial/17-4-stdstring-character-access-and-conversion-to-c-style-arrays/)
+
+        [copy()](http://www.learncpp.com/cpp-tutorial/17-4-stdstring-character-access-and-conversion-to-c-style-arrays/)
+
+        [data()](http://www.learncpp.com/cpp-tutorial/17-4-stdstring-character-access-and-conversion-to-c-style-arrays/)
+    
+
+        Reads values from the input stream into the string
+
+        Writes string value to the output stream
+
+        Returns the contents of the string as a NULL-terminated C-style string
+
+        Copies contents (not NULL-terminated) to a character array
+
+        Same as c_str(). The non-const overload allows writing to the returned string.
+    
+
+**String comparison**
+
+        ==, !=
+
+        <, <=, > >=
+
+        compare()
+    
+
+        Compares whether two strings are equal/unequal (returns bool)
+
+        Compares whether two strings are less than / greater than each other (returns bool)
+
+        Compares whether two strings are equal/unequal (returns -1, 0, or 1)
+    
+
+**Substrings and concatenation**
+
+        +
+
+        substr()
+    
+
+        Concatenates two strings
+
+        Returns a substring
+    
+
+**Searching**
+
+        find()
+
+        find_first_of()
+
+        find_first_not_of()
+
+        find_last_of()
+
+        find_last_not_of()
+
+        rfind()
+    
+
+        Find index of first character/substring
+
+        Find index of first character from a set of characters
+
+        Find index of first character not from a set of characters
+
+        Find index of last character from a set of characters
+
+        Find index of last character not from a set of characters
+
+        Find index of last character/substring</p>
+
+**Iterator and allocator support**
+
+        begin(), end()
+
+        get_allocator()
+
+        rbegin(), rend()
+    
+
+        Forward-direction iterator support for beginning/end of string
+
+        Returns the allocator
+
+        Reverse-direction iterator support for beginning/end of string
+    
+
+<p>While the standard library string classes provide a lot of functionality, there are a few notable omissions:
+
+<li>Constructors for creating strings from numbers
+<li>Capitalization / upper case / lower case các hàm
+<li>Case-insensitive comparisons
+<li>Tokenization / splitting string into array
+<li>Easy các hàm for getting the left or right hand portion of string
+<li>Whitespace trimming
+<li>Formatting a string sprintf style
+<li>Conversion from utf-8 to utf-16 or vice-versa
+
+For most of these, you will have to either write your own các hàm, or convert your string to a C-style string (using c_str()) and use the C các hàm that offer this functionality.
+
+In the next lessons, we will look at the various các hàm of the string class in more depth.  Although we will use string for our examples, everything is equally applicable to wstring.
+
+</a>
+  	<a class="nav-link" href="/">
+  
+    <i class="fa fa-home" aria-hidden="true"></i>
+    
+      Back to table of contents
+    
+</a>
+  	<a class="nav-link" href="https://www.learncpp.com/cpp-tutorial/stl-algorithms-overview/">
+  
+    <i class="fa fa-chevron-circle-left" aria-hidden="true"></i>
+    
+      Previous lesson
+      
+        21.4STL algorithms overview
+      
+    
+  </a>
+
+
+---
+
+
+
+
+
+
+
+::: tip 💡 Tóm Tắt Quy Tắc Vàng (Core Guidelines)
+1. Luôn hiểu rõ vòng đời và quyền sở hữu (Ownership) của dữ liệu trước khi viết code.
+2. Ưu tiên khởi tạo đồng nhất với dấu ngoặc nhọn `{}` để ngăn chặn lỗi thu hẹp kiểu dữ liệu (Narrowing conversions).
+3. Bật toàn bộ cờ cảnh báo `-Wall -Wextra -Wpedantic` để compiler giúp bạn phát hiện bug từ sớm!
+:::

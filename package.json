@@ -1,0 +1,19 @@
+{
+  "name": "learncpp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs",
+    "scrape": "python3 scripts/scraper.py",
+    "build:config": "python3 scripts/generate_site_config.py"
+  },
+  "keywords": [],
+  "type": "commonjs",
+  "devDependencies": {
+    "vitepress": "^1.6.4",
+    "vue": "^3.5.45"
+  }
+}

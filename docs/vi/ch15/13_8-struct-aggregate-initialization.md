@@ -1,0 +1,502 @@
+# 13.8 — Struct aggregate initialization
+
+---
+
+## 🎯 Mục Tiêu Bài Học
+- Nắm vững bản chất lý thuyết và cơ chế hoạt động của **Struct aggregate initialization** trong tiêu chuẩn ISO C++.
+- Hiểu rõ cách máy tính tổ chức bộ nhớ (RAM, CPU registers) khi thực thi mã nguồn liên quan.
+- Nhận biết các cạm bẫy lỗi kinh điển (**Undefined Behavior**, Memory Leak, Bug logic) và cách phòng tránh.
+- Áp dụng các quy tắc thực hành tốt nhất (**Best Practices**) chuẩn công nghiệp và cập nhật C++20/C++23 hiện đại.
+
+---
+
+# 13.8 &#8212; Struct aggregate sự khởi tạo
+
+In the previous lesson ([13.7 -- Introduction to structs, members, and member selection](https://www.learncpp.com/cpp-tutorial/introduction-to-structs-members-and-member-selection/)), we talked about how to define structs, instantiate struct đối tượng, and access their members.  In this lesson, we’ll discuss how structs are được khởi tạo.
+
+Data members are not được khởi tạo by default
+
+Much like normal các biến, data members are not được khởi tạo by default.  Consider the following struct:
+
+```cpp
+#include <iostream>
+
+struct Employee
+{
+    int id; // note: no initializer here
+    int age;
+    double wage;
+};
+
+int main()
+{
+    Employee joe; // note: no initializer here either
+    std::cout << joe.id << '\n';
+
+    return 0;
+}
+```
+
+Because we have not provided any initializers, when `joe` is instantiated, `joe.id`, `joe.age`, and `joe.wage` will all be chưa được khởi tạo.  We will then get hành vi không xác định (Hành vi không xác định (Undefined Behavior - UB) - UB) when we try to print the value of `joe.id`.
+
+However, before we show you how to khởi tạo a struct, let’s take a short detour.
+
+<a name="aggregate"></a>What is an aggregate? [<i class="fa fa-link" style="font-size: 0.8em;"></i>](#aggregate)
+
+In general programming, an **aggregate kiểu dữ liệu** (also called an **aggregate**) is any type that can contain multiple data members.  Some types of aggregates allow members to have different types (e.g. structs), while others require that all members must be of a single type (e.g. arrays).
+
+In C++, the definition of an aggregate is narrower and quite a bit more complicated.
+
+::: info Author’s note
+
+In this tutorial series, when we use the term “aggregate” (or “non-aggregate”) we will mean the C++ definition of aggregate.
+
+:::
+
+::: info For advanced readers
+
+To simplify a bit, an aggregate in C++ is either a C-style array ([17.7 -- Introduction to C-style arrays](https://www.learncpp.com/cpp-tutorial/introduction-to-c-style-arrays/)), or a class type (struct, class, or union) that has:
+
+- No user-declared các hàm tạo (constructors) ([14.9 -- Introduction to các hàm tạo (constructors)](https://www.learncpp.com/cpp-tutorial/introduction-to-các hàm tạo (constructors)/))
+
+- No private or protected non-static data members ([14.5 -- Public and private members and access specifiers](https://www.learncpp.com/cpp-tutorial/public-and-private-members-and-access-specifiers/))
+
+- No virtual các hàm ([25.2 -- Virtual các hàm and tính đa hình](https://www.learncpp.com/cpp-tutorial/virtual-các hàm/))
+
+The popular type `std::array` ([17.1 -- Introduction to std::array](https://www.learncpp.com/cpp-tutorial/introduction-to-stdarray/)) is also an aggregate.
+
+You can find the precise definition of a C++ aggregate [here](https://en.cppreference.com/w/cpp/language/aggregate_initialization).
+:::
+
+<p>The key thing to understand at this point is that structs with only data members are aggregates.
+
+Aggregate sự khởi tạo of a struct
+
+Because a normal biến can only hold a single value, we only need to provide a single initializer:
+
+```cpp
+int x { 5 };
+```
+
+However, a struct can have multiple members:
+
+```cpp
+struct Employee
+{
+    int id {};
+    int age {};
+    double wage {};
+};
+```
+
+When we define an object with a struct type, we need some way to khởi tạo multiple members at sự khởi tạo time:
+
+```cpp
+Employee joe; // how do we initialize joe.id, joe.age, and joe.wage?
+```
+
+Aggregates use a form of sự khởi tạo called **aggregate sự khởi tạo**, which allows us to directly khởi tạo the members of aggregates.  To do this, we provide an **initializer list** as an initializer, which is just a braced list of comma-separated values.
+
+There are 2 primary forms of aggregate sự khởi tạo:
+
+```cpp
+struct Employee
+{
+    int id {};
+    int age {};
+    double wage {};
+};
+
+int main()
+{
+    Employee frank = { 1, 32, 60000.0 }; // copy-list initialization using braced list
+    Employee joe { 2, 28, 45000.0 };     // list initialization using braced list (preferred)
+
+    return 0;
+}
+```
+
+Each of these sự khởi tạo forms does a **memberwise sự khởi tạo**, which means each member in the struct is được khởi tạo in the order of declaration.  Thus, `Employee joe { 2, 28, 45000.0 };` first initializes `joe.id` with value `2`, then `joe.age` with value `28`, and `joe.wage` with value `45000.0` last.
+
+::: tip Thực hành tốt nhất (Best Practice)
+
+Prefer the (non-copy) braced list form when initializing aggregates.
+
+:::
+
+In C++20, we can also khởi tạo (some) aggregates using a parenthesized list of values:
+
+```cpp
+Employee robert ( 3, 45, 62500.0 );  // direct initialization using parenthesized list (C++20)
+```
+
+We recommend avoiding this last form as much as possible, as it doesn’t currently work with aggregates that utilize brace elision (notably `std::array`).
+
+Missing initializers in an initializer list
+
+If an aggregate is được khởi tạo but the number of sự khởi tạo values is fewer than the number of members, then each member without an explicit initializer is được khởi tạo as follows:
+
+- If the member has a default member initializer, that is used.
+
+- Otherwise, the member is copy-được khởi tạo from an empty initializer list.  In most cases, this will perform value-sự khởi tạo on those members (on class types, this will invoke the default hàm tạo (constructor) even if a list hàm tạo (constructor) exist).
+
+```cpp
+struct Employee
+{
+    int id {};
+    int age {};
+    double wage { 76000.0 };
+    double whatever;
+};
+
+int main()
+{
+    Employee joe { 2, 28 }; // joe.whatever will be value-initialized to 0.0
+
+    return 0;
+}
+```
+
+In the above example, `joe.id` will be được khởi tạo with value `2` and `joe.age` will be được khởi tạo with value `28`.  Because `joe.wage` wasn’t given an explicit initializer but has a default member initializer, `joe.wage` will be được khởi tạo to `76000.0`.  And finally, because `joe.whatever` wasn’t given an explicit initializer, `joe.whatever` is value-được khởi tạo to `0.0`.
+
+::: info Tip
+
+This means we can generally use an empty sự khởi tạo list to value-khởi tạo all members of the struct:
+
+```cpp
+Employee joe {}; // value-initialize all members
+```
+:::
+
+Overloading `toán tử<<` to print a struct
+
+Trong bài học [13.5 -- Introduction to overloading the I/O các toán tử](https://www.learncpp.com/cpp-tutorial/introduction-to-overloading-the-i-o-các toán tử/), we showed how to overload `toán tử<<` to print an enumeration.  It’s also useful to overload `toán tử<<` for structs.
+
+Here’s the same example as in the previous section, now with an overloaded `toán tử<<`:
+
+```cpp
+#include <iostream>
+
+struct Employee
+{
+    int id {};
+    int age {};
+    double wage {};
+};
+
+std::ostream& operator<<(std::ostream& out, const Employee& e)
+{
+    out << e.id << ' ' << e.age << ' ' << e.wage;
+    return out;
+}
+
+int main()
+{
+    Employee joe { 2, 28 }; // joe.wage will be value-initialized to 0.0
+    std::cout << joe << '\n';
+
+    return 0;
+}
+```
+
+This prints:
+
+```cpp
+2 28 0
+```
+
+We can see that `joe.wage` was indeed value-được khởi tạo to `0.0` (which prints as `0`).
+
+Unlike an enumeration, a struct can hold multiple values.  How you format the output (e.g. to separate the values) is entirely up to you.  
+
+The three values output by our overloaded `toán tử<<` above aren’t intuitive, as there is no indication of what these values mean.  Let’s do the same example, but update our output hàm to be a bit more descriptive:
+
+```cpp
+#include <iostream>
+
+struct Employee
+{
+    int id {};
+    int age {};
+    double wage {};
+};
+
+std::ostream& operator<<(std::ostream& out, const Employee& e)
+{
+    out << "id: " << e.id << " age: " << e.age << " wage: " << e.wage;
+    return out;
+}
+
+int main()
+{
+    Employee joe { 2, 28 }; // joe.wage will be value-initialized to 0.0
+    std::cout << joe << '\n';
+
+    return 0;
+}
+```
+
+This now prints:
+
+```cpp
+id: 2 age: 28 wage: 0
+```
+
+That’s a little easier to understand.
+
+Const structs
+
+Variables of a struct type can be const (or constexpr), and just like all const các biến, they must be được khởi tạo.
+
+```cpp
+struct Rectangle
+{
+    double length {};
+    double width {};
+};
+
+int main()
+{
+    const Rectangle unit { 1.0, 1.0 };
+    const Rectangle zero { }; // value-initialize all members
+
+    return 0;
+}
+```
+
+Designated initializers C++20
+
+When initializing a struct from a list of values, the initializers are applied to the members in order of declaration.
+
+```cpp
+struct Foo
+{
+    int a {};
+    int c {};
+};
+
+int main()
+{
+    Foo f { 1, 3 }; // f.a = 1, f.c = 3
+
+    return 0;
+}
+```
+
+Now consider what would happen if you were to update this struct definition to add a new member that is not the last member:
+
+```cpp
+struct Foo
+{
+    int a {};
+    int b {}; // just added
+    int c {};
+};
+
+int main()
+{
+    Foo f { 1, 3 }; // now, f.a = 1, f.b = 3, f.c = 0
+
+    return 0;
+}
+```
+
+Now all your sự khởi tạo values have shifted, and worse, the trình biên dịch may not detect this as an error (after all, the syntax is still valid).
+
+To help avoid this, C++20 adds a new way to khởi tạo struct members called **designated initializers**.  Designated initializers allow you to explicitly define which sự khởi tạo values map to which members.  The members can be được khởi tạo using list or copy sự khởi tạo, and must be được khởi tạo in the same order in which they are declared in the struct, otherwise a cảnh báo or error will result.  Members not designated an initializer will be value được khởi tạo.
+
+```cpp
+struct Foo
+{
+    int a{ };
+    int b{ };
+    int c{ };
+};
+
+int main()
+{
+    Foo f1{ .a{ 1 }, .c{ 3 } }; // ok: f1.a = 1, f1.b = 0 (value initialized), f1.c = 3
+    Foo f2{ .a = 1, .c = 3 };   // ok: f2.a = 1, f2.b = 0 (value initialized), f2.c = 3
+    Foo f3{ .b{ 2 }, .a{ 1 } }; // error: initialization order does not match order of declaration in struct
+
+    return 0;
+}
+```
+
+::: cảnh báo For Clang users
+
+When doing designated initializers of single values using braces, Clang improperly issues cảnh báo “braces around scalar initializer”.  Hopefully this will be fixed soon.
+
+:::
+
+Designated initializers are nice because they provide some level of self-documentation and help ensure you don’t inadvertently mix up the order of your sự khởi tạo values.  However, designated initializers also clutter up the initializer list significantly, so we won’t recommend their use as a thực hành tốt nhất (Best Practice) at this time.
+
+Also, because there’s no enforcement that designated initializers are being used consistently everywhere an aggregate is được khởi tạo, it’s a good idea to avoid adding new members to the middle of an existing aggregate definition, to avoid the risk of initializer shifting.
+
+::: tip Thực hành tốt nhất (Best Practice)
+
+When adding a new member to an aggregate, it’s safest to add it to the bottom of the definition list so the initializers for other members don’t shift.
+
+:::
+
+Assignment with an initializer list
+
+As shown in the prior lesson, we can assign values to members of structs individually:
+
+```cpp
+struct Employee
+{
+    int id {};
+    int age {};
+    double wage {};
+};
+
+int main()
+{
+    Employee joe { 1, 32, 60000.0 };
+
+    joe.age  = 33;      // Joe had a birthday
+    joe.wage = 66000.0; // and got a raise
+
+    return 0;
+}
+```
+
+This is fine for single members, but not great when we want to update many members.  Similar to initializing a struct with an initializer list, you can also assign values to structs using an initializer list (which does memberwise phép gán):
+
+```cpp
+struct Employee
+{
+    int id {};
+    int age {};
+    double wage {};
+};
+
+int main()
+{
+    Employee joe { 1, 32, 60000.0 };
+    joe = { joe.id, 33, 66000.0 }; // Joe had a birthday and got a raise
+
+    return 0;
+}
+```
+
+Note that because we didn’t want to change `joe.id`, we needed to provide the current value for `joe.id` in our list as a placeholder, so that memberwise phép gán could assign `joe.id` to `joe.id`.  This is a bit ugly.
+
+Assignment with designated initializers C++20
+
+Designated initializers can also be used in a list phép gán:
+
+```cpp
+struct Employee
+{
+    int id {};
+    int age {};
+    double wage {};
+};
+
+int main()
+{
+    Employee joe { 1, 32, 60000.0 };
+    joe = { .id = joe.id, .age = 33, .wage = 66000.0 }; // Joe had a birthday and got a raise
+
+    return 0;
+}
+```
+
+Any members that aren’t designated in such an phép gán will be assigned the value that would be used for value sự khởi tạo.  If we hadn’t have specified a designated initializer for `joe.id`, `joe.id` would have been assigned the value 0.
+
+Initializing a struct with another struct of the same type
+
+A struct may also be được khởi tạo using another struct of the same type:
+
+```cpp
+#include <iostream>
+
+struct Foo
+{
+    int a{};
+    int b{};
+    int c{};
+};
+
+std::ostream& operator<<(std::ostream& out, const Foo& f)
+{
+    out << f.a << ' ' << f.b << ' ' << f.c;
+    return out;
+}
+
+int main()
+{
+    Foo foo { 1, 2, 3 };
+
+    Foo x = foo; // copy-initialization
+    Foo y(foo);  // direct-initialization
+    Foo z {foo}; // direct-list-initialization
+
+    std::cout << x << '\n';
+    std::cout << y << '\n';
+    std::cout << z << '\n';
+
+    return 0;
+}
+```
+
+The above prints:
+
+```cpp
+1 2 3
+1 2 3
+1 2 3
+```
+
+Note that this uses the standard forms of sự khởi tạo that we’re familiar with (copy, direct, or direct-list-sự khởi tạo) rather than aggregate sự khởi tạo.
+
+This is most commonly seen when initializing a struct with the giá trị trả về of a hàm that returns a struct of the same type.  We cover this in more detail in lesson [13.10 -- Passing and returning structs](https://www.learncpp.com/cpp-tutorial/passing-and-returning-structs/).
+
+</a>
+  	<a class="nav-link" href="/">
+  
+    <i class="fa fa-home" aria-hidden="true"></i>
+    
+      Back to table of contents
+    
+</a>
+  	<a class="nav-link" href="https://www.learncpp.com/cpp-tutorial/introduction-to-structs-members-and-member-selection/">
+  
+    <i class="fa fa-chevron-circle-left" aria-hidden="true"></i>
+    
+      Previous lesson
+      
+        13.7Introduction to structs, members, and member selection
+      
+    
+  </a>
+
+
+---
+
+
+```mermaid
+classDiagram
+    class DoiTuong {
+        -du_lieu_rieng_tu
+        +ham_thanh_vien()
+        +lay_gia_tri()
+    }
+    note for DoiTuong "Đóng gói (Encapsulation):\nDữ liệu được bảo vệ trong private\nThao tác qua phương thức public"
+```
+
+
+::: warning Cạm Bẫy: Khởi Tạo Không Đồng Nhất (Initialization Pitfalls)
+Hãy luôn khởi tạo biến thành viên ngay tại nơi khai báo hoặc sử dụng **Danh sách khởi tạo thành viên (Member Initializer List)** trong hàm tạo để tránh việc đối tượng bị gán giá trị 2 lần gây lãng phí chu kỳ CPU.
+:::
+
+
+
+
+::: tip 💡 Tóm Tắt Quy Tắc Vàng (Core Guidelines)
+1. Luôn hiểu rõ vòng đời và quyền sở hữu (Ownership) của dữ liệu trước khi viết code.
+2. Ưu tiên khởi tạo đồng nhất với dấu ngoặc nhọn `{}` để ngăn chặn lỗi thu hẹp kiểu dữ liệu (Narrowing conversions).
+3. Bật toàn bộ cờ cảnh báo `-Wall -Wextra -Wpedantic` để compiler giúp bạn phát hiện bug từ sớm!
+:::
